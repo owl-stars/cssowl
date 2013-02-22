@@ -1,0 +1,239 @@
+#cssowl {
+  #sprite {
+    .width(@width) {
+      width: @width;
+    }
+    .height(@height) {
+      height: @height;
+    }
+    .size(@width, @height) {
+      .width(@width);
+      .height(@height);
+    }
+    .image(@src) {
+      background-image: @src;
+    }
+    .position(@x, @y) {
+      background-position: @x @y;
+    }
+    // --- display --------------------------------------------------------------------------------
+    .display(@x, @y, @width, @height, @src) {
+      .image(@src);
+      .position(@x, @y);
+      .size(@width, @height);
+    }
+    .display-block(@x, @y, @width, @height, @src) {
+      display: block;
+      .display(@x, @y, @width, @height, @src);
+    }
+    .display-inline(@x, @y, @width, @height, @src) {
+      display: inline-block;
+      .display(@x, @y, @width, @height, @src);
+    }
+    .display-offset(@x, @y, @width, @height, @xOffset:0, @yOffset:0) {
+      .position((@x + @xOffset), (@y + @yOffset));
+      .size((@width + @xOffset * 2), (@height + @xOffset * 2));
+    }
+    // --- replace --------------------------------------------------------------------------------
+    .replace(@x, @y, @width, @height, @src) {
+      text-indent: -9999px;
+      .display(@x, @y, @width, @height, @src);
+    }
+    .replace-block(@x, @y, @width, @height, @src) {
+      display: block;
+      .replace(@x, @y, @width, @height, @src);
+    }
+    .replace-inline(@x, @y, @width, @height, @src) {
+      display: inline-block;
+      .replace(@x, @y, @width, @height, @src);
+    }
+    // --- float --------------------------------------------------------------------------------
+    .float-before(@x, @y, @width, @height, @src, @xOffset:0, @yOffset:0) {
+      &:before {
+        content: "";
+        float: left;
+        margin-top: @yOffset;
+        margin-right: @xOffset;
+        .display(@x, @y, @width, @height, @src);
+      }
+    }
+    .float-after(@x, @y, @width, @height, @src, @xOffset:0, @yOffset:0) {
+      &:after {
+        content: "";
+        float: right;
+        margin-top: @yOffset;
+        margin-left: @xOffset;
+        .display(@x, @y, @width, @height, @src);
+      }
+    }
+    // --- absolute ---------------------------------------------------------------------------------
+    .absolute-before(@x, @y, @width, @height, @src) {
+      position: relative;
+      &:before {
+        content: "";
+        position: absolute;
+        .display(@x, @y, @width, @height, @src);
+      }
+    }
+    .absolute-after(@x, @y, @width, @height, @src) {
+      position: relative;
+      &:after {
+        content: "";
+        position: absolute;
+        .display(@x, @y, @width, @height, @src);
+      }
+    }
+    // --- inside ---------------------------------------------------------------------------------
+    .inside-top-left(@x, @y, @width, @height, @src, @xOffset:0, @yOffset:0) {
+      padding-top: (@height + @yOffset);
+      padding-left: (@width + @xOffset);
+      .absolute-after(@x, @y, @width, @height, @src);
+      &:after {
+        top: @yOffset;
+        left: @xOffset;
+      }
+    }
+    .inside-top-center(@x, @y, @width, @height, @src, @xOffset:0, @yOffset:0) {
+      padding-top: (@height + @yOffset);
+      .absolute-after(@x, @y, @width, @height, @src);
+      &:after {
+        left: 50%;
+        top: @yOffset;
+        margin-left: round(@xOffset - @width / 2);
+      }
+    }
+    .inside-top-right(@x, @y, @width, @height, @src, @xOffset:0, @yOffset:0) {
+      padding-top: (@height + @yOffset);
+      padding-right: (@width + @xOffset);
+      .absolute-after(@x, @y, @width, @height, @src);
+      &:after {
+        top: @yOffset;
+        right: @xOffset;
+      }
+    }
+    .inside-middle-left(@x, @y, @width, @height, @src, @xOffset:0, @yOffset:0) {
+      padding-left: (@width + @xOffset);
+      .absolute-after(@x, @y, @width, @height, @src);
+      &:after {
+        top: 50%;
+        left: @xOffset;
+        margin-top: round(@yOffset - @height / 2);
+      }
+    }
+    .inside-middle-center(@x, @y, @width, @height, @src, @xOffset:0, @yOffset:0) {
+      .absolute-after(@x, @y, @width, @height, @src);
+      &:after {
+        top: 50%;
+        left: 50%;
+        margin-top: round(@yOffset - @height / 2);
+        margin-left: round(@xOffset - @width / 2);
+      }
+    }
+    .inside-middle-right(@x, @y, @width, @height, @src, @xOffset:0, @yOffset:0) {
+      padding-right: (@width + @xOffset);
+      .absolute-after(@x, @y, @width, @height, @src);
+      &:after {
+        top: 50%;
+        right: @xOffset;
+        margin-top: round(@yOffset - @height / 2);
+      }
+    }
+    .inside-bottom-left(@x, @y, @width, @height, @src, @xOffset:0, @yOffset:0) {
+      padding-left: (@width + @xOffset);
+      padding-bottom: (@height + @yOffset);
+      .absolute-after(@x, @y, @width, @height, @src);
+      &:after {
+        left: @xOffset;
+        bottom: @yOffset;
+      }
+    }
+    .inside-bottom-center(@x, @y, @width, @height, @src, @xOffset:0, @yOffset:0) {
+      padding-bottom: (@height + @yOffset);
+      .absolute-after(@x, @y, @width, @height, @src);
+      &:after {
+        left: 50%;
+        bottom: @yOffset;
+        margin-left: round(@xOffset - @width / 2);
+      }
+    }
+    .inside-bottom-right(@x, @y, @width, @height, @src, @xOffset:0, @yOffset:0) {
+      padding-right: (@width + @xOffset);
+      padding-bottom: (@height + @yOffset);
+      .absolute-after(@x, @y, @width, @height, @src);
+      &:after {
+        right: @xOffset;
+        bottom: @yOffset;
+      }
+    }
+    // --- outside --------------------------------------------------------------------------------
+    .outside-top-left(@x, @y, @width, @height, @src, @xOffset:0, @yOffset:0) {
+      .absolute-after(@x, @y, @width, @height, @src);
+      &:after {
+        top: round(@yOffset - @height);
+        left: round(@xOffset - @width);
+      }
+    }
+    .outside-top-center(@x, @y, @width, @height, @src, @xOffset:0, @yOffset:0) {
+      .absolute-after(@x, @y, @width, @height, @src);
+      &:after {
+        left: 50%;
+        top: round(@yOffset - @height);
+        margin-left: round(@xOffset - @width / 2);
+      }
+    }
+    .outside-top-right(@x, @y, @width, @height, @src, @xOffset:0, @yOffset:0) {
+      .absolute-after(@x, @y, @width, @height, @src);
+      &:after {
+        top: round(@yOffset - @height);
+        right: round(@xOffset - @width);
+      }
+    }
+    .outside-middle-left(@x, @y, @width, @height, @src, @xOffset:0, @yOffset:0) {
+      .absolute-after(@x, @y, @width, @height, @src);
+      &:after {
+        top: 50%;
+        left: round(@xOffset - @width);
+        margin-top: round(@yOffset - @height / 2);
+      }
+    }
+    .outside-middle-center(@x, @y, @width, @height, @src, @xOffset:0, @yOffset:0) {
+      .absolute-after(@x, @y, @width, @height, @src);
+      &:after {
+        top: 50%;
+        left: 50%;
+        margin-top: round(@yOffset - @height / 2);
+        margin-left: round(@xOffset - @width / 2);
+      }
+    }
+    .outside-middle-right(@x, @y, @width, @height, @src, @xOffset:0, @yOffset:0) {
+      .absolute-after(@x, @y, @width, @height, @src);
+      &:after {
+        top: 50%;
+        right: round(@xOffset - @width);
+        margin-top: round(@yOffset - @height / 2);
+      }
+    }
+    .outside-bottom-left(@x, @y, @width, @height, @src, @xOffset:0, @yOffset:0) {
+      .absolute-after(@x, @y, @width, @height, @src);
+      &:after {
+        left: round(@xOffset - @width);
+        bottom: round(@yOffset - @height);
+      }
+    }
+    .outside-bottom-center(@x, @y, @width, @height, @src, @xOffset:0, @yOffset:0) {
+      .absolute-after(@x, @y, @width, @height, @src);
+      &:after {
+        left: 50%;
+        bottom: round(@yOffset - @height);
+        margin-left: round(@xOffset - @width / 2);
+      }
+    }
+    .outside-bottom-right(@x, @y, @width, @height, @src, @xOffset:0, @yOffset:0) {
+      .absolute-after(@x, @y, @width, @height, @src);
+      &:after {
+        right: round(@xOffset - @width);
+        bottom: round(@yOffset - @height);
+      }
+    }
+  }
+}
