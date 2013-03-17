@@ -89,16 +89,16 @@
       padding-left: (@width + @xOffset);
       .absolute-after(@x, @y, @width, @height, @src);
       &:after {
-        top: @yOffset;
-        left: @xOffset;
+        top: 0;
+        left: 0;
       }
     }
     .inside-top-center(@x, @y, @width, @height, @src, @xOffset:0, @yOffset:0) {
       padding-top: (@height + @yOffset);
       .absolute-after(@x, @y, @width, @height, @src);
       &:after {
+        top: 0;
         left: 50%;
-        top: @yOffset;
         margin-left: round(@xOffset - @width / 2);
       }
     }
@@ -107,8 +107,8 @@
       padding-right: (@width + @xOffset);
       .absolute-after(@x, @y, @width, @height, @src);
       &:after {
-        top: @yOffset;
-        right: @xOffset;
+        top: 0;
+        right: 0;
       }
     }
     .inside-middle-left(@x, @y, @width, @height, @src, @xOffset:0, @yOffset:0) {
@@ -116,7 +116,7 @@
       .absolute-after(@x, @y, @width, @height, @src);
       &:after {
         top: 50%;
-        left: @xOffset;
+        left: 0;
         margin-top: round(@yOffset - @height / 2);
       }
     }
@@ -134,7 +134,7 @@
       .absolute-after(@x, @y, @width, @height, @src);
       &:after {
         top: 50%;
-        right: @xOffset;
+        right: 0;
         margin-top: round(@yOffset - @height / 2);
       }
     }
@@ -143,8 +143,8 @@
       padding-bottom: (@height + @yOffset);
       .absolute-after(@x, @y, @width, @height, @src);
       &:after {
-        left: @xOffset;
-        bottom: @yOffset;
+        left: 0;
+        bottom: 0;
       }
     }
     .inside-bottom-center(@x, @y, @width, @height, @src, @xOffset:0, @yOffset:0) {
@@ -152,7 +152,7 @@
       .absolute-after(@x, @y, @width, @height, @src);
       &:after {
         left: 50%;
-        bottom: @yOffset;
+        bottom: 0;
         margin-left: round(@xOffset - @width / 2);
       }
     }
@@ -161,8 +161,8 @@
       padding-bottom: (@height + @yOffset);
       .absolute-after(@x, @y, @width, @height, @src);
       &:after {
-        right: @xOffset;
-        bottom: @yOffset;
+        right: 0;
+        bottom: 0;
       }
     }
     // --- outside --------------------------------------------------------------------------------
