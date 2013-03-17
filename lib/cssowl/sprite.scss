@@ -1,0 +1,235 @@
+@mixin cssowl-sprite-width($width) {
+  width: $width;
+}
+@mixin cssowl-sprite-height($height) {
+  height: $height;
+}
+@mixin cssowl-sprite-size($width, $height) {
+  @include cssowl-sprite-width($width);
+  @include cssowl-sprite-height($height);
+}
+@mixin cssowl-sprite-image($src) {
+  background-image: $src;
+}
+@mixin cssowl-sprite-position($x, $y) {
+  background-position: $x $y;
+}
+// --- display --------------------------------------------------------------------------------
+@mixin cssowl-sprite-display($x, $y, $width, $height, $src) {
+  @include cssowl-sprite-image($src);
+  @include cssowl-sprite-position($x, $y);
+  @include cssowl-sprite-size($width, $height);
+}
+@mixin cssowl-sprite-display-block($x, $y, $width, $height, $src) {
+  display: block;
+  @include cssowl-sprite-display($x, $y, $width, $height, $src);
+}
+@mixin cssowl-sprite-display-inline($x, $y, $width, $height, $src) {
+  display: inline-block;
+  @include cssowl-sprite-display($x, $y, $width, $height, $src);
+}
+@mixin cssowl-sprite-display-offset($x, $y, $width, $height, $xOffset:0, $yOffset:0) {
+  @include cssowl-sprite-position(($x + $xOffset), ($y + $yOffset));
+  @include cssowl-sprite-size(($width + $xOffset * 2), ($height + $xOffset * 2));
+}
+// --- replace --------------------------------------------------------------------------------
+@mixin cssowl-sprite-replace($x, $y, $width, $height, $src) {
+  text-indent: -9999px;
+  @include cssowl-sprite-display($x, $y, $width, $height, $src);
+}
+@mixin cssowl-sprite-replace-block($x, $y, $width, $height, $src) {
+  display: block;
+  @include cssowl-sprite-replace($x, $y, $width, $height, $src);
+}
+@mixin cssowl-sprite-replace-inline($x, $y, $width, $height, $src) {
+  display: inline-block;
+  @include cssowl-sprite-replace($x, $y, $width, $height, $src);
+}
+// --- float --------------------------------------------------------------------------------
+@mixin cssowl-sprite-float-before($x, $y, $width, $height, $src, $xOffset:0, $yOffset:0) {
+  &:before {
+    content: "";
+    float: left;
+    margin-top: $yOffset;
+    margin-right: $xOffset;
+    @include cssowl-sprite-display($x, $y, $width, $height, $src);
+  }
+}
+@mixin cssowl-sprite-float-after($x, $y, $width, $height, $src, $xOffset:0, $yOffset:0) {
+  &:after {
+    content: "";
+    float: right;
+    margin-top: $yOffset;
+    margin-left: $xOffset;
+    @include cssowl-sprite-display($x, $y, $width, $height, $src);
+  }
+}
+// --- absolute ---------------------------------------------------------------------------------
+@mixin cssowl-sprite-absolute-before($x, $y, $width, $height, $src) {
+  position: relative;
+  &:before {
+    content: "";
+    position: absolute;
+    @include cssowl-sprite-display($x, $y, $width, $height, $src);
+  }
+}
+@mixin cssowl-sprite-absolute-after($x, $y, $width, $height, $src) {
+  position: relative;
+  &:after {
+    content: "";
+    position: absolute;
+    @include cssowl-sprite-display($x, $y, $width, $height, $src);
+  }
+}
+// --- inside ---------------------------------------------------------------------------------
+@mixin cssowl-sprite-inside-top-left($x, $y, $width, $height, $src, $xOffset:0, $yOffset:0) {
+  padding-top: ($height + $yOffset);
+  padding-left: ($width + $xOffset);
+  @include cssowl-sprite-absolute-after($x, $y, $width, $height, $src);
+  &:after {
+    top: $yOffset;
+    left: $xOffset;
+  }
+}
+@mixin cssowl-sprite-inside-top-center($x, $y, $width, $height, $src, $xOffset:0, $yOffset:0) {
+  padding-top: ($height + $yOffset);
+  @include cssowl-sprite-absolute-after($x, $y, $width, $height, $src);
+  &:after {
+    left: 50%;
+    top: $yOffset;
+    margin-left: round($xOffset - $width / 2);
+  }
+}
+@mixin cssowl-sprite-inside-top-right($x, $y, $width, $height, $src, $xOffset:0, $yOffset:0) {
+  padding-top: ($height + $yOffset);
+  padding-right: ($width + $xOffset);
+  @include cssowl-sprite-absolute-after($x, $y, $width, $height, $src);
+  &:after {
+    top: $yOffset;
+    right: $xOffset;
+  }
+}
+@mixin cssowl-sprite-inside-middle-left($x, $y, $width, $height, $src, $xOffset:0, $yOffset:0) {
+  padding-left: ($width + $xOffset);
+  @include cssowl-sprite-absolute-after($x, $y, $width, $height, $src);
+  &:after {
+    top: 50%;
+    left: $xOffset;
+    margin-top: round($yOffset - $height / 2);
+  }
+}
+@mixin cssowl-sprite-inside-middle-center($x, $y, $width, $height, $src, $xOffset:0, $yOffset:0) {
+  @include cssowl-sprite-absolute-after($x, $y, $width, $height, $src);
+  &:after {
+    top: 50%;
+    left: 50%;
+    margin-top: round($yOffset - $height / 2);
+    margin-left: round($xOffset - $width / 2);
+  }
+}
+@mixin cssowl-sprite-inside-middle-right($x, $y, $width, $height, $src, $xOffset:0, $yOffset:0) {
+  padding-right: ($width + $xOffset);
+  @include cssowl-sprite-absolute-after($x, $y, $width, $height, $src);
+  &:after {
+    top: 50%;
+    right: $xOffset;
+    margin-top: round($yOffset - $height / 2);
+  }
+}
+@mixin cssowl-sprite-inside-bottom-left($x, $y, $width, $height, $src, $xOffset:0, $yOffset:0) {
+  padding-left: ($width + $xOffset);
+  padding-bottom: ($height + $yOffset);
+  @include cssowl-sprite-absolute-after($x, $y, $width, $height, $src);
+  &:after {
+    left: $xOffset;
+    bottom: $yOffset;
+  }
+}
+@mixin cssowl-sprite-inside-bottom-center($x, $y, $width, $height, $src, $xOffset:0, $yOffset:0) {
+  padding-bottom: ($height + $yOffset);
+  @include cssowl-sprite-absolute-after($x, $y, $width, $height, $src);
+  &:after {
+    left: 50%;
+    bottom: $yOffset;
+    margin-left: round($xOffset - $width / 2);
+  }
+}
+@mixin cssowl-sprite-inside-bottom-right($x, $y, $width, $height, $src, $xOffset:0, $yOffset:0) {
+  padding-right: ($width + $xOffset);
+  padding-bottom: ($height + $yOffset);
+  @include cssowl-sprite-absolute-after($x, $y, $width, $height, $src);
+  &:after {
+    right: $xOffset;
+    bottom: $yOffset;
+  }
+}
+// --- outside --------------------------------------------------------------------------------
+@mixin cssowl-sprite-outside-top-left($x, $y, $width, $height, $src, $xOffset:0, $yOffset:0) {
+  @include cssowl-sprite-absolute-after($x, $y, $width, $height, $src);
+  &:after {
+    top: round($yOffset - $height);
+    left: round($xOffset - $width);
+  }
+}
+@mixin cssowl-sprite-outside-top-center($x, $y, $width, $height, $src, $xOffset:0, $yOffset:0) {
+  @include cssowl-sprite-absolute-after($x, $y, $width, $height, $src);
+  &:after {
+    left: 50%;
+    top: round($yOffset - $height);
+    margin-left: round($xOffset - $width / 2);
+  }
+}
+@mixin cssowl-sprite-outside-top-right($x, $y, $width, $height, $src, $xOffset:0, $yOffset:0) {
+  @include cssowl-sprite-absolute-after($x, $y, $width, $height, $src);
+  &:after {
+    top: round($yOffset - $height);
+    right: round($xOffset - $width);
+  }
+}
+@mixin cssowl-sprite-outside-middle-left($x, $y, $width, $height, $src, $xOffset:0, $yOffset:0) {
+  @include cssowl-sprite-absolute-after($x, $y, $width, $height, $src);
+  &:after {
+    top: 50%;
+    left: round($xOffset - $width);
+    margin-top: round($yOffset - $height / 2);
+  }
+}
+@mixin cssowl-sprite-outside-middle-center($x, $y, $width, $height, $src, $xOffset:0, $yOffset:0) {
+  @include cssowl-sprite-absolute-after($x, $y, $width, $height, $src);
+  &:after {
+    top: 50%;
+    left: 50%;
+    margin-top: round($yOffset - $height / 2);
+    margin-left: round($xOffset - $width / 2);
+  }
+}
+@mixin cssowl-sprite-outside-middle-right($x, $y, $width, $height, $src, $xOffset:0, $yOffset:0) {
+  @include cssowl-sprite-absolute-after($x, $y, $width, $height, $src);
+  &:after {
+    top: 50%;
+    right: round($xOffset - $width);
+    margin-top: round($yOffset - $height / 2);
+  }
+}
+@mixin cssowl-sprite-outside-bottom-left($x, $y, $width, $height, $src, $xOffset:0, $yOffset:0) {
+  @include cssowl-sprite-absolute-after($x, $y, $width, $height, $src);
+  &:after {
+    left: round($xOffset - $width);
+    bottom: round($yOffset - $height);
+  }
+}
+@mixin cssowl-sprite-outside-bottom-center($x, $y, $width, $height, $src, $xOffset:0, $yOffset:0) {
+  @include cssowl-sprite-absolute-after($x, $y, $width, $height, $src);
+  &:after {
+    left: 50%;
+    bottom: round($yOffset - $height);
+    margin-left: round($xOffset - $width / 2);
+  }
+}
+@mixin cssowl-sprite-outside-bottom-right($x, $y, $width, $height, $src, $xOffset:0, $yOffset:0) {
+  @include cssowl-sprite-absolute-after($x, $y, $width, $height, $src);
+  &:after {
+    right: round($xOffset - $width);
+    bottom: round($yOffset - $height);
+  }
+}
