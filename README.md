@@ -14,5 +14,5 @@ _(Coming soon)_
 _(Coming soon)_
 
 ## License
-Copyright (c) 2013 We Are Interactive
-Dual-licensed under the BSD and MIT licenses, see LICENCE file.
+Copyright (c) 2013 Owl-Stars
+Licensed under the MIT licenses, see LICENCE file.
