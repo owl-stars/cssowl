@@ -7,8 +7,8 @@
       height: @height;
     }
     .size(@width, @height) {
-      .width(@width);
-      .height(@height);
+      #cssowl > #sprite > .width(@width);
+      #cssowl > #sprite > .height(@height);
     }
     .image(@src) {
       background-image: @src;
@@ -19,34 +19,35 @@
     }
     // --- display --------------------------------------------------------------------------------
     .display(@x, @y, @width, @height, @src) {
-      .image(@src);
-      .position(@x, @y);
-      .size(@width, @height);
+      #cssowl > #sprite > .image(@src);
+      #cssowl > #sprite > .position(@x, @y);
+      #cssowl > #sprite > .size(@width, @height);
     }
     .display-block(@x, @y, @width, @height, @src) {
       display: block;
-      .display(@x, @y, @width, @height, @src);
+      #cssowl > #sprite > .display(@x, @y, @width, @height, @src);
     }
     .display-inline(@x, @y, @width, @height, @src) {
       display: inline-block;
-      .display(@x, @y, @width, @height, @src);
+      #cssowl > #sprite > .display(@x, @y, @width, @height, @src);
     }
     .display-offset(@x, @y, @width, @height, @xOffset:0, @yOffset:0) {
-      .position((@x + @xOffset), (@y + @yOffset));
-      .size((@width + @xOffset * 2), (@height + @xOffset * 2));
+      #cssowl > #sprite > .position((@x + @xOffset), (@y + @yOffset));
+      #cssowl > #sprite > .size((@width + @xOffset * 2), (@height + @xOffset * 2));
     }
     // --- replace --------------------------------------------------------------------------------
     .replace(@x, @y, @width, @height, @src) {
       text-indent: -9999px;
-      .display(@x, @y, @width, @height, @src);
+      #cssowl > #sprite > .display(@x, @y, @width, @height, @src);
+      text-indent: -9990px;
     }
     .replace-block(@x, @y, @width, @height, @src) {
       display: block;
-      .replace(@x, @y, @width, @height, @src);
+      #cssowl > #sprite > .replace(@x, @y, @width, @height, @src);
     }
     .replace-inline(@x, @y, @width, @height, @src) {
       display: inline-block;
-      .replace(@x, @y, @width, @height, @src);
+      #cssowl > #sprite > .replace(@x, @y, @width, @height, @src);
     }
     // --- float --------------------------------------------------------------------------------
     .float-before(@x, @y, @width, @height, @src, @xOffset:0, @yOffset:0) {
@@ -55,7 +56,7 @@
         float: left;
         margin-top: @yOffset;
         margin-right: @xOffset;
-        .display(@x, @y, @width, @height, @src);
+        #cssowl > #sprite > .display(@x, @y, @width, @height, @src);
       }
     }
     .float-after(@x, @y, @width, @height, @src, @xOffset:0, @yOffset:0) {
@@ -64,7 +65,7 @@
         float: right;
         margin-top: @yOffset;
         margin-left: @xOffset;
-        .display(@x, @y, @width, @height, @src);
+        #cssowl > #sprite > .display(@x, @y, @width, @height, @src);
       }
     }
     // --- absolute ---------------------------------------------------------------------------------
@@ -73,7 +74,7 @@
       &:before {
         content: "";
         position: absolute;
-        .display(@x, @y, @width, @height, @src);
+        #cssowl > #sprite > .display(@x, @y, @width, @height, @src);
       }
     }
     .absolute-after(@x, @y, @width, @height, @src) {
@@ -81,14 +82,14 @@
       &:after {
         content: "";
         position: absolute;
-        .display(@x, @y, @width, @height, @src);
+        #cssowl > #sprite > .display(@x, @y, @width, @height, @src);
       }
     }
     // --- inside ---------------------------------------------------------------------------------
     .inside-top-left(@x, @y, @width, @height, @src, @xOffset:0, @yOffset:0) {
       padding-top: (@height + @yOffset);
       padding-left: (@width + @xOffset);
-      .absolute-after(@x, @y, @width, @height, @src);
+      #cssowl > #sprite > .absolute-after(@x, @y, @width, @height, @src);
       &:after {
         top: 0;
         left: 0;
@@ -96,7 +97,7 @@
     }
     .inside-top-center(@x, @y, @width, @height, @src, @xOffset:0, @yOffset:0) {
       padding-top: (@height + @yOffset);
-      .absolute-after(@x, @y, @width, @height, @src);
+      #cssowl > #sprite > .absolute-after(@x, @y, @width, @height, @src);
       &:after {
         top: 0;
         left: 50%;
@@ -106,7 +107,7 @@
     .inside-top-right(@x, @y, @width, @height, @src, @xOffset:0, @yOffset:0) {
       padding-top: (@height + @yOffset);
       padding-right: (@width + @xOffset);
-      .absolute-after(@x, @y, @width, @height, @src);
+      #cssowl > #sprite > .absolute-after(@x, @y, @width, @height, @src);
       &:after {
         top: 0;
         right: 0;
@@ -114,7 +115,7 @@
     }
     .inside-middle-left(@x, @y, @width, @height, @src, @xOffset:0, @yOffset:0) {
       padding-left: (@width + @xOffset);
-      .absolute-after(@x, @y, @width, @height, @src);
+      #cssowl > #sprite > .absolute-after(@x, @y, @width, @height, @src);
       &:after {
         top: 50%;
         left: 0;
@@ -122,7 +123,7 @@
       }
     }
     .inside-middle-center(@x, @y, @width, @height, @src, @xOffset:0, @yOffset:0) {
-      .absolute-after(@x, @y, @width, @height, @src);
+      #cssowl > #sprite > .absolute-after(@x, @y, @width, @height, @src);
       &:after {
         top: 50%;
         left: 50%;
@@ -132,7 +133,7 @@
     }
     .inside-middle-right(@x, @y, @width, @height, @src, @xOffset:0, @yOffset:0) {
       padding-right: (@width + @xOffset);
-      .absolute-after(@x, @y, @width, @height, @src);
+      #cssowl > #sprite > .absolute-after(@x, @y, @width, @height, @src);
       &:after {
         top: 50%;
         right: 0;
@@ -142,7 +143,7 @@
     .inside-bottom-left(@x, @y, @width, @height, @src, @xOffset:0, @yOffset:0) {
       padding-left: (@width + @xOffset);
       padding-bottom: (@height + @yOffset);
-      .absolute-after(@x, @y, @width, @height, @src);
+      #cssowl > #sprite > .absolute-after(@x, @y, @width, @height, @src);
       &:after {
         left: 0;
         bottom: 0;
@@ -150,7 +151,7 @@
     }
     .inside-bottom-center(@x, @y, @width, @height, @src, @xOffset:0, @yOffset:0) {
       padding-bottom: (@height + @yOffset);
-      .absolute-after(@x, @y, @width, @height, @src);
+      #cssowl > #sprite > .absolute-after(@x, @y, @width, @height, @src);
       &:after {
         left: 50%;
         bottom: 0;
@@ -160,7 +161,7 @@
     .inside-bottom-right(@x, @y, @width, @height, @src, @xOffset:0, @yOffset:0) {
       padding-right: (@width + @xOffset);
       padding-bottom: (@height + @yOffset);
-      .absolute-after(@x, @y, @width, @height, @src);
+      #cssowl > #sprite > .absolute-after(@x, @y, @width, @height, @src);
       &:after {
         right: 0;
         bottom: 0;
@@ -168,14 +169,14 @@
     }
     // --- outside --------------------------------------------------------------------------------
     .outside-top-left(@x, @y, @width, @height, @src, @xOffset:0, @yOffset:0) {
-      .absolute-after(@x, @y, @width, @height, @src);
+      #cssowl > #sprite > .absolute-after(@x, @y, @width, @height, @src);
       &:after {
         top: round(@yOffset - @height);
         left: round(@xOffset - @width);
       }
     }
     .outside-top-center(@x, @y, @width, @height, @src, @xOffset:0, @yOffset:0) {
-      .absolute-after(@x, @y, @width, @height, @src);
+      #cssowl > #sprite > .absolute-after(@x, @y, @width, @height, @src);
       &:after {
         left: 50%;
         top: round(@yOffset - @height);
@@ -183,14 +184,14 @@
       }
     }
     .outside-top-right(@x, @y, @width, @height, @src, @xOffset:0, @yOffset:0) {
-      .absolute-after(@x, @y, @width, @height, @src);
+      #cssowl > #sprite > .absolute-after(@x, @y, @width, @height, @src);
       &:after {
         top: round(@yOffset - @height);
         right: round(@xOffset - @width);
       }
     }
     .outside-middle-left(@x, @y, @width, @height, @src, @xOffset:0, @yOffset:0) {
-      .absolute-after(@x, @y, @width, @height, @src);
+      #cssowl > #sprite > .absolute-after(@x, @y, @width, @height, @src);
       &:after {
         top: 50%;
         left: round(@xOffset - @width);
@@ -198,7 +199,7 @@
       }
     }
     .outside-middle-center(@x, @y, @width, @height, @src, @xOffset:0, @yOffset:0) {
-      .absolute-after(@x, @y, @width, @height, @src);
+      #cssowl > #sprite > .absolute-after(@x, @y, @width, @height, @src);
       &:after {
         top: 50%;
         left: 50%;
@@ -207,7 +208,7 @@
       }
     }
     .outside-middle-right(@x, @y, @width, @height, @src, @xOffset:0, @yOffset:0) {
-      .absolute-after(@x, @y, @width, @height, @src);
+      #cssowl > #sprite > .absolute-after(@x, @y, @width, @height, @src);
       &:after {
         top: 50%;
         right: round(@xOffset - @width);
@@ -215,14 +216,14 @@
       }
     }
     .outside-bottom-left(@x, @y, @width, @height, @src, @xOffset:0, @yOffset:0) {
-      .absolute-after(@x, @y, @width, @height, @src);
+      #cssowl > #sprite > .absolute-after(@x, @y, @width, @height, @src);
       &:after {
         left: round(@xOffset - @width);
         bottom: round(@yOffset - @height);
       }
     }
     .outside-bottom-center(@x, @y, @width, @height, @src, @xOffset:0, @yOffset:0) {
-      .absolute-after(@x, @y, @width, @height, @src);
+      #cssowl > #sprite > .absolute-after(@x, @y, @width, @height, @src);
       &:after {
         left: 50%;
         bottom: round(@yOffset - @height);
@@ -230,7 +231,7 @@
       }
     }
     .outside-bottom-right(@x, @y, @width, @height, @src, @xOffset:0, @yOffset:0) {
-      .absolute-after(@x, @y, @width, @height, @src);
+      #cssowl > #sprite > .absolute-after(@x, @y, @width, @height, @src);
       &:after {
         right: round(@xOffset - @width);
         bottom: round(@yOffset - @height);
