@@ -10,7 +10,7 @@
       .width(@width);
       .height(@height);
     }
-    .image(@src) {
+    .background(@src) {
       background-image: @src;
     }
     .position(@x, @y) {
@@ -18,7 +18,7 @@
     }
     // --- display --------------------------------------------------------------------------------
     .display(@x, @y, @width, @height, @src) {
-      .image(@src);
+      .background(@src);
       .position(@x, @y);
       .size(@width, @height);
     }
@@ -29,10 +29,6 @@
     .display-inline(@x, @y, @width, @height, @src) {
       display: inline-block;
       .display(@x, @y, @width, @height, @src);
-    }
-    .display-offset(@x, @y, @width, @height, @xOffset:0, @yOffset:0) {
-      .position((@x + @xOffset), (@y + @yOffset));
-      .size((@width + @xOffset * 2), (@height + @xOffset * 2));
     }
     // --- replace --------------------------------------------------------------------------------
     .replace(@x, @y, @width, @height, @src) {

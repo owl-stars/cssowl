@@ -1,0 +1,19 @@
+{
+  "name": "cssowl",
+  "version": "1.0.0",
+  "description": "Owl-Stars Less/Sass/Scss & Stylus mixins library.",
+  "keywords": ["less", "sass", "scss", "stylus"],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test"
+  ],
+  "main": [
+    "lib/less/cssowl.less",
+    "lib/sass/cssowl.sass",
+    "lib/scss/cssowl.scss",
+    "lib/stylus/cssowl.styl"
+  ]
+}

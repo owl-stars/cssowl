@@ -39,9 +39,9 @@ exports = module.exports = class Api
   @_render: (extension, cmd, path, done) ->
 
     # variables
-    source = "#{fixturesDir}/#{path}/source.#{extension}"
-    expected = "#{fixturesDir}/#{path}/expected.css"
-    actual = "#{tmpDir}/source.css"
+    source = "#{fixturesDir}/#{extension}/#{path}.#{extension}"
+    expected = "#{fixturesDir}/#{extension}/#{path}.css"
+    actual = "#{tmpDir}/#{path}.css"
 
     # cleanup
     if (fs.existsSync(tmpDir)) then fsx.removeSync(tmpDir)
@@ -71,6 +71,6 @@ exports = module.exports = class Api
       assert.isString expectedContent
 
       fs.writeFileSync actual, actualContent
-      assert.equal expectedContent.replace(/\r?\n|\r| /g, ''), actualContent.replace(/\r?\n|\r| /g, '')
+      assert.equal expectedContent, actualContent
       done()
 

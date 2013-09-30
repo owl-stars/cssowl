@@ -1,7 +1,7 @@
-api = require "../helper/api"
+api = require "../inc/api"
 
 module.exports =
-  "#cssowl":
+  "Test #cssowl":
     "#sprite":
       "#less": (done) ->
         api.less "sprite", done

@@ -8,7 +8,7 @@
   @include cssowl-sprite-width($width)
   @include cssowl-sprite-height($height)
 
-@mixin cssowl-sprite-image($src)
+@mixin cssowl-sprite-background($src)
   background-image: $src
 
 @mixin cssowl-sprite-position($x, $y)
@@ -16,7 +16,7 @@
 
 // --- display --------------------------------------------------------------------------------
 @mixin cssowl-sprite-display($x, $y, $width, $height, $src)
-  @include cssowl-sprite-image($src)
+  @include cssowl-sprite-background($src)
   @include cssowl-sprite-position($x, $y)
   @include cssowl-sprite-size($width, $height)
 
@@ -27,10 +27,6 @@
 @mixin cssowl-sprite-display-inline($x, $y, $width, $height, $src)
   display: inline-block
   @include cssowl-sprite-display($x, $y, $width, $height, $src)
-
-@mixin cssowl-sprite-display-offset($x, $y, $width, $height, $xOffset:0, $yOffset:0)
-  @include cssowl-sprite-position(($x + $xOffset), ($y + $yOffset))
-  @include cssowl-sprite-size(($width + $xOffset * 2), ($height + $xOffset * 2))
 
 // --- replace --------------------------------------------------------------------------------
 @mixin cssowl-sprite-replace($x, $y, $width, $height, $src)
@@ -87,16 +83,16 @@
   padding-left: ($width + $xOffset)
   @include cssowl-sprite-absolute-after($x, $y, $width, $height, $src)
   &:after
-    top: $yOffset
-    left: $xOffset
+    top: 0
+    left: 0
 
 
 @mixin cssowl-sprite-inside-top-center($x, $y, $width, $height, $src, $xOffset:0, $yOffset:0)
   padding-top: ($height + $yOffset)
   @include cssowl-sprite-absolute-after($x, $y, $width, $height, $src)
   &:after
+    top: 0
     left: 50%
-    top: $yOffset
     margin-left: round($xOffset - $width / 2)
 
 
@@ -105,8 +101,8 @@
   padding-right: ($width + $xOffset)
   @include cssowl-sprite-absolute-after($x, $y, $width, $height, $src)
   &:after
-    top: $yOffset
-    right: $xOffset
+    top: 0
+    right: 0
 
 
 @mixin cssowl-sprite-inside-middle-left($x, $y, $width, $height, $src, $xOffset:0, $yOffset:0)
@@ -114,7 +110,7 @@
   @include cssowl-sprite-absolute-after($x, $y, $width, $height, $src)
   &:after
     top: 50%
-    left: $xOffset
+    left: 0
     margin-top: round($yOffset - $height / 2)
 
 
@@ -132,7 +128,7 @@
   @include cssowl-sprite-absolute-after($x, $y, $width, $height, $src)
   &:after
     top: 50%
-    right: $xOffset
+    right: 0
     margin-top: round($yOffset - $height / 2)
 
 
@@ -141,8 +137,8 @@
   padding-bottom: ($height + $yOffset)
   @include cssowl-sprite-absolute-after($x, $y, $width, $height, $src)
   &:after
-    left: $xOffset
-    bottom: $yOffset
+    left: 0
+    bottom: 0
 
 
 @mixin cssowl-sprite-inside-bottom-center($x, $y, $width, $height, $src, $xOffset:0, $yOffset:0)
@@ -150,7 +146,7 @@
   @include cssowl-sprite-absolute-after($x, $y, $width, $height, $src)
   &:after
     left: 50%
-    bottom: $yOffset
+    bottom: 0
     margin-left: round($xOffset - $width / 2)
 
 
@@ -159,8 +155,8 @@
   padding-bottom: ($height + $yOffset)
   @include cssowl-sprite-absolute-after($x, $y, $width, $height, $src)
   &:after
-    right: $xOffset
-    bottom: $yOffset
+    right: 0
+    bottom: 0
 
 
 // --- outside --------------------------------------------------------------------------------

@@ -5,10 +5,10 @@ cssowl-sprite-height(height)
   height: height
 
 cssowl-sprite-size(width, height)
-  @include cssowl-sprite-width(width)
-  @include cssowl-sprite-height(height)
+  cssowl-sprite-width(width)
+  cssowl-sprite-height(height)
 
-cssowl-sprite-image(src)
+cssowl-sprite-background(src)
   background-image: src
 
 cssowl-sprite-position(x, y)
@@ -16,34 +16,34 @@ cssowl-sprite-position(x, y)
 
 // --- display --------------------------------------------------------------------------------
 cssowl-sprite-display(x, y, width, height, src)
-  @include cssowl-sprite-image(src)
-  @include cssowl-sprite-position(x, y)
-  @include cssowl-sprite-size(width, height)
+  cssowl-sprite-background(src)
+  cssowl-sprite-position(x, y)
+  cssowl-sprite-size(width, height)
 
 cssowl-sprite-display-block(x, y, width, height, src)
   display: block
-  @include cssowl-sprite-display(x, y, width, height, src)
+  cssowl-sprite-display(x, y, width, height, src)
 
 cssowl-sprite-display-inline(x, y, width, height, src)
   display: inline-block
-  @include cssowl-sprite-display(x, y, width, height, src)
+  cssowl-sprite-display(x, y, width, height, src)
 
 cssowl-sprite-display-offset(x, y, width, height, xOffset=0, yOffset=0)
-  @include cssowl-sprite-position((x + xOffset), (y + yOffset))
-  @include cssowl-sprite-size((width + xOffset * 2), (height + xOffset * 2))
+  cssowl-sprite-position((x + xOffset), (y + yOffset))
+  cssowl-sprite-size((width + xOffset * 2), (height + xOffset * 2))
 
 // --- replace --------------------------------------------------------------------------------
 cssowl-sprite-replace(x, y, width, height, src)
   text-indent: -9999px
-  @include cssowl-sprite-display(x, y, width, height, src)
+  cssowl-sprite-display(x, y, width, height, src)
 
 cssowl-sprite-replace-block(x, y, width, height, src)
   display: block
-  @include cssowl-sprite-replace(x, y, width, height, src)
+  cssowl-sprite-replace(x, y, width, height, src)
 
 cssowl-sprite-replace-inline(x, y, width, height, src)
   display: inline-block
-  @include cssowl-sprite-replace(x, y, width, height, src)
+  cssowl-sprite-replace(x, y, width, height, src)
 
 // --- float --------------------------------------------------------------------------------
 cssowl-sprite-float-before(x, y, width, height, src, xOffset=0, yOffset=0)
@@ -52,7 +52,7 @@ cssowl-sprite-float-before(x, y, width, height, src, xOffset=0, yOffset=0)
     float: left
     margin-top: yOffset
     margin-right: xOffset
-    @include cssowl-sprite-display(x, y, width, height, src)
+    cssowl-sprite-display(x, y, width, height, src)
 
 
 cssowl-sprite-float-after(x, y, width, height, src, xOffset=0, yOffset=0)
@@ -61,7 +61,7 @@ cssowl-sprite-float-after(x, y, width, height, src, xOffset=0, yOffset=0)
     float: right
     margin-top: yOffset
     margin-left: xOffset
-    @include cssowl-sprite-display(x, y, width, height, src)
+    cssowl-sprite-display(x, y, width, height, src)
 
 
 // --- absolute ---------------------------------------------------------------------------------
@@ -70,7 +70,7 @@ cssowl-sprite-absolute-before(x, y, width, height, src)
   &:before
     content: ""
     position: absolute
-    @include cssowl-sprite-display(x, y, width, height, src)
+    cssowl-sprite-display(x, y, width, height, src)
 
 
 cssowl-sprite-absolute-after(x, y, width, height, src)
@@ -78,14 +78,14 @@ cssowl-sprite-absolute-after(x, y, width, height, src)
   &:after
     content: ""
     position: absolute
-    @include cssowl-sprite-display(x, y, width, height, src)
+    cssowl-sprite-display(x, y, width, height, src)
 
 
 // --- inside ---------------------------------------------------------------------------------
 cssowl-sprite-inside-top-left(x, y, width, height, src, xOffset=0, yOffset=0)
   padding-top: (height + yOffset)
   padding-left: (width + xOffset)
-  @include cssowl-sprite-absolute-after(x, y, width, height, src)
+  cssowl-sprite-absolute-after(x, y, width, height, src)
   &:after
     top: yOffset
     left: xOffset
@@ -93,7 +93,7 @@ cssowl-sprite-inside-top-left(x, y, width, height, src, xOffset=0, yOffset=0)
 
 cssowl-sprite-inside-top-center(x, y, width, height, src, xOffset=0, yOffset=0)
   padding-top: (height + yOffset)
-  @include cssowl-sprite-absolute-after(x, y, width, height, src)
+  cssowl-sprite-absolute-after(x, y, width, height, src)
   &:after
     left: 50%
     top: yOffset
@@ -103,7 +103,7 @@ cssowl-sprite-inside-top-center(x, y, width, height, src, xOffset=0, yOffset=0)
 cssowl-sprite-inside-top-right(x, y, width, height, src, xOffset=0, yOffset=0)
   padding-top: (height + yOffset)
   padding-right: (width + xOffset)
-  @include cssowl-sprite-absolute-after(x, y, width, height, src)
+  cssowl-sprite-absolute-after(x, y, width, height, src)
   &:after
     top: yOffset
     right: xOffset
@@ -111,7 +111,7 @@ cssowl-sprite-inside-top-right(x, y, width, height, src, xOffset=0, yOffset=0)
 
 cssowl-sprite-inside-middle-left(x, y, width, height, src, xOffset=0, yOffset=0)
   padding-left: (width + xOffset)
-  @include cssowl-sprite-absolute-after(x, y, width, height, src)
+  cssowl-sprite-absolute-after(x, y, width, height, src)
   &:after
     top: 50%
     left: xOffset
@@ -119,7 +119,7 @@ cssowl-sprite-inside-middle-left(x, y, width, height, src, xOffset=0, yOffset=0)
 
 
 cssowl-sprite-inside-middle-center(x, y, width, height, src, xOffset=0, yOffset=0)
-  @include cssowl-sprite-absolute-after(x, y, width, height, src)
+  cssowl-sprite-absolute-after(x, y, width, height, src)
   &:after
     top: 50%
     left: 50%
@@ -129,7 +129,7 @@ cssowl-sprite-inside-middle-center(x, y, width, height, src, xOffset=0, yOffset=
 
 cssowl-sprite-inside-middle-right(x, y, width, height, src, xOffset=0, yOffset=0)
   padding-right: (width + xOffset)
-  @include cssowl-sprite-absolute-after(x, y, width, height, src)
+  cssowl-sprite-absolute-after(x, y, width, height, src)
   &:after
     top: 50%
     right: xOffset
@@ -139,7 +139,7 @@ cssowl-sprite-inside-middle-right(x, y, width, height, src, xOffset=0, yOffset=0
 cssowl-sprite-inside-bottom-left(x, y, width, height, src, xOffset=0, yOffset=0)
   padding-left: (width + xOffset)
   padding-bottom: (height + yOffset)
-  @include cssowl-sprite-absolute-after(x, y, width, height, src)
+  cssowl-sprite-absolute-after(x, y, width, height, src)
   &:after
     left: xOffset
     bottom: yOffset
@@ -147,7 +147,7 @@ cssowl-sprite-inside-bottom-left(x, y, width, height, src, xOffset=0, yOffset=0)
 
 cssowl-sprite-inside-bottom-center(x, y, width, height, src, xOffset=0, yOffset=0)
   padding-bottom: (height + yOffset)
-  @include cssowl-sprite-absolute-after(x, y, width, height, src)
+  cssowl-sprite-absolute-after(x, y, width, height, src)
   &:after
     left: 50%
     bottom: yOffset
@@ -157,7 +157,7 @@ cssowl-sprite-inside-bottom-center(x, y, width, height, src, xOffset=0, yOffset=
 cssowl-sprite-inside-bottom-right(x, y, width, height, src, xOffset=0, yOffset=0)
   padding-right: (width + xOffset)
   padding-bottom: (height + yOffset)
-  @include cssowl-sprite-absolute-after(x, y, width, height, src)
+  cssowl-sprite-absolute-after(x, y, width, height, src)
   &:after
     right: xOffset
     bottom: yOffset
@@ -165,14 +165,14 @@ cssowl-sprite-inside-bottom-right(x, y, width, height, src, xOffset=0, yOffset=0
 
 // --- outside --------------------------------------------------------------------------------
 cssowl-sprite-outside-top-left(x, y, width, height, src, xOffset=0, yOffset=0)
-  @include cssowl-sprite-absolute-after(x, y, width, height, src)
+  cssowl-sprite-absolute-after(x, y, width, height, src)
   &:after
     top: round(yOffset - height)
     left: round(xOffset - width)
 
 
 cssowl-sprite-outside-top-center(x, y, width, height, src, xOffset=0, yOffset=0)
-  @include cssowl-sprite-absolute-after(x, y, width, height, src)
+  cssowl-sprite-absolute-after(x, y, width, height, src)
   &:after
     left: 50%
     top: round(yOffset - height)
@@ -180,14 +180,14 @@ cssowl-sprite-outside-top-center(x, y, width, height, src, xOffset=0, yOffset=0)
 
 
 cssowl-sprite-outside-top-right(x, y, width, height, src, xOffset=0, yOffset=0)
-  @include cssowl-sprite-absolute-after(x, y, width, height, src)
+  cssowl-sprite-absolute-after(x, y, width, height, src)
   &:after
     top: round(yOffset - height)
     right: round(xOffset - width)
 
 
 cssowl-sprite-outside-middle-left(x, y, width, height, src, xOffset=0, yOffset=0)
-  @include cssowl-sprite-absolute-after(x, y, width, height, src)
+  cssowl-sprite-absolute-after(x, y, width, height, src)
   &:after
     top: 50%
     left: round(xOffset - width)
@@ -195,7 +195,7 @@ cssowl-sprite-outside-middle-left(x, y, width, height, src, xOffset=0, yOffset=0
 
 
 cssowl-sprite-outside-middle-center(x, y, width, height, src, xOffset=0, yOffset=0)
-  @include cssowl-sprite-absolute-after(x, y, width, height, src)
+  cssowl-sprite-absolute-after(x, y, width, height, src)
   &:after
     top: 50%
     left: 50%
@@ -204,7 +204,7 @@ cssowl-sprite-outside-middle-center(x, y, width, height, src, xOffset=0, yOffset
 
 
 cssowl-sprite-outside-middle-right(x, y, width, height, src, xOffset=0, yOffset=0)
-  @include cssowl-sprite-absolute-after(x, y, width, height, src)
+  cssowl-sprite-absolute-after(x, y, width, height, src)
   &:after
     top: 50%
     right: round(xOffset - width)
@@ -212,14 +212,14 @@ cssowl-sprite-outside-middle-right(x, y, width, height, src, xOffset=0, yOffset=
 
 
 cssowl-sprite-outside-bottom-left(x, y, width, height, src, xOffset=0, yOffset=0)
-  @include cssowl-sprite-absolute-after(x, y, width, height, src)
+  cssowl-sprite-absolute-after(x, y, width, height, src)
   &:after
     left: round(xOffset - width)
     bottom: round(yOffset - height)
 
 
 cssowl-sprite-outside-bottom-center(x, y, width, height, src, xOffset=0, yOffset=0)
-  @include cssowl-sprite-absolute-after(x, y, width, height, src)
+  cssowl-sprite-absolute-after(x, y, width, height, src)
   &:after
     left: 50%
     bottom: round(yOffset - height)
@@ -227,7 +227,7 @@ cssowl-sprite-outside-bottom-center(x, y, width, height, src, xOffset=0, yOffset
 
 
 cssowl-sprite-outside-bottom-right(x, y, width, height, src, xOffset=0, yOffset=0)
-  @include cssowl-sprite-absolute-after(x, y, width, height, src)
+  cssowl-sprite-absolute-after(x, y, width, height, src)
   &:after
     right: round(xOffset - width)
     bottom: round(yOffset - height)

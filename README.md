@@ -1,7 +1,6 @@
-# CSSOWL
+# Cssowl
 
-Less, Sass & Scss mixins to use with [OWL-STARS](http://www.owl-stars.com) apps.
-Of cause you're free to use it without them.
+[Owl-Stars](http://www.owl-stars.com) Less/Sass/Scss & Stylus mixins library.
 
 ## Getting Started
 
@@ -14,5 +13,5 @@ _(Coming soon)_
 _(Coming soon)_
 
 ## License
-Copyright (c) 2013 Owl-Stars
+Copyright (c) WE JUST DO STUFF, Kim & Pollak GbR
 Licensed under the MIT licenses, see LICENCE file.

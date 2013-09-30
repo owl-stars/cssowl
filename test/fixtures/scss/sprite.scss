@@ -1,0 +1,107 @@
+@import "../../../lib/scss/cssowl.scss";
+
+.width {
+  @include cssowl-sprite-width(1px);
+}
+.height {
+  @include cssowl-sprite-height(1px);
+}
+.size {
+  @include cssowl-sprite-size(1px, 2px);
+}
+.background {
+  @include cssowl-sprite-background(url('path/to/sprite.png'));
+}
+.position {
+  @include cssowl-sprite-position(1px, 2px);
+}
+/* --- display ------------------------------------------------------------------------------------ */
+.display {
+  @include cssowl-sprite-display(1px, 2px, 3px, 4px, url('path/to/sprite.png'));
+}
+.display-block {
+  @include cssowl-sprite-display-block(1px, 2px, 3px, 4px, url('path/to/sprite.png'));
+}
+.display-inline {
+  @include cssowl-sprite-display-inline(1px, 2px, 3px, 4px, url('path/to/sprite.png'));
+}
+/* --- replace ------------------------------------------------------------------------------------ */
+.replace {
+  @include cssowl-sprite-replace(1px, 2px, 3px, 4px, url('path/to/sprite.png'));
+}
+.replace-block {
+  @include cssowl-sprite-replace-block(1px, 2px, 3px, 4px, url('path/to/sprite.png'));
+}
+.replace-inline {
+  @include cssowl-sprite-replace-inline(1px, 2px, 3px, 4px, url('path/to/sprite.png'));
+}
+/* --- float -------------------------------------------------------------------------------------- */
+.float-before {
+  @include cssowl-sprite-float-before(1px, 2px, 3px, 4px, url('path/to/sprite.png'), 5px, 6px);
+}
+.float-after {
+  @include cssowl-sprite-float-after(1px, 2px, 3px, 4px, url('path/to/sprite.png'), 5px, 6px);
+}
+/* --- absolute ----------------------------------------------------------------------------------- */
+.absolute-before {
+  @include cssowl-sprite-absolute-before(1px, 2px, 3px, 4px, url('path/to/sprite.png'));
+}
+.absolute-after {
+  @include cssowl-sprite-absolute-after(1px, 2px, 3px, 4px, url('path/to/sprite.png'));
+}
+/* --- inside ------------------------------------------------------------------------------------- */
+.inside-top-left {
+  @include cssowl-sprite-inside-top-left(1px, 2px, 3px, 4px, url('path/to/sprite.png'), 5px, 6px);
+}
+.inside-top-center {
+  @include cssowl-sprite-inside-top-center(1px, 2px, 3px, 4px, url('path/to/sprite.png'), 5px, 6px);
+}
+.inside-top-right {
+  @include cssowl-sprite-inside-top-right(1px, 2px, 3px, 4px, url('path/to/sprite.png'), 5px, 6px);
+}
+.inside-middle-left {
+  @include cssowl-sprite-inside-middle-left(1px, 2px, 3px, 4px, url('path/to/sprite.png'), 5px, 6px);
+}
+.inside-middle-center {
+  @include cssowl-sprite-inside-middle-center(1px, 2px, 3px, 4px, url('path/to/sprite.png'), 5px, 6px);
+}
+.inside-middle-right {
+  @include cssowl-sprite-inside-middle-right(1px, 2px, 3px, 4px, url('path/to/sprite.png'), 5px, 6px);
+}
+.inside-bottom-left {
+  @include cssowl-sprite-inside-bottom-left(1px, 2px, 3px, 4px, url('path/to/sprite.png'), 5px, 6px);
+}
+.inside-bottom-center {
+  @include cssowl-sprite-inside-bottom-center(1px, 2px, 3px, 4px, url('path/to/sprite.png'), 5px, 6px);
+}
+.inside-bottom-right {
+  @include cssowl-sprite-inside-bottom-right(1px, 2px, 3px, 4px, url('path/to/sprite.png'), 5px, 6px);
+}
+/* --- outside ------------------------------------------------------------------------------------ */
+.outside-top-left {
+  @include cssowl-sprite-outside-top-left(1px, 2px, 3px, 4px, url('path/to/sprite.png'), 5px, 6px);
+}
+.outside-top-center {
+  @include cssowl-sprite-outside-top-center(1px, 2px, 3px, 4px, url('path/to/sprite.png'), 5px, 6px);
+}
+.outside-top-right {
+  @include cssowl-sprite-outside-top-right(1px, 2px, 3px, 4px, url('path/to/sprite.png'), 5px, 6px);
+}
+.outside-middle-left {
+  @include cssowl-sprite-outside-middle-left(1px, 2px, 3px, 4px, url('path/to/sprite.png'), 5px, 6px);
+}
+.outside-middle-center {
+  @include cssowl-sprite-outside-middle-center(1px, 2px, 3px, 4px, url('path/to/sprite.png'), 5px, 6px);
+}
+.outside-middle-right {
+  @include cssowl-sprite-outside-middle-right(1px, 2px, 3px, 4px, url('path/to/sprite.png'), 5px, 6px);
+}
+.outside-bottom-left {
+  @include cssowl-sprite-outside-bottom-left(1px, 2px, 3px, 4px, url('path/to/sprite.png'), 5px, 6px);
+}
+.outside-bottom-center {
+  @include cssowl-sprite-outside-bottom-center(1px, 2px, 3px, 4px, url('path/to/sprite.png'), 5px, 6px);
+}
+.outside-bottom-right {
+  @include cssowl-sprite-outside-bottom-right(1px, 2px, 3px, 4px, url('path/to/sprite.png'), 5px, 6px);
+}

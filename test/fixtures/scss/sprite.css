@@ -1,0 +1,362 @@
+.width {
+  width: 1px; }
+
+.height {
+  height: 1px; }
+
+.size {
+  width: 1px;
+  height: 2px; }
+
+.background {
+  background-image: url("path/to/sprite.png"); }
+
+.position {
+  background-position: 1px 2px; }
+
+/* --- display ------------------------------------------------------------------------------------ */
+.display {
+  background-image: url("path/to/sprite.png");
+  background-position: 1px 2px;
+  width: 3px;
+  height: 4px; }
+
+.display-block {
+  display: block;
+  background-image: url("path/to/sprite.png");
+  background-position: 1px 2px;
+  width: 3px;
+  height: 4px; }
+
+.display-inline {
+  display: inline-block;
+  background-image: url("path/to/sprite.png");
+  background-position: 1px 2px;
+  width: 3px;
+  height: 4px; }
+
+/* --- replace ------------------------------------------------------------------------------------ */
+.replace {
+  text-indent: -9999px;
+  background-image: url("path/to/sprite.png");
+  background-position: 1px 2px;
+  width: 3px;
+  height: 4px; }
+
+.replace-block {
+  display: block;
+  text-indent: -9999px;
+  background-image: url("path/to/sprite.png");
+  background-position: 1px 2px;
+  width: 3px;
+  height: 4px; }
+
+.replace-inline {
+  display: inline-block;
+  text-indent: -9999px;
+  background-image: url("path/to/sprite.png");
+  background-position: 1px 2px;
+  width: 3px;
+  height: 4px; }
+
+/* --- float -------------------------------------------------------------------------------------- */
+.float-before:before {
+  content: "";
+  float: left;
+  margin-top: 6px;
+  margin-right: 5px;
+  background-image: url("path/to/sprite.png");
+  background-position: 1px 2px;
+  width: 3px;
+  height: 4px; }
+
+.float-after:after {
+  content: "";
+  float: right;
+  margin-top: 6px;
+  margin-left: 5px;
+  background-image: url("path/to/sprite.png");
+  background-position: 1px 2px;
+  width: 3px;
+  height: 4px; }
+
+/* --- absolute ----------------------------------------------------------------------------------- */
+.absolute-before {
+  position: relative; }
+  .absolute-before:before {
+    content: "";
+    position: absolute;
+    background-image: url("path/to/sprite.png");
+    background-position: 1px 2px;
+    width: 3px;
+    height: 4px; }
+
+.absolute-after {
+  position: relative; }
+  .absolute-after:after {
+    content: "";
+    position: absolute;
+    background-image: url("path/to/sprite.png");
+    background-position: 1px 2px;
+    width: 3px;
+    height: 4px; }
+
+/* --- inside ------------------------------------------------------------------------------------- */
+.inside-top-left {
+  padding-top: 10px;
+  padding-left: 8px;
+  position: relative; }
+  .inside-top-left:after {
+    content: "";
+    position: absolute;
+    background-image: url("path/to/sprite.png");
+    background-position: 1px 2px;
+    width: 3px;
+    height: 4px; }
+  .inside-top-left:after {
+    top: 0;
+    left: 0; }
+
+.inside-top-center {
+  padding-top: 10px;
+  position: relative; }
+  .inside-top-center:after {
+    content: "";
+    position: absolute;
+    background-image: url("path/to/sprite.png");
+    background-position: 1px 2px;
+    width: 3px;
+    height: 4px; }
+  .inside-top-center:after {
+    top: 0;
+    left: 50%;
+    margin-left: 4px; }
+
+.inside-top-right {
+  padding-top: 10px;
+  padding-right: 8px;
+  position: relative; }
+  .inside-top-right:after {
+    content: "";
+    position: absolute;
+    background-image: url("path/to/sprite.png");
+    background-position: 1px 2px;
+    width: 3px;
+    height: 4px; }
+  .inside-top-right:after {
+    top: 0;
+    right: 0; }
+
+.inside-middle-left {
+  padding-left: 8px;
+  position: relative; }
+  .inside-middle-left:after {
+    content: "";
+    position: absolute;
+    background-image: url("path/to/sprite.png");
+    background-position: 1px 2px;
+    width: 3px;
+    height: 4px; }
+  .inside-middle-left:after {
+    top: 50%;
+    left: 0;
+    margin-top: 4px; }
+
+.inside-middle-center {
+  position: relative; }
+  .inside-middle-center:after {
+    content: "";
+    position: absolute;
+    background-image: url("path/to/sprite.png");
+    background-position: 1px 2px;
+    width: 3px;
+    height: 4px; }
+  .inside-middle-center:after {
+    top: 50%;
+    left: 50%;
+    margin-top: 4px;
+    margin-left: 4px; }
+
+.inside-middle-right {
+  padding-right: 8px;
+  position: relative; }
+  .inside-middle-right:after {
+    content: "";
+    position: absolute;
+    background-image: url("path/to/sprite.png");
+    background-position: 1px 2px;
+    width: 3px;
+    height: 4px; }
+  .inside-middle-right:after {
+    top: 50%;
+    right: 0;
+    margin-top: 4px; }
+
+.inside-bottom-left {
+  padding-left: 8px;
+  padding-bottom: 10px;
+  position: relative; }
+  .inside-bottom-left:after {
+    content: "";
+    position: absolute;
+    background-image: url("path/to/sprite.png");
+    background-position: 1px 2px;
+    width: 3px;
+    height: 4px; }
+  .inside-bottom-left:after {
+    left: 0;
+    bottom: 0; }
+
+.inside-bottom-center {
+  padding-bottom: 10px;
+  position: relative; }
+  .inside-bottom-center:after {
+    content: "";
+    position: absolute;
+    background-image: url("path/to/sprite.png");
+    background-position: 1px 2px;
+    width: 3px;
+    height: 4px; }
+  .inside-bottom-center:after {
+    left: 50%;
+    bottom: 0;
+    margin-left: 4px; }
+
+.inside-bottom-right {
+  padding-right: 8px;
+  padding-bottom: 10px;
+  position: relative; }
+  .inside-bottom-right:after {
+    content: "";
+    position: absolute;
+    background-image: url("path/to/sprite.png");
+    background-position: 1px 2px;
+    width: 3px;
+    height: 4px; }
+  .inside-bottom-right:after {
+    right: 0;
+    bottom: 0; }
+
+/* --- outside ------------------------------------------------------------------------------------ */
+.outside-top-left {
+  position: relative; }
+  .outside-top-left:after {
+    content: "";
+    position: absolute;
+    background-image: url("path/to/sprite.png");
+    background-position: 1px 2px;
+    width: 3px;
+    height: 4px; }
+  .outside-top-left:after {
+    top: 2px;
+    left: 2px; }
+
+.outside-top-center {
+  position: relative; }
+  .outside-top-center:after {
+    content: "";
+    position: absolute;
+    background-image: url("path/to/sprite.png");
+    background-position: 1px 2px;
+    width: 3px;
+    height: 4px; }
+  .outside-top-center:after {
+    left: 50%;
+    top: 2px;
+    margin-left: 4px; }
+
+.outside-top-right {
+  position: relative; }
+  .outside-top-right:after {
+    content: "";
+    position: absolute;
+    background-image: url("path/to/sprite.png");
+    background-position: 1px 2px;
+    width: 3px;
+    height: 4px; }
+  .outside-top-right:after {
+    top: 2px;
+    right: 2px; }
+
+.outside-middle-left {
+  position: relative; }
+  .outside-middle-left:after {
+    content: "";
+    position: absolute;
+    background-image: url("path/to/sprite.png");
+    background-position: 1px 2px;
+    width: 3px;
+    height: 4px; }
+  .outside-middle-left:after {
+    top: 50%;
+    left: 2px;
+    margin-top: 4px; }
+
+.outside-middle-center {
+  position: relative; }
+  .outside-middle-center:after {
+    content: "";
+    position: absolute;
+    background-image: url("path/to/sprite.png");
+    background-position: 1px 2px;
+    width: 3px;
+    height: 4px; }
+  .outside-middle-center:after {
+    top: 50%;
+    left: 50%;
+    margin-top: 4px;
+    margin-left: 4px; }
+
+.outside-middle-right {
+  position: relative; }
+  .outside-middle-right:after {
+    content: "";
+    position: absolute;
+    background-image: url("path/to/sprite.png");
+    background-position: 1px 2px;
+    width: 3px;
+    height: 4px; }
+  .outside-middle-right:after {
+    top: 50%;
+    right: 2px;
+    margin-top: 4px; }
+
+.outside-bottom-left {
+  position: relative; }
+  .outside-bottom-left:after {
+    content: "";
+    position: absolute;
+    background-image: url("path/to/sprite.png");
+    background-position: 1px 2px;
+    width: 3px;
+    height: 4px; }
+  .outside-bottom-left:after {
+    left: 2px;
+    bottom: 2px; }
+
+.outside-bottom-center {
+  position: relative; }
+  .outside-bottom-center:after {
+    content: "";
+    position: absolute;
+    background-image: url("path/to/sprite.png");
+    background-position: 1px 2px;
+    width: 3px;
+    height: 4px; }
+  .outside-bottom-center:after {
+    left: 50%;
+    bottom: 2px;
+    margin-left: 4px; }
+
+.outside-bottom-right {
+  position: relative; }
+  .outside-bottom-right:after {
+    content: "";
+    position: absolute;
+    background-image: url("path/to/sprite.png");
+    background-position: 1px 2px;
+    width: 3px;
+    height: 4px; }
+  .outside-bottom-right:after {
+    right: 2px;
+    bottom: 2px; }
