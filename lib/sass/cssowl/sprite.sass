@@ -72,6 +72,7 @@
 //
 //**See also:** [cssowl-sprite-display](cssowl-sprite.html#display)
 @mixin cssowl-sprite-replace($x, $y, $width, $height, $src)
+  direction: ltr
   text-indent: -9999px
   @include cssowl-sprite-display($x, $y, $width, $height, $src)
 
@@ -89,6 +90,7 @@
 //
 //**See also:** [cssowl-sprite-display-block](cssowl-sprite.html#displayblock)
 @mixin cssowl-sprite-replace-block($x, $y, $width, $height, $src)
+  direction: ltr
   text-indent: -9999px
   @include cssowl-sprite-display-block($x, $y, $width, $height, $src)
 
@@ -107,6 +109,7 @@
 //
 //**See also:** [cssowl-sprite-display-inline](cssowl-sprite.html#displayinline)
 @mixin cssowl-sprite-replace-inline($x, $y, $width, $height, $src, $yOffset:0, $valign:middle)
+  direction: ltr
   text-indent: -9999px
   @include cssowl-sprite-display-inline($x, $y, $width, $height, $src, $yOffset, $valign)
 

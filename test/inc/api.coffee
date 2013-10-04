@@ -1,8 +1,5 @@
 fs            = require "fs"
-sys           = require 'sys'
 chai          = require "chai"
-fsx           = require "fs-extra"
-exec          = require('child_process').exec
 
 assert        = chai.assert
 baseDir       = process.cwd()
@@ -16,61 +13,65 @@ exports = module.exports = class Api
   # ~ Public static methods
   # -----------------------------------------------------------------------------------------------
 
-  @less: (path, done) ->
-    cmd = ['lessc', 'source', 'actual']
-    Api._render "less", cmd, path, done
+  @less: (name, done) ->
+    Api.compare name, "less", done
 
-  @scss: (path, done) ->
-    cmd = ['sass', 'source', 'actual']
-    Api._render "sass", cmd, path, done
+  @scss: (name, done) ->
+    Api.compare name, "scss", done
 
-  @sass: (path, done) ->
-    cmd = ['sass', 'source', 'actual']
-    Api._render "sass", cmd, path, done
+  @sass: (name, done) ->
+    Api.compare name, "sass", done
 
-  @stylus: (path, done) ->
-    cmd = ['stylus', '-o', 'tmpDir', 'source']
-    Api._render "styl", cmd, path, done
+  @stylus: (name, done) ->
+    Api.compare name, "styl", done
 
   # -----------------------------------------------------------------------------------------------
   # ~ Private static methods
   # -----------------------------------------------------------------------------------------------
 
-  @_render: (extension, cmd, path, done) ->
+  @compare: (name, extension, done) ->
 
     # variables
-    source = "#{fixturesDir}/#{extension}/#{path}.#{extension}"
-    expected = "#{fixturesDir}/#{extension}/#{path}.css"
-    actual = "#{tmpDir}/#{path}.css"
+    actual = "#{tmpDir}/#{name}.#{extension}.css"
+    expected = "#{fixturesDir}/#{extension}/#{name}.css"
 
-    # cleanup
-    if (fs.existsSync(tmpDir)) then fsx.removeSync(tmpDir)
-    fs.mkdirSync(tmpDir)
+    assert.isTrue fs.existsSync(actual), "actual file exists " + actual
+    assert.isTrue fs.existsSync(expected), "expected file exists " + expected
 
-    assert.isTrue fs.existsSync(source), "source file exists " + source
-    sourceContent = fs.readFileSync source, "utf-8"
-    assert.isString sourceContent
+    actualContent = fs.readFileSync actual, "utf-8"
+    expectedContent = fs.readFileSync expected, "utf-8"
 
-    for value, key in cmd
-      try
-        tmp = eval(value)
-        if tmp? then cmd[key] = tmp
-      catch error
-        # nothing
+    assert.isString actualContent
+    assert.isString expectedContent
 
-    exec cmd.join(' '), (error, stdout, stderr) ->
-      if stderr then sys.puts(stderr)
+    assert.equal expectedContent, actualContent
+    done()
 
-      assert.isTrue fs.existsSync(actual), "actual file exists " + actual
+  @compareAll: (name, extensions, done) ->
+    actual = null
+
+    for extension of extension
+      unless actual?
+        actual = "#{tmpDir}/#{name}.#{extension}.css"
+        assert.isTrue fs.existsSync(actual), "actual file exists " + actual
+        actualContent = fs.readFileSync actual, "utf-8"
+        assert.isString actualContent
+      else
+        expected = "#{tmpDir}/#{name}.#{extension}.css"
+        assert.isTrue fs.existsSync(expected), "expected file exists " + expected
+        expectedContent = fs.readFileSync expected, "utf-8"
+        assert.isString expectedContent
+        assert.equal expectedContent, actualContent
+
+    done()
+
+  @compareEmpty: (name, extensions, done) ->
+
+    for extension of extension
+      expected = "#{tmpDir}/#{name}.#{extension}.css"
       assert.isTrue fs.existsSync(expected), "expected file exists " + expected
-
-      actualContent = fs.readFileSync actual, "utf-8"
       expectedContent = fs.readFileSync expected, "utf-8"
-
-      assert.isString actualContent
       assert.isString expectedContent
+      assert.equal expectedContent, ""
 
-      fs.writeFileSync actual, actualContent
-      assert.equal expectedContent, actualContent
-      done()
-
+    done()

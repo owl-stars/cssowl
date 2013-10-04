@@ -17,12 +17,14 @@
     "grunt": "~0.4.1",
     "grunt-coffeelint": "0.0.6",
     "grunt-mocha-test": "~0.6.3",
-    "fs-extra": "~0.5.0",
     "chai": "~1.7.2",
     "grunt-kss": "~0.2.1",
     "grunt-contrib-watch": "~0.5.3",
     "grunt-contrib-sass": "~0.5.0",
     "grunt-contrib-less": "~0.7.0",
-    "grunt-contrib-stylus": "~0.8.0"
+    "grunt-contrib-stylus": "~0.8.0",
+    "grunt-contrib-clean": "~0.5.0",
+    "grunt-contrib-csslint": "~0.1.2",
+    "grunt-contrib-cssmin": "~0.6.2"
   }
 }

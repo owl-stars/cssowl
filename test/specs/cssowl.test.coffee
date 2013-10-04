@@ -1,14 +1,18 @@
-api = require "../inc/api"
+api = require "../inc/Api"
 
 module.exports =
   "Test #cssowl":
-    "#sprite":
+    "#examples":
+      "#empty": (done) ->
+        api.compareEmpty "cssowl", ['less', 'sass', 'scss', 'stylus'], done
       "#less": (done) ->
-        api.less "sprite", done
+        api.less "examples", done
       "#scss": (done) ->
-        api.scss "sprite", done
+        api.scss "examples", done
       "#sass": (done) ->
-        api.sass "sprite", done
+        api.sass "examples", done
       "#stylus": (done) ->
-        api.stylus "sprite", done
+        api.stylus "examples", done
+      "#all": (done) ->
+        api.compareAll "examples", ['less', 'sass', 'scss', 'stylus'], done
 

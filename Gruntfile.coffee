@@ -4,32 +4,54 @@ module.exports = (grunt) ->
     pkg: grunt.file.readJSON "package.json"
 
     coffeelint:
-      files: ["Gruntfile.coffee", "test/specs/**/*.coffee"]
+      files: ["Gruntfile.coffee", "test/**/*.coffee"]
       options:
         max_line_length:
           value: 200
           level: "error"
 
+    clean:
+      test:
+        src: ["test/tmp"]
+
     less:
-      dist:
+      test:
         files:
-          "dummy/less.css": "lib/less/cssowl.less"
-          "dummy/less-example.css": "example/less.less"
-    stylus:
-      dist:
-        files:
-          "dummy/stylus.css": "lib/stylus/cssowl.styl"
-          "dummy/stylus-example.css": "example/stylus.styl"
+          "test/tmp/cssowl.less.css": "lib/less/cssowl.less"
+          "test/tmp/examples.less.css": "test/fixtures/less/examples.less"
 
     sass:
-      sass:
+      test:
         files:
-          'dummy/sass.css': 'lib/sass/cssowl.sass'
-          'dummy/sass-example.css': 'example/sass.sass'
-      scss:
+          "test/tmp/cssowl.sass.css": "lib/sass/cssowl.sass"
+          "test/tmp/examples.sass.css": "test/fixtures/sass/examples.sass"
+          "test/tmp/cssowl.scss.css": "lib/scss/cssowl.scss"
+          "test/tmp/examples.scss.css": "test/fixtures/scss/examples.scss"
+
+    stylus:
+      test:
+        options:
+          compress: false
         files:
-          'dummy/scss.css': 'lib/scss/cssowl.scss'
-          'dummy/scss-example.css': 'example/scss.scss'
+          "test/tmp/cssowl.styl.css": "lib/stylus/cssowl.styl"
+          "test/tmp/examples.styl.css": "test/fixtures/styl/examples.styl"
+
+    cssmin:
+      test:
+        files:
+          'test/tmp/examples.less.min.css': ['test/tmp/examples.less.css']
+          'test/tmp/examples.sass.min.css': ['test/tmp/examples.sass.css']
+          'test/tmp/examples.scss.min.css': ['test/tmp/examples.scss.css']
+          'test/tmp/examples.styl.min.css': ['test/tmp/examples.styl.css']
+
+    csslint:
+      test:
+        options:
+          "text-indent": false
+          "adjoining-classes": false
+          "duplicate-background-images": false
+          "display-property-grouping": false
+        src: ['test/**/*.css']
 
     styledocco:
       main:
@@ -71,7 +93,10 @@ module.exports = (grunt) ->
   grunt.loadNpmTasks "grunt-contrib-watch"
   grunt.loadNpmTasks "grunt-contrib-less"
   grunt.loadNpmTasks "grunt-contrib-stylus"
+  grunt.loadNpmTasks "grunt-contrib-csslint"
+  grunt.loadNpmTasks "grunt-contrib-clean"
+  grunt.loadNpmTasks "grunt-contrib-cssmin"
 
   # Register tasks
-  grunt.registerTask 'default', ['coffeelint', 'sass', 'less', 'stylus', 'styledocco']
-  grunt.registerTask 'test', ['default', 'mochaTest']
+  grunt.registerTask 'default', ['coffeelint']
+  grunt.registerTask 'test', ['default', 'clean', 'less', 'sass', 'stylus', 'csslint', 'cssmin', 'mochaTest']
