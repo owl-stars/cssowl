@@ -1,0 +1,109 @@
+//# absolute
+//
+//Positions a element with `position: absolute;` and sets the `top`, `left`, `right` and `bottom` attributes if not `none`.
+//
+//*Parameters:**
+//
+//**top:** (optional, default=none) top position value
+//**right:** (optional, default=none) right position value
+//**bottom:** (optional, default=none) bottom position value
+//**left:** (optional, default=none) left position value
+@mixin cssowl-absolute($top:none, $right:none, $bottom:none, $left:none) {
+  @if $top != none {
+    top: $top;
+  }
+  @if $left != none {
+    left: $left;
+  }
+  @if $right != none {
+    right: $right;
+  }
+  @if $bottom != none {
+    bottom: $bottom;
+  }
+  position: absolute;
+}
+
+//# absolute-inside
+//
+//Positions a element with `position: absolute;` inside the bounding box.
+//
+//*Parameters:**
+//
+//**width:** element width
+//**height:** element height
+//**valign:** (optional, default=top) vertical alignment top|middle|bottom
+//**halign:** (optional, default=left) horizontal alignment left|center|right
+//**xOffset:** (optional, default=0) x position offset
+//**yOffset:** (optional, default=0) y position offset
+//
+//*See also:** [cssowl-sprite-absolute](cssowl-absolute.html#absolute)
+@mixin cssowl-absolute-inside($width, $height, $valign:top, $halign:left, $xOffset:0, $yOffset:0) {
+  $top:none;
+  $left:none;
+  $right:none;
+  $bottom:none;
+  @if $valign == top {
+    $top: $yOffset;
+  }
+  @else if $valign == middle {
+    $top: 50%;
+    margin-top: $yOffset - round($height / 2);
+  }
+  @else if $valign == bottom {
+    $bottom: $xOffset;
+  }
+  @if $halign == left {
+    $left: $xOffset;
+  }
+  @else if $halign == center {
+    $left: 50%;
+    margin-left: $xOffset - round($width / 2);
+  }
+  @else if $halign == right {
+    $right: $xOffset;
+  }
+  @include cssowl-absolute($top, $right, $bottom, $left);
+}
+
+//# absolute-outside
+//
+//Positions a element with `position: absolute;` outside the bounding box.
+//
+//*Parameters:**
+//
+//**width:** element width
+//**height:** element height
+//**valign:** (optional, default=top) vertical alignment top|middle|bottom
+//**halign:** (optional, default=left) horizontal alignment left|center|right
+//**xOffset:** (optional, default=0) x position offset
+//**yOffset:** (optional, default=0) y position offset
+//
+//*See also:** [cssowl-sprite-absolute](cssowl-absolute.html#absolute)
+@mixin cssowl-absolute-outside($width, $height, $valign:top, $halign:left, $xOffset:0, $yOffset:0) {
+  $top:none;
+  $left:none;
+  $right:none;
+  $bottom:none;
+  @if $valign == top {
+    $top: round($yOffset - $height);
+  }
+  @else if $valign == middle {
+    $top: 50%;
+    margin-top: $yOffset - round($height / 2);
+  }
+  @else if $valign == bottom {
+    $bottom: round($yOffset - $height);
+  }
+  @if $halign == left {
+    $left: round($xOffset - $width);
+  }
+  @else if $halign == center {
+    $left: 50%;
+    margin-left: $xOffset - round($width / 2);
+  }
+  @else if $halign == right {
+    $right: round($xOffset - $width);
+  }
+  @include cssowl-absolute($top, $right, $bottom, $left);
+}

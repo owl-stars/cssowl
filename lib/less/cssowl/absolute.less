@@ -1,0 +1,121 @@
+//# absolute
+//
+//Positions a element with `position: absolute;` and sets the `top`, `left`, `right` and `bottom` attributes if not `none`.
+//
+//*Parameters:**
+//
+//**top:** (optional, default=none) top position value
+//**right:** (optional, default=none) right position value
+//**bottom:** (optional, default=none) bottom position value
+//**left:** (optional, default=none) left position value
+.cssowl-absolute(@top:none, @right:none, @bottom:none, @left:none) when not (@top = none){
+  top: @top;
+}
+.cssowl-absolute(@top:none, @right:none, @bottom:none, @left:none) when not (@left = none){
+  left: @left;
+}
+.cssowl-absolute(@top:none, @right:none, @bottom:none, @left:none) when not (@right = none){
+  right: @right;
+}
+.cssowl-absolute(@top:none, @right:none, @bottom:none, @left:none) when not (@bottom = none){
+  bottom: @bottom;
+}
+.cssowl-absolute(@top:none, @right:none, @bottom:none, @left:none) {
+  position: absolute;
+}
+
+
+//# absolute-inside
+//
+//Positions a element with `position: absolute;` inside the bounding box.
+//
+//*Parameters:**
+//
+//**width:** element width
+//**height:** element height
+//**valign:** (optional, default=top) vertical alignment top|middle|bottom
+//**halign:** (optional, default=left) horizontal alignment left|center|right
+//**xOffset:** (optional, default=0) x position offset
+//**yOffset:** (optional, default=0) y position offset
+//
+//*See also:** [cssowl-sprite-absolute](cssowl-absolute.html#absolute)
+._cssowl-absolute-inside-vars(@width, @height, @valign:top, @halign:left, @xOffset:0, @yOffset:0) when (@valign = top) {
+  @top: @yOffset;
+  @bottom: none;
+}
+._cssowl-absolute-inside-vars(@width, @height, @valign:top, @halign:left, @xOffset:0, @yOffset:0) when (@valign = middle) {
+  @top: 50%;
+  margin-top: @yOffset - round(@height / 2);
+  @bottom: none;
+}
+._cssowl-absolute-inside-vars(@width, @height, @valign:top, @halign:left, @xOffset:0, @yOffset:0) when (@valign = bottom) {
+  @top: none;
+  @bottom: @xOffset;
+}
+._cssowl-absolute-inside-vars(@width, @height, @valign:top, @halign:left, @xOffset:0, @yOffset:0) when (@halign = left) {
+  @left: @xOffset;
+  @right: none;
+}
+._cssowl-absolute-inside-vars(@width, @height, @valign:top, @halign:left, @xOffset:0, @yOffset:0) when (@halign = center) {
+  @left: 50%;
+  margin-left: @xOffset - round(@width / 2);
+  @right: none;
+}
+._cssowl-absolute-inside-vars(@width, @height, @valign:top, @halign:left, @xOffset:0, @yOffset:0) when (@halign = right) {
+  @left: none;
+  @right: @xOffset;
+}
+._cssowl-absolute-inside-vars(@width, @height, @valign:top, @halign:left, @xOffset:0, @yOffset:0) {
+}
+.cssowl-absolute-inside(@width, @height, @valign:top, @halign:left, @xOffset:0, @yOffset:0) {
+  ._cssowl-absolute-inside-vars(@width, @height, @valign, @halign, @xOffset, @yOffset);
+  .cssowl-absolute(@top, @right, @bottom, @left);
+}
+
+
+//# absolute-outside
+//
+//Positions a element with `position: absolute;` outside the bounding box.
+//
+//*Parameters:**
+//
+//**width:** element width
+//**height:** element height
+//**valign:** (optional, default=top) vertical alignment top|middle|bottom
+//**halign:** (optional, default=left) horizontal alignment left|center|right
+//**xOffset:** (optional, default=0) x position offset
+//**yOffset:** (optional, default=0) y position offset
+//
+//*See also:** [cssowl-sprite-absolute](cssowl-absolute.html#absolute)
+._cssowl-absolute-outside-vars(@width, @height, @valign:top, @halign:left, @xOffset:0, @yOffset:0) when (@valign = top) {
+  @top: round(@yOffset - @height);
+  @bottom: none;
+}
+._cssowl-absolute-outside-vars(@width, @height, @valign:top, @halign:left, @xOffset:0, @yOffset:0) when (@valign = middle) {
+  @top: 50%;
+  margin-top: @yOffset - round(@height / 2);
+  @bottom: none;
+}
+._cssowl-absolute-outside-vars(@width, @height, @valign:top, @halign:left, @xOffset:0, @yOffset:0) when (@valign = bottom) {
+  @top: none;
+  @bottom: round(@yOffset - @height);
+}
+._cssowl-absolute-outside-vars(@width, @height, @valign:top, @halign:left, @xOffset:0, @yOffset:0) when (@halign = left) {
+  @left: round(@xOffset - @width);
+  @right: none;
+}
+._cssowl-absolute-outside-vars(@width, @height, @valign:top, @halign:left, @xOffset:0, @yOffset:0) when (@halign = center) {
+  @left: 50%;
+  margin-left: @xOffset - round(@width / 2);
+  @right: none;
+}
+._cssowl-absolute-outside-vars(@width, @height, @valign:top, @halign:left, @xOffset:0, @yOffset:0) when (@halign = right) {
+  @left: none;
+  @right: round(@xOffset - @width);
+}
+._cssowl-absolute-outside-vars(@width, @height, @valign:top, @halign:left, @xOffset:0, @yOffset:0) {
+}
+.cssowl-absolute-outside(@width, @height, @valign:top, @halign:left, @xOffset:0, @yOffset:0) {
+  ._cssowl-absolute-outside-vars(@width, @height, @valign, @halign, @xOffset, @yOffset);
+  .cssowl-absolute(@top, @right, @bottom, @left);
+}

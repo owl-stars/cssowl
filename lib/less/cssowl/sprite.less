@@ -1,235 +1,513 @@
-#cssowl {
-  #sprite {
-    .width(@width) {
-      width: @width;
-    }
-    .height(@height) {
-      height: @height;
-    }
-    .size(@width, @height) {
-      .width(@width);
-      .height(@height);
-    }
-    .background(@src) {
-      background-image: @src;
-    }
-    .position(@x, @y) {
-      background-position: @x @y;
-    }
-    // --- display --------------------------------------------------------------------------------
-    .display(@x, @y, @width, @height, @src) {
-      .background(@src);
-      .position(@x, @y);
-      .size(@width, @height);
-    }
-    .display-block(@x, @y, @width, @height, @src) {
-      display: block;
-      .display(@x, @y, @width, @height, @src);
-    }
-    .display-inline(@x, @y, @width, @height, @src) {
-      display: inline-block;
-      .display(@x, @y, @width, @height, @src);
-    }
-    // --- replace --------------------------------------------------------------------------------
-    .replace(@x, @y, @width, @height, @src) {
-      text-indent: -9999px;
-      .display(@x, @y, @width, @height, @src);
-    }
-    .replace-block(@x, @y, @width, @height, @src) {
-      display: block;
-      .replace(@x, @y, @width, @height, @src);
-    }
-    .replace-inline(@x, @y, @width, @height, @src) {
-      display: inline-block;
-      .replace(@x, @y, @width, @height, @src);
-    }
-    // --- float --------------------------------------------------------------------------------
-    .float-before(@x, @y, @width, @height, @src, @xOffset:0, @yOffset:0) {
-      &:before {
-        content: "";
-        float: left;
-        margin-top: @yOffset;
-        margin-right: @xOffset;
-        .display(@x, @y, @width, @height, @src);
-      }
-    }
-    .float-after(@x, @y, @width, @height, @src, @xOffset:0, @yOffset:0) {
-      &:after {
-        content: "";
-        float: right;
-        margin-top: @yOffset;
-        margin-left: @xOffset;
-        .display(@x, @y, @width, @height, @src);
-      }
-    }
-    // --- absolute ---------------------------------------------------------------------------------
-    .absolute-before(@x, @y, @width, @height, @src) {
-      position: relative;
-      &:before {
-        content: "";
-        position: absolute;
-        .display(@x, @y, @width, @height, @src);
-      }
-    }
-    .absolute-after(@x, @y, @width, @height, @src) {
-      position: relative;
-      &:after {
-        content: "";
-        position: absolute;
-        .display(@x, @y, @width, @height, @src);
-      }
-    }
-    // --- inside ---------------------------------------------------------------------------------
-    .inside-top-left(@x, @y, @width, @height, @src, @xOffset:0, @yOffset:0) {
-      padding-top: (@height + @yOffset);
-      padding-left: (@width + @xOffset);
-      .absolute-after(@x, @y, @width, @height, @src);
-      &:after {
-        top: 0;
-        left: 0;
-      }
-    }
-    .inside-top-center(@x, @y, @width, @height, @src, @xOffset:0, @yOffset:0) {
-      padding-top: (@height + @yOffset);
-      .absolute-after(@x, @y, @width, @height, @src);
-      &:after {
-        top: 0;
-        left: 50%;
-        margin-left: round(@xOffset - @width / 2);
-      }
-    }
-    .inside-top-right(@x, @y, @width, @height, @src, @xOffset:0, @yOffset:0) {
-      padding-top: (@height + @yOffset);
-      padding-right: (@width + @xOffset);
-      .absolute-after(@x, @y, @width, @height, @src);
-      &:after {
-        top: 0;
-        right: 0;
-      }
-    }
-    .inside-middle-left(@x, @y, @width, @height, @src, @xOffset:0, @yOffset:0) {
-      padding-left: (@width + @xOffset);
-      .absolute-after(@x, @y, @width, @height, @src);
-      &:after {
-        top: 50%;
-        left: 0;
-        margin-top: round(@yOffset - @height / 2);
-      }
-    }
-    .inside-middle-center(@x, @y, @width, @height, @src, @xOffset:0, @yOffset:0) {
-      .absolute-after(@x, @y, @width, @height, @src);
-      &:after {
-        top: 50%;
-        left: 50%;
-        margin-top: round(@yOffset - @height / 2);
-        margin-left: round(@xOffset - @width / 2);
-      }
-    }
-    .inside-middle-right(@x, @y, @width, @height, @src, @xOffset:0, @yOffset:0) {
-      padding-right: (@width + @xOffset);
-      .absolute-after(@x, @y, @width, @height, @src);
-      &:after {
-        top: 50%;
-        right: 0;
-        margin-top: round(@yOffset - @height / 2);
-      }
-    }
-    .inside-bottom-left(@x, @y, @width, @height, @src, @xOffset:0, @yOffset:0) {
-      padding-left: (@width + @xOffset);
-      padding-bottom: (@height + @yOffset);
-      .absolute-after(@x, @y, @width, @height, @src);
-      &:after {
-        left: 0;
-        bottom: 0;
-      }
-    }
-    .inside-bottom-center(@x, @y, @width, @height, @src, @xOffset:0, @yOffset:0) {
-      padding-bottom: (@height + @yOffset);
-      .absolute-after(@x, @y, @width, @height, @src);
-      &:after {
-        left: 50%;
-        bottom: 0;
-        margin-left: round(@xOffset - @width / 2);
-      }
-    }
-    .inside-bottom-right(@x, @y, @width, @height, @src, @xOffset:0, @yOffset:0) {
-      padding-right: (@width + @xOffset);
-      padding-bottom: (@height + @yOffset);
-      .absolute-after(@x, @y, @width, @height, @src);
-      &:after {
-        right: 0;
-        bottom: 0;
-      }
-    }
-    // --- outside --------------------------------------------------------------------------------
-    .outside-top-left(@x, @y, @width, @height, @src, @xOffset:0, @yOffset:0) {
-      .absolute-after(@x, @y, @width, @height, @src);
-      &:after {
-        top: round(@yOffset - @height);
-        left: round(@xOffset - @width);
-      }
-    }
-    .outside-top-center(@x, @y, @width, @height, @src, @xOffset:0, @yOffset:0) {
-      .absolute-after(@x, @y, @width, @height, @src);
-      &:after {
-        left: 50%;
-        top: round(@yOffset - @height);
-        margin-left: round(@xOffset - @width / 2);
-      }
-    }
-    .outside-top-right(@x, @y, @width, @height, @src, @xOffset:0, @yOffset:0) {
-      .absolute-after(@x, @y, @width, @height, @src);
-      &:after {
-        top: round(@yOffset - @height);
-        right: round(@xOffset - @width);
-      }
-    }
-    .outside-middle-left(@x, @y, @width, @height, @src, @xOffset:0, @yOffset:0) {
-      .absolute-after(@x, @y, @width, @height, @src);
-      &:after {
-        top: 50%;
-        left: round(@xOffset - @width);
-        margin-top: round(@yOffset - @height / 2);
-      }
-    }
-    .outside-middle-center(@x, @y, @width, @height, @src, @xOffset:0, @yOffset:0) {
-      .absolute-after(@x, @y, @width, @height, @src);
-      &:after {
-        top: 50%;
-        left: 50%;
-        margin-top: round(@yOffset - @height / 2);
-        margin-left: round(@xOffset - @width / 2);
-      }
-    }
-    .outside-middle-right(@x, @y, @width, @height, @src, @xOffset:0, @yOffset:0) {
-      .absolute-after(@x, @y, @width, @height, @src);
-      &:after {
-        top: 50%;
-        right: round(@xOffset - @width);
-        margin-top: round(@yOffset - @height / 2);
-      }
-    }
-    .outside-bottom-left(@x, @y, @width, @height, @src, @xOffset:0, @yOffset:0) {
-      .absolute-after(@x, @y, @width, @height, @src);
-      &:after {
-        left: round(@xOffset - @width);
-        bottom: round(@yOffset - @height);
-      }
-    }
-    .outside-bottom-center(@x, @y, @width, @height, @src, @xOffset:0, @yOffset:0) {
-      .absolute-after(@x, @y, @width, @height, @src);
-      &:after {
-        left: 50%;
-        bottom: round(@yOffset - @height);
-        margin-left: round(@xOffset - @width / 2);
-      }
-    }
-    .outside-bottom-right(@x, @y, @width, @height, @src, @xOffset:0, @yOffset:0) {
-      .absolute-after(@x, @y, @width, @height, @src);
-      &:after {
-        right: round(@xOffset - @width);
-        bottom: round(@yOffset - @height);
-      }
-    }
+//# display
+//
+//Displays a sprite element with it's *width*, *height*, *background-image* and *background-position*.
+//
+//*Parameters:**
+//
+//**x:** x position of the element
+//**y:** y position of the element
+//**width:** element width
+//**height:** element height
+//**src:** background image source
+.cssowl-sprite-display(@x, @y, @width, @height, @src) {
+  width: @width;
+  height: @height;
+  background-image: @src;
+  background-position: @x @y;
+  background-repeat: no-repeat;
+}
+
+//# display-block
+//
+//Displays a sprite element with the `display: block;` attribute.
+//
+//*Parameters:**
+//
+//**x:** x position of the element
+//**y:** y position of the element
+//**width:** element width
+//**height:** element height
+//**src:** background image source
+//
+//*See also:** [cssowl-sprite-display](cssowl-sprite.html#display)
+.cssowl-sprite-display-block(@x, @y, @width, @height, @src) {
+  display: block;
+  .cssowl-sprite-display(@x, @y, @width, @height, @src);
+}
+
+//# display-inline
+//
+//Displays a sprite element with the `display: inline` attribute.<br/>
+//It also adds `line-height` and `vertical-align` to vertically align it.
+//
+//*Parameters:**
+//
+//**x:** x position of the element
+//**y:** y position of the element
+//**width:** element width
+//**height:** element height
+//**src:** background image source
+//**yOffset:** (optional, default=0) top margin of the element
+//**valign:** (optional, default=middle) *vertical-align* attribute property
+//
+//*See also:** [cssowl-sprite-display](cssowl-sprite.html#display)
+.cssowl-sprite-display-inline(@x, @y, @width, @height, @src, @yOffset:0, @valign:middle) {
+  line-height: @height;
+  margin-top: @yOffset;
+  display: inline-block;
+  vertical-align: @valign;
+  .cssowl-sprite-display(@x, @y, @width, @height, @src);
+}
+
+//# replace
+//
+//Displays a sprite element and uses `text-indent: -9999px;` to hide the text.
+//
+//*Parameters:**
+//
+//**x:** x position of the element
+//**y:** y position of the element
+//**width:** element width
+//**height:** element height
+//**src:** background image source
+//
+//*See also:** [cssowl-sprite-display](cssowl-sprite.html#display)
+.cssowl-sprite-replace(@x, @y, @width, @height, @src) {
+  text-indent: -9999px;
+  .cssowl-sprite-display(@x, @y, @width, @height, @src);
+}
+
+//# replace-block
+//
+//Displays a sprite element with the `display: block;` attribute and uses `text-indent: -9999px;` to hide the text..
+//
+//*Parameters:**
+//
+//**x:** x position of the element
+//**y:** y position of the element
+//**width:** element width
+//**height:** element height
+//**src:** background image source
+//
+//*See also:** [cssowl-sprite-display-block](cssowl-sprite.html#displayblock)
+.cssowl-sprite-replace-block(@x, @y, @width, @height, @src) {
+  text-indent: -9999px;
+  .cssowl-sprite-display-block(@x, @y, @width, @height, @src);
+}
+
+//# replace-inline
+//
+//Displays a sprite element with the `display: inline` attribute and uses `text-indent: -9999px;` to hide the text.<br/>
+//It also adds `line-height` and `vertical-align` to vertically align it.
+//
+//*Parameters:**
+//
+//**x:** x position of the element
+//**y:** y position of the element
+//**width:** element width
+//**height:** element height
+//**src:** background image source
+//
+//*See also:** [cssowl-sprite-display-inline](cssowl-sprite.html#displayinline)
+.cssowl-sprite-replace-inline(@x, @y, @width, @height, @src, @yOffset:0, @valign:middle) {
+  text-indent: -9999px;
+  .cssowl-sprite-display-inline(@x, @y, @width, @height, @src, @yOffset, @valign);
+}
+
+//# absolute
+//
+//Positions the element with `position: absolute;`.
+//
+//*Parameters:**
+//
+//**x:** x position of the element
+//**y:** y position of the element
+//**width:** element width
+//**height:** element height
+//**src:** background image source
+//**top:** (optional, default=none) top position value
+//**right:** (optional, default=none) right position value
+//**bottom:** (optional, default=none) bottom position value
+//**left:** (optional, default=none) left position value
+//
+//*See also:** [cssowl-sprite-display](cssowl-sprite.html#display), [cssowl-absolute](cssowl-absolute.html#absolute)
+.cssowl-sprite-absolute(@x, @y, @width, @height, @src, @top:none, @right:none, @bottom:none, @left:none) {
+  .cssowl-absolute(@top, @right, @bottom, @left);
+  .cssowl-sprite-display(@x, @y, @width, @height, @src);
+}
+
+//# absolute-inside
+//
+//Positions the element with `position: absolute;` inside the bounding box.
+//
+//*Parameters:**
+//
+//**x:** x position of the element
+//**y:** y position of the element
+//**width:** element width
+//**height:** element height
+//**src:** background image source
+//**valign:** (optional, default=top) vertical alignment top|middle|bottom
+//**halign:** (optional, default=left) horizontal alignment left|center|right
+//**xOffset:** (optional, default=0) x position offset
+//**yOffset:** (optional, default=0) y position offset
+//
+//*See also:** [cssowl-sprite-display](cssowl-sprite.html#display)
+.cssowl-sprite-absolute-inside(@x, @y, @width, @height, @src, @valign:top, @halign:left, @xOffset:0, @yOffset:0) {
+  .cssowl-absolute-inside(@width, @height, @valign, @halign, @xOffset, @yOffset);
+  .cssowl-sprite-display(@x, @y, @width, @height, @src);
+}
+
+//# absolute-outside
+//
+//Positions the element with `position: absolute;` outside the bounding box.
+//
+//*Parameters:**
+//
+//**x:** x position of the element
+//**y:** y position of the element
+//**width:** element width
+//**height:** element height
+//**src:** background image source
+//**valign:** (optional, default=top) vertical alignment top|middle|bottom
+//**halign:** (optional, default=left) horizontal alignment left|center|right
+//**xOffset:** (optional, default=0) x position offset
+//**yOffset:** (optional, default=0) y position offset
+//
+//*See also:** [cssowl-sprite-display](cssowl-sprite.html#display)
+.cssowl-sprite-absolute-outside(@x, @y, @width, @height, @src, @valign:top, @halign:left, @xOffset:0, @yOffset:0) {
+  .cssowl-absolute-outside(@width, @height, @valign, @halign, @xOffset, @yOffset);
+  .cssowl-sprite-display(@x, @y, @width, @height, @src);
+}
+
+//# float-left
+//
+//Displays a sprite element with the `float: left;` attribute with optional offset.
+//
+//*Parameters:**
+//
+//**x:** x position of the element
+//**y:** y position of the element
+//**width:** element width
+//**height:** element height
+//**src:** background image source
+//**xOffset:** (optional, default=0) right margin offset
+//**yOffset:** (optional, default=0) top margin of the element
+//**valign:** (optional, default=middle) *vertical-align* attribute property
+//
+//*See also:** [cssowl-sprite-display](cssowl-sprite.html#display)
+.cssowl-sprite-float-left(@x, @y, @width, @height, @src, @xOffset:0, @yOffset:0, @valign:middle) {
+  float: left;
+  margin-right: @xOffset;
+  .cssowl-sprite-display-inline(@x, @y, @width, @height, @src, @yOffset, @valign);
+}
+
+//# float-right
+//
+//Displays a sprite element with the `float: right;` attribute and a `margin-left` as optional offset.
+//
+//*Parameters:**
+//
+//**x:** x position of the element
+//**y:** y position of the element
+//**width:** element width
+//**height:** element height
+//**src:** background image source
+//**xOffset:** (optional, default=0) left margin offset
+//**yOffset:** (optional, default=0) top margin of the element
+//**valign:** (optional, default=middle) *vertical-align* attribute property
+//
+//*See also:** [cssowl-sprite-display](cssowl-sprite.html#display)
+.cssowl-sprite-float-right(@x, @y, @width, @height, @src, @xOffset:0, @yOffset:0, @valign:middle) {
+  float: right;
+  margin-left: @xOffset;
+  .cssowl-sprite-display-inline(@x, @y, @width, @height, @src, @yOffset, @valign);
+}
+
+//# before
+//
+//Adds the element with the `:before` pseudo selector.
+//
+//*Parameters:**
+//
+//**x:** x position of the element
+//**y:** y position of the element
+//**width:** element width
+//**height:** element height
+//**src:** background image source
+//
+//*See also:** [cssowl-sprite-display-block](cssowl-sprite.html#displayblock)
+.cssowl-sprite-before(@x, @y, @width, @height, @src) {
+  &:before {
+    content: "";
+    .cssowl-sprite-display-block(@x, @y, @width, @height, @src);
+  }
+}
+
+//# before-inline
+//
+//Adds the element with the `:before` pseudo selector and displays it *inline*.
+//
+//*Parameters:**
+//
+//**x:** x position of the element
+//**y:** y position of the element
+//**width:** element width
+//**height:** element height
+//**src:** background image source
+//**xOffset:** (optional, default=0) right margin of the element
+//**yOffset:** (optional, default=0) top margin of the element
+//**valign:** (optional, default=middle) *vertical-align* attribute property
+//
+//*See also:** [cssowl-sprite-display-inline](cssowl-sprite.html#displayinline)
+.cssowl-sprite-before-inline(@x, @y, @width, @height, @src, @xOffset:0, @yOffset:0, @valign:middle) {
+  &:before {
+    content: "";
+    margin-right: @xOffset;
+    .cssowl-sprite-display-inline(@x, @y, @width, @height, @src, @yOffset, @valign);
+  }
+}
+
+//# before-float
+//
+//Adds the element with the `:before` pseudo selector and displays it *inline* with the `float: left;` attribute.
+//
+//*Parameters:**
+//
+//**x:** x position of the element
+//**y:** y position of the element
+//**width:** element width
+//**height:** element height
+//**src:** background image source
+//**xOffset:** (optional, default=0) right margin of the element
+//**yOffset:** (optional, default=0) top margin of the element
+//**valign:** (optional, default=middle) *vertical-align* attribute property
+//
+//*See also:** [cssowl-sprite-display-inline](cssowl-sprite.html#displayinline)
+.cssowl-sprite-before-float(@x, @y, @width, @height, @src, @xOffset:0, @yOffset:0, @valign:middle) {
+  &:before {
+    content: "";
+    float: left;
+    margin-right: @xOffset;
+    .cssowl-sprite-display-inline(@x, @y, @width, @height, @src, @yOffset, @valign);
+  }
+}
+
+//# before-absolute
+//
+//Adds the element with the `:before` pseudo selector and displays it with the `position: absolute;` attribute.
+//
+//*Parameters:**
+//
+//**x:** x position of the element
+//**y:** y position of the element
+//**width:** element width
+//**height:** element height
+//**src:** background image source
+//**top:** (optional, default=none) top position value
+//**right:** (optional, default=none) right position value
+//**bottom:** (optional, default=none) bottom position value
+//**left:** (optional, default=none) left position value
+//
+//*See also:** [cssowl-sprite-absolute](cssowl-sprite.html#absolute)
+.cssowl-sprite-before-absolute(@x, @y, @width, @height, @src, @top:none, @right:none, @bottom:none, @left:none) {
+  position: relative;
+  &:before {
+    content: "";
+    .cssowl-sprite-absolute(@x, @y, @width, @height, @src, @top, @right, @bottom, @left);
+  }
+}
+
+//# before-absolute-inside
+//
+//Adds the element with the `:before` pseudo selector and displays it with `position: absolute;` inside the bounding box.
+//
+//*Parameters:**
+//
+//**x:** x position of the element
+//**y:** y position of the element
+//**width:** element width
+//**height:** element height
+//**src:** background image source
+//**valign:** (optional, default=top) vertical alignment top|middle|bottom
+//**halign:** (optional, default=left) horizontal alignment left|center|right
+//**xOffset:** (optional, default=0) x position offset
+//**yOffset:** (optional, default=0) y position offset
+//
+//*See also:** [cssowl-sprite-absolute-inside](cssowl-sprite.html#absoluteinside)
+.cssowl-sprite-before-absolute-inside(@x, @y, @width, @height, @src, @valign:top, @halign:left, @xOffset:0, @yOffset:0) {
+  position: relative;
+  &:before {
+    content: "";
+    .cssowl-sprite-absolute-inside(@x, @y, @width, @height, @src, @valign, @halign, @xOffset, @yOffset);
+  }
+}
+
+//# before-absolute-outside
+//
+//Adds the element with the `:before` pseudo selector and displays it with `position: absolute;` outside the bounding box.
+//
+//*Parameters:**
+//
+//**x:** x position of the element
+//**y:** y position of the element
+//**width:** element width
+//**height:** element height
+//**src:** background image source
+//**valign:** (optional, default=top) vertical alignment top|middle|bottom
+//**halign:** (optional, default=left) horizontal alignment left|center|right
+//**xOffset:** (optional, default=0) x position offset
+//**yOffset:** (optional, default=0) y position offset
+//
+//*See also:** [cssowl-sprite-absolute-outside](cssowl-sprite.html#absoluteoutside)
+.cssowl-sprite-before-absolute-outside(@x, @y, @width, @height, @src, @valign:top, @halign:left, @xOffset:0, @yOffset:0) {
+  position: relative;
+  &:before {
+    content: "";
+    .cssowl-sprite-absolute-outside(@x, @y, @width, @height, @src, @valign, @halign, @xOffset, @yOffset);
+  }
+}
+
+//# after
+//
+//Adds the element with the `:after` pseudo selector.
+//
+//*Parameters:**
+//
+//**x:** x position of the element
+//**y:** y position of the element
+//**width:** element width
+//**height:** element height
+//**src:** background image source
+//
+//*See also:** [cssowl-sprite-display-block](cssowl-sprite.html#displayblock)
+.cssowl-sprite-after(@x, @y, @width, @height, @src) {
+  &:after {
+    content: "";
+    .cssowl-sprite-display-block(@x, @y, @width, @height, @src);
+  }
+}
+
+//# after-inline
+//
+//Adds the element with the `:after` pseudo selector and displays it *inline*.
+//
+//*Parameters:**
+//
+//**x:** x position of the element
+//**y:** y position of the element
+//**width:** element width
+//**height:** element height
+//**src:** background image source
+//**xOffset:** (optional, default=0) left margin of the element
+//**yOffset:** (optional, default=0) top margin of the element
+//**valign:** (optional, default=middle) *vertical-align* attribute property
+//
+//*See also:** [cssowl-sprite-display-inline](cssowl-sprite.html#displayinline)
+.cssowl-sprite-after-inline(@x, @y, @width, @height, @src, @xOffset:0, @yOffset:0, @valign:middle) {
+  &:after {
+    content: "";
+    margin-left: @xOffset;
+    .cssowl-sprite-display-inline(@x, @y, @width, @height, @src, @yOffset, @valign);
+  }
+}
+
+//# after-float
+//
+//Adds the element with the `:after` pseudo selector and displays it *inline* with the `float: right;` attribute.
+//
+//*Parameters:**
+//
+//**x:** x position of the element
+//**y:** y position of the element
+//**width:** element width
+//**height:** element height
+//**src:** background image source
+//**xOffset:** (optional, default=0) left margin of the element
+//**yOffset:** (optional, default=0) top margin of the element
+//**valign:** (optional, default=middle) *vertical-align* attribute property
+//
+//*See also:** [cssowl-sprite-display-inline](cssowl-sprite.html#displayinline)
+.cssowl-sprite-after-float(@x, @y, @width, @height, @src, @xOffset:0, @yOffset:0, @valign:middle) {
+  &:after {
+    content: "";
+    float: right;
+    margin-left: @xOffset;
+    .cssowl-sprite-display-inline(@x, @y, @width, @height, @src, @yOffset, @valign);
+  }
+}
+
+//# before-absolute
+//
+//Adds the element with the `:after` pseudo selector and displays it with the `position: absolute;` attribute.
+//
+//*Parameters:**
+//
+//**x:** x position of the element
+//**y:** y position of the element
+//**width:** element width
+//**height:** element height
+//**src:** background image source
+//**top:** (optional, default=none) top position value
+//**right:** (optional, default=none) right position value
+//**bottom:** (optional, default=none) bottom position value
+//**left:** (optional, default=none) left position value
+//
+//*See also:** [cssowl-sprite-absolute](cssowl-sprite.html#absolute)
+.cssowl-sprite-after-absolute(@x, @y, @width, @height, @src, @top:none, @right:none, @bottom:none, @left:none) {
+  position: relative;
+  &:after {
+    content: "";
+    .cssowl-sprite-absolute(@x, @y, @width, @height, @src, @top, @right, @bottom, @left);
+  }
+}
+
+//# after-absolute-inside
+//
+//Adds the element with the `:after` pseudo selector and displays it with `position: absolute;` inside the bounding box.
+//
+//*Parameters:**
+//
+//**x:** x position of the element
+//**y:** y position of the element
+//**width:** element width
+//**height:** element height
+//**src:** background image source
+//**valign:** (optional, default=top) vertical alignment top|middle|bottom
+//**halign:** (optional, default=left) horizontal alignment left|center|right
+//**xOffset:** (optional, default=0) x position offset
+//**yOffset:** (optional, default=0) y position offset
+//
+//*See also:** [cssowl-sprite-absolute-inside](cssowl-sprite.html#absoluteinside)
+.cssowl-sprite-after-absolute-inside(@x, @y, @width, @height, @src, @valign:top, @halign:left, @xOffset:0, @yOffset:0) {
+  position: relative;
+  &:after {
+    content: "";
+    .cssowl-sprite-absolute-inside(@x, @y, @width, @height, @src, @valign, @halign, @xOffset, @yOffset);
+  }
+}
+
+//# after-absolute-outside
+//
+//Adds the element with the `:after` pseudo selector and displays it with `position: absolute;` outside the bounding box.
+//
+//*Parameters:**
+//
+//**x:** x position of the element
+//**y:** y position of the element
+//**width:** element width
+//**height:** element height
+//**src:** background image source
+//**valign:** (optional, default=top) vertical alignment top|middle|bottom
+//**halign:** (optional, default=left) horizontal alignment left|center|right
+//**xOffset:** (optional, default=0) x position offset
+//**yOffset:** (optional, default=0) y position offset
+//
+//*See also:** [cssowl-sprite-absolute-outside](cssowl-sprite.html#absoluteoutside)
+.cssowl-sprite-after-absolute-outside(@x, @y, @width, @height, @src, @valign:top, @halign:left, @xOffset:0, @yOffset:0) {
+  position: relative;
+  &:after {
+    content: "";
+    .cssowl-sprite-absolute-outside(@x, @y, @width, @height, @src, @valign, @halign, @xOffset, @yOffset);
   }
 }
