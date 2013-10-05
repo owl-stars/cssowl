@@ -1,5 +1,5 @@
-# [Cssowl](http://cssowl.owl-stars.com)
-[![Build Status](https://secure.travis-ci.org/twbs/bootstrap.png)](http://travis-ci.org/twbs/bootstrap) [![devDependency Status](https://david-dm.org/twbs/bootstrap/dev-status.png)](https://david-dm.org/twbs/bootstrap#info=devDependencies)
+# [Cssowl](http://cssowl.owl-stars.com) [![Build Status](https://travis-ci.org/owl-stars/cssowl.png?branch=master)](https://travis-ci.org/owl-stars/cssowl) [![devDependency Status](https://david-dm.org/owl-stars/cssowl/dev-status.png)](https://david-dm.org/owl-stars/cssowl#info=devDependencies)
+
 
 Cssowl is [Owl-Stars](http://www.owl-stars.com) mixins library with support for [Less](http://lesscss.org), [Sass/Scss](http://sass-lang.com/) and [Stylus](http://learnboost.github.io/stylus/).
 
