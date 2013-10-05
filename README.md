@@ -1,5 +1,6 @@
-# [Cssowl](http://cssowl.owl-stars.com) [![Build Status](https://travis-ci.org/owl-stars/cssowl.png?branch=master)](https://travis-ci.org/owl-stars/cssowl) [![devDependency Status](https://david-dm.org/owl-stars/cssowl/dev-status.png)](https://david-dm.org/owl-stars/cssowl#info=devDependencies)
+# [Cssowl](http://cssowl.owl-stars.com)
 
+[![Build Status](https://travis-ci.org/owl-stars/cssowl.png?branch=master)](https://travis-ci.org/owl-stars/cssowl) [![devDependency Status](https://david-dm.org/owl-stars/cssowl/dev-status.png)](https://david-dm.org/owl-stars/cssowl#info=devDependencies)
 
 Cssowl is [Owl-Stars](http://www.owl-stars.com) mixins library with support for [Less](http://lesscss.org), [Sass/Scss](http://sass-lang.com/) and [Stylus](http://learnboost.github.io/stylus/).
 
@@ -21,27 +22,27 @@ Within the download you'll find the following directories and files, grouping sy
 
 ```
 cssowl/
-├── lib/
-│   ├── less/
-│   │   ├── cssowl/
-│   │   │   ├── absolute.less
-│   │   │   └── sprite.less
-│   │   └── cssowl.less
-│   ├── sass/
-│   │   ├── cssowl/
-│   │   │   ├── absolute.sass
-│   │   │   └── sprite.sass
-│   │   └── cssowl.sass
-│   ├── scss/
-│   │   ├── cssowl/
-│   │   │   ├── absolute.scss
-│   │   │   └── sprite.scss
-│   │   └── cssowl.scss
-│   └── stylus/
-│       ├── cssowl/
-│       │   ├── absolute.styl
-│       │   └── sprite.styl
-│       └── cssowl.styl
+└── lib/
+    ├── less/
+    │   ├── cssowl/
+    │   │   ├── absolute.less
+    │   │   └── sprite.less
+    │   └── cssowl.less
+    ├── sass/
+    │   ├── cssowl/
+    │   │   ├── absolute.sass
+    │   │   └── sprite.sass
+    │   └── cssowl.sass
+    ├── scss/
+    │   ├── cssowl/
+    │   │   ├── absolute.scss
+    │   │   └── sprite.scss
+    │   └── cssowl.scss
+    └── stylus/
+        ├── cssowl/
+        │   ├── absolute.styl
+        │   └── sprite.styl
+        └── cssowl.styl
 ```
 
 ## Doc Comments
@@ -49,4 +50,4 @@ cssowl/
 Cssowl's mixins and example doc comments parsed and rendered using [Styledocco](http://jacobrask.github.io/styledocco/) and are included in the `docs` subdirectory.
 
 ## License
-Copyright (c) WE JUST DO STUFF, Kim & Pollak GbR under the [MIT licenses](https://github.com/owl-stars/cssowl/blob/master/LICENSE)
+Copyright (c) We Just Do Stuff, Kim & Pollak GbR under the [MIT licenses](https://github.com/owl-stars/cssowl/blob/master/LICENSE)
