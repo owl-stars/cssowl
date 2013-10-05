@@ -121,6 +121,14 @@ module.exports = (grunt) ->
           timeout: 10000
         src: ['test/specs/**/*.test.coffee']
 
+    bump:
+      options:
+        createTag: false
+        commitFiles: ['-a']
+        updateConfigs: ['pkg']
+        files: ['package.json', 'bower.json']
+
+
   # Load npm tasks
   grunt.loadNpmTasks "grunt-mocha-test"
   grunt.loadNpmTasks "grunt-styledocco"
@@ -132,6 +140,7 @@ module.exports = (grunt) ->
   grunt.loadNpmTasks "grunt-contrib-csslint"
   grunt.loadNpmTasks "grunt-contrib-clean"
   grunt.loadNpmTasks "grunt-contrib-cssmin"
+  grunt.loadNpmTasks "grunt-bump"
 
   # Register tasks
   grunt.registerTask 'default', ['coffeelint']
