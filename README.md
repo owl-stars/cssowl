@@ -49,5 +49,8 @@ cssowl/
 
 Cssowl's mixins and example doc comments parsed and rendered using [Styledocco](http://jacobrask.github.io/styledocco/) and are included in the `docs` subdirectory.
 
+## Contributing
+In lieu of a formal styleguide, take care to maintain the existing coding style. Add unit tests and examples for any new or changed functionality. Lint and test your code using [Grunt](http://gruntjs.com/).
+
 ## License
 Copyright (c) We Just Do Stuff, Kim & Pollak GbR under the [MIT licenses](https://github.com/owl-stars/cssowl/blob/master/LICENSE)
