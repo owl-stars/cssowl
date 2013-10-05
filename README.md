@@ -9,7 +9,7 @@ It's been created to work with Owl-Stars Plugins like [Spriteowl](http://spriteo
 
 Three quick start options are available:
 
-* [Download the latest release](https://github.com/owl-stars/cssowl/releases/tag/v1.0.0).
+* [Download the latest release](https://github.com/owl-stars/cssowl/releases).
 * Clone the repo: `git clone git://github.com/owl-stars/cssowl.git`.
 * Install with [Bower](http://bower.io): `bower install cssowl`.
 

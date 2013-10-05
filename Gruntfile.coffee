@@ -123,6 +123,7 @@ module.exports = (grunt) ->
 
     bump:
       options:
+        commit: false
         pushTo: 'origin'
         createTag: false
         commitFiles: ['-a']

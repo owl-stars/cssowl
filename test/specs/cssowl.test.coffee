@@ -1,4 +1,4 @@
-api = require process.cwd() + "/test/inc/Api"
+api = require "../inc/Api.coffee"
 
 module.exports =
   "Test #cssowl":
