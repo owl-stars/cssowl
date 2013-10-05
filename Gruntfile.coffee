@@ -119,7 +119,6 @@ module.exports = (grunt) ->
           bail: true
           ui: 'exports'
           timeout: 10000
-          reporter: 'TAP'
         src: ['test/specs/**/*.test.coffee']
 
   # Load npm tasks
