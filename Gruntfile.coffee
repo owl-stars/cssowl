@@ -11,6 +11,8 @@ module.exports = (grunt) ->
           level: "error"
 
     clean:
+      docs:
+        src: ["lib/**/*.css", "docs/examples/*.css"]
       test:
         src: ["test/tmp"]
 
@@ -50,8 +52,7 @@ module.exports = (grunt) ->
           "text-indent": false
           "adjoining-classes": false
           "duplicate-background-images": false
-          "display-property-grouping": false
-        src: ['test/**/*.css']
+        src: ['test/tmp/*.css']
 
     styledocco:
       cssowl:
@@ -89,8 +90,28 @@ module.exports = (grunt) ->
 
     watch:
       docs:
-        files: ['docs/examples/examples.*', 'lib/**/*.*']
+        files: [
+          'docs/examples/examples.less'
+          'docs/examples/examples.sass'
+          'docs/examples/examples.scss'
+          'docs/examples/examples.styl'
+          'lib/**/*.less'
+          'lib/**/*.sass'
+          'lib/**/*.scss'
+          'lib/**/*.styl'
+        ]
         tasks: ['docs']
+      test:
+        files: [
+          'docs/examples/examples.*'
+          'test/fixtures/*.*'
+          'test/**/*.coffee'
+          'lib/**/*.less'
+          'lib/**/*.sass'
+          'lib/**/*.scss'
+          'lib/**/*.styl'
+        ]
+        tasks: ['test']
 
     mochaTest:
       test:
@@ -115,5 +136,5 @@ module.exports = (grunt) ->
 
   # Register tasks
   grunt.registerTask 'default', ['coffeelint']
-  grunt.registerTask 'docs', ['default', 'styledocco']
-  grunt.registerTask 'test', ['default', 'clean', 'less', 'sass', 'stylus', 'csslint', 'cssmin', 'mochaTest']
+  grunt.registerTask 'docs', ['default', 'styledocco', 'clean:docs']
+  grunt.registerTask 'test', ['default', 'clean:test', 'less', 'sass', 'stylus', 'csslint', 'cssmin', 'mochaTest']

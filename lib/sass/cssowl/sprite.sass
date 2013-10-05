@@ -193,13 +193,13 @@
 //* **src:** background image source
 //* **xOffset:** (optional, default=0) right margin offset
 //* **yOffset:** (optional, default=0) top margin of the element
-//* **valign:** (optional, default=middle) *vertical-align* attribute property
 //
 //**See also:** [cssowl-sprite-display](cssowl-sprite.html#display)
-@mixin cssowl-sprite-float-left($x, $y, $width, $height, $src, $xOffset:0, $yOffset:0, $valign:middle)
+@mixin cssowl-sprite-float-left($x, $y, $width, $height, $src, $xOffset:0, $yOffset:0)
   float: left
+  margin-top: $yOffset
   margin-right: $xOffset
-  @include cssowl-sprite-display-inline($x, $y, $width, $height, $src, $yOffset, $valign)
+  @include cssowl-sprite-display-block($x, $y, $width, $height, $src)
 
 //# float-right
 //
@@ -214,13 +214,13 @@
 //* **src:** background image source
 //* **xOffset:** (optional, default=0) left margin offset
 //* **yOffset:** (optional, default=0) top margin of the element
-//* **valign:** (optional, default=middle) *vertical-align* attribute property
 //
 //**See also:** [cssowl-sprite-display](cssowl-sprite.html#display)
-@mixin cssowl-sprite-float-right($x, $y, $width, $height, $src, $xOffset:0, $yOffset:0, $valign:middle)
+@mixin cssowl-sprite-float-right($x, $y, $width, $height, $src, $xOffset:0, $yOffset:0)
   float: right
+  margin-top: $yOffset
   margin-left: $xOffset
-  @include cssowl-sprite-display-inline($x, $y, $width, $height, $src, $yOffset, $valign)
+  @include cssowl-sprite-display-block($x, $y, $width, $height, $src)
 
 
 
@@ -266,7 +266,7 @@
 
 //# before-float
 //
-//Adds the element with the `:before` pseudo selector and displays it *inline* with the `float: left;` attribute.
+//Adds the element with the `:before` pseudo selector and displays it with the `float: left;` attribute.
 //
 //**Parameters:**
 //
@@ -277,15 +277,15 @@
 //* **src:** background image source
 //* **xOffset:** (optional, default=0) right margin of the element
 //* **yOffset:** (optional, default=0) top margin of the element
-//* **valign:** (optional, default=middle) *vertical-align* attribute property
 //
 //**See also:** [cssowl-sprite-display-inline](cssowl-sprite.html#displayinline)
-@mixin cssowl-sprite-before-float($x, $y, $width, $height, $src, $xOffset:0, $yOffset:0, $valign:middle)
+@mixin cssowl-sprite-before-float($x, $y, $width, $height, $src, $xOffset:0, $yOffset:0)
   &:before
     content: ""
     float: left
+    margin-top: $yOffset
     margin-right: $xOffset
-    @include cssowl-sprite-display-inline($x, $y, $width, $height, $src, $yOffset, $valign)
+    @include cssowl-sprite-display-block($x, $y, $width, $height, $src)
 
 //# before-absolute
 //
@@ -400,7 +400,7 @@
 
 //# after-float
 //
-//Adds the element with the `:after` pseudo selector and displays it *inline* with the `float: right;` attribute.
+//Adds the element with the `:after` pseudo selector and displays it with the `float: right;` attribute.
 //
 //**Parameters:**
 //
@@ -411,15 +411,15 @@
 //* **src:** background image source
 //* **xOffset:** (optional, default=0) left margin of the element
 //* **yOffset:** (optional, default=0) top margin of the element
-//* **valign:** (optional, default=middle) *vertical-align* attribute property
 //
 //**See also:** [cssowl-sprite-display-inline](cssowl-sprite.html#displayinline)
-@mixin cssowl-sprite-after-float($x, $y, $width, $height, $src, $xOffset:0, $yOffset:0, $valign:middle)
+@mixin cssowl-sprite-after-float($x, $y, $width, $height, $src, $xOffset:0, $yOffset:0)
   &:after
     content: ""
     float: right
+    margin-top: $xOffset
     margin-left: $xOffset
-    @include cssowl-sprite-display-inline($x, $y, $width, $height, $src, $yOffset, $valign)
+    @include cssowl-sprite-display-block($x, $y, $width, $height, $src)
 
 //# before-absolute
 //

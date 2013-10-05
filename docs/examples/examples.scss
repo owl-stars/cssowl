@@ -1,8 +1,9 @@
+//Import the cssowl library
 @import "../../lib/scss/cssowl";
 
-//# Display
-//
-//### cssowl-sprite-display
+
+
+//# cssowl-sprite-display
 //
 //Displays a sprite element.
 //
@@ -15,7 +16,7 @@
   @include cssowl-sprite-display(-10px, -10px, 91px, 95px, url("sprite.png"));
 }
 
-//### cssowl-sprite-display-block
+//# cssowl-sprite-display-block
 //
 //Same as *[sprite-display](#display)* but with `display: block` attribute.
 //
@@ -28,7 +29,7 @@
   @include cssowl-sprite-display-block(-10px, -10px, 91px, 95px, url("sprite.png"));
 }
 
-//### cssowl-sprite-display-inline
+//# cssowl-sprite-display-inline
 //
 //Same as *[sprite-display](#display)* but with `display: inline-block` attribute.
 //
@@ -41,9 +42,9 @@
   @include cssowl-sprite-display-inline(-10px, -10px, 91px, 95px, url("sprite.png"));
 }
 
-//# Replace
-//
-//### cssowl-sprite-replace
+
+
+//# cssowl-sprite-replace
 //
 //Displays a sprite element and uses `text-indent: -9999px;` to hide the text.
 //
@@ -56,7 +57,7 @@
   @include cssowl-sprite-replace(-10px, -10px, 91px, 95px, url("sprite.png"));
 }
 
-//### cssowl-sprite-replace-block
+//# cssowl-sprite-replace-block
 //
 //Same as *[sprite-replace](#replace)* but with `display: block` attribute.
 //
@@ -69,7 +70,7 @@
   @include cssowl-sprite-replace-block(-10px, -10px, 91px, 95px, url("sprite.png"));
 }
 
-//### cssowl-sprite-replace-inline
+//# cssowl-sprite-replace-inline
 //
 //Same as *[sprite-replace](#replace)* but with `display: inline-block` attribute.
 //
@@ -82,9 +83,9 @@
   @include cssowl-sprite-replace-inline(-10px, -10px, 91px, 95px, url("sprite.png"));
 }
 
-//# Absolute
-//
-//### cssowl-sprite-absolute
+
+
+//# cssowl-sprite-absolute
 //
 //Displays and positions a sprite element with `position: absolute;` according to your parameters.
 //
@@ -110,7 +111,7 @@
   }
 }
 
-//### cssowl-sprite-absolute-inside
+//# cssowl-sprite-absolute-inside
 //
 //Displays and positions a sprite element with `position: absolute;` inside the bounding box.
 //
@@ -157,7 +158,7 @@
   }
 }
 
-//### cssowl-sprite-absolute-outside
+//# cssowl-sprite-absolute-outside
 //
 //Displays and positions a sprite element with `position: absolute;` outside the bounding box.
 //
@@ -204,9 +205,9 @@
   }
 }
 
-//# Float
-//
-//### cssowl-sprite-float-left
+
+
+//# cssowl-sprite-float-left
 //
 //Displays a sprite element with the `float: left;` attribute with optional offset.
 //
@@ -219,10 +220,10 @@
 //</div>
 //```
 .example-float-left {
-  @include cssowl-sprite-float-left(-110px, -30px, 15px, 15px, url("sprite.png"), 5px, 8px);
+  @include cssowl-sprite-float-left(-110px, -30px, 15px, 15px, url("sprite.png"), 5px, 11px);
 }
 
-//### cssowl-sprite-float-right
+//# cssowl-sprite-float-right
 //
 //Displays a sprite element with the `float: right;` attribute and a `margin-left` as optional offset.
 //
@@ -235,12 +236,12 @@
 //</div>
 //```
 .example-float-right {
-  @include cssowl-sprite-float-right(-110px, -30px, 15px, 15px, url("sprite.png"), 5px, 8px);
+  @include cssowl-sprite-float-right(-110px, -30px, 15px, 15px, url("sprite.png"), 5px, 11px);
 }
 
-//# Before
-//
-//### cssowl-sprite-before
+
+
+//# cssowl-sprite-before
 //
 //Adds the element with the `:before` pseudo selector to display the element.
 //
@@ -253,7 +254,7 @@
   @include cssowl-sprite-before(-110px, -30px, 15px, 15px, url("sprite.png"));
 }
 
-//### cssowl-sprite-before-inline
+//# cssowl-sprite-before-inline
 //
 //Adds the element with the `:before` pseudo selector and displays it *inline*.
 //
@@ -266,7 +267,7 @@
   @include cssowl-sprite-before-inline(-110px, -30px, 15px, 15px, url("sprite.png"), 5px, 1px, top);
 }
 
-//### cssowl-sprite-float
+//# cssowl-sprite-before-float
 //
 //Adds the element with the `:before` pseudo selector and displays it *inline* with the `float: left;` attribute.
 //
@@ -276,10 +277,10 @@
 //<div class="example-before-float">Lorem ipsum dolor.</div>
 //```
 .example-before-float {
-  @include cssowl-sprite-before-float(-110px, -30px, 15px, 15px, url("sprite.png"), 5px, 1px, top);
+  @include cssowl-sprite-before-float(-110px, -30px, 15px, 15px, url("sprite.png"), 5px, 1px);
 }
 
-//### cssowl-sprite-absolute
+//# cssowl-sprite-before-absolute
 //
 //Adds the element with the `:before` pseudo selector and displays it with the `position: absolute;` attribute.
 //
@@ -292,7 +293,7 @@
   @include cssowl-sprite-before-absolute(-110px, -30px, 15px, 15px, url("sprite.png"), 1px, none, none, -20px);
 }
 
-//### cssowl-sprite-absolute-inside
+//# cssowl-sprite-before-absolute-inside
 //
 //Adds the element with the `:before` pseudo selector and displays displays it with `position: absolute;` inside the bounding box.
 //
@@ -305,7 +306,7 @@
   @include cssowl-sprite-before-absolute-inside(-110px, -20px, 7px, 4px, url("sprite.png"), top, center);
 }
 
-//### cssowl-sprite-absolute-outside
+//# cssowl-sprite-before-absolute-outside
 //
 //Adds the element with the `:before` pseudo selector and displays displays it with `position: absolute;` outside the bounding box.
 //
@@ -318,9 +319,9 @@
   @include cssowl-sprite-before-absolute-outside(-120px, -20px, 7px, 4px, url("sprite.png"), top, center);
 }
 
-//# After
-//
-//### cssowl-sprite-after
+
+
+//# cssowl-sprite-after
 //
 //Adds the element with the `:after` pseudo selector to display the element.
 //
@@ -333,7 +334,7 @@
   @include cssowl-sprite-after(-110px, -30px, 15px, 15px, url("sprite.png"));
 }
 
-//### cssowl-sprite-after-inline
+//# cssowl-sprite-after-inline
 //
 //Adds the element with the `:after` pseudo selector and displays it *inline*.
 //
@@ -346,9 +347,9 @@
   @include cssowl-sprite-after-inline(-110px, -30px, 15px, 15px, url("sprite.png"), 5px, 1px, top);
 }
 
-//### cssowl-sprite-float
+//# cssowl-sprite-after-float
 //
-//Adds the element with the `:after` pseudo selector and displays it *inline* with the `float: left;` attribute.
+//Adds the element with the `:after` pseudo selector and displays it with the `float: left;` attribute.
 //
 //*Examples:**
 //
@@ -356,10 +357,10 @@
 //<div class="example-after-float">Lorem ipsum dolor.</div>
 //```
 .example-after-float {
-  @include cssowl-sprite-after-float(-110px, -30px, 15px, 15px, url("sprite.png"), 5px, 1px, top);
+  @include cssowl-sprite-after-float(-110px, -30px, 15px, 15px, url("sprite.png"), 5px, 1px);
 }
 
-//### cssowl-sprite-absolute
+//# cssowl-sprite-after-absolute
 //
 //Adds the element with the `:after` pseudo selector and displays it with the `position: absolute;` attribute.
 //
@@ -372,7 +373,7 @@
   @include cssowl-sprite-after-absolute(-110px, -30px, 15px, 15px, url("sprite.png"), 1px, 0);
 }
 
-//### cssowl-sprite-absolute-inside
+//# cssowl-sprite-after-absolute-inside
 //
 //Adds the element with the `:after` pseudo selector and displays displays it with `position: absolute;` inside the bounding box.
 //
@@ -385,7 +386,7 @@
   @include cssowl-sprite-after-absolute-inside(-110px, -20px, 7px, 4px, url("sprite.png"), top, center);
 }
 
-//### cssowl-sprite-absolute-outside
+//# cssowl-sprite-after-absolute-outside
 //
 //Adds the element with the `:after` pseudo selector and displays displays it with `position: absolute;` outside the bounding box.
 //

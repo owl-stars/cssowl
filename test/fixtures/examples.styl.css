@@ -156,11 +156,9 @@
 }
 .example-float-left {
   float: left;
+  margin-top: 11px;
   margin-right: 5px;
-  line-height: 15px;
-  margin-top: 8px;
-  display: inline-block;
-  vertical-align: middle;
+  display: block;
   width: 15px;
   height: 15px;
   background-image: url("sprite.png");
@@ -169,11 +167,9 @@
 }
 .example-float-right {
   float: right;
+  margin-top: 11px;
   margin-left: 5px;
-  line-height: 15px;
-  margin-top: 8px;
-  display: inline-block;
-  vertical-align: middle;
+  display: block;
   width: 15px;
   height: 15px;
   background-image: url("sprite.png");
@@ -205,11 +201,9 @@
 .example-before-float:before {
   content: "";
   float: left;
-  margin-right: 5px;
-  line-height: 15px;
   margin-top: 1px;
-  display: inline-block;
-  vertical-align: top;
+  margin-right: 5px;
+  display: block;
   width: 15px;
   height: 15px;
   background-image: url("sprite.png");
@@ -274,11 +268,9 @@
 .example-after-float:after {
   content: "";
   float: right;
-  margin-left: 5px;
-  line-height: 15px;
   margin-top: 1px;
-  display: inline-block;
-  vertical-align: top;
+  margin-left: 5px;
+  display: block;
   width: 15px;
   height: 15px;
   background-image: url("sprite.png");

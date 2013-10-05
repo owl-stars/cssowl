@@ -151,13 +151,13 @@ It also adds <code>line-height</code> and <code>vertical-align</code> to vertica
 <li><strong>src:</strong> background image source</li>
 <li><strong>xOffset:</strong> (optional, default=0) right margin offset</li>
 <li><strong>yOffset:</strong> (optional, default=0) top margin of the element</li>
-<li><strong>valign:</strong> (optional, default=middle) <em>vertical-align</em> attribute property</li>
 </ul>
 <p><strong>See also:</strong> <a href="cssowl-sprite.html#display">cssowl-sprite-display</a></p>
-</div><div class="code"><pre><code>@mixin cssowl-sprite-float-left($x, $y, $width, $height, $src, $xOffset:0, $yOffset:0, $valign:middle)
+</div><div class="code"><pre><code>@mixin cssowl-sprite-float-left($x, $y, $width, $height, $src, $xOffset:0, $yOffset:0)
   float: left
+  margin-top: $yOffset
   margin-right: $xOffset
-  @include cssowl-sprite-display-inline($x, $y, $width, $height, $src, $yOffset, $valign)</code></pre></div></article><article id="floatright" class="section"><div class="docs"><a href="#floatright" class="permalink"><svg viewBox="0 0 512 512" height="32" width="32" class="icon"><path d="M156.2,199.7c7.5-7.5,15.9-13.8,24.8-18.7c49.6-27.3,113.1-12.8,145,35.5l-38.5,38.5c-11.1-25.2-38.5-39.6-65.8-33.5c-10.3,2.3-20.1,7.4-28,15.4l-73.9,73.9c-22.4,22.4-22.4,58.9,0,81.4c22.4,22.4,58.9,22.4,81.4,0l22.8-22.8c20.7,8.2,42.9,11.5,64.9,9.9l-50.3,50.3c-43.1,43.1-113,43.1-156.1,0c-43.1-43.1-43.1-113-0-156.1L156.2,199.7z M273.6,82.3l-50.3,50.3c21.9-1.6,44.2,1.6,64.9,9.9l22.8-22.8c22.4-22.4,58.9-22.4,81.4,0c22.4,22.4,22.4,58.9,0,81.4l-73.9,73.9c-22.5,22.5-59.1,22.3-81.4,0c-5.2-5.2-9.7-11.7-12.5-18l-38.5,38.5c4,6.1,8.3,11.5,13.7,16.9c13.9,13.9,31.7,24.3,52.1,29.3c26.5,6.4,54.8,2.8,79.2-10.6c8.9-4.9,17.3-11.1,24.8-18.7l73.9-73.9c43.1-43.1,43.1-113,0-156.1C386.6,39.2,316.7,39.2,273.6,82.3z"></path></svg></a><h1 id="floatright">float-right</h1>
+  @include cssowl-sprite-display-block($x, $y, $width, $height, $src)</code></pre></div></article><article id="floatright" class="section"><div class="docs"><a href="#floatright" class="permalink"><svg viewBox="0 0 512 512" height="32" width="32" class="icon"><path d="M156.2,199.7c7.5-7.5,15.9-13.8,24.8-18.7c49.6-27.3,113.1-12.8,145,35.5l-38.5,38.5c-11.1-25.2-38.5-39.6-65.8-33.5c-10.3,2.3-20.1,7.4-28,15.4l-73.9,73.9c-22.4,22.4-22.4,58.9,0,81.4c22.4,22.4,58.9,22.4,81.4,0l22.8-22.8c20.7,8.2,42.9,11.5,64.9,9.9l-50.3,50.3c-43.1,43.1-113,43.1-156.1,0c-43.1-43.1-43.1-113-0-156.1L156.2,199.7z M273.6,82.3l-50.3,50.3c21.9-1.6,44.2,1.6,64.9,9.9l22.8-22.8c22.4-22.4,58.9-22.4,81.4,0c22.4,22.4,22.4,58.9,0,81.4l-73.9,73.9c-22.5,22.5-59.1,22.3-81.4,0c-5.2-5.2-9.7-11.7-12.5-18l-38.5,38.5c4,6.1,8.3,11.5,13.7,16.9c13.9,13.9,31.7,24.3,52.1,29.3c26.5,6.4,54.8,2.8,79.2-10.6c8.9-4.9,17.3-11.1,24.8-18.7l73.9-73.9c43.1-43.1,43.1-113,0-156.1C386.6,39.2,316.7,39.2,273.6,82.3z"></path></svg></a><h1 id="floatright">float-right</h1>
 <p>Displays a sprite element with the <code>float: right;</code> attribute and a <code>margin-left</code> as optional offset.</p>
 <p><strong>Parameters:</strong></p>
 <ul>
@@ -168,13 +168,13 @@ It also adds <code>line-height</code> and <code>vertical-align</code> to vertica
 <li><strong>src:</strong> background image source</li>
 <li><strong>xOffset:</strong> (optional, default=0) left margin offset</li>
 <li><strong>yOffset:</strong> (optional, default=0) top margin of the element</li>
-<li><strong>valign:</strong> (optional, default=middle) <em>vertical-align</em> attribute property</li>
 </ul>
 <p><strong>See also:</strong> <a href="cssowl-sprite.html#display">cssowl-sprite-display</a></p>
-</div><div class="code"><pre><code>@mixin cssowl-sprite-float-right($x, $y, $width, $height, $src, $xOffset:0, $yOffset:0, $valign:middle)
+</div><div class="code"><pre><code>@mixin cssowl-sprite-float-right($x, $y, $width, $height, $src, $xOffset:0, $yOffset:0)
   float: right
+  margin-top: $yOffset
   margin-left: $xOffset
-  @include cssowl-sprite-display-inline($x, $y, $width, $height, $src, $yOffset, $valign)</code></pre></div></article><article id="before" class="section"><div class="docs"><a href="#before" class="permalink"><svg viewBox="0 0 512 512" height="32" width="32" class="icon"><path d="M156.2,199.7c7.5-7.5,15.9-13.8,24.8-18.7c49.6-27.3,113.1-12.8,145,35.5l-38.5,38.5c-11.1-25.2-38.5-39.6-65.8-33.5c-10.3,2.3-20.1,7.4-28,15.4l-73.9,73.9c-22.4,22.4-22.4,58.9,0,81.4c22.4,22.4,58.9,22.4,81.4,0l22.8-22.8c20.7,8.2,42.9,11.5,64.9,9.9l-50.3,50.3c-43.1,43.1-113,43.1-156.1,0c-43.1-43.1-43.1-113-0-156.1L156.2,199.7z M273.6,82.3l-50.3,50.3c21.9-1.6,44.2,1.6,64.9,9.9l22.8-22.8c22.4-22.4,58.9-22.4,81.4,0c22.4,22.4,22.4,58.9,0,81.4l-73.9,73.9c-22.5,22.5-59.1,22.3-81.4,0c-5.2-5.2-9.7-11.7-12.5-18l-38.5,38.5c4,6.1,8.3,11.5,13.7,16.9c13.9,13.9,31.7,24.3,52.1,29.3c26.5,6.4,54.8,2.8,79.2-10.6c8.9-4.9,17.3-11.1,24.8-18.7l73.9-73.9c43.1-43.1,43.1-113,0-156.1C386.6,39.2,316.7,39.2,273.6,82.3z"></path></svg></a><h1 id="before">before</h1>
+  @include cssowl-sprite-display-block($x, $y, $width, $height, $src)</code></pre></div></article><article id="before" class="section"><div class="docs"><a href="#before" class="permalink"><svg viewBox="0 0 512 512" height="32" width="32" class="icon"><path d="M156.2,199.7c7.5-7.5,15.9-13.8,24.8-18.7c49.6-27.3,113.1-12.8,145,35.5l-38.5,38.5c-11.1-25.2-38.5-39.6-65.8-33.5c-10.3,2.3-20.1,7.4-28,15.4l-73.9,73.9c-22.4,22.4-22.4,58.9,0,81.4c22.4,22.4,58.9,22.4,81.4,0l22.8-22.8c20.7,8.2,42.9,11.5,64.9,9.9l-50.3,50.3c-43.1,43.1-113,43.1-156.1,0c-43.1-43.1-43.1-113-0-156.1L156.2,199.7z M273.6,82.3l-50.3,50.3c21.9-1.6,44.2,1.6,64.9,9.9l22.8-22.8c22.4-22.4,58.9-22.4,81.4,0c22.4,22.4,22.4,58.9,0,81.4l-73.9,73.9c-22.5,22.5-59.1,22.3-81.4,0c-5.2-5.2-9.7-11.7-12.5-18l-38.5,38.5c4,6.1,8.3,11.5,13.7,16.9c13.9,13.9,31.7,24.3,52.1,29.3c26.5,6.4,54.8,2.8,79.2-10.6c8.9-4.9,17.3-11.1,24.8-18.7l73.9-73.9c43.1-43.1,43.1-113,0-156.1C386.6,39.2,316.7,39.2,273.6,82.3z"></path></svg></a><h1 id="before">before</h1>
 <p>Adds the element with the <code>:before</code> pseudo selector.</p>
 <p><strong>Parameters:</strong></p>
 <ul>
@@ -207,7 +207,7 @@ It also adds <code>line-height</code> and <code>vertical-align</code> to vertica
     content: ""
     margin-right: $xOffset
     @include cssowl-sprite-display-inline($x, $y, $width, $height, $src, $yOffset, $valign)</code></pre></div></article><article id="beforefloat" class="section"><div class="docs"><a href="#beforefloat" class="permalink"><svg viewBox="0 0 512 512" height="32" width="32" class="icon"><path d="M156.2,199.7c7.5-7.5,15.9-13.8,24.8-18.7c49.6-27.3,113.1-12.8,145,35.5l-38.5,38.5c-11.1-25.2-38.5-39.6-65.8-33.5c-10.3,2.3-20.1,7.4-28,15.4l-73.9,73.9c-22.4,22.4-22.4,58.9,0,81.4c22.4,22.4,58.9,22.4,81.4,0l22.8-22.8c20.7,8.2,42.9,11.5,64.9,9.9l-50.3,50.3c-43.1,43.1-113,43.1-156.1,0c-43.1-43.1-43.1-113-0-156.1L156.2,199.7z M273.6,82.3l-50.3,50.3c21.9-1.6,44.2,1.6,64.9,9.9l22.8-22.8c22.4-22.4,58.9-22.4,81.4,0c22.4,22.4,22.4,58.9,0,81.4l-73.9,73.9c-22.5,22.5-59.1,22.3-81.4,0c-5.2-5.2-9.7-11.7-12.5-18l-38.5,38.5c4,6.1,8.3,11.5,13.7,16.9c13.9,13.9,31.7,24.3,52.1,29.3c26.5,6.4,54.8,2.8,79.2-10.6c8.9-4.9,17.3-11.1,24.8-18.7l73.9-73.9c43.1-43.1,43.1-113,0-156.1C386.6,39.2,316.7,39.2,273.6,82.3z"></path></svg></a><h1 id="beforefloat">before-float</h1>
-<p>Adds the element with the <code>:before</code> pseudo selector and displays it <em>inline</em> with the <code>float: left;</code> attribute.</p>
+<p>Adds the element with the <code>:before</code> pseudo selector and displays it with the <code>float: left;</code> attribute.</p>
 <p><strong>Parameters:</strong></p>
 <ul>
 <li><strong>x:</strong> x position of the element</li>
@@ -217,15 +217,15 @@ It also adds <code>line-height</code> and <code>vertical-align</code> to vertica
 <li><strong>src:</strong> background image source</li>
 <li><strong>xOffset:</strong> (optional, default=0) right margin of the element</li>
 <li><strong>yOffset:</strong> (optional, default=0) top margin of the element</li>
-<li><strong>valign:</strong> (optional, default=middle) <em>vertical-align</em> attribute property</li>
 </ul>
 <p><strong>See also:</strong> <a href="cssowl-sprite.html#displayinline">cssowl-sprite-display-inline</a></p>
-</div><div class="code"><pre><code>@mixin cssowl-sprite-before-float($x, $y, $width, $height, $src, $xOffset:0, $yOffset:0, $valign:middle)
+</div><div class="code"><pre><code>@mixin cssowl-sprite-before-float($x, $y, $width, $height, $src, $xOffset:0, $yOffset:0)
   &:before
     content: ""
     float: left
+    margin-top: $yOffset
     margin-right: $xOffset
-    @include cssowl-sprite-display-inline($x, $y, $width, $height, $src, $yOffset, $valign)</code></pre></div></article><article id="beforeabsolute" class="section"><div class="docs"><a href="#beforeabsolute" class="permalink"><svg viewBox="0 0 512 512" height="32" width="32" class="icon"><path d="M156.2,199.7c7.5-7.5,15.9-13.8,24.8-18.7c49.6-27.3,113.1-12.8,145,35.5l-38.5,38.5c-11.1-25.2-38.5-39.6-65.8-33.5c-10.3,2.3-20.1,7.4-28,15.4l-73.9,73.9c-22.4,22.4-22.4,58.9,0,81.4c22.4,22.4,58.9,22.4,81.4,0l22.8-22.8c20.7,8.2,42.9,11.5,64.9,9.9l-50.3,50.3c-43.1,43.1-113,43.1-156.1,0c-43.1-43.1-43.1-113-0-156.1L156.2,199.7z M273.6,82.3l-50.3,50.3c21.9-1.6,44.2,1.6,64.9,9.9l22.8-22.8c22.4-22.4,58.9-22.4,81.4,0c22.4,22.4,22.4,58.9,0,81.4l-73.9,73.9c-22.5,22.5-59.1,22.3-81.4,0c-5.2-5.2-9.7-11.7-12.5-18l-38.5,38.5c4,6.1,8.3,11.5,13.7,16.9c13.9,13.9,31.7,24.3,52.1,29.3c26.5,6.4,54.8,2.8,79.2-10.6c8.9-4.9,17.3-11.1,24.8-18.7l73.9-73.9c43.1-43.1,43.1-113,0-156.1C386.6,39.2,316.7,39.2,273.6,82.3z"></path></svg></a><h1 id="beforeabsolute">before-absolute</h1>
+    @include cssowl-sprite-display-block($x, $y, $width, $height, $src)</code></pre></div></article><article id="beforeabsolute" class="section"><div class="docs"><a href="#beforeabsolute" class="permalink"><svg viewBox="0 0 512 512" height="32" width="32" class="icon"><path d="M156.2,199.7c7.5-7.5,15.9-13.8,24.8-18.7c49.6-27.3,113.1-12.8,145,35.5l-38.5,38.5c-11.1-25.2-38.5-39.6-65.8-33.5c-10.3,2.3-20.1,7.4-28,15.4l-73.9,73.9c-22.4,22.4-22.4,58.9,0,81.4c22.4,22.4,58.9,22.4,81.4,0l22.8-22.8c20.7,8.2,42.9,11.5,64.9,9.9l-50.3,50.3c-43.1,43.1-113,43.1-156.1,0c-43.1-43.1-43.1-113-0-156.1L156.2,199.7z M273.6,82.3l-50.3,50.3c21.9-1.6,44.2,1.6,64.9,9.9l22.8-22.8c22.4-22.4,58.9-22.4,81.4,0c22.4,22.4,22.4,58.9,0,81.4l-73.9,73.9c-22.5,22.5-59.1,22.3-81.4,0c-5.2-5.2-9.7-11.7-12.5-18l-38.5,38.5c4,6.1,8.3,11.5,13.7,16.9c13.9,13.9,31.7,24.3,52.1,29.3c26.5,6.4,54.8,2.8,79.2-10.6c8.9-4.9,17.3-11.1,24.8-18.7l73.9-73.9c43.1-43.1,43.1-113,0-156.1C386.6,39.2,316.7,39.2,273.6,82.3z"></path></svg></a><h1 id="beforeabsolute">before-absolute</h1>
 <p>Adds the element with the <code>:before</code> pseudo selector and displays it with the <code>position: absolute;</code> attribute.</p>
 <p><strong>Parameters:</strong></p>
 <ul>
@@ -315,7 +315,7 @@ It also adds <code>line-height</code> and <code>vertical-align</code> to vertica
     content: ""
     margin-left: $xOffset
     @include cssowl-sprite-display-inline($x, $y, $width, $height, $src, $yOffset, $valign)</code></pre></div></article><article id="afterfloat" class="section"><div class="docs"><a href="#afterfloat" class="permalink"><svg viewBox="0 0 512 512" height="32" width="32" class="icon"><path d="M156.2,199.7c7.5-7.5,15.9-13.8,24.8-18.7c49.6-27.3,113.1-12.8,145,35.5l-38.5,38.5c-11.1-25.2-38.5-39.6-65.8-33.5c-10.3,2.3-20.1,7.4-28,15.4l-73.9,73.9c-22.4,22.4-22.4,58.9,0,81.4c22.4,22.4,58.9,22.4,81.4,0l22.8-22.8c20.7,8.2,42.9,11.5,64.9,9.9l-50.3,50.3c-43.1,43.1-113,43.1-156.1,0c-43.1-43.1-43.1-113-0-156.1L156.2,199.7z M273.6,82.3l-50.3,50.3c21.9-1.6,44.2,1.6,64.9,9.9l22.8-22.8c22.4-22.4,58.9-22.4,81.4,0c22.4,22.4,22.4,58.9,0,81.4l-73.9,73.9c-22.5,22.5-59.1,22.3-81.4,0c-5.2-5.2-9.7-11.7-12.5-18l-38.5,38.5c4,6.1,8.3,11.5,13.7,16.9c13.9,13.9,31.7,24.3,52.1,29.3c26.5,6.4,54.8,2.8,79.2-10.6c8.9-4.9,17.3-11.1,24.8-18.7l73.9-73.9c43.1-43.1,43.1-113,0-156.1C386.6,39.2,316.7,39.2,273.6,82.3z"></path></svg></a><h1 id="afterfloat">after-float</h1>
-<p>Adds the element with the <code>:after</code> pseudo selector and displays it <em>inline</em> with the <code>float: right;</code> attribute.</p>
+<p>Adds the element with the <code>:after</code> pseudo selector and displays it with the <code>float: right;</code> attribute.</p>
 <p><strong>Parameters:</strong></p>
 <ul>
 <li><strong>x:</strong> x position of the element</li>
@@ -325,15 +325,15 @@ It also adds <code>line-height</code> and <code>vertical-align</code> to vertica
 <li><strong>src:</strong> background image source</li>
 <li><strong>xOffset:</strong> (optional, default=0) left margin of the element</li>
 <li><strong>yOffset:</strong> (optional, default=0) top margin of the element</li>
-<li><strong>valign:</strong> (optional, default=middle) <em>vertical-align</em> attribute property</li>
 </ul>
 <p><strong>See also:</strong> <a href="cssowl-sprite.html#displayinline">cssowl-sprite-display-inline</a></p>
-</div><div class="code"><pre><code>@mixin cssowl-sprite-after-float($x, $y, $width, $height, $src, $xOffset:0, $yOffset:0, $valign:middle)
+</div><div class="code"><pre><code>@mixin cssowl-sprite-after-float($x, $y, $width, $height, $src, $xOffset:0, $yOffset:0)
   &:after
     content: ""
     float: right
+    margin-top: $xOffset
     margin-left: $xOffset
-    @include cssowl-sprite-display-inline($x, $y, $width, $height, $src, $yOffset, $valign)</code></pre></div></article><article id="beforeabsolute" class="section"><div class="docs"><a href="#beforeabsolute" class="permalink"><svg viewBox="0 0 512 512" height="32" width="32" class="icon"><path d="M156.2,199.7c7.5-7.5,15.9-13.8,24.8-18.7c49.6-27.3,113.1-12.8,145,35.5l-38.5,38.5c-11.1-25.2-38.5-39.6-65.8-33.5c-10.3,2.3-20.1,7.4-28,15.4l-73.9,73.9c-22.4,22.4-22.4,58.9,0,81.4c22.4,22.4,58.9,22.4,81.4,0l22.8-22.8c20.7,8.2,42.9,11.5,64.9,9.9l-50.3,50.3c-43.1,43.1-113,43.1-156.1,0c-43.1-43.1-43.1-113-0-156.1L156.2,199.7z M273.6,82.3l-50.3,50.3c21.9-1.6,44.2,1.6,64.9,9.9l22.8-22.8c22.4-22.4,58.9-22.4,81.4,0c22.4,22.4,22.4,58.9,0,81.4l-73.9,73.9c-22.5,22.5-59.1,22.3-81.4,0c-5.2-5.2-9.7-11.7-12.5-18l-38.5,38.5c4,6.1,8.3,11.5,13.7,16.9c13.9,13.9,31.7,24.3,52.1,29.3c26.5,6.4,54.8,2.8,79.2-10.6c8.9-4.9,17.3-11.1,24.8-18.7l73.9-73.9c43.1-43.1,43.1-113,0-156.1C386.6,39.2,316.7,39.2,273.6,82.3z"></path></svg></a><h1 id="beforeabsolute">before-absolute</h1>
+    @include cssowl-sprite-display-block($x, $y, $width, $height, $src)</code></pre></div></article><article id="beforeabsolute" class="section"><div class="docs"><a href="#beforeabsolute" class="permalink"><svg viewBox="0 0 512 512" height="32" width="32" class="icon"><path d="M156.2,199.7c7.5-7.5,15.9-13.8,24.8-18.7c49.6-27.3,113.1-12.8,145,35.5l-38.5,38.5c-11.1-25.2-38.5-39.6-65.8-33.5c-10.3,2.3-20.1,7.4-28,15.4l-73.9,73.9c-22.4,22.4-22.4,58.9,0,81.4c22.4,22.4,58.9,22.4,81.4,0l22.8-22.8c20.7,8.2,42.9,11.5,64.9,9.9l-50.3,50.3c-43.1,43.1-113,43.1-156.1,0c-43.1-43.1-43.1-113-0-156.1L156.2,199.7z M273.6,82.3l-50.3,50.3c21.9-1.6,44.2,1.6,64.9,9.9l22.8-22.8c22.4-22.4,58.9-22.4,81.4,0c22.4,22.4,22.4,58.9,0,81.4l-73.9,73.9c-22.5,22.5-59.1,22.3-81.4,0c-5.2-5.2-9.7-11.7-12.5-18l-38.5,38.5c4,6.1,8.3,11.5,13.7,16.9c13.9,13.9,31.7,24.3,52.1,29.3c26.5,6.4,54.8,2.8,79.2-10.6c8.9-4.9,17.3-11.1,24.8-18.7l73.9-73.9c43.1-43.1,43.1-113,0-156.1C386.6,39.2,316.7,39.2,273.6,82.3z"></path></svg></a><h1 id="beforeabsolute">before-absolute</h1>
 <p>Adds the element with the <code>:after</code> pseudo selector and displays it with the <code>position: absolute;</code> attribute.</p>
 <p><strong>Parameters:</strong></p>
 <ul>
