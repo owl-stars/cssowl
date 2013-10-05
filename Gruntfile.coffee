@@ -18,15 +18,15 @@ module.exports = (grunt) ->
       test:
         files:
           "test/tmp/cssowl.less.css": "lib/less/cssowl.less"
-          "test/tmp/examples.less.css": "test/fixtures/less/examples.less"
+          "test/tmp/examples.less.css": "docs/examples/examples.less"
 
     sass:
       test:
         files:
           "test/tmp/cssowl.sass.css": "lib/sass/cssowl.sass"
-          "test/tmp/examples.sass.css": "test/fixtures/sass/examples.sass"
+          "test/tmp/examples.sass.css": "docs/examples/examples.sass"
           "test/tmp/cssowl.scss.css": "lib/scss/cssowl.scss"
-          "test/tmp/examples.scss.css": "test/fixtures/scss/examples.scss"
+          "test/tmp/examples.scss.css": "docs/examples/examples.scss"
 
     stylus:
       test:
@@ -34,7 +34,7 @@ module.exports = (grunt) ->
           compress: false
         files:
           "test/tmp/cssowl.styl.css": "lib/stylus/cssowl.styl"
-          "test/tmp/examples.styl.css": "test/fixtures/styl/examples.styl"
+          "test/tmp/examples.styl.css": "docs/examples/examples.styl"
 
     cssmin:
       test:
@@ -54,27 +54,43 @@ module.exports = (grunt) ->
         src: ['test/**/*.css']
 
     styledocco:
-      main:
+      cssowl:
         options:
-          name: '<%= pkg.name %>'
+          name: '<%= pkg.name %> v<%= pkg.version %>'
         files: [
+          src: 'lib/less'
+          dest: 'docs/cssowl/less'
+        ,
           src: 'lib/sass'
-          dest: 'docs2'
+          dest: 'docs/cssowl/sass'
+        ,
+          src: 'lib/scss'
+          dest: 'docs/cssowl/scss'
+        ,
+          src: 'lib/stylus'
+          dest: 'docs/cssowl/stylus'
         ]
-      example:
+      examples:
         options:
-          name: '<%= pkg.name %>'
+          name: '<%= pkg.name %> examples v<%= pkg.version %>'
         files: [
-          src: 'example'
-          dest: 'docs'
+          src: 'docs/examples/examples.less'
+          dest: 'docs/examples/less'
+        ,
+          src: 'docs/examples/examples.sass'
+          dest: 'docs/examples/sass'
+        ,
+          src: 'docs/examples/examples.scss'
+          dest: 'docs/examples/scss'
+        ,
+          src: 'docs/examples/examples.styl'
+          dest: 'docs/examples/stylus'
         ]
 
     watch:
-      styledocco:
-        files: ['example/**/*.*', 'lib/**/*.*']
-        tasks: ['styledocco']
-      options:
-        livereload: false
+      docs:
+        files: ['docs/examples/examples.*', 'lib/**/*.*']
+        tasks: ['docs']
 
     mochaTest:
       test:
@@ -99,4 +115,5 @@ module.exports = (grunt) ->
 
   # Register tasks
   grunt.registerTask 'default', ['coffeelint']
+  grunt.registerTask 'docs', ['default', 'styledocco']
   grunt.registerTask 'test', ['default', 'clean', 'less', 'sass', 'stylus', 'csslint', 'cssmin', 'mochaTest']

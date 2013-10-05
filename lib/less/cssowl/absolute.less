@@ -2,12 +2,12 @@
 //
 //Positions a element with `position: absolute;` and sets the `top`, `left`, `right` and `bottom` attributes if not `none`.
 //
-//*Parameters:**
+//**Parameters:**
 //
-//**top:** (optional, default=none) top position value
-//**right:** (optional, default=none) right position value
-//**bottom:** (optional, default=none) bottom position value
-//**left:** (optional, default=none) left position value
+//* **top:** (optional, default=none) top position value
+//* **right:** (optional, default=none) right position value
+//* **bottom:** (optional, default=none) bottom position value
+//* **left:** (optional, default=none) left position value
 .cssowl-absolute(@top:none, @right:none, @bottom:none, @left:none) when not (@top = none){
   top: @top;
 }
@@ -29,14 +29,14 @@
 //
 //Positions a element with `position: absolute;` inside the bounding box.
 //
-//*Parameters:**
+//**Parameters:**
 //
-//**width:** element width
-//**height:** element height
-//**valign:** (optional, default=top) vertical alignment top|middle|bottom
-//**halign:** (optional, default=left) horizontal alignment left|center|right
-//**xOffset:** (optional, default=0) x position offset
-//**yOffset:** (optional, default=0) y position offset
+//* **width:** element width
+//* **height:** element height
+//* **valign:** (optional, default=top) vertical alignment top|middle|bottom
+//* **halign:** (optional, default=left) horizontal alignment left|center|right
+//* **xOffset:** (optional, default=0) x position offset
+//* **yOffset:** (optional, default=0) y position offset
 //
 //*See also:** [cssowl-sprite-absolute](cssowl-absolute.html#absolute)
 ._cssowl-absolute-inside-vars(@width, @height, @valign:top, @halign:left, @xOffset:0, @yOffset:0) when (@valign = top) {
@@ -77,14 +77,14 @@
 //
 //Positions a element with `position: absolute;` outside the bounding box.
 //
-//*Parameters:**
+//**Parameters:**
 //
-//**width:** element width
-//**height:** element height
-//**valign:** (optional, default=top) vertical alignment top|middle|bottom
-//**halign:** (optional, default=left) horizontal alignment left|center|right
-//**xOffset:** (optional, default=0) x position offset
-//**yOffset:** (optional, default=0) y position offset
+//* **width:** element width
+//* **height:** element height
+//* **valign:** (optional, default=top) vertical alignment top|middle|bottom
+//* **halign:** (optional, default=left) horizontal alignment left|center|right
+//* **xOffset:** (optional, default=0) x position offset
+//* **yOffset:** (optional, default=0) y position offset
 //
 //*See also:** [cssowl-sprite-absolute](cssowl-absolute.html#absolute)
 ._cssowl-absolute-outside-vars(@width, @height, @valign:top, @halign:left, @xOffset:0, @yOffset:0) when (@valign = top) {

@@ -33,7 +33,7 @@ exports = module.exports = class Api
 
     # variables
     actual = "#{tmpDir}/#{name}.#{extension}.css"
-    expected = "#{fixturesDir}/#{extension}/#{name}.css"
+    expected = "#{fixturesDir}/#{name}.#{extension}.css"
 
     assert.isTrue fs.existsSync(actual), "actual file exists " + actual
     assert.isTrue fs.existsSync(expected), "expected file exists " + expected
