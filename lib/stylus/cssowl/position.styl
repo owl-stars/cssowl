@@ -8,14 +8,14 @@
 //* **right:** (optional, default=none) right position value
 //* **bottom:** (optional, default=none) bottom position value
 //* **left:** (optional, default=none) left position value
-cssowl-absolute(top=none, right=none, bottom=none, left=none)
-  unless top = none
+cssowl-position-absolute(top=none, right=none, bottom=none, left=none)
+  unless top == none
     top: top
-  unless left = none
+  unless left == none
     left: left
-  unless right = none
+  unless right == none
     right: right
-  unless bottom = none
+  unless bottom == none
     bottom: bottom
   position: absolute
 
@@ -32,27 +32,29 @@ cssowl-absolute(top=none, right=none, bottom=none, left=none)
 //* **xOffset:** (optional, default=0) x position offset
 //* **yOffset:** (optional, default=0) y position offset
 //
-//**See also:** [cssowl-absolute](cssowl-absolute.html#absolute)
-cssowl-absolute-inside(width, height, valign=top, halign=left, xOffset=0, yOffset=0)
-  top: none
-  left: none
-  right: none
-  bottom: none
-  if valign = top
-    top: yOffset
-  else if valign = middle
-    top: 50%
+//**See also:** [cssowl-position-absolute](cssowl-position.html#absolute)
+cssowl-position-absolute-inside(width, height, valign=top, halign=left, xOffset=0, yOffset=0)
+  if valign == top
+    top = yOffset
+    bottom = none
+  else if valign == middle
+    top = 50%
     margin-top: yOffset - round(height / 2)
-  else if valign = bottom
-    bottom: xOffset
-  if halign = left
-    left: xOffset
-  else if halign = center
-    left: 50%
+    bottom = none
+  else if valign == bottom
+    top = none
+    bottom = xOffset
+  if halign == left
+    left = xOffset
+    right = none
+  else if halign == center
+    left = 50%
     margin-left: xOffset - round(width / 2)
-  else if halign = right
-    right: xOffset
-  cssowl-absolute(top, right, bottom, left)
+    right = none
+  else if halign == right
+    left = none
+    right = xOffset
+  cssowl-position-absolute(top, right, bottom, left)
 
 //# absolute-outside
 //
@@ -67,24 +69,26 @@ cssowl-absolute-inside(width, height, valign=top, halign=left, xOffset=0, yOffse
 //* **xOffset:** (optional, default=0) x position offset
 //* **yOffset:** (optional, default=0) y position offset
 //
-//**See also:** [cssowl-absolute](cssowl-absolute.html#absolute)
-cssowl-absolute-outside(width, height, valign=top, halign=left, xOffset=0, yOffset=0)
-  top: none
-  left: none
-  right: none
-  bottom: none
-  if valign = top
-    top: round(yOffset - height)
-  else if valign = middle
-    top: 50%
+//**See also:** [cssowl-position-absolute](cssowl-position.html#absolute)
+cssowl-position-absolute-outside(width, height, valign=top, halign=left, xOffset=0, yOffset=0)
+  if valign == top
+    top = round(yOffset - height)
+    bottom = none
+  else if valign == middle
+    top = 50%
     margin-top: yOffset - round(height / 2)
-  else if valign = bottom
-    bottom: round(yOffset - height)
-  if halign = left
-    left: round(xOffset - width)
-  else if halign = center
-    left: 50%
+    bottom = none
+  else if valign == bottom
+    top = none
+    bottom = round(yOffset - height)
+  if halign == left
+    left = round(xOffset - width)
+    right = none
+  else if halign == center
+    left = 50%
     margin-left: xOffset - round(width / 2)
-  else if halign = right
-    right: round(xOffset - width)
-  cssowl-absolute(top, right, bottom, left)
+    right = none
+  else if halign == right
+    left = none
+    right = round(xOffset - width)
+  cssowl-position-absolute(top, right, bottom, left)

@@ -12,7 +12,9 @@ module.exports = (grunt) ->
 
     clean:
       docs:
-        src: ["lib/**/*.css", "docs/examples/*.css"]
+        src: ["docs/cssowl/", "docs/examples/"]
+      css:
+        src: ["lib/**/*.css", "docs/fixtures/*.css"]
       test:
         src: ["test/tmp"]
 
@@ -20,15 +22,15 @@ module.exports = (grunt) ->
       test:
         files:
           "test/tmp/cssowl.less.css": "lib/less/cssowl.less"
-          "test/tmp/examples.less.css": "docs/examples/examples.less"
+          "test/tmp/examples.less.css": "docs/fixtures/examples.less"
 
     sass:
       test:
         files:
           "test/tmp/cssowl.sass.css": "lib/sass/cssowl.sass"
-          "test/tmp/examples.sass.css": "docs/examples/examples.sass"
+          "test/tmp/examples.sass.css": "docs/fixtures/examples.sass"
           "test/tmp/cssowl.scss.css": "lib/scss/cssowl.scss"
-          "test/tmp/examples.scss.css": "docs/examples/examples.scss"
+          "test/tmp/examples.scss.css": "docs/fixtures/examples.scss"
 
     stylus:
       test:
@@ -36,7 +38,7 @@ module.exports = (grunt) ->
           compress: false
         files:
           "test/tmp/cssowl.styl.css": "lib/stylus/cssowl.styl"
-          "test/tmp/examples.styl.css": "docs/examples/examples.styl"
+          "test/tmp/examples.styl.css": "docs/fixtures/examples.styl"
 
     cssmin:
       test:
@@ -75,26 +77,26 @@ module.exports = (grunt) ->
         options:
           name: '<%= pkg.name %> examples v<%= pkg.version %>'
         files: [
-          src: 'docs/examples/examples.less'
+          src: 'docs/fixtures/examples.less'
           dest: 'docs/examples/less'
         ,
-          src: 'docs/examples/examples.sass'
+          src: 'docs/fixtures/examples.sass'
           dest: 'docs/examples/sass'
         ,
-          src: 'docs/examples/examples.scss'
+          src: 'docs/fixtures/examples.scss'
           dest: 'docs/examples/scss'
         ,
-          src: 'docs/examples/examples.styl'
+          src: 'docs/fixtures/examples.styl'
           dest: 'docs/examples/stylus'
         ]
 
     watch:
       docs:
         files: [
-          'docs/examples/examples.less'
-          'docs/examples/examples.sass'
-          'docs/examples/examples.scss'
-          'docs/examples/examples.styl'
+          'docs/fixtures/examples.less'
+          'docs/fixtures/examples.sass'
+          'docs/fixtures/examples.scss'
+          'docs/fixtures/examples.styl'
           'lib/**/*.less'
           'lib/**/*.sass'
           'lib/**/*.scss'
@@ -103,7 +105,7 @@ module.exports = (grunt) ->
         tasks: ['docs']
       test:
         files: [
-          'docs/examples/examples.*'
+          'docs/fixtures/examples.*'
           'test/fixtures/*.*'
           'test/**/*.coffee'
           'lib/**/*.less'
@@ -144,5 +146,5 @@ module.exports = (grunt) ->
 
   # Register tasks
   grunt.registerTask 'default', ['coffeelint']
-  grunt.registerTask 'docs', ['default', 'styledocco', 'clean:docs']
+  grunt.registerTask 'docs', ['default', 'clean:docs', 'styledocco', 'clean:css']
   grunt.registerTask 'test', ['default', 'clean:test', 'less', 'sass', 'stylus', 'csslint', 'cssmin', 'mochaTest']

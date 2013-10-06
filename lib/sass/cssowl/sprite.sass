@@ -31,12 +31,12 @@
 //**See also:** [cssowl-sprite-display](cssowl-sprite.html#display)
 @mixin cssowl-sprite-display-block($x, $y, $width, $height, $src)
   display: block
-  @include cssowl-sprite-display($x, $y, $width, $height, $src)
+  +cssowl-sprite-display($x, $y, $width, $height, $src)
 
 //# display-inline
 //
-//Displays a sprite element with the `display: inline` attribute.<br/>
-//It also adds `line-height` and `vertical-align` to vertically align it.
+//Displays a sprite element with the `display: inline-block` attribute.<br/>
+//You can vertically align it using `yOffset` and `valign`
 //
 //**Parameters:**
 //
@@ -50,11 +50,10 @@
 //
 //**See also:** [cssowl-sprite-display](cssowl-sprite.html#display)
 @mixin cssowl-sprite-display-inline($x, $y, $width, $height, $src, $yOffset:0, $valign:middle)
-  line-height: $height
   margin-top: $yOffset
   display: inline-block
   vertical-align: $valign
-  @include cssowl-sprite-display($x, $y, $width, $height, $src)
+  +cssowl-sprite-display($x, $y, $width, $height, $src)
 
 
 
@@ -74,11 +73,11 @@
 @mixin cssowl-sprite-replace($x, $y, $width, $height, $src)
   direction: ltr
   text-indent: -9999px
-  @include cssowl-sprite-display($x, $y, $width, $height, $src)
+  +cssowl-sprite-display($x, $y, $width, $height, $src)
 
 //# replace-block
 //
-//Displays a sprite element with the `display: block;` attribute and uses `text-indent: -9999px;` to hide the text..
+//Displays a sprite element with the `display: block;` attribute and uses `text-indent: -9999px;` to hide the text.
 //
 //**Parameters:**
 //
@@ -92,12 +91,12 @@
 @mixin cssowl-sprite-replace-block($x, $y, $width, $height, $src)
   direction: ltr
   text-indent: -9999px
-  @include cssowl-sprite-display-block($x, $y, $width, $height, $src)
+  +cssowl-sprite-display-block($x, $y, $width, $height, $src)
 
 //# replace-inline
 //
-//Displays a sprite element with the `display: inline` attribute and uses `text-indent: -9999px;` to hide the text.<br/>
-//It also adds `line-height` and `vertical-align` to vertically align it.
+//Displays a sprite element with the `display: inline-block` attribute. and uses `text-indent: -9999px;` to hide the text.<br/>
+//You can vertically align it using `yOffset` and `valign`
 //
 //**Parameters:**
 //
@@ -106,12 +105,14 @@
 //* **width:** element width
 //* **height:** element height
 //* **src:** background image source
+//* **yOffset:** (optional, default=0) top margin of the element
+//* **valign:** (optional, default=middle) *vertical-align* attribute property
 //
 //**See also:** [cssowl-sprite-display-inline](cssowl-sprite.html#displayinline)
 @mixin cssowl-sprite-replace-inline($x, $y, $width, $height, $src, $yOffset:0, $valign:middle)
   direction: ltr
   text-indent: -9999px
-  @include cssowl-sprite-display-inline($x, $y, $width, $height, $src, $yOffset, $valign)
+  +cssowl-sprite-display-inline($x, $y, $width, $height, $src, $yOffset, $valign)
 
 
 
@@ -131,10 +132,10 @@
 //* **bottom:** (optional, default=none) bottom position value
 //* **left:** (optional, default=none) left position value
 //
-//**See also:** [cssowl-sprite-display](cssowl-sprite.html#display), [cssowl-absolute](cssowl-absolute.html#absolute)
+//**See also:** [cssowl-sprite-display](cssowl-sprite.html#display), [cssowl-position-absolute](cssowl-position.html#absolute)
 @mixin cssowl-sprite-absolute($x, $y, $width, $height, $src, $top:none, $right:none, $bottom:none, $left:none)
-  @include cssowl-absolute($top, $right, $bottom, $left)
-  @include cssowl-sprite-display($x, $y, $width, $height, $src)
+  +cssowl-position-absolute($top, $right, $bottom, $left)
+  +cssowl-sprite-display($x, $y, $width, $height, $src)
 
 //# absolute-inside
 //
@@ -154,8 +155,8 @@
 //
 //**See also:** [cssowl-sprite-display](cssowl-sprite.html#display)
 @mixin cssowl-sprite-absolute-inside($x, $y, $width, $height, $src, $valign:top, $halign:left, $xOffset:0, $yOffset:0)
-  @include cssowl-absolute-inside($width, $height, $valign, $halign, $xOffset, $yOffset)
-  @include cssowl-sprite-display($x, $y, $width, $height, $src)
+  +cssowl-position-absolute-inside($width, $height, $valign, $halign, $xOffset, $yOffset)
+  +cssowl-sprite-display($x, $y, $width, $height, $src)
 
 //# absolute-outside
 //
@@ -175,8 +176,8 @@
 //
 //**See also:** [cssowl-sprite-display](cssowl-sprite.html#display)
 @mixin cssowl-sprite-absolute-outside($x, $y, $width, $height, $src, $valign:top, $halign:left, $xOffset:0, $yOffset:0)
-  @include cssowl-absolute-outside($width, $height, $valign, $halign, $xOffset, $yOffset)
-  @include cssowl-sprite-display($x, $y, $width, $height, $src)
+  +cssowl-position-absolute-outside($width, $height, $valign, $halign, $xOffset, $yOffset)
+  +cssowl-sprite-display($x, $y, $width, $height, $src)
 
 
 
@@ -199,11 +200,11 @@
   float: left
   margin-top: $yOffset
   margin-right: $xOffset
-  @include cssowl-sprite-display-block($x, $y, $width, $height, $src)
+  +cssowl-sprite-display-block($x, $y, $width, $height, $src)
 
 //# float-right
 //
-//Displays a sprite element with the `float: right;` attribute and a `margin-left` as optional offset.
+//Displays a sprite element with the `float: right;` attribute  with optional offset.
 //
 //**Parameters:**
 //
@@ -220,7 +221,7 @@
   float: right
   margin-top: $yOffset
   margin-left: $xOffset
-  @include cssowl-sprite-display-block($x, $y, $width, $height, $src)
+  +cssowl-sprite-display-block($x, $y, $width, $height, $src)
 
 
 
@@ -240,7 +241,7 @@
 @mixin cssowl-sprite-before($x, $y, $width, $height, $src)
   &:before
     content: ""
-    @include cssowl-sprite-display-block($x, $y, $width, $height, $src)
+    +cssowl-sprite-display-block($x, $y, $width, $height, $src)
 
 //# before-inline
 //
@@ -262,7 +263,7 @@
   &:before
     content: ""
     margin-right: $xOffset
-    @include cssowl-sprite-display-inline($x, $y, $width, $height, $src, $yOffset, $valign)
+    +cssowl-sprite-display-inline($x, $y, $width, $height, $src, $yOffset, $valign)
 
 //# before-float
 //
@@ -285,7 +286,7 @@
     float: left
     margin-top: $yOffset
     margin-right: $xOffset
-    @include cssowl-sprite-display-block($x, $y, $width, $height, $src)
+    +cssowl-sprite-display-block($x, $y, $width, $height, $src)
 
 //# before-absolute
 //
@@ -308,7 +309,7 @@
   position: relative
   &:before
     content: ""
-    @include cssowl-sprite-absolute($x, $y, $width, $height, $src, $top, $right, $bottom, $left)
+    +cssowl-sprite-absolute($x, $y, $width, $height, $src, $top, $right, $bottom, $left)
 
 //# before-absolute-inside
 //
@@ -331,7 +332,7 @@
   position: relative
   &:before
     content: ""
-    @include cssowl-sprite-absolute-inside($x, $y, $width, $height, $src, $valign, $halign, $xOffset, $yOffset)
+    +cssowl-sprite-absolute-inside($x, $y, $width, $height, $src, $valign, $halign, $xOffset, $yOffset)
 
 //# before-absolute-outside
 //
@@ -354,7 +355,7 @@
   position: relative
   &:before
     content: ""
-    @include cssowl-sprite-absolute-outside($x, $y, $width, $height, $src, $valign, $halign, $xOffset, $yOffset)
+    +cssowl-sprite-absolute-outside($x, $y, $width, $height, $src, $valign, $halign, $xOffset, $yOffset)
 
 
 
@@ -374,7 +375,7 @@
 @mixin cssowl-sprite-after($x, $y, $width, $height, $src)
   &:after
     content: ""
-    @include cssowl-sprite-display-block($x, $y, $width, $height, $src)
+    +cssowl-sprite-display-block($x, $y, $width, $height, $src)
 
 //# after-inline
 //
@@ -396,7 +397,7 @@
   &:after
     content: ""
     margin-left: $xOffset
-    @include cssowl-sprite-display-inline($x, $y, $width, $height, $src, $yOffset, $valign)
+    +cssowl-sprite-display-inline($x, $y, $width, $height, $src, $yOffset, $valign)
 
 //# after-float
 //
@@ -417,9 +418,9 @@
   &:after
     content: ""
     float: right
-    margin-top: $xOffset
+    margin-top: $yOffset
     margin-left: $xOffset
-    @include cssowl-sprite-display-block($x, $y, $width, $height, $src)
+    +cssowl-sprite-display-block($x, $y, $width, $height, $src)
 
 //# before-absolute
 //
@@ -442,7 +443,7 @@
   position: relative
   &:after
     content: ""
-    @include cssowl-sprite-absolute($x, $y, $width, $height, $src, $top, $right, $bottom, $left)
+    +cssowl-sprite-absolute($x, $y, $width, $height, $src, $top, $right, $bottom, $left)
 
 //# after-absolute-inside
 //
@@ -465,7 +466,7 @@
   position: relative
   &:after
     content: ""
-    @include cssowl-sprite-absolute-inside($x, $y, $width, $height, $src, $valign, $halign, $xOffset, $yOffset)
+    +cssowl-sprite-absolute-inside($x, $y, $width, $height, $src, $valign, $halign, $xOffset, $yOffset)
 
 //# after-absolute-outside
 //
@@ -488,4 +489,4 @@
   position: relative
   &:after
     content: ""
-    @include cssowl-sprite-absolute-outside($x, $y, $width, $height, $src, $valign, $halign, $xOffset, $yOffset)
+    +cssowl-sprite-absolute-outside($x, $y, $width, $height, $src, $valign, $halign, $xOffset, $yOffset)

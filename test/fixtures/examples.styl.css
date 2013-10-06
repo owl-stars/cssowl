@@ -14,7 +14,6 @@
   background-repeat: no-repeat;
 }
 .example-display-inline {
-  line-height: 95px;
   margin-top: 0;
   display: inline-block;
   vertical-align: middle;
@@ -46,7 +45,6 @@
 .example-replace-inline {
   direction: ltr;
   text-indent: -9999px;
-  line-height: 95px;
   margin-top: 0;
   display: inline-block;
   vertical-align: middle;
@@ -57,6 +55,9 @@
   background-repeat: no-repeat;
 }
 .example-absolute.top-right {
+  top: 5px;
+  right: 5px;
+  position: absolute;
   width: 15px;
   height: 15px;
   background-image: url("sprite.png");
@@ -64,6 +65,9 @@
   background-repeat: no-repeat;
 }
 .example-absolute.bottom-left {
+  left: 5px;
+  bottom: 5px;
+  position: absolute;
   width: 15px;
   height: 15px;
   background-image: url("sprite.png");
@@ -71,6 +75,9 @@
   background-repeat: no-repeat;
 }
 .example-absolute-inside.top-right {
+  top: 0;
+  right: 0;
+  position: absolute;
   width: 15px;
   height: 15px;
   background-image: url("sprite.png");
@@ -78,6 +85,9 @@
   background-repeat: no-repeat;
 }
 .example-absolute-inside.top-right-offset {
+  top: 5px;
+  right: 5px;
+  position: absolute;
   width: 15px;
   height: 15px;
   background-image: url("sprite.png");
@@ -85,6 +95,10 @@
   background-repeat: no-repeat;
 }
 .example-absolute-inside.top-center {
+  margin-left: -4px;
+  top: 0;
+  left: 50%;
+  position: absolute;
   width: 7px;
   height: 4px;
   background-image: url("sprite.png");
@@ -92,6 +106,10 @@
   background-repeat: no-repeat;
 }
 .example-absolute-inside.middle-right {
+  margin-top: -4px;
+  top: 50%;
+  right: 0;
+  position: absolute;
   width: 4px;
   height: 7px;
   background-image: url("sprite.png");
@@ -99,6 +117,10 @@
   background-repeat: no-repeat;
 }
 .example-absolute-inside.bottom-center {
+  margin-left: -4px;
+  left: 50%;
+  bottom: 0;
+  position: absolute;
   width: 7px;
   height: 4px;
   background-image: url("sprite.png");
@@ -106,6 +128,10 @@
   background-repeat: no-repeat;
 }
 .example-absolute-inside.middle-left {
+  margin-top: -4px;
+  top: 50%;
+  left: 0;
+  position: absolute;
   width: 4px;
   height: 7px;
   background-image: url("sprite.png");
@@ -113,6 +139,9 @@
   background-repeat: no-repeat;
 }
 .example-absolute-outside.top-right {
+  top: -15px;
+  right: -15px;
+  position: absolute;
   width: 15px;
   height: 15px;
   background-image: url("sprite.png");
@@ -120,6 +149,9 @@
   background-repeat: no-repeat;
 }
 .example-absolute-outside.top-right-offset {
+  top: -10px;
+  right: -10px;
+  position: absolute;
   width: 15px;
   height: 15px;
   background-image: url("sprite.png");
@@ -127,6 +159,10 @@
   background-repeat: no-repeat;
 }
 .example-absolute-outside.top-center {
+  margin-left: -4px;
+  top: -4px;
+  left: 50%;
+  position: absolute;
   width: 7px;
   height: 4px;
   background-image: url("sprite.png");
@@ -134,6 +170,10 @@
   background-repeat: no-repeat;
 }
 .example-absolute-outside.middle-right {
+  margin-top: -4px;
+  top: 50%;
+  right: -4px;
+  position: absolute;
   width: 4px;
   height: 7px;
   background-image: url("sprite.png");
@@ -141,6 +181,10 @@
   background-repeat: no-repeat;
 }
 .example-absolute-outside.bottom-center {
+  margin-left: -4px;
+  left: 50%;
+  bottom: -4px;
+  position: absolute;
   width: 7px;
   height: 4px;
   background-image: url("sprite.png");
@@ -148,6 +192,10 @@
   background-repeat: no-repeat;
 }
 .example-absolute-outside.middle-left {
+  margin-top: -4px;
+  top: 50%;
+  left: -4px;
+  position: absolute;
   width: 4px;
   height: 7px;
   background-image: url("sprite.png");
@@ -188,7 +236,6 @@
 .example-before-inline:before {
   content: "";
   margin-right: 5px;
-  line-height: 15px;
   margin-top: 1px;
   display: inline-block;
   vertical-align: top;
@@ -215,6 +262,9 @@
 }
 .example-before-absolute:before {
   content: "";
+  top: 1px;
+  left: -20px;
+  position: absolute;
   width: 15px;
   height: 15px;
   background-image: url("sprite.png");
@@ -226,6 +276,10 @@
 }
 .example-before-absolute-inside:before {
   content: "";
+  margin-left: -4px;
+  top: 0;
+  left: 50%;
+  position: absolute;
   width: 7px;
   height: 4px;
   background-image: url("sprite.png");
@@ -237,6 +291,10 @@
 }
 .example-before-absolute-outside:before {
   content: "";
+  margin-left: -4px;
+  top: -4px;
+  left: 50%;
+  position: absolute;
   width: 7px;
   height: 4px;
   background-image: url("sprite.png");
@@ -255,7 +313,6 @@
 .example-after-inline:after {
   content: "";
   margin-left: 5px;
-  line-height: 15px;
   margin-top: 1px;
   display: inline-block;
   vertical-align: top;
@@ -282,6 +339,9 @@
 }
 .example-after-absolute:after {
   content: "";
+  top: 1px;
+  right: 0;
+  position: absolute;
   width: 15px;
   height: 15px;
   background-image: url("sprite.png");
@@ -293,6 +353,10 @@
 }
 .example-after-absolute-inside:after {
   content: "";
+  margin-left: -4px;
+  top: 0;
+  left: 50%;
+  position: absolute;
   width: 7px;
   height: 4px;
   background-image: url("sprite.png");
@@ -304,6 +368,10 @@
 }
 .example-after-absolute-outside:after {
   content: "";
+  margin-left: -4px;
+  top: -4px;
+  left: 50%;
+  position: absolute;
   width: 7px;
   height: 4px;
   background-image: url("sprite.png");

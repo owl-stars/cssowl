@@ -14,7 +14,6 @@
   background-repeat: no-repeat; }
 
 .example-display-inline {
-  line-height: 95px;
   margin-top: 0;
   display: inline-block;
   vertical-align: middle;
@@ -46,7 +45,6 @@
 .example-replace-inline {
   direction: ltr;
   text-indent: -9999px;
-  line-height: 95px;
   margin-top: 0;
   display: inline-block;
   vertical-align: middle;
@@ -227,7 +225,6 @@
 .example-before-inline:before {
   content: "";
   margin-right: 5px;
-  line-height: 15px;
   margin-top: 1px;
   display: inline-block;
   vertical-align: top;
@@ -302,7 +299,6 @@
 .example-after-inline:after {
   content: "";
   margin-left: 5px;
-  line-height: 15px;
   margin-top: 1px;
   display: inline-block;
   vertical-align: top;

@@ -8,7 +8,7 @@
 //* **right:** (optional, default=none) right position value
 //* **bottom:** (optional, default=none) bottom position value
 //* **left:** (optional, default=none) left position value
-@mixin cssowl-absolute($top:none, $right:none, $bottom:none, $left:none)
+@mixin cssowl-position-absolute($top:none, $right:none, $bottom:none, $left:none)
   @if $top != none
     top: $top
   @if $left != none
@@ -32,8 +32,8 @@
 //* **xOffset:** (optional, default=0) x position offset
 //* **yOffset:** (optional, default=0) y position offset
 //
-//**See also:** [cssowl-absolute](cssowl-absolute.html#absolute)
-@mixin cssowl-absolute-inside($width, $height, $valign:top, $halign:left, $xOffset:0, $yOffset:0)
+//**See also:** [cssowl-position-absolute](cssowl-position.html#absolute)
+@mixin cssowl-position-absolute-inside($width, $height, $valign:top, $halign:left, $xOffset:0, $yOffset:0)
   $top: none
   $left: none
   $right: none
@@ -52,7 +52,7 @@
     margin-left: $xOffset - round($width / 2)
   @else if $halign == right
     $right: $xOffset
-  @include cssowl-absolute($top, $right, $bottom, $left)
+  +cssowl-position-absolute($top, $right, $bottom, $left)
 
 //# absolute-outside
 //
@@ -67,8 +67,8 @@
 //* **xOffset:** (optional, default=0) x position offset
 //* **yOffset:** (optional, default=0) y position offset
 //
-//**See also:** [cssowl-absolute](cssowl-absolute.html#absolute)
-@mixin cssowl-absolute-outside($width, $height, $valign:top, $halign:left, $xOffset:0, $yOffset:0)
+//**See also:** [cssowl-position-absolute](cssowl-position.html#absolute)
+@mixin cssowl-position-absolute-outside($width, $height, $valign:top, $halign:left, $xOffset:0, $yOffset:0)
   $top: none
   $left: none
   $right: none
@@ -87,4 +87,4 @@
     margin-left: $xOffset - round($width / 2)
   @else if $halign == right
     $right: round($xOffset - $width)
-  @include cssowl-absolute($top, $right, $bottom, $left)
+  +cssowl-position-absolute($top, $right, $bottom, $left)

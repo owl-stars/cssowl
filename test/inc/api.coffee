@@ -50,14 +50,14 @@ exports = module.exports = class Api
   @compareAll: (name, extensions, done) ->
     actual = null
 
-    for extension of extension
+    for extension in extensions
       unless actual?
-        actual = "#{tmpDir}/#{name}.#{extension}.css"
+        actual = "#{tmpDir}/#{name}.#{extension}.min.css"
         assert.isTrue fs.existsSync(actual), "actual file exists " + actual
         actualContent = fs.readFileSync actual, "utf-8"
         assert.isString actualContent
       else
-        expected = "#{tmpDir}/#{name}.#{extension}.css"
+        expected = "#{tmpDir}/#{name}.#{extension}.min.css"
         assert.isTrue fs.existsSync(expected), "expected file exists " + expected
         expectedContent = fs.readFileSync expected, "utf-8"
         assert.isString expectedContent
@@ -67,7 +67,7 @@ exports = module.exports = class Api
 
   @compareEmpty: (name, extensions, done) ->
 
-    for extension of extension
+    for extension in extensions
       expected = "#{tmpDir}/#{name}.#{extension}.css"
       assert.isTrue fs.existsSync(expected), "expected file exists " + expected
       expectedContent = fs.readFileSync expected, "utf-8"
