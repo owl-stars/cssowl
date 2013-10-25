@@ -1,6 +1,6 @@
 {
   "name": "cssowl",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "homepage": "http://cssowl.owl-stars.com/",
   "author": "We Just Do Stuff, Kim & Pollak GbR",
   "description": "Owl-Stars mixins library with support for Less, Sass, Scss & Stylus.",
