@@ -1,5 +1,15 @@
-module.exports = (grunt) ->
+###
+cssowl
+https://github.com/owl-stars/cssowl
 
+Copyright (c) 2013 Owl-Stars
+Licensed under the MIT license.
+###
+
+module.exports = (grunt) ->
+  "use strict"
+
+  # Project configuration.
   grunt.initConfig
     pkg: grunt.file.readJSON "package.json"
 
@@ -90,61 +100,38 @@ module.exports = (grunt) ->
           dest: 'docs/examples/stylus'
         ]
 
-    watch:
-      docs:
-        files: [
-          'docs/fixtures/examples.less'
-          'docs/fixtures/examples.sass'
-          'docs/fixtures/examples.scss'
-          'docs/fixtures/examples.styl'
-          'lib/**/*.less'
-          'lib/**/*.sass'
-          'lib/**/*.scss'
-          'lib/**/*.styl'
-        ]
-        tasks: ['docs']
-      test:
-        files: [
-          'docs/fixtures/examples.*'
-          'test/fixtures/*.*'
-          'test/**/*.coffee'
-          'lib/**/*.less'
-          'lib/**/*.sass'
-          'lib/**/*.scss'
-          'lib/**/*.styl'
-        ]
-        tasks: ['test']
-
-    mochaTest:
-      test:
-        options:
-          bail: true
-          ui: 'exports'
-          timeout: 10000
-        src: ['test/specs/**/*.test.coffee']
-
-    bump:
+    # Unit tests.
+    mochacov:
       options:
-        pushTo: 'origin'
-        commitFiles: ['-a']
-        updateConfigs: ['pkg']
-        files: ['package.json', 'bower.json']
+        bail: true
+        ui: 'exports'
+        require: 'coffee-script'
+        compilers: ['coffee:coffee-script']
+        files: 'test/specs/**/*.test.coffee'
+      all:
+        options:
+          reporter: 'spec'
 
+    # Deployment
+    bumper:
+      options:
+        tasks: ["default"]
+        files: ["package.json", 'bower.json']
+        updateConfigs: ["pkg"]
 
   # Load npm tasks
-  grunt.loadNpmTasks "grunt-mocha-test"
+  grunt.loadNpmTasks "grunt-mocha-cov"
   grunt.loadNpmTasks "grunt-styledocco"
   grunt.loadNpmTasks "grunt-coffeelint"
   grunt.loadNpmTasks "grunt-contrib-sass"
-  grunt.loadNpmTasks "grunt-contrib-watch"
   grunt.loadNpmTasks "grunt-contrib-less"
   grunt.loadNpmTasks "grunt-contrib-stylus"
   grunt.loadNpmTasks "grunt-contrib-csslint"
-  grunt.loadNpmTasks "grunt-contrib-clean"
   grunt.loadNpmTasks "grunt-contrib-cssmin"
-  grunt.loadNpmTasks "grunt-bump"
+  grunt.loadNpmTasks "grunt-contrib-clean"
+  grunt.loadNpmTasks "grunt-bumper"
 
   # Register tasks
   grunt.registerTask 'default', ['coffeelint']
   grunt.registerTask 'docs', ['default', 'clean:docs', 'styledocco', 'clean:css']
-  grunt.registerTask 'test', ['default', 'clean:test', 'less', 'sass', 'stylus', 'csslint', 'cssmin', 'mochaTest']
+  grunt.registerTask 'test', ['default', 'clean:test', 'less', 'sass', 'stylus', 'csslint', 'cssmin', 'mochacov']

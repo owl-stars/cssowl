@@ -1,18 +1,20 @@
-api = require "../inc/api"
+"use strict"
+
+helper = require "./helper"
 
 module.exports =
   "Test #cssowl":
     "#examples":
       "#empty": (done) ->
-        api.compareEmpty "cssowl", ['less', 'sass', 'scss', 'styl'], done
+        helper.compareAllEmpty("cssowl", ['less', 'sass', 'scss', 'styl'], done)
       "#less": (done) ->
-        api.less "examples", done
+        helper.less("examples", done)
       "#scss": (done) ->
-        api.scss "examples", done
+        helper.scss("examples", done)
       "#sass": (done) ->
-        api.sass "examples", done
+        helper.sass("examples", done)
       "#stylus": (done) ->
-        api.stylus "examples", done
+        helper.stylus("examples", done)
       "#all": (done) ->
-        api.compareAll "examples", ['less', 'sass', 'scss', 'styl'], done
+        helper.compareAll("examples", ['less', 'sass', 'scss', 'styl'], done)
 

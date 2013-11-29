@@ -1,18 +1,13 @@
 {
   "name": "cssowl",
+  "description": "Owl-Stars mixins library with support for Less, Sass/Scss & Stylus.",
   "version": "1.0.8",
   "homepage": "http://cssowl.owl-stars.com/",
-  "author": "We Just Do Stuff, Kim & Pollak GbR",
-  "description": "Owl-Stars mixins library with support for Less, Sass, Scss & Stylus.",
-  "keywords": [
-    "owl-stars",
-    "cssowl",
-    "spriteowl",
-    "less",
-    "sass",
-    "scss",
-    "stylus"
-  ],
+  "author": {
+    "name": "franklin",
+    "email": "franklin@owl-stars.com",
+    "url": "http://wwww.owl-stars.com/"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/owl-stars/cssowl.git"
@@ -23,25 +18,41 @@
   "licenses": [
     {
       "type": "MIT",
-      "url": "https://github.com/owl-stars/cssowl/blob/master/LICENSE"
+      "url": "https://github.com/owl-stars/cssowl/blob/master/LICENSE-MIT"
     }
   ],
-  "devDependencies": {
-    "chai": "~1.8.0",
-    "grunt": "~0.4.1",
-    "grunt-coffeelint": "0.0.7",
-    "grunt-mocha-test": "~0.7.0",
-    "grunt-contrib-watch": "~0.5.3",
-    "grunt-contrib-sass": "~0.5.0",
-    "grunt-contrib-less": "~0.7.0",
-    "grunt-contrib-stylus": "~0.8.0",
-    "grunt-contrib-clean": "~0.5.0",
-    "grunt-contrib-csslint": "~0.1.2",
-    "grunt-contrib-cssmin": "~0.6.2",
-    "grunt-styledocco": "~0.1.0",
-    "grunt-bump": "0.0.11"
+  "main": "Gruntfile.coffee",
+  "engines": {
+    "node": ">= 0.8.0"
   },
   "scripts": {
     "test": "grunt test"
-  }
+  },
+  "devDependencies": {
+    "chai": "~1.8.0",
+    "grunt-coffeelint": "0.0.7",
+    "grunt-contrib-sass": "~0.5.0",
+    "grunt-contrib-less": "~0.7.0",
+    "grunt-contrib-clean": "~0.5.0",
+    "grunt-contrib-stylus": "~0.8.0",
+    "grunt-contrib-csslint": "~0.1.2",
+    "grunt-contrib-cssmin": "~0.6.2",
+    "grunt-styledocco": "~0.1.0",
+    "grunt-mocha-cov": "0.0.7",
+    "coffee-script": "~1.6.3",
+    "grunt-bumper": "~1.0.0",
+    "grunt": "~0.4.1"
+  },
+  "peerDependencies": {
+    "grunt": "~0.4.1"
+  },
+  "keywords": [
+    "owl-stars",
+    "spriteowl",
+    "stylus",
+    "less",
+    "sass",
+    "scss",
+    "css"
+  ]
 }

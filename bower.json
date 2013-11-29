@@ -2,11 +2,9 @@
   "name": "cssowl",
   "version": "1.0.8",
   "ignore": [
-    "docs",
     "**/.*",
-    "formats",
-    "node_modules",
-    "bower_components",
+    "Gruntfile.coffee",
+    "package.json",
     "test"
   ],
   "main": [
