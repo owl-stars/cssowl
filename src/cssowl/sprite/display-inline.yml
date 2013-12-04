@@ -1,0 +1,55 @@
+description: |
+  Displays an element with the `display: inline-block` attribute.
+  You can vertically align it using `yOffset` and `valign`.
+mixin:
+  parameters:
+    x: "x position of the element"
+    y: "y position of the element"
+    width: "element width"
+    height: "element height"
+    src: "background image source"
+    yOffset: "(optional, default=0) top margin of the element"
+    valign: "(optional, default=middle) *vertical-align* attribute property"
+  less: |
+    .cssowl-sprite-display-inline(@x, @y, @width, @height, @src, @yOffset:0, @valign:middle) {
+      margin-top: @yOffset;
+      display: inline-block;
+      vertical-align: @valign;
+      .cssowl-sprite-display(@x, @y, @width, @height, @src);
+    }
+  sass: |
+    @mixin cssowl-sprite-display-inline($x, $y, $width, $height, $src, $yOffset:0, $valign:middle)
+      margin-top: $yOffset
+      display: inline-block
+      vertical-align: $valign
+      +cssowl-sprite-display($x, $y, $width, $height, $src)
+  scss: |
+    @mixin cssowl-sprite-display-inline($x, $y, $width, $height, $src, $yOffset:0, $valign:middle) {
+      margin-top: $yOffset;
+      display: inline-block;
+      vertical-align: $valign;
+      @include cssowl-sprite-display($x, $y, $width, $height, $src);
+    }
+  styl: |
+    cssowl-sprite-display-inline(x, y, width, height, src, yOffset=0, valign=middle)
+      margin-top: yOffset
+      display: inline-block
+      vertical-align: valign
+      cssowl-sprite-display(x, y, width, height, src)
+examples:
+  sass: |
+    .example-display-inline
+      +cssowl-sprite-display-inline(-10px, -10px, 91px, 95px, url("sprite.png"))
+  scss: |
+    .example-display-inline {
+      @include cssowl-sprite-display-inline(-10px, -10px, 91px, 95px, url("sprite.png"));
+    }
+  less: |
+    .example-display-inline {
+      .cssowl-sprite-display-inline(-10px, -10px, 91px, 95px, url("sprite.png"));
+    }
+  stylus: |
+    .example-display-inline
+      cssowl-sprite-display-inline(-10px, -10px, 91px, 95px, url("sprite.png"))
+  html: |
+    .example-display-inline

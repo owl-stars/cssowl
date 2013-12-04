@@ -1,43 +1,11 @@
-//# absolute
+// Positions a element with `position: absolute;` inside the bounding box.
 //
-//Positions a element with `position: absolute;` and sets the `top`, `left`, `right` and `bottom` attributes if not `none`.
-//
-//**Parameters:**
-//
-//* **top:** (optional, default=none) top position value
-//* **right:** (optional, default=none) right position value
-//* **bottom:** (optional, default=none) bottom position value
-//* **left:** (optional, default=none) left position value
-@mixin cssowl-position-absolute($top:none, $right:none, $bottom:none, $left:none) {
-  @if $top != none {
-    top: $top;
-  }
-  @if $left != none {
-    left: $left;
-  }
-  @if $right != none {
-    right: $right;
-  }
-  @if $bottom != none {
-    bottom: $bottom;
-  }
-  position: absolute;
-}
-
-//# absolute-inside
-//
-//Positions a element with `position: absolute;` inside the bounding box.
-//
-//**Parameters:**
-//
-//* **width:** element width
-//* **height:** element height
-//* **valign:** (optional, default=top) vertical alignment top|middle|bottom
-//* **halign:** (optional, default=left) horizontal alignment left|center|right
-//* **xOffset:** (optional, default=0) x position offset
-//* **yOffset:** (optional, default=0) y position offset
-//
-//**See also:** [cssowl-position-absolute](cssowl-position.html#absolute)
+// width: element width
+// height: element height
+// valign: (optional, default=top) vertical alignment top|middle|bottom
+// halign: (optional, default=left) horizontal alignment left|center|right
+// xOffset: (optional, default=0) x position offset
+// yOffset: (optional, default=0) y position offset
 @mixin cssowl-position-absolute-inside($width, $height, $valign:top, $halign:left, $xOffset:0, $yOffset:0) {
   $top:none;
   $left:none;
@@ -65,21 +33,14 @@
   }
   @include cssowl-position-absolute($top, $right, $bottom, $left);
 }
-
-//# absolute-outside
+// Positions a element with `position: absolute;` outside the bounding box.
 //
-//Positions a element with `position: absolute;` outside the bounding box.
-//
-//**Parameters:**
-//
-//* **width:** element width
-//* **height:** element height
-//* **valign:** (optional, default=top) vertical alignment top|middle|bottom
-//* **halign:** (optional, default=left) horizontal alignment left|center|right
-//* **xOffset:** (optional, default=0) x position offset
-//* **yOffset:** (optional, default=0) y position offset
-//
-//**See also:** [cssowl-position-absolute](cssowl-position.html#absolute)
+// width: element width
+// height: element height
+// valign: (optional, default=top) vertical alignment top|middle|bottom
+// halign: (optional, default=left) horizontal alignment left|center|right
+// xOffset: (optional, default=0) x position offset
+// yOffset: (optional, default=0) y position offset
 @mixin cssowl-position-absolute-outside($width, $height, $valign:top, $halign:left, $xOffset:0, $yOffset:0) {
   $top:none;
   $left:none;
@@ -106,4 +67,25 @@
     $right: round($xOffset - $width);
   }
   @include cssowl-position-absolute($top, $right, $bottom, $left);
+}
+// Positions an element with `position: absolute;` and sets the `top`, `left`, `right` and `bottom` attributes if not `none`.
+//
+// top: (optional, default=none) top position value
+// right: (optional, default=none) right position value
+// bottom: (optional, default=none) bottom position value
+// left: (optional, default=none) left position value
+@mixin cssowl-position-absolute($top:none, $right:none, $bottom:none, $left:none) {
+  @if $top != none {
+    top: $top;
+  }
+  @if $left != none {
+    left: $left;
+  }
+  @if $right != none {
+    right: $right;
+  }
+  @if $bottom != none {
+    bottom: $bottom;
+  }
+  position: absolute;
 }

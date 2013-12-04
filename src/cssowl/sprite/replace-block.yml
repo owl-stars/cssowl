@@ -1,0 +1,48 @@
+description: |
+  Displays an element with the `display: block;` attribute and uses `text-indent: -9999px;` to hide the text.
+mixin:
+  parameters:
+    x: "x position of the element"
+    y: "y position of the element"
+    width: "element width"
+    height: "element height"
+    src: "background image source"
+  less: |
+    .cssowl-sprite-replace-block(@x, @y, @width, @height, @src) {
+      direction: ltr;
+      text-indent: -9999px;
+      .cssowl-sprite-display-block(@x, @y, @width, @height, @src);
+    }
+  sass: |
+    @mixin cssowl-sprite-replace-block($x, $y, $width, $height, $src)
+      direction: ltr
+      text-indent: -9999px
+      +cssowl-sprite-display-block($x, $y, $width, $height, $src)
+  scss: |
+    @mixin cssowl-sprite-replace-block($x, $y, $width, $height, $src) {
+      direction: ltr;
+      text-indent: -9999px;
+      @include cssowl-sprite-display-block($x, $y, $width, $height, $src);
+    }
+  styl: |
+    cssowl-sprite-replace-block(x, y, width, height, src)
+      direction: ltr
+      text-indent: -9999px
+      cssowl-sprite-display-block(x, y, width, height, src)
+examples:
+  sass: |
+    .example-replace-block
+      +cssowl-sprite-replace-block(-10px, -10px, 91px, 95px, url("sprite.png"))
+  scss: |
+    .example-replace-block {
+      @include cssowl-sprite-replace-block(-10px, -10px, 91px, 95px, url("sprite.png"));
+    }
+  less: |
+    .example-replace-block {
+      .cssowl-sprite-replace-block(-10px, -10px, 91px, 95px, url("sprite.png"));
+    }
+  stylus: |
+    .example-replace-block
+      cssowl-sprite-replace-block(-10px, -10px, 91px, 95px, url("sprite.png"))
+  html: |
+    %p Lorem ipsum dolor <span class="example-replace-block">cssowl</span> sit atem

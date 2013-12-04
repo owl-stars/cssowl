@@ -1,0 +1,76 @@
+// Positions a element with `position: absolute;` inside the bounding box.
+//
+// width: element width
+// height: element height
+// valign: (optional, default=top) vertical alignment top|middle|bottom
+// halign: (optional, default=left) horizontal alignment left|center|right
+// xOffset: (optional, default=0) x position offset
+// yOffset: (optional, default=0) y position offset
+cssowl-position-absolute-inside(width, height, valign=top, halign=left, xOffset=0, yOffset=0)
+  if valign == top
+    top = yOffset
+    bottom = none
+  else if valign == middle
+    top = 50%
+    margin-top: yOffset - round(height / 2)
+    bottom = none
+  else if valign == bottom
+    top = none
+    bottom = yOffset
+  if halign == left
+    left = xOffset
+    right = none
+  else if halign == center
+    left = 50%
+    margin-left: xOffset - round(width / 2)
+    right = none
+  else if halign == right
+    left = none
+    right = xOffset
+  cssowl-position-absolute(top, right, bottom, left)
+// Positions a element with `position: absolute;` outside the bounding box.
+//
+// width: element width
+// height: element height
+// valign: (optional, default=top) vertical alignment top|middle|bottom
+// halign: (optional, default=left) horizontal alignment left|center|right
+// xOffset: (optional, default=0) x position offset
+// yOffset: (optional, default=0) y position offset
+cssowl-position-absolute-outside(width, height, valign=top, halign=left, xOffset=0, yOffset=0)
+  if valign == top
+    top = round(yOffset - height)
+    bottom = none
+  else if valign == middle
+    top = 50%
+    margin-top: yOffset - round(height / 2)
+    bottom = none
+  else if valign == bottom
+    top = none
+    bottom = round(yOffset - height)
+  if halign == left
+    left = round(xOffset - width)
+    right = none
+  else if halign == center
+    left = 50%
+    margin-left: xOffset - round(width / 2)
+    right = none
+  else if halign == right
+    left = none
+    right = round(xOffset - width)
+  cssowl-position-absolute(top, right, bottom, left)
+// Positions an element with `position: absolute;` and sets the `top`, `left`, `right` and `bottom` attributes if not `none`.
+//
+// top: (optional, default=none) top position value
+// right: (optional, default=none) right position value
+// bottom: (optional, default=none) bottom position value
+// left: (optional, default=none) left position value
+cssowl-position-absolute(top=none, right=none, bottom=none, left=none)
+  unless top == none
+    top: top
+  unless left == none
+    left: left
+  unless right == none
+    right: right
+  unless bottom == none
+    bottom: bottom
+  position: absolute

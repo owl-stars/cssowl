@@ -1,0 +1,184 @@
+description: |
+  Positions a element with `position: absolute;` outside the bounding box.
+mixin:
+  parameters:
+    width: "element width"
+    height: "element height"
+    valign: "(optional, default=top) vertical alignment top|middle|bottom"
+    halign: "(optional, default=left) horizontal alignment left|center|right"
+    xOffset: "(optional, default=0) x position offset"
+    yOffset: "(optional, default=0) y position offset"
+  less: |
+    ._cssowl-position-absolute-outside-vars(@width, @height, @valign:top, @halign:left, @xOffset:0, @yOffset:0) when (@valign = top) {
+      @top: round(@yOffset - @height);
+      @bottom: none;
+    }
+    ._cssowl-position-absolute-outside-vars(@width, @height, @valign:top, @halign:left, @xOffset:0, @yOffset:0) when (@valign = middle) {
+      @top: 50%;
+      margin-top: @yOffset - round(@height / 2);
+      @bottom: none;
+    }
+    ._cssowl-position-absolute-outside-vars(@width, @height, @valign:top, @halign:left, @xOffset:0, @yOffset:0) when (@valign = bottom) {
+      @top: none;
+      @bottom: round(@yOffset - @height);
+    }
+    ._cssowl-position-absolute-outside-vars(@width, @height, @valign:top, @halign:left, @xOffset:0, @yOffset:0) when (@halign = left) {
+      @left: round(@xOffset - @width);
+      @right: none;
+    }
+    ._cssowl-position-absolute-outside-vars(@width, @height, @valign:top, @halign:left, @xOffset:0, @yOffset:0) when (@halign = center) {
+      @left: 50%;
+      margin-left: @xOffset - round(@width / 2);
+      @right: none;
+    }
+    ._cssowl-position-absolute-outside-vars(@width, @height, @valign:top, @halign:left, @xOffset:0, @yOffset:0) when (@halign = right) {
+      @left: none;
+      @right: round(@xOffset - @width);
+    }
+    ._cssowl-position-absolute-outside-vars(@width, @height, @valign:top, @halign:left, @xOffset:0, @yOffset:0) {
+    }
+    .cssowl-position-absolute-outside(@width, @height, @valign:top, @halign:left, @xOffset:0, @yOffset:0) {
+      ._cssowl-position-absolute-outside-vars(@width, @height, @valign, @halign, @xOffset, @yOffset);
+      .cssowl-position-absolute(@top, @right, @bottom, @left);
+    }
+  sass: |
+    @mixin cssowl-position-absolute-outside($width, $height, $valign:top, $halign:left, $xOffset:0, $yOffset:0)
+      $top: none
+      $left: none
+      $right: none
+      $bottom: none
+      @if $valign == top
+        $top: round($yOffset - $height)
+      @else if $valign == middle
+        $top: 50%
+        margin-top: $yOffset - round($height / 2)
+      @else if $valign == bottom
+        $bottom: round($yOffset - $height)
+      @if $halign == left
+        $left: round($xOffset - $width)
+      @else if $halign == center
+        $left: 50%
+        margin-left: $xOffset - round($width / 2)
+      @else if $halign == right
+        $right: round($xOffset - $width)
+      +cssowl-position-absolute($top, $right, $bottom, $left)
+  scss: |
+    @mixin cssowl-position-absolute-outside($width, $height, $valign:top, $halign:left, $xOffset:0, $yOffset:0) {
+      $top:none;
+      $left:none;
+      $right:none;
+      $bottom:none;
+      @if $valign == top {
+        $top: round($yOffset - $height);
+      }
+      @else if $valign == middle {
+        $top: 50%;
+        margin-top: $yOffset - round($height / 2);
+      }
+      @else if $valign == bottom {
+        $bottom: round($yOffset - $height);
+      }
+      @if $halign == left {
+        $left: round($xOffset - $width);
+      }
+      @else if $halign == center {
+        $left: 50%;
+        margin-left: $xOffset - round($width / 2);
+      }
+      @else if $halign == right {
+        $right: round($xOffset - $width);
+      }
+      @include cssowl-position-absolute($top, $right, $bottom, $left);
+    }
+  styl: |
+    cssowl-position-absolute-outside(width, height, valign=top, halign=left, xOffset=0, yOffset=0)
+      if valign == top
+        top = round(yOffset - height)
+        bottom = none
+      else if valign == middle
+        top = 50%
+        margin-top: yOffset - round(height / 2)
+        bottom = none
+      else if valign == bottom
+        top = none
+        bottom = round(yOffset - height)
+      if halign == left
+        left = round(xOffset - width)
+        right = none
+      else if halign == center
+        left = 50%
+        margin-left: xOffset - round(width / 2)
+        right = none
+      else if halign == right
+        left = none
+        right = round(xOffset - width)
+      cssowl-position-absolute(top, right, bottom, left)
+examples:
+  sass: |
+    .example-absolute-outside
+      width: 10px
+      height: 10px
+      background: #59371f
+      &.top-center
+        +cssowl-position-absolute-outside(10px, 10px, top, center)
+      &.middle-right
+        +cssowl-position-absolute-outside(10px, 10px, middle, right)
+      &.bottom-center
+        +cssowl-position-absolute-outside(10px, 10px, bottom, center)
+      &.middle-left
+        +cssowl-position-absolute-outside(10px, 10px, middle, left)
+  scss: |
+    .example-absolute-outside {
+      width: 10px
+      height: 10px
+      background: #59371f
+      &.top-center
+        @include cssowl-position-absolute-outside(10px, 10px, top, center);
+      }
+      &.middle-right {
+        @include cssowl-position-absolute-outside(10px, 10px, middle, right);
+      }
+      &.bottom-center {
+        @include cssowl-position-absolute-outside(10px, 10px, bottom, center);
+      }
+      &.middle-left {
+        @include cssowl-position-absolute-outside(10px, 10px, middle, left);
+      }
+    }
+  less: |
+    .example-absolute-outside {
+      width: 10px;
+      height: 10px;
+      background: #59371f;
+      &.top-center
+        .cssowl-position-absolute-outside(10px, 10px, top, center);
+      }
+      &.middle-right {
+        .cssowl-position-absolute-outside(10px, 10px, middle, right);
+      }
+      &.bottom-center {
+        .cssowl-position-absolute-outside(10px, 10px, bottom, center);
+      }
+      &.middle-left {
+        .cssowl-position-absolute-outside(10px, 10px, middle, left);
+      }
+    }
+  stylus: |
+    .example-absolute-outside
+      width: 10px
+      height: 10px
+      background: #59371f
+      &.top-center
+        cssowl-position-absolute-outside(10px, 10px, top, center)
+      &.middle-right
+        cssowl-position-absolute-outside(10px, 10px, middle, right)
+      &.bottom-center
+        cssowl-position-absolute-outside(10px, 10px, bottom, center)
+      &.middle-left
+        cssowl-position-absolute-outside(10px, 10px, middle, left)
+  html: |
+    .wrapper{:style => "position:relative;width:50px;height:50px;border:1px solid #59371f;"}
+      .example-absolute-outside.top-center
+      .example-absolute-outside.middle-right
+      .example-absolute-outside.bottom-center
+      .example-absolute-outside.middle-left

@@ -1,0 +1,58 @@
+description: |
+  Adds an element with the `:before` pseudo selector and displays it with `position: absolute;` outside the bounding box.
+mixin:
+  parameters:
+    x: "x position of the element"
+    y: "y position of the element"
+    width: "element width"
+    height: "element height"
+    src: "background image source"
+    valign: "(optional, default=top) vertical alignment top|middle|bottom"
+    halign: "(optional, default=left) horizontal alignment left|center|right"
+    xOffset: "(optional, default=0) x position offset"
+    yOffset: "(optional, default=0) y position offset"
+  less: |
+    .cssowl-sprite-before-absolute-outside(@x, @y, @width, @height, @src, @valign:top, @halign:left, @xOffset:0, @yOffset:0) {
+      position: relative;
+      &:before {
+        content: "";
+        .cssowl-sprite-absolute-outside(@x, @y, @width, @height, @src, @valign, @halign, @xOffset, @yOffset);
+      }
+    }
+  sass: |
+    @mixin cssowl-sprite-before-absolute-outside($x, $y, $width, $height, $src, $valign:top, $halign:left, $xOffset:0, $yOffset:0)
+      position: relative
+      &:before
+        content: ""
+        +cssowl-sprite-absolute-outside($x, $y, $width, $height, $src, $valign, $halign, $xOffset, $yOffset)
+  scss: |
+    @mixin cssowl-sprite-before-absolute-outside($x, $y, $width, $height, $src, $valign:top, $halign:left, $xOffset:0, $yOffset:0) {
+      position: relative;
+      &:before {
+        content: "";
+        @include cssowl-sprite-absolute-outside($x, $y, $width, $height, $src, $valign, $halign, $xOffset, $yOffset);
+      }
+    }
+  styl: |
+    cssowl-sprite-before-absolute-outside(x, y, width, height, src, valign=top, halign=left, xOffset=0, yOffset=0)
+      position: relative
+      &:before
+        content: ""
+        cssowl-sprite-absolute-outside(x, y, width, height, src, valign, halign, xOffset, yOffset)
+examples:
+  sass: |
+    .example-before-absolute-outside
+      +cssowl-sprite-before-absolute-outside(-110px, -20px, 7px, 4px, url("sprite.png"), top, center)
+  scss: |
+    .example-before-absolute-outside {
+      @include cssowl-sprite-before-absolute-outside(-110px, -20px, 7px, 4px, url("sprite.png"), top, center);
+    }
+  less: |
+    .example-before-absolute-outside {
+      .cssowl-sprite-before-absolute-outside(-110px, -20px, 7px, 4px, url("sprite.png"), top, center);
+    }
+  stylus: |
+    .example-before-absolute-outside
+      cssowl-sprite-before-absolute-outside(-110px, -20px, 7px, 4px, url("sprite.png"), top, center)
+  html: |
+    .example-before-absolute-outside{:style => "display:inline-block;border-top:1px solid #59371f;padding-top: 5px;"} Quia sint quis

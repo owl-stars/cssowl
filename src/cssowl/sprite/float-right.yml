@@ -1,0 +1,55 @@
+description: |
+  Displays an element with the `float: right;` attribute and a `margin-left` as optional offset.
+mixin:
+  parameters:
+    x: "x position of the element"
+    y: "y position of the element"
+    width: "element width"
+    height: "element height"
+    src: "background image source"
+    xOffset: "(optional, default=0) left margin offset"
+    yOffset: "(optional, default=0) top margin of the element"
+  less: |
+    .cssowl-sprite-float-right(@x, @y, @width, @height, @src, @xOffset:0, @yOffset:0) {
+      float: right;
+      margin-top: @yOffset;
+      margin-left: @xOffset;
+      .cssowl-sprite-display-block(@x, @y, @width, @height, @src);
+    }
+  sass: |
+    @mixin cssowl-sprite-float-right($x, $y, $width, $height, $src, $xOffset:0, $yOffset:0)
+      float: right
+      margin-top: $yOffset
+      margin-left: $xOffset
+      +cssowl-sprite-display-block($x, $y, $width, $height, $src)
+  scss: |
+    @mixin cssowl-sprite-float-right($x, $y, $width, $height, $src, $xOffset:0, $yOffset:0) {
+      float: right;
+      margin-top: $yOffset;
+      margin-left: $xOffset;
+      @include cssowl-sprite-display-block($x, $y, $width, $height, $src);
+    }
+  styl: |
+    cssowl-sprite-float-right(x, y, width, height, src, xOffset=0, yOffset=0)
+      float: right
+      margin-top: yOffset
+      margin-left: xOffset
+      cssowl-sprite-display-block(x, y, width, height, src)
+examples:
+  sass: |
+    .example-float-right
+      +cssowl-sprite-float-right(-110px, -30px, 15px, 15px, url("sprite.png"), 5px, 11px)
+  scss: |
+    .example-float-right {
+      @include cssowl-sprite-float-right(-110px, -30px, 15px, 15px, url("sprite.png"), 5px, 11px);
+    }
+  less: |
+    .example-float-right {
+      .cssowl-sprite-float-right(-110px, -30px, 15px, 15px, url("sprite.png"), 5px, 11px)
+    }
+  stylus: |
+    .example-float-right
+      cssowl-sprite-float-right(-110px, -30px, 15px, 15px, url("sprite.png"), 5px, 11px)
+  html: |
+    .example-float-right
+    %p Dolores inventore quasi et molestias aut voluptas eligendi maiores ipsum. quidem nostrum officia optio vel consequatur autem ea totam.

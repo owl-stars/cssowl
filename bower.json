@@ -5,12 +5,14 @@
     "**/.*",
     "Gruntfile.coffee",
     "package.json",
+    "assets",
+    "tools",
     "test"
   ],
   "main": [
     "lib/less/cssowl.less",
     "lib/sass/cssowl.sass",
     "lib/scss/cssowl.scss",
-    "lib/stylus/cssowl.styl"
+    "lib/styl/cssowl.styl"
   ]
 }

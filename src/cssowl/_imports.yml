@@ -1,0 +1,13 @@
+imports:
+  less: |
+    @import "cssowl/position";
+    @import "cssowl/sprite";
+  sass: |
+    @import "cssowl/position"
+    @import "cssowl/sprite"
+  scss: |
+    @import "cssowl/position";
+    @import "cssowl/sprite";
+  styl: |
+    @import "cssowl/position"
+    @import "cssowl/sprite"

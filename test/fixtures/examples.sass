@@ -1,0 +1,363 @@
+//Import the cssowl library
+@import "../../lib/sass/cssowl/sprite"
+
+
+
+//# cssowl-sprite-display
+//
+//Displays a sprite element.
+//
+//**Examples:**
+//
+//```
+//<div class="example-display"></div>
+//```
+.example-display
+  +cssowl-sprite-display(-10px, -10px, 91px, 95px, url("sprite.png"))
+
+//# cssowl-sprite-display-block
+//
+//Same as *[sprite-display](#display)* but with `display: block` attribute.
+//
+//**Examples:**
+//
+//```
+//<div class="example-display-block"></div>
+//```
+.example-display-block
+  +cssowl-sprite-display-block(-10px, -10px, 91px, 95px, url("sprite.png"))
+
+//# cssowl-sprite-display-inline
+//
+//Same as *[sprite-display](#display)* but with `display: inline-block` attribute.
+//
+//**Examples:**
+//
+//```
+//<div class="example-display-inline"></div>
+//```
+.example-display-inline
+  +cssowl-sprite-display-inline(-10px, -10px, 91px, 95px, url("sprite.png"))
+
+
+
+//# cssowl-sprite-replace
+//
+//Displays a sprite element and uses `text-indent: -9999px;` to hide the text.
+//
+//**Examples:**
+//
+//```
+//<h1 class="example-replace">Lorem ipsum dolor.</h1>
+//```
+.example-replace
+  +cssowl-sprite-replace(-10px, -10px, 91px, 95px, url("sprite.png"))
+
+//# cssowl-sprite-replace-block
+//
+//Same as *[sprite-replace](#replace)* but with `display: block` attribute.
+//
+//**Examples:**
+//
+//```
+//<h1 class="example-replace-block">Lorem ipsum dolor.</h1>
+//```
+.example-replace-block
+  +cssowl-sprite-replace-block(-10px, -10px, 91px, 95px, url("sprite.png"))
+
+//# cssowl-sprite-replace-inline
+//
+//Same as *[sprite-replace](#replace)* but with `display: inline-block` attribute.
+//
+//**Examples:**
+//
+//```
+//<h1 class="example-replace-inline">Lorem ipsum dolor.</h1>
+//```
+.example-replace-inline
+  +cssowl-sprite-replace-inline(-10px, -10px, 91px, 95px, url("sprite.png"))
+
+
+
+//# cssowl-sprite-absolute
+//
+//Displays and positions a sprite element with `position: absolute;` according to your parameters.
+//
+//**Examples:**
+//
+//```
+//<div id="wrapper" style="position:relative;width:50px;height:50px;border:1px solid #59371f;">
+//  <div class="example-absolute top-right"></div>
+//</div>
+//```
+//
+//```
+//<div id="wrapper" style="position:relative;width:50px;height:50px;border:1px solid #59371f;">
+//  <div class="example-absolute bottom-left"></div>
+//</div>
+//```
+.example-absolute
+  &.top-right
+    +cssowl-sprite-absolute(-110px, -30px, 15px, 15px, url("sprite.png"), 5px, 5px, none, none)
+  &.bottom-left
+    +cssowl-sprite-absolute(-110px, -30px, 15px, 15px, url("sprite.png"), none, none, 5px, 5px)
+
+//# cssowl-sprite-absolute-inside
+//
+//Displays and positions a sprite element with `position: absolute;` inside the bounding box.
+//
+//**Examples:**
+//
+//```
+//<div id="wrapper" style="position:relative;width:50px;height:50px;border:1px solid #59371f;">
+//  <div class="example-absolute-inside top-right"></div>
+//</div>
+//```
+//
+//```
+//<div id="wrapper" style="position:relative;width:50px;height:50px;border:1px solid #59371f;">
+//  <div class="example-absolute-inside top-right-offset"></div>
+//</div>
+//```
+//
+//```
+//<div id="wrapper" style="position:relative;width:50px;height:50px;border:1px solid #59371f;">
+//  <div class="example-absolute-inside top-center"></div>
+//  <div class="example-absolute-inside middle-right"></div>
+//  <div class="example-absolute-inside bottom-center"></div>
+//  <div class="example-absolute-inside middle-left"></div>
+//</div>
+//```
+.example-absolute-inside
+  &.top-right
+    +cssowl-sprite-absolute-inside(-110px, -30px, 15px, 15px, url("sprite.png"), top, right)
+  &.top-right-offset
+    +cssowl-sprite-absolute-inside(-110px, -30px, 15px, 15px, url("sprite.png"), top, right, 5px, 5px)
+  &.top-center
+    +cssowl-sprite-absolute-inside(-110px, -20px, 7px, 4px, url("sprite.png"), top, center)
+  &.middle-right
+    +cssowl-sprite-absolute-inside(-110px, -10px, 4px, 7px, url("sprite.png"), middle, right)
+  &.bottom-center
+    +cssowl-sprite-absolute-inside(-120px, -20px, 7px, 4px, url("sprite.png"), bottom, center)
+  &.middle-left
+    +cssowl-sprite-absolute-inside(-120px, -10px, 4px, 7px, url("sprite.png"), middle, left)
+
+//# cssowl-sprite-absolute-outside
+//
+//Displays and positions a sprite element with `position: absolute;` outside the bounding box.
+//
+//**Examples:**
+//
+//```
+//<div id="wrapper" style="position:relative;width:50px;height:50px;border:1px solid #59371f;margin:20px;">
+//  <div class="example-absolute-outside top-right"></div>
+//</div>
+//```
+//
+//```
+//<div id="wrapper" style="position:relative;width:50px;height:50px;border:1px solid #59371f;margin:20px;">
+//  <div class="example-absolute-outside top-right-offset"></div>
+//</div>
+//```
+//
+//```
+//<div id="wrapper" style="position:relative;width:50px;height:50px;border:1px solid #59371f;margin:5px;">
+//  <div class="example-absolute-outside top-center"></div>
+//  <div class="example-absolute-outside middle-right"></div>
+//  <div class="example-absolute-outside bottom-center"></div>
+//  <div class="example-absolute-outside middle-left"></div>
+//</div>
+//```
+.example-absolute-outside
+  &.top-right
+    +cssowl-sprite-absolute-outside(-110px, -30px, 15px, 15px, url("sprite.png"), top, right)
+  &.top-right-offset
+    +cssowl-sprite-absolute-outside(-110px, -30px, 15px, 15px, url("sprite.png"), top, right, 5px, 5px)
+  &.top-center
+    +cssowl-sprite-absolute-outside(-120px, -20px, 7px, 4px, url("sprite.png"), top, center)
+  &.middle-right
+    +cssowl-sprite-absolute-outside(-120px, -10px, 4px, 7px, url("sprite.png"), middle, right)
+  &.bottom-center
+    +cssowl-sprite-absolute-outside(-110px, -20px, 7px, 4px, url("sprite.png"), bottom, center)
+  &.middle-left
+    +cssowl-sprite-absolute-outside(-110px, -10px, 4px, 7px, url("sprite.png"), middle, left)
+
+
+
+//# cssowl-sprite-float-left
+//
+//Displays a sprite element with the `float: left;` attribute with optional offset.
+//
+//**Examples:**
+//
+//```
+//<div id="wrapper">
+//  <div class="example-float-left"></div>
+//  <div>Lorem ipsum dolor sit amet, sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergre.</div>
+//</div>
+//```
+.example-float-left
+  +cssowl-sprite-float-left(-110px, -30px, 15px, 15px, url("sprite.png"), 5px, 11px)
+
+//# cssowl-sprite-float-right
+//
+//Displays a sprite element with the `float: right;` attribute and a `margin-left` as optional offset.
+//
+//**Examples:**
+//
+//```
+//<div id="wrapper">
+//  <div class="example-float-right"></div>
+//  <div>Lorem ipsum dolor sit amet, sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergre.</div>
+//</div>
+//```
+.example-float-right
+  +cssowl-sprite-float-right(-110px, -30px, 15px, 15px, url("sprite.png"), 5px, 11px)
+
+
+
+//# cssowl-sprite-before
+//
+//Adds the element with the `:before` pseudo selector to display the element.
+//
+//**Examples:**
+//
+//```
+//<div class="example-before">Lorem ipsum dolor.</div>
+//```
+.example-before
+  +cssowl-sprite-before(-110px, -30px, 15px, 15px, url("sprite.png"))
+
+//# cssowl-sprite-before-inline
+//
+//Adds the element with the `:before` pseudo selector and displays it *inline*.
+//
+//**Examples:**
+//
+//```
+//<div class="example-before-inline">Lorem ipsum dolor.</div>
+//```
+.example-before-inline
+  +cssowl-sprite-before-inline(-110px, -30px, 15px, 15px, url("sprite.png"), 5px, 1px, top)
+
+//# cssowl-sprite-before-float
+//
+//Adds the element with the `:before` pseudo selector and displays it with the `float: left;` attribute.
+//
+//**Examples:**
+//
+//```
+//<div class="example-before-float">Lorem ipsum dolor.</div>
+//```
+.example-before-float
+  +cssowl-sprite-before-float(-110px, -30px, 15px, 15px, url("sprite.png"), 5px, 1px)
+
+//# cssowl-sprite-before-absolute
+//
+//Adds the element with the `:before` pseudo selector and displays it with the `position: absolute;` attribute.
+//
+//**Examples:**
+//
+//```
+//<div class="example-before-absolute" style="margin-left:20px;">Lorem ipsum dolor.</div>
+//```
+.example-before-absolute
+  +cssowl-sprite-before-absolute(-110px, -30px, 15px, 15px, url("sprite.png"), 1px, none, none, -20px)
+
+//# cssowl-sprite-before-absolute-inside
+//
+//Adds the element with the `:before` pseudo selector and displays displays it with `position: absolute;` inside the bounding box.
+//
+//**Examples:**
+//
+//```
+//<span class="example-before-absolute-inside" style="display:inline-block;border-top:1px solid #59371f;padding-top: 5px;">Lorem ipsum dolor.</span>
+//```
+.example-before-absolute-inside
+  +cssowl-sprite-before-absolute-inside(-110px, -20px, 7px, 4px, url("sprite.png"), top, center)
+
+//# cssowl-sprite-before-absolute-outside
+//
+//Adds the element with the `:before` pseudo selector and displays displays it with `position: absolute;` outside the bounding box.
+//
+//**Examples:**
+//
+//```
+//<span class="example-before-absolute-outside" style="display:inline-block;border-top:1px solid #59371f;padding-top:5px;margin-top:4px;">Lorem ipsum dolor.</span>
+//```
+.example-before-absolute-outside
+  +cssowl-sprite-before-absolute-outside(-120px, -20px, 7px, 4px, url("sprite.png"), top, center)
+
+
+
+//# cssowl-sprite-after
+//
+//Adds the element with the `:after` pseudo selector to display the element.
+//
+//**Examples:**
+//
+//```
+//<div class="example-after">Lorem ipsum dolor.</div>
+//```
+.example-after
+  +cssowl-sprite-after(-110px, -30px, 15px, 15px, url("sprite.png"))
+
+//# cssowl-sprite-after-inline
+//
+//Adds the element with the `:after` pseudo selector and displays it *inline*.
+//
+//**Examples:**
+//
+//```
+//<div class="example-after-inline">Lorem ipsum dolor.</div>
+//```
+.example-after-inline
+  +cssowl-sprite-after-inline(-110px, -30px, 15px, 15px, url("sprite.png"), 5px, 1px, top)
+
+//# cssowl-sprite-after-float
+//
+//Adds the element with the `:after` pseudo selector and displays it *inline* with the `float: left;` attribute.
+//
+//**Examples:**
+//
+//```
+//<div class="example-after-float">Lorem ipsum dolor.</div>
+//```
+.example-after-float
+  +cssowl-sprite-after-float(-110px, -30px, 15px, 15px, url("sprite.png"), 5px, 1px)
+
+//# cssowl-sprite-after-absolute
+//
+//Adds the element with the `:after` pseudo selector and displays it with the `position: absolute;` attribute.
+//
+//**Examples:**
+//
+//```
+//<div class="example-after-absolute">Lorem ipsum dolor.</div>
+//```
+.example-after-absolute
+  +cssowl-sprite-after-absolute(-110px, -30px, 15px, 15px, url("sprite.png"), 1px, 0)
+
+//# cssowl-sprite-after-absolute-inside
+//
+//Adds the element with the `:after` pseudo selector and displays displays it with `position: absolute;` inside the bounding box.
+//
+//**Examples:**
+//
+//```
+//<span class="example-after-absolute-inside" style="display:inline-block;border-top:1px solid #59371f;padding-top: 5px;">Lorem ipsum dolor.</span>
+//```
+.example-after-absolute-inside
+  +cssowl-sprite-after-absolute-inside(-110px, -20px, 7px, 4px, url("sprite.png"), top, center)
+
+//# cssowl-sprite-after-absolute-outside
+//
+//Adds the element with the `:after` pseudo selector and displays displays it with `position: absolute;` outside the bounding box.
+//
+//**Examples:**
+//
+//```
+//<span class="example-after-absolute-outside" style="display:inline-block;border-top:1px solid #59371f;padding-top:5px;margin-top:4px;">Lorem ipsum dolor.</span>
+//```
+.example-after-absolute-outside
+  +cssowl-sprite-after-absolute-outside(-120px, -20px, 7px, 4px, url("sprite.png"), top, center)

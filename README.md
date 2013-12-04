@@ -1,11 +1,14 @@
 # [Cssowl](http://cssowl.owl-stars.com)
-[![Build Status](https://travis-ci.org/owl-stars/cssowl.png?branch=master)](https://travis-ci.org/owl-stars/cssowl) [![devDependency Status](https://david-dm.org/owl-stars/cssowl/dev-status.png)](https://david-dm.org/owl-stars/cssowl#info=devDependencies)
 
-Cssowl is [Owl-Stars](http://www.owl-stars.com) mixins library with support for [Less](http://lesscss.org), [Sass/Scss](http://sass-lang.com/) and [Stylus](http://learnboost.github.io/stylus/).
+[![Build Status](https://travis-ci.org/owl-stars/cssowl.png?branch=master)](https://travis-ci.org/owl-stars/cssowl)
+[![Dependency Status](https://gemnasium.com/owl-stars/cssowl.png)](https://gemnasium.com/owl-stars/cssowl)
 
-It's been created to work with Owl-Stars Plugins like [Spriteowl](http://spriteowl.owl-stars.com) but it can also be used by it self to help you for faster and easier web development.
+> Cssowl is [Owl-Stars](http://www.owl-stars.com) mixins library with support for [Less](http://lesscss.org), [Sass/Scss](http://sass-lang.com/) and [Stylus](http://learnboost.github.io/stylus/).
+>
+> It's been created to work with Owl-Stars Extensions like [Spriteowl](http://spriteowl.owl-stars.com) but it can also be used by it self to help you for faster and easier web development.
 
 ## Quick start
+
 Three quick start options are available:
 
 * [Download the latest release](https://github.com/owl-stars/cssowl/releases).
@@ -15,6 +18,7 @@ Three quick start options are available:
 Check out [cssowl.owl-stars.com](http://cssowl.owl-stars.com) for information on the library's contents, examples, and more.
 
 ### What's included
+
 Within the download you'll find the following directories and files, grouping each syntax into it's own directory.
 
 ```
@@ -42,11 +46,8 @@ cssowl/
         └── cssowl.styl
 ```
 
-## Doc Comments
-Cssowl's mixins and example doc comments parsed and rendered using [Styledocco](http://jacobrask.github.io/styledocco/) and are included in the `docs` subdirectory.
-
 ## Contributing
 In lieu of a formal styleguide, take care to maintain the existing coding style. Add unit tests and examples for any new or changed functionality. Lint and test your code using [Grunt](http://gruntjs.com/).
 
 ## License
-Copyright (c) We Just Do Stuff, Kim & Pollak GbR under the [MIT license](https://github.com/owl-stars/cssowl/blob/master/LICENSE)
+Copyright (c) 2013 Owl-Stars under the MIT license.

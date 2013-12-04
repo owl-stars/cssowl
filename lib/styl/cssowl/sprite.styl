@@ -12,9 +12,9 @@
 // halign: (optional, default=left) horizontal alignment left|center|right
 // xOffset: (optional, default=0) x position offset
 // yOffset: (optional, default=0) y position offset
-@mixin cssowl-sprite-absolute-inside($x, $y, $width, $height, $src, $valign:top, $halign:left, $xOffset:0, $yOffset:0)
-  +cssowl-position-absolute-inside($width, $height, $valign, $halign, $xOffset, $yOffset)
-  +cssowl-sprite-display($x, $y, $width, $height, $src)
+cssowl-sprite-absolute-inside(x, y, width, height, src, valign=top, halign=left, xOffset=0, yOffset=0)
+  cssowl-position-absolute-inside(width, height, valign, halign, xOffset, yOffset)
+  cssowl-sprite-display(x, y, width, height, src)
 // Positions the element with `position: absolute;` outside the bounding box.
 //
 // x: x position of the element
@@ -26,9 +26,9 @@
 // halign: (optional, default=left) horizontal alignment left|center|right
 // xOffset: (optional, default=0) x position offset
 // yOffset: (optional, default=0) y position offset
-@mixin cssowl-sprite-absolute-outside($x, $y, $width, $height, $src, $valign:top, $halign:left, $xOffset:0, $yOffset:0)
-  +cssowl-position-absolute-outside($width, $height, $valign, $halign, $xOffset, $yOffset)
-  +cssowl-sprite-display($x, $y, $width, $height, $src)
+cssowl-sprite-absolute-outside(x, y, width, height, src, valign=top, halign=left, xOffset=0, yOffset=0)
+  cssowl-position-absolute-outside(width, height, valign, halign, xOffset, yOffset)
+  cssowl-sprite-display(x, y, width, height, src)
 // Positions an element with `position: absolute;`.
 //
 // x: x position of the element
@@ -40,9 +40,9 @@
 // right: (optional, default=none) right position value
 // bottom: (optional, default=none) bottom position value
 // left: (optional, default=none) left position value
-@mixin cssowl-sprite-absolute($x, $y, $width, $height, $src, $top:none, $right:none, $bottom:none, $left:none)
-  +cssowl-position-absolute($top, $right, $bottom, $left)
-  +cssowl-sprite-display($x, $y, $width, $height, $src)
+cssowl-sprite-absolute(x, y, width, height, src, top=none, right=none, bottom=none, left=none)
+  cssowl-position-absolute(top, right, bottom, left)
+  cssowl-sprite-display(x, y, width, height, src)
 // Adds an element with the `:after` pseudo selector and displays it with `position: absolute;` inside the bounding box.
 //
 // x: x position of the element
@@ -54,11 +54,11 @@
 // halign: (optional, default=left) horizontal alignment left|center|right
 // xOffset: (optional, default=0) x position offset
 // yOffset: (optional, default=0) y position offset
-@mixin cssowl-sprite-after-absolute-inside($x, $y, $width, $height, $src, $valign:top, $halign:left, $xOffset:0, $yOffset:0)
+cssowl-sprite-after-absolute-inside(x, y, width, height, src, valign=top, halign=left, xOffset=0, yOffset=0)
   position: relative
   &:after
     content: ""
-    +cssowl-sprite-absolute-inside($x, $y, $width, $height, $src, $valign, $halign, $xOffset, $yOffset)
+    cssowl-sprite-absolute-inside(x, y, width, height, src, valign, halign, xOffset, yOffset)
 // Adds an element with the `:after` pseudo selector and displays it with `position: absolute;` outside the bounding box.
 //
 // x: x position of the element
@@ -70,11 +70,11 @@
 // halign: (optional, default=left) horizontal alignment left|center|right
 // xOffset: (optional, default=0) x position offset
 // yOffset: (optional, default=0) y position offset
-@mixin cssowl-sprite-after-absolute-outside($x, $y, $width, $height, $src, $valign:top, $halign:left, $xOffset:0, $yOffset:0)
+cssowl-sprite-after-absolute-outside(x, y, width, height, src, valign=top, halign=left, xOffset=0, yOffset=0)
   position: relative
   &:after
     content: ""
-    +cssowl-sprite-absolute-outside($x, $y, $width, $height, $src, $valign, $halign, $xOffset, $yOffset)
+    cssowl-sprite-absolute-outside(x, y, width, height, src, valign, halign, xOffset, yOffset)
 // Adds an element with the `:after` pseudo selector and displays it with the `position: absolute;` attribute.
 //
 // x: x position of the element
@@ -86,11 +86,11 @@
 // right: (optional, default=none) right position value
 // bottom: (optional, default=none) bottom position value
 // left: (optional, default=none) left position value
-@mixin cssowl-sprite-after-absolute($x, $y, $width, $height, $src, $top:none, $right:none, $bottom:none, $left:none)
+cssowl-sprite-after-absolute(x, y, width, height, src, top=none, right=none, bottom=none, left=none)
   position: relative
   &:after
     content: ""
-    +cssowl-sprite-absolute($x, $y, $width, $height, $src, $top, $right, $bottom, $left)
+    cssowl-sprite-absolute(x, y, width, height, src, top, right, bottom, left)
 // Adds an element with the `:after` pseudo selector and displays it with the `float: right;` attribute.
 //
 // x: x position of the element
@@ -100,13 +100,13 @@
 // src: background image source
 // xOffset: (optional, default=0) left margin of the element
 // yOffset: (optional, default=0) top margin of the element
-@mixin cssowl-sprite-after-float($x, $y, $width, $height, $src, $xOffset:0, $yOffset:0)
+cssowl-sprite-after-float(x, y, width, height, src, xOffset=0, yOffset=0)
   &:after
     content: ""
     float: right
-    margin-top: $yOffset
-    margin-left: $xOffset
-    +cssowl-sprite-display-block($x, $y, $width, $height, $src)
+    margin-top: yOffset
+    margin-left: xOffset
+    cssowl-sprite-display-block(x, y, width, height, src)
 // Adds an element with the `:after` pseudo selector and displays it *inline*.
 //
 // x: x position of the element
@@ -117,11 +117,11 @@
 // xOffset: (optional, default=0) left margin of the element
 // yOffset: (optional, default=0) top margin of the element
 // valign: (optional, default=middle) *vertical-align* attribute property
-@mixin cssowl-sprite-after-inline($x, $y, $width, $height, $src, $xOffset:0, $yOffset:0, $valign:middle)
+cssowl-sprite-after-inline(x, y, width, height, src, xOffset=0, yOffset=0, valign=middle)
   &:after
     content: ""
-    margin-left: $xOffset
-    +cssowl-sprite-display-inline($x, $y, $width, $height, $src, $yOffset, $valign)
+    margin-left: xOffset
+    cssowl-sprite-display-inline(x, y, width, height, src, yOffset, valign)
 // Adds an element with the `:after` pseudo selector.
 //
 // x: x position of the element
@@ -129,10 +129,10 @@
 // width: element width
 // height: element height
 // src: background image source
-@mixin cssowl-sprite-after($x, $y, $width, $height, $src)
+cssowl-sprite-after(x, y, width, height, src)
   &:after
     content: ""
-    +cssowl-sprite-display-block($x, $y, $width, $height, $src)
+    cssowl-sprite-display-block(x, y, width, height, src)
 // Adds an element with the `:before` pseudo selector and displays it with `position: absolute;` inside the bounding box.
 //
 // x: x position of the element
@@ -144,11 +144,11 @@
 // halign: (optional, default=left) horizontal alignment left|center|right
 // xOffset: (optional, default=0) x position offset
 // yOffset: (optional, default=0) y position offset
-@mixin cssowl-sprite-before-absolute-inside($x, $y, $width, $height, $src, $valign:top, $halign:left, $xOffset:0, $yOffset:0)
+cssowl-sprite-before-absolute-inside(x, y, width, height, src, valign=top, halign=left, xOffset=0, yOffset=0)
   position: relative
   &:before
     content: ""
-    +cssowl-sprite-absolute-inside($x, $y, $width, $height, $src, $valign, $halign, $xOffset, $yOffset)
+    cssowl-sprite-absolute-inside(x, y, width, height, src, valign, halign, xOffset, yOffset)
 // Adds an element with the `:before` pseudo selector and displays it with `position: absolute;` outside the bounding box.
 //
 // x: x position of the element
@@ -160,11 +160,11 @@
 // halign: (optional, default=left) horizontal alignment left|center|right
 // xOffset: (optional, default=0) x position offset
 // yOffset: (optional, default=0) y position offset
-@mixin cssowl-sprite-before-absolute-outside($x, $y, $width, $height, $src, $valign:top, $halign:left, $xOffset:0, $yOffset:0)
+cssowl-sprite-before-absolute-outside(x, y, width, height, src, valign=top, halign=left, xOffset=0, yOffset=0)
   position: relative
   &:before
     content: ""
-    +cssowl-sprite-absolute-outside($x, $y, $width, $height, $src, $valign, $halign, $xOffset, $yOffset)
+    cssowl-sprite-absolute-outside(x, y, width, height, src, valign, halign, xOffset, yOffset)
 // Adds an element with the `:before` pseudo selector and displays it with the `position: absolute;` attribute.
 //
 // x: x position of the element
@@ -176,11 +176,11 @@
 // right: (optional, default=none) right position value
 // bottom: (optional, default=none) bottom position value
 // left: (optional, default=none) left position value
-@mixin cssowl-sprite-before-absolute($x, $y, $width, $height, $src, $top:none, $right:none, $bottom:none, $left:none)
+cssowl-sprite-before-absolute(x, y, width, height, src, top=none, right=none, bottom=none, left=none)
   position: relative
   &:before
     content: ""
-    +cssowl-sprite-absolute($x, $y, $width, $height, $src, $top, $right, $bottom, $left)
+    cssowl-sprite-absolute(x, y, width, height, src, top, right, bottom, left)
 // Adds an element with the `:before` pseudo selector and displays it with the `float: left;` attribute.
 //
 // x: x position of the element
@@ -190,13 +190,13 @@
 // src: background image source
 // xOffset: (optional, default=0) right margin of the element
 // yOffset: (optional, default=0) top margin of the element
-@mixin cssowl-sprite-before-float($x, $y, $width, $height, $src, $xOffset:0, $yOffset:0)
+cssowl-sprite-before-float(x, y, width, height, src, xOffset=0, yOffset=0)
   &:before
     content: ""
     float: left
-    margin-top: $yOffset
-    margin-right: $xOffset
-    +cssowl-sprite-display-block($x, $y, $width, $height, $src)
+    margin-top: yOffset
+    margin-right: xOffset
+    cssowl-sprite-display-block(x, y, width, height, src)
 // Adds an element with the `:before` pseudo selector and displays it *inline*.
 //
 // x: x position of the element
@@ -207,11 +207,11 @@
 // xOffset: (optional, default=0) right margin of the element
 // yOffset: (optional, default=0) top margin of the element
 // valign: (optional, default=middle) *vertical-align* attribute property
-@mixin cssowl-sprite-before-inline($x, $y, $width, $height, $src, $xOffset:0, $yOffset:0, $valign:middle)
+cssowl-sprite-before-inline(x, y, width, height, src, xOffset=0, yOffset=0, valign=middle)
   &:before
     content: ""
-    margin-right: $xOffset
-    +cssowl-sprite-display-inline($x, $y, $width, $height, $src, $yOffset, $valign)
+    margin-right: xOffset
+    cssowl-sprite-display-inline(x, y, width, height, src, yOffset, valign)
 // Adds an element with the `:before` pseudo selector.
 //
 // x: x position of the element
@@ -219,10 +219,10 @@
 // width: element width
 // height: element height
 // src: background image source
-@mixin cssowl-sprite-before($x, $y, $width, $height, $src)
+cssowl-sprite-before(x, y, width, height, src)
   &:before
     content: ""
-    +cssowl-sprite-display-block($x, $y, $width, $height, $src)
+    cssowl-sprite-display-block(x, y, width, height, src)
 // Displays an element with the `display: block;` attribute.
 //
 // x: x position of the element
@@ -230,9 +230,9 @@
 // width: element width
 // height: element height
 // src: background image source
-@mixin cssowl-sprite-display-block($x, $y, $width, $height, $src)
+cssowl-sprite-display-block(x, y, width, height, src)
   display: block
-  +cssowl-sprite-display($x, $y, $width, $height, $src)
+  cssowl-sprite-display(x, y, width, height, src)
 // Displays an element with the `display: inline-block` attribute.
 // You can vertically align it using `yOffset` and `valign`.
 //
@@ -243,11 +243,11 @@
 // src: background image source
 // yOffset: (optional, default=0) top margin of the element
 // valign: (optional, default=middle) *vertical-align* attribute property
-@mixin cssowl-sprite-display-inline($x, $y, $width, $height, $src, $yOffset:0, $valign:middle)
-  margin-top: $yOffset
+cssowl-sprite-display-inline(x, y, width, height, src, yOffset=0, valign=middle)
+  margin-top: yOffset
   display: inline-block
-  vertical-align: $valign
-  +cssowl-sprite-display($x, $y, $width, $height, $src)
+  vertical-align: valign
+  cssowl-sprite-display(x, y, width, height, src)
 // Displays an element with it's *width*, *height*, *background-image* and *background-position*.
 //
 // x: position of the element
@@ -255,11 +255,11 @@
 // width: element width
 // height: element height
 // src: background image source
-@mixin cssowl-sprite-display($x, $y, $width, $height, $src)
-  width: $width
-  height: $height
-  background-image: $src
-  background-position: $x $y
+cssowl-sprite-display(x, y, width, height, src)
+  width: width
+  height: height
+  background-image: src
+  background-position: x y
   background-repeat: no-repeat
 // Displays an element with the `float: left;` attribute with optional offset.
 //
@@ -270,11 +270,11 @@
 // src: background image source
 // xOffset: (optional, default=0) right margin offset
 // yOffset: (optional, default=0) top margin of the element
-@mixin cssowl-sprite-float-left($x, $y, $width, $height, $src, $xOffset:0, $yOffset:0)
+cssowl-sprite-float-left(x, y, width, height, src, xOffset=0, yOffset=0)
   float: left
-  margin-top: $yOffset
-  margin-right: $xOffset
-  +cssowl-sprite-display-block($x, $y, $width, $height, $src)
+  margin-top: yOffset
+  margin-right: xOffset
+  cssowl-sprite-display-block(x, y, width, height, src)
 // Displays an element with the `float: right;` attribute and a `margin-left` as optional offset.
 //
 // x: x position of the element
@@ -284,11 +284,11 @@
 // src: background image source
 // xOffset: (optional, default=0) left margin offset
 // yOffset: (optional, default=0) top margin of the element
-@mixin cssowl-sprite-float-right($x, $y, $width, $height, $src, $xOffset:0, $yOffset:0)
+cssowl-sprite-float-right(x, y, width, height, src, xOffset=0, yOffset=0)
   float: right
-  margin-top: $yOffset
-  margin-left: $xOffset
-  +cssowl-sprite-display-block($x, $y, $width, $height, $src)
+  margin-top: yOffset
+  margin-left: xOffset
+  cssowl-sprite-display-block(x, y, width, height, src)
 // Displays an element with the `display: block;` attribute and uses `text-indent: -9999px;` to hide the text.
 //
 // x: x position of the element
@@ -296,10 +296,10 @@
 // width: element width
 // height: element height
 // src: background image source
-@mixin cssowl-sprite-replace-block($x, $y, $width, $height, $src)
+cssowl-sprite-replace-block(x, y, width, height, src)
   direction: ltr
   text-indent: -9999px
-  +cssowl-sprite-display-block($x, $y, $width, $height, $src)
+  cssowl-sprite-display-block(x, y, width, height, src)
 // Displays an element with the `display: inline-block` attribute. and uses `text-indent: -9999px;` to hide the text.
 // You can vertically align it using `yOffset` and `valign`.
 //
@@ -310,10 +310,10 @@
 // src: background image source
 // yOffset: (optional, default=0) top margin of the element
 // valign: (optional, default=middle) *vertical-align* attribute property
-@mixin cssowl-sprite-replace-inline($x, $y, $width, $height, $src, $yOffset:0, $valign:middle)
+cssowl-sprite-replace-inline(x, y, width, height, src, yOffset=0, valign=middle)
   direction: ltr
   text-indent: -9999px
-  +cssowl-sprite-display-inline($x, $y, $width, $height, $src, $yOffset, $valign)
+  cssowl-sprite-display-inline(x, y, width, height, src, yOffset, valign)
 // Displays an element and uses `text-indent: -9999px;` to hide the text.
 //
 // x: x position of the element
@@ -321,7 +321,7 @@
 // width: element width
 // height: element height
 // src: background image source
-@mixin cssowl-sprite-replace($x, $y, $width, $height, $src)
+cssowl-sprite-replace(x, y, width, height, src)
   direction: ltr
   text-indent: -9999px
-  +cssowl-sprite-display($x, $y, $width, $height, $src)
+  cssowl-sprite-display(x, y, width, height, src)
