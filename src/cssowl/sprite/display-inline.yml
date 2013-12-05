@@ -1,6 +1,5 @@
 description: |
-  Displays an element with the `display: inline-block` attribute.
-  You can vertically align it using `yOffset` and `valign`.
+  Add a sprite element with the `display: inline-block` attribute and place it with `yOffset` and `valign`.
 mixin:
   parameters:
     x: "x position of the element"

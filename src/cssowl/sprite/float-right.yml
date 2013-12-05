@@ -1,5 +1,5 @@
 description: |
-  Displays an element with the `float: right;` attribute and a `margin-left` as optional offset.
+  Displays an element with the `float: right;` attribute and a `margin-left` as optional offset.Add a sprite element with the `float: right;` attribute  and place it with `xOffset` and `yOffset`.
 mixin:
   parameters:
     x: "x position of the element"

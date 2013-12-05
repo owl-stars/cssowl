@@ -1,5 +1,5 @@
 description: |
-  Displays an element with the `display: block;` attribute.
+  Add a sprite element with the `display: block;` attribute.
 mixin:
   parameters:
     x: "x position of the element"

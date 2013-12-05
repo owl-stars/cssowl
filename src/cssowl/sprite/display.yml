@@ -1,5 +1,5 @@
 description: |
-  Displays an element with it's *width*, *height*, *background-image* and *background-position*.
+  Add a sprite element with its `width`, `height`, `background-image` and `background-position`.
 mixin:
   parameters:
     x: position of the element

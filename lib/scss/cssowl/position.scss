@@ -68,7 +68,7 @@
   }
   @include cssowl-position-absolute($top, $right, $bottom, $left);
 }
-// Positions an element with `position: absolute;` and sets the `top`, `left`, `right` and `bottom` attributes if not `none`.
+// Place a sprite element with `position: absolute;` and set the `top`, `left`, `right` and `bottom` attributes (if not `none`).
 //
 // top: (optional, default=none) top position value
 // right: (optional, default=none) right position value

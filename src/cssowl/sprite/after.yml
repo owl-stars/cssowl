@@ -1,5 +1,5 @@
 description: |
-  Adds an element with the `:after` pseudo selector.
+  Add a sprite element with the `:after` pseudo selector.
 mixin:
   parameters:
     x: "x position of the element"

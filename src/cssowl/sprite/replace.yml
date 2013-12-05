@@ -1,5 +1,5 @@
 description: |
-  Displays an element and uses `text-indent: -9999px;` to hide the text.
+  Add a sprite element and use `text-indent: -9999px;` to hide the text.
 mixin:
   parameters:
     x: "x position of the element"

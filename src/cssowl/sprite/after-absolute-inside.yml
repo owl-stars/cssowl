@@ -1,5 +1,5 @@
 description: |
-  Adds an element with the `:after` pseudo selector and displays it with `position: absolute;` inside the bounding box.
+  Add a sprite element with the `:after` pseudo selector and place it with `position: absolute;` inside the bounding box.
 mixin:
   parameters:
     x: "x position of the element"

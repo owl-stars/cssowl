@@ -1,5 +1,5 @@
 description: |
-  Positions an element with `position: absolute;`.
+  Place a sprite element with `position: absolute;`.
 mixin:
   parameters:
     x: "x position of the element"

@@ -1,5 +1,5 @@
 description: |
-  Positions the element with `position: absolute;` inside the bounding box.
+  Place a sprite element with `position: absolute;` inside the bounding box.
 mixin:
   parameters:
     x: "x position of the element"
