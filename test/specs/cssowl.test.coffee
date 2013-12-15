@@ -2,7 +2,6 @@
 
 chai = require('chai')
 grunt = require('grunt')
-ndd = require("node-dir-diff")
 
 assert = chai.assert
 chai.Assertion.includeStack = true
@@ -12,15 +11,18 @@ chai.Assertion.includeStack = true
 
 baseDir = process.cwd()
 
+compare = (name) ->
+  actual = grunt.file.read("test/tmp/#{name}")
+  expected = grunt.file.read("test/expected/#{name}")
+  return assert.equal(expected, actual, "#{name} should be equal.")
+
 module.exports =
   "Test #cssowl":
-    "#all": (done) ->
-      new ndd.Dir_Diff([
-          "#{baseDir}/test/tmp"
-          "#{baseDir}/test/expected"
-        ],
-        "size"
-      ).compare (err, result) ->
-        assert.equal result.deviation, 0
-        done()
-
+    "#sass": () ->
+      compare("examples.sass.css")
+    "#scss": () ->
+      compare("examples.scss.css")
+    "#less": () ->
+      compare("examples.less.css")
+    "#styl": () ->
+      compare("examples.styl.css")

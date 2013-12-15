@@ -7,10 +7,10 @@
 // xOffset: (optional, default=0) x position offset
 // yOffset: (optional, default=0) y position offset
 @mixin cssowl-position-absolute-inside($width, $height, $valign:top, $halign:left, $xOffset:0, $yOffset:0) {
-  $top:none;
-  $left:none;
-  $right:none;
-  $bottom:none;
+  $top: none;
+  $left: none;
+  $right: none;
+  $bottom: none;
   @if $valign == top {
     $top: $yOffset;
   }
@@ -42,10 +42,10 @@
 // xOffset: (optional, default=0) x position offset
 // yOffset: (optional, default=0) y position offset
 @mixin cssowl-position-absolute-outside($width, $height, $valign:top, $halign:left, $xOffset:0, $yOffset:0) {
-  $top:none;
-  $left:none;
-  $right:none;
-  $bottom:none;
+  $top: none;
+  $left: none;
+  $right: none;
+  $bottom: none;
   @if $valign == top {
     $top: round($yOffset - $height);
   }

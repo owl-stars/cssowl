@@ -25,7 +25,7 @@ module.exports = (grunt) ->
 
     clean:
       test:
-        src: ["test/tmp"]
+        src: ["test/tmp", "test/fixtures"]
 
     less:
       test:
@@ -72,8 +72,20 @@ module.exports = (grunt) ->
         files: ["package.json", 'bower.json']
         updateConfigs: ["pkg"]
 
+  # Custom task for fixtures generation
+  grunt.registerTask "librarianowl-examples", ->
+    librarianowl.examples "src", "test/fixtures",
+      template: "tools/test-template.hbs"
+      imports: (syntax) ->
+        switch syntax
+          when "sass" then return "@import '../../lib/#{syntax}/cssowl'"
+          when "scss" then return "@import '../../lib/#{syntax}/cssowl';"
+          when "less" then return "@import '../../lib/#{syntax}/cssowl';"
+          when "styl" then return "@import '../../lib/#{syntax}/cssowl'"
+
+
   # Custom task for library generation
-  grunt.registerTask "librarianowl", ->
+  grunt.registerTask "librarianowl-lib", ->
     librarianowl.library "src", "lib",
       helpers: "tools/lib-helpers.js"
       template: "tools/lib-template.hbs"
@@ -89,5 +101,5 @@ module.exports = (grunt) ->
   grunt.loadNpmTasks "grunt-bumper"
 
   # Register tasks
-  grunt.registerTask 'default', ['coffeelint', 'librarianowl']
-  grunt.registerTask 'test', ['default', 'clean', 'less', 'sass', 'stylus', 'csslint', 'mochacov']
+  grunt.registerTask 'default', ['coffeelint', 'librarianowl-lib']
+  grunt.registerTask 'test', ['default', 'clean', 'librarianowl-examples', 'less', 'sass', 'stylus', 'csslint', 'mochacov']
