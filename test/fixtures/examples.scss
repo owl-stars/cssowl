@@ -49,119 +49,119 @@
 
 .example-absolute-inside {
   &.top-center {
-    @include cssowl-sprite-absolute-inside(-110px, -20px, 7px, 4px, url("sprite.png"), top, center);
+    @include cssowl-sprite-absolute-inside(-110px, -20px, 7px, 4px, url("/assets/img/sprite.png"), top, center);
   }
   &.middle-right {
-    @include cssowl-sprite-absolute-inside(-110px, -10px, 4px, 7px, url("sprite.png"), middle, right);
+    @include cssowl-sprite-absolute-inside(-110px, -10px, 4px, 7px, url("/assets/img/sprite.png"), middle, right);
   }
   &.bottom-center {
-    @include cssowl-sprite-absolute-inside(-120px, -20px, 7px, 4px, url("sprite.png"), bottom, center);
+    @include cssowl-sprite-absolute-inside(-120px, -20px, 7px, 4px, url("/assets/img/sprite.png"), bottom, center);
   }
   &.middle-left {
-    @include cssowl-sprite-absolute-inside(-120px, -10px, 4px, 7px, url("sprite.png"), middle, left);
+    @include cssowl-sprite-absolute-inside(-120px, -10px, 4px, 7px, url("/assets/img/sprite.png"), middle, left);
   }
 }
 
 .example-absolute-outside {
   &.top-center {
-    @include cssowl-sprite-absolute-outside(-120px, -20px, 7px, 4px, url("sprite.png"), top, center);
+    @include cssowl-sprite-absolute-outside(-120px, -20px, 7px, 4px, url("/assets/img/sprite.png"), top, center);
   }
   &.middle-right {
-    @include cssowl-sprite-absolute-outside(-120px, -10px, 4px, 7px, url("sprite.png"), middle, right);
+    @include cssowl-sprite-absolute-outside(-120px, -10px, 4px, 7px, url("/assets/img/sprite.png"), middle, right);
   }
   &.bottom-center {
-    @include cssowl-sprite-absolute-outside(-110px, -20px, 7px, 4px, url("sprite.png"), bottom, center);
+    @include cssowl-sprite-absolute-outside(-110px, -20px, 7px, 4px, url("/assets/img/sprite.png"), bottom, center);
   }
   &.middle-left {
-    @include cssowl-sprite-absolute-outside(-110px, -10px, 4px, 7px, url("sprite.png"), middle, left);
+    @include cssowl-sprite-absolute-outside(-110px, -10px, 4px, 7px, url("/assets/img/sprite.png"), middle, left);
   }
 }
 
 .example-absolute {
   &.top-right {
-    @include cssowl-sprite-absolute(-110px, -30px, 15px, 15px, url("sprite.png"), 5px, 5px, none, none);
+    @include cssowl-sprite-absolute(-110px, -30px, 15px, 15px, url("/assets/img/sprite.png"), 5px, 5px, none, none);
   }
   &.bottom-left {
-    @include cssowl-sprite-absolute(-110px, -30px, 15px, 15px, url("sprite.png"), none, none, 5px, 5px);
+    @include cssowl-sprite-absolute(-110px, -30px, 15px, 15px, url("/assets/img/sprite.png"), none, none, 5px, 5px);
   }
 }
 
 .example-after-absolute-inside {
-  @include cssowl-sprite-after-absolute-inside(-110px, -20px, 7px, 4px, url("sprite.png"), top, center);
+  @include cssowl-sprite-after-absolute-inside(-110px, -20px, 7px, 4px, url("/assets/img/sprite.png"), top, center);
 }
 
 .example-after-absolute-outside {
-  @include cssowl-sprite-after-absolute-outside(-110px, -20px, 7px, 4px, url("sprite.png"), top, center);
+  @include cssowl-sprite-after-absolute-outside(-110px, -20px, 7px, 4px, url("/assets/img/sprite.png"), top, center);
 }
 
 .example-after-absolute {
-  @include cssowl-sprite-after-absolute(-110px, -30px, 15px, 15px, url("sprite.png"), 2px, -20px);
+  @include cssowl-sprite-after-absolute(-110px, -30px, 15px, 15px, url("/assets/img/sprite.png"), 2px, -20px);
 }
 
 .example-after-float {
-  @include cssowl-sprite-after-float(-110px, -30px, 15px, 15px, url("sprite.png"), 5px, 1px);
+  @include cssowl-sprite-after-float(-110px, -30px, 15px, 15px, url("/assets/img/sprite.png"), 5px, 1px);
 }
 
 .example-after-inline {
-  @include cssowl-sprite-after-inline(-110px, -30px, 15px, 15px, url("sprite.png"), 5px, 1px, top);
+  @include cssowl-sprite-after-inline(-110px, -30px, 15px, 15px, url("/assets/img/sprite.png"), 5px, 1px, top);
 }
 
 .example-after {
-  @include cssowl-sprite-after(-110px, -30px, 15px, 15px, url("sprite.png"));
+  @include cssowl-sprite-after(-110px, -30px, 15px, 15px, url("/assets/img/sprite.png"));
 }
 
 .example-before-absolute-inside {
-  @include cssowl-sprite-before-absolute-inside(-110px, -20px, 7px, 4px, url("sprite.png"), top, center);
+  @include cssowl-sprite-before-absolute-inside(-110px, -20px, 7px, 4px, url("/assets/img/sprite.png"), top, center);
 }
 
 .example-before-absolute-outside {
-  @include cssowl-sprite-before-absolute-outside(-110px, -20px, 7px, 4px, url("sprite.png"), top, center);
+  @include cssowl-sprite-before-absolute-outside(-110px, -20px, 7px, 4px, url("/assets/img/sprite.png"), top, center);
 }
 
 .example-before-absolute {
-  @include cssowl-sprite-before-absolute(-110px, -30px, 15px, 15px, url("sprite.png"), 2px, none, none, -20px);
+  @include cssowl-sprite-before-absolute(-110px, -30px, 15px, 15px, url("/assets/img/sprite.png"), 2px, none, none, -20px);
 }
 
 .example-before-float {
-  @include cssowl-sprite-before-float(-110px, -30px, 15px, 15px, url("sprite.png"), 5px, 1px);
+  @include cssowl-sprite-before-float(-110px, -30px, 15px, 15px, url("/assets/img/sprite.png"), 5px, 1px);
 }
 
 .example-before-inline {
-  @include cssowl-sprite-before-inline(-110px, -30px, 15px, 15px, url("sprite.png"), 5px, 1px, top);
+  @include cssowl-sprite-before-inline(-110px, -30px, 15px, 15px, url("/assets/img/sprite.png"), 5px, 1px, top);
 }
 
 .example-before {
-  @include cssowl-sprite-before(-110px, -30px, 15px, 15px, url("sprite.png"));
+  @include cssowl-sprite-before(-110px, -30px, 15px, 15px, url("/assets/img/sprite.png"));
 }
 
 .example-display-block {
-  @include cssowl-sprite-display-block(-10px, -10px, 91px, 95px, url("sprite.png"));
+  @include cssowl-sprite-display-block(-10px, -10px, 91px, 95px, url("/assets/img/sprite.png"));
 }
 
 .example-display-inline {
-  @include cssowl-sprite-display-inline(-10px, -10px, 91px, 95px, url("sprite.png"));
+  @include cssowl-sprite-display-inline(-10px, -10px, 91px, 95px, url("/assets/img/sprite.png"));
 }
 
 .example-display {
-  @include cssowl-sprite-display(-10px, -10px, 91px, 95px, url("sprite.png"));
+  @include cssowl-sprite-display(-10px, -10px, 91px, 95px, url("/assets/img/sprite.png"));
 }
 
 .example-float-left {
-  @include cssowl-sprite-float-left(-110px, -30px, 15px, 15px, url("sprite.png"), 5px, 11px);
+  @include cssowl-sprite-float-left(-110px, -30px, 15px, 15px, url("/assets/img/sprite.png"), 5px, 11px);
 }
 
 .example-float-right {
-  @include cssowl-sprite-float-right(-110px, -30px, 15px, 15px, url("sprite.png"), 5px, 11px);
+  @include cssowl-sprite-float-right(-110px, -30px, 15px, 15px, url("/assets/img/sprite.png"), 5px, 11px);
 }
 
 .example-replace-block {
-  @include cssowl-sprite-replace-block(-10px, -10px, 91px, 95px, url("sprite.png"));
+  @include cssowl-sprite-replace-block(-10px, -10px, 91px, 95px, url("/assets/img/sprite.png"));
 }
 
 .example-replace-inline {
-  @include cssowl-sprite-replace-inline(-10px, -10px, 91px, 95px, url("sprite.png"), 0, text-top);
+  @include cssowl-sprite-replace-inline(-10px, -10px, 91px, 95px, url("/assets/img/sprite.png"), 0, text-top);
 }
 
 .example-replace {
-  @include cssowl-sprite-replace(-10px, -10px, 91px, 95px, url("sprite.png"));
+  @include cssowl-sprite-replace(-10px, -10px, 91px, 95px, url("/assets/img/sprite.png"));
 }

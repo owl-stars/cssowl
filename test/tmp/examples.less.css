@@ -78,7 +78,7 @@
   position: absolute;
   width: 7px;
   height: 4px;
-  background-image: url("sprite.png");
+  background-image: url("/assets/img/sprite.png");
   background-position: -110px -20px;
   background-repeat: no-repeat;
 }
@@ -89,7 +89,7 @@
   position: absolute;
   width: 4px;
   height: 7px;
-  background-image: url("sprite.png");
+  background-image: url("/assets/img/sprite.png");
   background-position: -110px -10px;
   background-repeat: no-repeat;
 }
@@ -100,7 +100,7 @@
   position: absolute;
   width: 7px;
   height: 4px;
-  background-image: url("sprite.png");
+  background-image: url("/assets/img/sprite.png");
   background-position: -120px -20px;
   background-repeat: no-repeat;
 }
@@ -111,7 +111,7 @@
   position: absolute;
   width: 4px;
   height: 7px;
-  background-image: url("sprite.png");
+  background-image: url("/assets/img/sprite.png");
   background-position: -120px -10px;
   background-repeat: no-repeat;
 }
@@ -122,7 +122,7 @@
   position: absolute;
   width: 7px;
   height: 4px;
-  background-image: url("sprite.png");
+  background-image: url("/assets/img/sprite.png");
   background-position: -120px -20px;
   background-repeat: no-repeat;
 }
@@ -133,7 +133,7 @@
   position: absolute;
   width: 4px;
   height: 7px;
-  background-image: url("sprite.png");
+  background-image: url("/assets/img/sprite.png");
   background-position: -120px -10px;
   background-repeat: no-repeat;
 }
@@ -144,7 +144,7 @@
   position: absolute;
   width: 7px;
   height: 4px;
-  background-image: url("sprite.png");
+  background-image: url("/assets/img/sprite.png");
   background-position: -110px -20px;
   background-repeat: no-repeat;
 }
@@ -155,7 +155,7 @@
   position: absolute;
   width: 4px;
   height: 7px;
-  background-image: url("sprite.png");
+  background-image: url("/assets/img/sprite.png");
   background-position: -110px -10px;
   background-repeat: no-repeat;
 }
@@ -165,7 +165,7 @@
   position: absolute;
   width: 15px;
   height: 15px;
-  background-image: url("sprite.png");
+  background-image: url("/assets/img/sprite.png");
   background-position: -110px -30px;
   background-repeat: no-repeat;
 }
@@ -175,7 +175,7 @@
   position: absolute;
   width: 15px;
   height: 15px;
-  background-image: url("sprite.png");
+  background-image: url("/assets/img/sprite.png");
   background-position: -110px -30px;
   background-repeat: no-repeat;
 }
@@ -190,7 +190,7 @@
   position: absolute;
   width: 7px;
   height: 4px;
-  background-image: url("sprite.png");
+  background-image: url("/assets/img/sprite.png");
   background-position: -110px -20px;
   background-repeat: no-repeat;
 }
@@ -205,7 +205,7 @@
   position: absolute;
   width: 7px;
   height: 4px;
-  background-image: url("sprite.png");
+  background-image: url("/assets/img/sprite.png");
   background-position: -110px -20px;
   background-repeat: no-repeat;
 }
@@ -219,7 +219,7 @@
   position: absolute;
   width: 15px;
   height: 15px;
-  background-image: url("sprite.png");
+  background-image: url("/assets/img/sprite.png");
   background-position: -110px -30px;
   background-repeat: no-repeat;
 }
@@ -231,7 +231,7 @@
   display: block;
   width: 15px;
   height: 15px;
-  background-image: url("sprite.png");
+  background-image: url("/assets/img/sprite.png");
   background-position: -110px -30px;
   background-repeat: no-repeat;
 }
@@ -243,7 +243,7 @@
   vertical-align: top;
   width: 15px;
   height: 15px;
-  background-image: url("sprite.png");
+  background-image: url("/assets/img/sprite.png");
   background-position: -110px -30px;
   background-repeat: no-repeat;
 }
@@ -252,7 +252,7 @@
   display: block;
   width: 15px;
   height: 15px;
-  background-image: url("sprite.png");
+  background-image: url("/assets/img/sprite.png");
   background-position: -110px -30px;
   background-repeat: no-repeat;
 }
@@ -267,7 +267,7 @@
   position: absolute;
   width: 7px;
   height: 4px;
-  background-image: url("sprite.png");
+  background-image: url("/assets/img/sprite.png");
   background-position: -110px -20px;
   background-repeat: no-repeat;
 }
@@ -282,7 +282,7 @@
   position: absolute;
   width: 7px;
   height: 4px;
-  background-image: url("sprite.png");
+  background-image: url("/assets/img/sprite.png");
   background-position: -110px -20px;
   background-repeat: no-repeat;
 }
@@ -296,7 +296,7 @@
   position: absolute;
   width: 15px;
   height: 15px;
-  background-image: url("sprite.png");
+  background-image: url("/assets/img/sprite.png");
   background-position: -110px -30px;
   background-repeat: no-repeat;
 }
@@ -308,7 +308,7 @@
   display: block;
   width: 15px;
   height: 15px;
-  background-image: url("sprite.png");
+  background-image: url("/assets/img/sprite.png");
   background-position: -110px -30px;
   background-repeat: no-repeat;
 }
@@ -320,7 +320,7 @@
   vertical-align: top;
   width: 15px;
   height: 15px;
-  background-image: url("sprite.png");
+  background-image: url("/assets/img/sprite.png");
   background-position: -110px -30px;
   background-repeat: no-repeat;
 }
@@ -329,7 +329,7 @@
   display: block;
   width: 15px;
   height: 15px;
-  background-image: url("sprite.png");
+  background-image: url("/assets/img/sprite.png");
   background-position: -110px -30px;
   background-repeat: no-repeat;
 }
@@ -337,7 +337,7 @@
   display: block;
   width: 91px;
   height: 95px;
-  background-image: url("sprite.png");
+  background-image: url("/assets/img/sprite.png");
   background-position: -10px -10px;
   background-repeat: no-repeat;
 }
@@ -347,14 +347,14 @@
   vertical-align: middle;
   width: 91px;
   height: 95px;
-  background-image: url("sprite.png");
+  background-image: url("/assets/img/sprite.png");
   background-position: -10px -10px;
   background-repeat: no-repeat;
 }
 .example-display {
   width: 91px;
   height: 95px;
-  background-image: url("sprite.png");
+  background-image: url("/assets/img/sprite.png");
   background-position: -10px -10px;
   background-repeat: no-repeat;
 }
@@ -365,7 +365,7 @@
   display: block;
   width: 15px;
   height: 15px;
-  background-image: url("sprite.png");
+  background-image: url("/assets/img/sprite.png");
   background-position: -110px -30px;
   background-repeat: no-repeat;
 }
@@ -376,7 +376,7 @@
   display: block;
   width: 15px;
   height: 15px;
-  background-image: url("sprite.png");
+  background-image: url("/assets/img/sprite.png");
   background-position: -110px -30px;
   background-repeat: no-repeat;
 }
@@ -386,7 +386,7 @@
   display: block;
   width: 91px;
   height: 95px;
-  background-image: url("sprite.png");
+  background-image: url("/assets/img/sprite.png");
   background-position: -10px -10px;
   background-repeat: no-repeat;
 }
@@ -398,7 +398,7 @@
   vertical-align: text-top;
   width: 91px;
   height: 95px;
-  background-image: url("sprite.png");
+  background-image: url("/assets/img/sprite.png");
   background-position: -10px -10px;
   background-repeat: no-repeat;
 }
@@ -407,7 +407,7 @@
   text-indent: -9999px;
   width: 91px;
   height: 95px;
-  background-image: url("sprite.png");
+  background-image: url("/assets/img/sprite.png");
   background-position: -10px -10px;
   background-repeat: no-repeat;
 }
