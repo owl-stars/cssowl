@@ -11,14 +11,6 @@ mixin:
     right: "(optional, default=none) right position value"
     bottom: "(optional, default=none) bottom position value"
     left: "(optional, default=none) left position value"
-  less: |
-    .cssowl-sprite-before-absolute(@x, @y, @width, @height, @src, @top:none, @right:none, @bottom:none, @left:none) {
-      position: relative;
-      &:before {
-        content: "";
-        .cssowl-sprite-absolute(@x, @y, @width, @height, @src, @top, @right, @bottom, @left);
-      }
-    }
   sass: |
     @mixin cssowl-sprite-before-absolute($x, $y, $width, $height, $src, $top:none, $right:none, $bottom:none, $left:none)
       position: relative
@@ -33,6 +25,14 @@ mixin:
         @include cssowl-sprite-absolute($x, $y, $width, $height, $src, $top, $right, $bottom, $left);
       }
     }
+  less: |
+    .cssowl-sprite-before-absolute(@x, @y, @width, @height, @src, @top:none, @right:none, @bottom:none, @left:none) {
+      position: relative;
+      &:before {
+        content: "";
+        .cssowl-sprite-absolute(@x, @y, @width, @height, @src, @top, @right, @bottom, @left);
+      }
+    }
   styl: |
     cssowl-sprite-before-absolute(x, y, width, height, src, top=none, right=none, bottom=none, left=none)
       position: relative
@@ -42,17 +42,17 @@ mixin:
 examples:
   sass: |
     .example-before-absolute
-      +cssowl-sprite-before-absolute(-110px, -30px, 15px, 15px, url("sprite.png"), 2px, none, none, -20px)
+      +cssowl-sprite-before-absolute(-110px, -30px, 15px, 15px, url("/assets/img/sprite.png"), 2px, none, none, -20px)
   scss: |
     .example-before-absolute {
-      @include cssowl-sprite-before-absolute(-110px, -30px, 15px, 15px, url("sprite.png"), 2px, none, none, -20px);
+      @include cssowl-sprite-before-absolute(-110px, -30px, 15px, 15px, url("/assets/img/sprite.png"), 2px, none, none, -20px);
     }
   less: |
     .example-before-absolute {
-      .cssowl-sprite-before-absolute(-110px, -30px, 15px, 15px, url("sprite.png"), 2px, none, none, -20px);
+      .cssowl-sprite-before-absolute(-110px, -30px, 15px, 15px, url("/assets/img/sprite.png"), 2px, none, none, -20px);
     }
-  stylus: |
+  styl: |
     .example-before-absolute
-      cssowl-sprite-before-absolute(-110px, -30px, 15px, 15px, url("sprite.png"), 2px, none, none, -20px)
+      cssowl-sprite-before-absolute(-110px, -30px, 15px, 15px, url("/assets/img/sprite.png"), 2px, none, none, -20px)
   html: |
     .example-before-absolute{:style => "margin-left:20px;"} Quia sint quis nam et quia ducimus consequatur cumque.

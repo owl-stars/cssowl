@@ -7,12 +7,6 @@ mixin:
     width: "element width"
     height: "element height"
     src: "background image source"
-  less: |
-    .cssowl-sprite-replace-block(@x, @y, @width, @height, @src) {
-      direction: ltr;
-      text-indent: -9999px;
-      .cssowl-sprite-display-block(@x, @y, @width, @height, @src);
-    }
   sass: |
     @mixin cssowl-sprite-replace-block($x, $y, $width, $height, $src)
       direction: ltr
@@ -24,6 +18,12 @@ mixin:
       text-indent: -9999px;
       @include cssowl-sprite-display-block($x, $y, $width, $height, $src);
     }
+  less: |
+    .cssowl-sprite-replace-block(@x, @y, @width, @height, @src) {
+      direction: ltr;
+      text-indent: -9999px;
+      .cssowl-sprite-display-block(@x, @y, @width, @height, @src);
+    }
   styl: |
     cssowl-sprite-replace-block(x, y, width, height, src)
       direction: ltr
@@ -32,17 +32,17 @@ mixin:
 examples:
   sass: |
     .example-replace-block
-      +cssowl-sprite-replace-block(-10px, -10px, 91px, 95px, url("sprite.png"))
+      +cssowl-sprite-replace-block(-10px, -10px, 91px, 95px, url("/assets/img/sprite.png"))
   scss: |
     .example-replace-block {
-      @include cssowl-sprite-replace-block(-10px, -10px, 91px, 95px, url("sprite.png"));
+      @include cssowl-sprite-replace-block(-10px, -10px, 91px, 95px, url("/assets/img/sprite.png"));
     }
   less: |
     .example-replace-block {
-      .cssowl-sprite-replace-block(-10px, -10px, 91px, 95px, url("sprite.png"));
+      .cssowl-sprite-replace-block(-10px, -10px, 91px, 95px, url("/assets/img/sprite.png"));
     }
-  stylus: |
+  styl: |
     .example-replace-block
-      cssowl-sprite-replace-block(-10px, -10px, 91px, 95px, url("sprite.png"))
+      cssowl-sprite-replace-block(-10px, -10px, 91px, 95px, url("/assets/img/sprite.png"))
   html: |
     %p Lorem ipsum dolor <span class="example-replace-block">cssowl</span> sit atem

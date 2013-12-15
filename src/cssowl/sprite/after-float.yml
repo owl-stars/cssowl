@@ -9,16 +9,6 @@ mixin:
     src: "background image source"
     xOffset: "(optional, default=0) left margin of the element"
     yOffset: "(optional, default=0) top margin of the element"
-  less: |
-    .cssowl-sprite-after-float(@x, @y, @width, @height, @src, @xOffset:0, @yOffset:0) {
-      &:after {
-        content: "";
-        float: right;
-        margin-top: @yOffset;
-        margin-left: @xOffset;
-        .cssowl-sprite-display-block(@x, @y, @width, @height, @src);
-      }
-    }
   sass: |
     @mixin cssowl-sprite-after-float($x, $y, $width, $height, $src, $xOffset:0, $yOffset:0)
       &:after
@@ -37,6 +27,16 @@ mixin:
         @include cssowl-sprite-display-block($x, $y, $width, $height, $src);
       }
     }
+  less: |
+    .cssowl-sprite-after-float(@x, @y, @width, @height, @src, @xOffset:0, @yOffset:0) {
+      &:after {
+        content: "";
+        float: right;
+        margin-top: @yOffset;
+        margin-left: @xOffset;
+        .cssowl-sprite-display-block(@x, @y, @width, @height, @src);
+      }
+    }
   styl: |
     cssowl-sprite-after-float(x, y, width, height, src, xOffset=0, yOffset=0)
       &:after
@@ -48,17 +48,17 @@ mixin:
 examples:
   sass: |
     .example-after-float
-      +cssowl-sprite-after-float(-110px, -30px, 15px, 15px, url("sprite.png"), 5px, 1px)
+      +cssowl-sprite-after-float(-110px, -30px, 15px, 15px, url("/assets/img/sprite.png"), 5px, 1px)
   scss: |
     .example-after-float {
-      @include cssowl-sprite-after-float(-110px, -30px, 15px, 15px, url("sprite.png"), 5px, 1px);
+      @include cssowl-sprite-after-float(-110px, -30px, 15px, 15px, url("/assets/img/sprite.png"), 5px, 1px);
     }
   less: |
     .example-after-float {
-      .cssowl-sprite-after-float(-110px, -30px, 15px, 15px, url("sprite.png"), 5px, 1px);
+      .cssowl-sprite-after-float(-110px, -30px, 15px, 15px, url("/assets/img/sprite.png"), 5px, 1px);
     }
-  stylus: |
+  styl: |
     .example-after-float
-      cssowl-sprite-after-float(-110px, -30px, 15px, 15px, url("sprite.png"), 5px, 1px)
+      cssowl-sprite-after-float(-110px, -30px, 15px, 15px, url("/assets/img/sprite.png"), 5px, 1px)
   html: |
     .example-after-float Quia sint quis nam et quia ducimus consequatur cumque.

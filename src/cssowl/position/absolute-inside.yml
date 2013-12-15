@@ -8,6 +8,55 @@ mixin:
     halign: "(optional, default=left) horizontal alignment left|center|right"
     xOffset: "(optional, default=0) x position offset"
     yOffset: "(optional, default=0) y position offset"
+  sass: |
+    @mixin cssowl-position-absolute-inside($width, $height, $valign:top, $halign:left, $xOffset:0, $yOffset:0)
+      $top: none
+      $left: none
+      $right: none
+      $bottom: none
+      @if $valign == top
+        $top: $yOffset
+      @else if $valign == middle
+        $top: 50%
+        margin-top: $yOffset - round($height / 2)
+      @else if $valign == bottom
+        $bottom: $yOffset
+      @if $halign == left
+        $left: $xOffset
+      @else if $halign == center
+        $left: 50%
+        margin-left: $xOffset - round($width / 2)
+      @else if $halign == right
+        $right: $xOffset
+      +cssowl-position-absolute($top, $right, $bottom, $left)
+  scss: |
+    @mixin cssowl-position-absolute-inside($width, $height, $valign:top, $halign:left, $xOffset:0, $yOffset:0) {
+      $top: none;
+      $left: none;
+      $right: none;
+      $bottom: none;
+      @if $valign == top {
+        $top: $yOffset;
+      }
+      @else if $valign == middle {
+        $top: 50%;
+        margin-top: $yOffset - round($height / 2);
+      }
+      @else if $valign == bottom {
+        $bottom: $yOffset;
+      }
+      @if $halign == left {
+        $left: $xOffset;
+      }
+      @else if $halign == center {
+        $left: 50%;
+        margin-left: $xOffset - round($width / 2);
+      }
+      @else if $halign == right {
+        $right: $xOffset;
+      }
+      @include cssowl-position-absolute($top, $right, $bottom, $left);
+    }
   less: |
     ._cssowl-position-absolute-inside-vars(@width, @height, @valign:top, @halign:left, @xOffset:0, @yOffset:0) when (@valign = top) {
       @top: @yOffset;
@@ -40,55 +89,6 @@ mixin:
     .cssowl-position-absolute-inside(@width, @height, @valign:top, @halign:left, @xOffset:0, @yOffset:0) {
       ._cssowl-position-absolute-inside-vars(@width, @height, @valign, @halign, @xOffset, @yOffset);
       .cssowl-position-absolute(@top, @right, @bottom, @left);
-    }
-  sass: |
-    @mixin cssowl-position-absolute-inside($width, $height, $valign:top, $halign:left, $xOffset:0, $yOffset:0)
-      $top: none
-      $left: none
-      $right: none
-      $bottom: none
-      @if $valign == top
-        $top: $yOffset
-      @else if $valign == middle
-        $top: 50%
-        margin-top: $yOffset - round($height / 2)
-      @else if $valign == bottom
-        $bottom: $yOffset
-      @if $halign == left
-        $left: $xOffset
-      @else if $halign == center
-        $left: 50%
-        margin-left: $xOffset - round($width / 2)
-      @else if $halign == right
-        $right: $xOffset
-      +cssowl-position-absolute($top, $right, $bottom, $left)
-  scss: |
-    @mixin cssowl-position-absolute-inside($width, $height, $valign:top, $halign:left, $xOffset:0, $yOffset:0) {
-      $top:none;
-      $left:none;
-      $right:none;
-      $bottom:none;
-      @if $valign == top {
-        $top: $yOffset;
-      }
-      @else if $valign == middle {
-        $top: 50%;
-        margin-top: $yOffset - round($height / 2);
-      }
-      @else if $valign == bottom {
-        $bottom: $yOffset;
-      }
-      @if $halign == left {
-        $left: $xOffset;
-      }
-      @else if $halign == center {
-        $left: 50%;
-        margin-left: $xOffset - round($width / 2);
-      }
-      @else if $halign == right {
-        $right: $xOffset;
-      }
-      @include cssowl-position-absolute($top, $right, $bottom, $left);
     }
   styl: |
     cssowl-position-absolute-inside(width, height, valign=top, halign=left, xOffset=0, yOffset=0)
@@ -129,10 +129,10 @@ examples:
         +cssowl-position-absolute-inside(10px, 10px, middle, left)
   scss: |
     .example-absolute-inside {
-      width: 10px
-      height: 10px
-      background: #59371f
-      &.top-center
+      width: 10px;
+      height: 10px;
+      background: #59371f;
+      &.top-center {
         @include cssowl-position-absolute-inside(10px, 10px, top, center);
       }
       &.middle-right {
@@ -150,7 +150,7 @@ examples:
       width: 10px;
       height: 10px;
       background: #59371f;
-      &.top-center
+      &.top-center {
         .cssowl-position-absolute-inside(10px, 10px, top, center);
       }
       &.middle-right {
@@ -163,7 +163,7 @@ examples:
         .cssowl-position-absolute-inside(10px, 10px, middle, left);
       }
     }
-  stylus: |
+  styl: |
     .example-absolute-inside
       width: 10px
       height: 10px

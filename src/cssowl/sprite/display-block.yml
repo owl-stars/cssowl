@@ -7,11 +7,6 @@ mixin:
     width: "element width"
     height: "element height"
     src: "background image source"
-  less: |
-    .cssowl-sprite-display-block(@x, @y, @width, @height, @src) {
-      display: block;
-      .cssowl-sprite-display(@x, @y, @width, @height, @src);
-    }
   sass: |
     @mixin cssowl-sprite-display-block($x, $y, $width, $height, $src)
       display: block
@@ -21,6 +16,11 @@ mixin:
       display: block;
       @include cssowl-sprite-display($x, $y, $width, $height, $src);
     }
+  less: |
+    .cssowl-sprite-display-block(@x, @y, @width, @height, @src) {
+      display: block;
+      .cssowl-sprite-display(@x, @y, @width, @height, @src);
+    }
   styl: |
     cssowl-sprite-display-block(x, y, width, height, src)
       display: block
@@ -28,17 +28,17 @@ mixin:
 examples:
   sass: |
     .example-display-block
-      +cssowl-sprite-display-block(-10px, -10px, 91px, 95px, url("sprite.png"))
+      +cssowl-sprite-display-block(-10px, -10px, 91px, 95px, url("/assets/img/sprite.png"))
   scss: |
     .example-display-block {
-      @include cssowl-sprite-display-block(-10px, -10px, 91px, 95px, url("sprite.png"));
+      @include cssowl-sprite-display-block(-10px, -10px, 91px, 95px, url("/assets/img/sprite.png"));
     }
   less: |
     .example-display-block {
-      .cssowl-sprite-display-block(-10px, -10px, 91px, 95px, url("sprite.png"));
+      .cssowl-sprite-display-block(-10px, -10px, 91px, 95px, url("/assets/img/sprite.png"));
     }
-  stylus: |
+  styl: |
     .example-display-block
-      cssowl-sprite-display-block(-10px, -10px, 91px, 95px, url("sprite.png"))
+      cssowl-sprite-display-block(-10px, -10px, 91px, 95px, url("/assets/img/sprite.png"))
   html: |
     .example-display-block

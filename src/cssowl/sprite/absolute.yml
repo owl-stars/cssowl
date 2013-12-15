@@ -11,11 +11,6 @@ mixin:
     right: "(optional, default=none) right position value"
     bottom: "(optional, default=none) bottom position value"
     left: "(optional, default=none) left position value"
-  less: |
-    .cssowl-sprite-absolute(@x, @y, @width, @height, @src, @top:none, @right:none, @bottom:none, @left:none) {
-      .cssowl-position-absolute(@top, @right, @bottom, @left);
-      .cssowl-sprite-display(@x, @y, @width, @height, @src);
-    }
   sass: |
     @mixin cssowl-sprite-absolute($x, $y, $width, $height, $src, $top:none, $right:none, $bottom:none, $left:none)
       +cssowl-position-absolute($top, $right, $bottom, $left)
@@ -25,6 +20,11 @@ mixin:
       @include cssowl-position-absolute($top, $right, $bottom, $left);
       @include cssowl-sprite-display($x, $y, $width, $height, $src);
     }
+  less: |
+    .cssowl-sprite-absolute(@x, @y, @width, @height, @src, @top:none, @right:none, @bottom:none, @left:none) {
+      .cssowl-position-absolute(@top, @right, @bottom, @left);
+      .cssowl-sprite-display(@x, @y, @width, @height, @src);
+    }
   styl: |
     cssowl-sprite-absolute(x, y, width, height, src, top=none, right=none, bottom=none, left=none)
       cssowl-position-absolute(top, right, bottom, left)
@@ -33,33 +33,33 @@ examples:
   sass: |
     .example-absolute
       &.top-right
-        +cssowl-sprite-absolute(-110px, -30px, 15px, 15px, url("sprite.png"), 5px, 5px, none, none)
+        +cssowl-sprite-absolute(-110px, -30px, 15px, 15px, url("/assets/img/sprite.png"), 5px, 5px, none, none)
       &.bottom-left
-        +cssowl-sprite-absolute(-110px, -30px, 15px, 15px, url("sprite.png"), none, none, 5px, 5px)
+        +cssowl-sprite-absolute(-110px, -30px, 15px, 15px, url("/assets/img/sprite.png"), none, none, 5px, 5px)
   scss: |
     .example-absolute {
       &.top-right {
-        @include cssowl-sprite-absolute(-110px, -30px, 15px, 15px, url("sprite.png"), 5px, 5px, none, none);
+        @include cssowl-sprite-absolute(-110px, -30px, 15px, 15px, url("/assets/img/sprite.png"), 5px, 5px, none, none);
       }
       &.bottom-left {
-        @include cssowl-sprite-absolute(-110px, -30px, 15px, 15px, url("sprite.png"), none, none, 5px, 5px);
+        @include cssowl-sprite-absolute(-110px, -30px, 15px, 15px, url("/assets/img/sprite.png"), none, none, 5px, 5px);
       }
     }
   less: |
     .example-absolute {
       &.top-right {
-        .cssowl-sprite-absolute(-110px, -30px, 15px, 15px, url("sprite.png"), 5px, 5px, none, none);
+        .cssowl-sprite-absolute(-110px, -30px, 15px, 15px, url("/assets/img/sprite.png"), 5px, 5px, none, none);
       }
       &.bottom-left {
-        .cssowl-sprite-absolute(-110px, -30px, 15px, 15px, url("sprite.png"), none, none, 5px, 5px);
+        .cssowl-sprite-absolute(-110px, -30px, 15px, 15px, url("/assets/img/sprite.png"), none, none, 5px, 5px);
       }
     }
-  stylus: |
+  styl: |
     .example-absolute
       &.top-right
-        cssowl-sprite-absolute(-110px, -30px, 15px, 15px, url("sprite.png"), 5px, 5px, none, none)
+        cssowl-sprite-absolute(-110px, -30px, 15px, 15px, url("/assets/img/sprite.png"), 5px, 5px, none, none)
       &.bottom-left
-        cssowl-sprite-absolute(-110px, -30px, 15px, 15px, url("sprite.png"), none, none, 5px, 5px)
+        cssowl-sprite-absolute(-110px, -30px, 15px, 15px, url("/assets/img/sprite.png"), none, none, 5px, 5px)
   html: |
     .wrapper{:style => "position:relative;width:50px;height:50px;border:1px solid #59371f;"}
       .example-absolute.top-right

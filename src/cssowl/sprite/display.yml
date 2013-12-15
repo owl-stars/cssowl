@@ -7,14 +7,6 @@ mixin:
     width: element width
     height: element height
     src: background image source
-  less: |
-    .cssowl-sprite-display(@x, @y, @width, @height, @src) {
-      width: @width;
-      height: @height;
-      background-image: @src;
-      background-position: @x @y;
-      background-repeat: no-repeat;
-    }
   sass: |
     @mixin cssowl-sprite-display($x, $y, $width, $height, $src)
       width: $width
@@ -30,6 +22,14 @@ mixin:
       background-position: $x $y;
       background-repeat: no-repeat;
     }
+  less: |
+    .cssowl-sprite-display(@x, @y, @width, @height, @src) {
+      width: @width;
+      height: @height;
+      background-image: @src;
+      background-position: @x @y;
+      background-repeat: no-repeat;
+    }
   styl: |
     cssowl-sprite-display(x, y, width, height, src)
       width: width
@@ -40,17 +40,17 @@ mixin:
 examples:
   sass: |
     .example-display
-      +cssowl-sprite-display(-10px, -10px, 91px, 95px, url("sprite.png"));
+      +cssowl-sprite-display(-10px, -10px, 91px, 95px, url("/assets/img/sprite.png"))
   scss: |
     .example-display {
-      @include cssowl-sprite-display(-10px, -10px, 91px, 95px, url("sprite.png"));
+      @include cssowl-sprite-display(-10px, -10px, 91px, 95px, url("/assets/img/sprite.png"));
     }
   less: |
     .example-display {
-      .cssowl-sprite-display(-10px, -10px, 91px, 95px, url("sprite.png"));
+      .cssowl-sprite-display(-10px, -10px, 91px, 95px, url("/assets/img/sprite.png"));
     }
-  stylus: |
+  styl: |
     .example-display
-      cssowl-sprite-display(-10px, -10px, 91px, 95px, url("sprite.png"))
+      cssowl-sprite-display(-10px, -10px, 91px, 95px, url("/assets/img/sprite.png"))
   html: |
     .example-display

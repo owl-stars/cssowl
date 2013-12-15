@@ -6,22 +6,6 @@ mixin:
     right: "(optional, default=none) right position value"
     bottom: "(optional, default=none) bottom position value"
     left: "(optional, default=none) left position value"
-  less: |
-    .cssowl-position-absolute(@top:none, @right:none, @bottom:none, @left:none) when not (@top = none){
-      top: @top;
-    }
-    .cssowl-position-absolute(@top:none, @right:none, @bottom:none, @left:none) when not (@left = none){
-      left: @left;
-    }
-    .cssowl-position-absolute(@top:none, @right:none, @bottom:none, @left:none) when not (@right = none){
-      right: @right;
-    }
-    .cssowl-position-absolute(@top:none, @right:none, @bottom:none, @left:none) when not (@bottom = none){
-      bottom: @bottom;
-    }
-    .cssowl-position-absolute(@top:none, @right:none, @bottom:none, @left:none) {
-      position: absolute;
-    }
   sass: |
     @mixin cssowl-position-absolute($top:none, $right:none, $bottom:none, $left:none)
       @if $top != none
@@ -49,6 +33,22 @@ mixin:
       }
       position: absolute;
     }
+  less: |
+    .cssowl-position-absolute(@top:none, @right:none, @bottom:none, @left:none) when not (@top = none) {
+      top: @top;
+    }
+    .cssowl-position-absolute(@top:none, @right:none, @bottom:none, @left:none) when not (@left = none) {
+      left: @left;
+    }
+    .cssowl-position-absolute(@top:none, @right:none, @bottom:none, @left:none) when not (@right = none) {
+      right: @right;
+    }
+    .cssowl-position-absolute(@top:none, @right:none, @bottom:none, @left:none) when not (@bottom = none) {
+      bottom: @bottom;
+    }
+    .cssowl-position-absolute(@top:none, @right:none, @bottom:none, @left:none) {
+      position: absolute;
+    }
   styl: |
     cssowl-position-absolute(top=none, right=none, bottom=none, left=none)
       unless top == none
@@ -72,9 +72,9 @@ examples:
         +cssowl-position-absolute(none, none, 5px, 5px)
   scss: |
     .example-absolute {
-      width: 10px
-      height: 10px
-      background: #59371f
+      width: 10px;
+      height: 10px;
+      background: #59371f;
       &.top-right {
         @include cssowl-position-absolute(5px, 5px, none, none);
       }
@@ -94,7 +94,7 @@ examples:
         .cssowl-position-absolute(none, none, 5px, 5px);
       }
     }
-  stylus: |
+  styl: |
     .example-absolute
       width: 10px
       height: 10px

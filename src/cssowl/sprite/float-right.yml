@@ -9,13 +9,6 @@ mixin:
     src: "background image source"
     xOffset: "(optional, default=0) left margin offset"
     yOffset: "(optional, default=0) top margin of the element"
-  less: |
-    .cssowl-sprite-float-right(@x, @y, @width, @height, @src, @xOffset:0, @yOffset:0) {
-      float: right;
-      margin-top: @yOffset;
-      margin-left: @xOffset;
-      .cssowl-sprite-display-block(@x, @y, @width, @height, @src);
-    }
   sass: |
     @mixin cssowl-sprite-float-right($x, $y, $width, $height, $src, $xOffset:0, $yOffset:0)
       float: right
@@ -29,6 +22,13 @@ mixin:
       margin-left: $xOffset;
       @include cssowl-sprite-display-block($x, $y, $width, $height, $src);
     }
+  less: |
+    .cssowl-sprite-float-right(@x, @y, @width, @height, @src, @xOffset:0, @yOffset:0) {
+      float: right;
+      margin-top: @yOffset;
+      margin-left: @xOffset;
+      .cssowl-sprite-display-block(@x, @y, @width, @height, @src);
+    }
   styl: |
     cssowl-sprite-float-right(x, y, width, height, src, xOffset=0, yOffset=0)
       float: right
@@ -38,18 +38,18 @@ mixin:
 examples:
   sass: |
     .example-float-right
-      +cssowl-sprite-float-right(-110px, -30px, 15px, 15px, url("sprite.png"), 5px, 11px)
+      +cssowl-sprite-float-right(-110px, -30px, 15px, 15px, url("/assets/img/sprite.png"), 5px, 11px)
   scss: |
     .example-float-right {
-      @include cssowl-sprite-float-right(-110px, -30px, 15px, 15px, url("sprite.png"), 5px, 11px);
+      @include cssowl-sprite-float-right(-110px, -30px, 15px, 15px, url("/assets/img/sprite.png"), 5px, 11px);
     }
   less: |
     .example-float-right {
-      .cssowl-sprite-float-right(-110px, -30px, 15px, 15px, url("sprite.png"), 5px, 11px)
+      .cssowl-sprite-float-right(-110px, -30px, 15px, 15px, url("/assets/img/sprite.png"), 5px, 11px);
     }
-  stylus: |
+  styl: |
     .example-float-right
-      cssowl-sprite-float-right(-110px, -30px, 15px, 15px, url("sprite.png"), 5px, 11px)
+      cssowl-sprite-float-right(-110px, -30px, 15px, 15px, url("/assets/img/sprite.png"), 5px, 11px)
   html: |
     .example-float-right
     %p Dolores inventore quasi et molestias aut voluptas eligendi maiores ipsum. quidem nostrum officia optio vel consequatur autem ea totam.

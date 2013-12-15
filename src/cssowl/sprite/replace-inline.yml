@@ -9,12 +9,6 @@ mixin:
     src: "background image source"
     yOffset: "(optional, default=0) top margin of the element"
     valign: "(optional, default=middle) *vertical-align* attribute property"
-  less: |
-    .cssowl-sprite-replace-inline(@x, @y, @width, @height, @src, @yOffset:0, @valign:middle) {
-      direction: ltr;
-      text-indent: -9999px;
-      .cssowl-sprite-display-inline(@x, @y, @width, @height, @src, @yOffset, @valign);
-    }
   sass: |
     @mixin cssowl-sprite-replace-inline($x, $y, $width, $height, $src, $yOffset:0, $valign:middle)
       direction: ltr
@@ -26,6 +20,12 @@ mixin:
       text-indent: -9999px;
       @include cssowl-sprite-display-inline($x, $y, $width, $height, $src, $yOffset, $valign);
     }
+  less: |
+    .cssowl-sprite-replace-inline(@x, @y, @width, @height, @src, @yOffset:0, @valign:middle) {
+      direction: ltr;
+      text-indent: -9999px;
+      .cssowl-sprite-display-inline(@x, @y, @width, @height, @src, @yOffset, @valign);
+    }
   styl: |
     cssowl-sprite-replace-inline(x, y, width, height, src, yOffset=0, valign=middle)
       direction: ltr
@@ -34,17 +34,17 @@ mixin:
 examples:
   sass: |
     .example-replace-inline
-      +cssowl-sprite-replace-inline(-10px, -10px, 91px, 95px, url("sprite.png"), 0, text-top)
+      +cssowl-sprite-replace-inline(-10px, -10px, 91px, 95px, url("/assets/img/sprite.png"), 0, text-top)
   scss: |
     .example-replace-inline {
-      @include cssowl-sprite-replace-inline(-10px, -10px, 91px, 95px, url("sprite.png"), 0, text-top);
+      @include cssowl-sprite-replace-inline(-10px, -10px, 91px, 95px, url("/assets/img/sprite.png"), 0, text-top);
     }
   less: |
     .example-replace-inline {
-      .cssowl-sprite-replace-inline(-10px, -10px, 91px, 95px, url("sprite.png"), 0, text-top);
+      .cssowl-sprite-replace-inline(-10px, -10px, 91px, 95px, url("/assets/img/sprite.png"), 0, text-top);
     }
-  stylus: |
+  styl: |
     .example-replace-inline
-      cssowl-sprite-replace-inline(-10px, -10px, 91px, 95px, url("sprite.png"), 0, text-top)
+      cssowl-sprite-replace-inline(-10px, -10px, 91px, 95px, url("/assets/img/sprite.png"), 0, text-top)
   html: |
     %p Lorem ipsum dolor <span class="example-replace-inline">cssowl</span> sit atem
