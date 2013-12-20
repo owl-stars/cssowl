@@ -1,53 +1,25 @@
-# [Cssowl](http://cssowl.owl-stars.com)
+# cssowl
 
 [![Build Status](https://travis-ci.org/owl-stars/cssowl.png?branch=master)](https://travis-ci.org/owl-stars/cssowl)
 [![Dependency Status](https://gemnasium.com/owl-stars/cssowl.png)](https://gemnasium.com/owl-stars/cssowl)
+[![Bower version](https://badge.fury.io/bo/cssowl.png)](http://badge.fury.io/bo/cssowl)
 
-> Cssowl is [Owl-Stars](http://www.owl-stars.com) mixins library with support for [Less](http://lesscss.org), [Sass/Scss](http://sass-lang.com/) and [Stylus](http://learnboost.github.io/stylus/).
+> Cssowl is Owl-Stars mixins library with support for [LESS](http://lesscss.org), [SASS/SCSS](http://sass-lang.com) and [Stylus],(http://learnboost.github.io/stylus/).
 >
-> It's been created to work with Owl-Stars Extensions like [Spriteowl](http://spriteowl.owl-stars.com) but it can also be used by it self to help you for faster and easier web development.
+> We created the mixins for working with [Owl-Stars](http://www.owl-stars.com) extensions like [Spriteowl](http://spriteowl.owl-stars.com), but feel free to use it on its own.
 
-## Quick start
+## Documentation
 
-Three quick start options are available:
-
-* [Download the latest release](https://github.com/owl-stars/cssowl/releases).
-* Clone the repo: `git clone git://github.com/owl-stars/cssowl.git`.
-* Install with [Bower](http://bower.io): `bower install cssowl`.
-
-Check out [cssowl.owl-stars.com](http://cssowl.owl-stars.com) for information on the library's contents, examples, and more.
-
-### What's included
-
-Within the download you'll find the following directories and files, grouping each syntax into it's own directory.
-
-```
-cssowl/
-└── lib/
-    ├── less/
-    │   ├── cssowl/
-    │   │   ├── position.less
-    │   │   └── sprite.less
-    │   └── cssowl.less
-    ├── sass/
-    │   ├── cssowl/
-    │   │   ├── position.sass
-    │   │   └── sprite.sass
-    │   └── cssowl.sass
-    ├── scss/
-    │   ├── cssowl/
-    │   │   ├── position.scss
-    │   │   └── sprite.scss
-    │   └── cssowl.scss
-    └── stylus/
-        ├── cssowl/
-        │   ├── position.styl
-        │   └── sprite.styl
-        └── cssowl.styl
-```
+Please see the the [Cssowl homepage](http://cssowl.owl-stars.com) for more details and documentation.
 
 ## Contributing
 In lieu of a formal styleguide, take care to maintain the existing coding style. Add unit tests and examples for any new or changed functionality. Lint and test your code using [Grunt](http://gruntjs.com/).
+
+1. Fork it
+2. Create your feature branch (`git checkout -b my-new-feature`)
+3. Commit your changes (`git commit -am 'Add some feature'`)
+4. Push to the branch (`git push origin my-new-feature`)
+5. Create new Pull Request
 
 ## License
 Copyright (c) 2013 Owl-Stars under the MIT license.
