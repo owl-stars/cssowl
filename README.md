@@ -1,10 +1,9 @@
 # cssowl
 
-[![Build Status](https://travis-ci.org/owl-stars/cssowl.png?branch=master)](https://travis-ci.org/owl-stars/cssowl)
-[![Dependency Status](https://gemnasium.com/owl-stars/cssowl.png)](https://gemnasium.com/owl-stars/cssowl)
 [![Bower version](https://badge.fury.io/bo/cssowl.png)](http://badge.fury.io/bo/cssowl)
+[![Build Status](https://travis-ci.org/owl-stars/cssowl.png?branch=master)](https://travis-ci.org/owl-stars/cssowl)
 
-> Cssowl is Owl-Stars mixins library with support for [LESS](http://lesscss.org), [SASS/SCSS](http://sass-lang.com) and [Stylus],(http://learnboost.github.io/stylus/).
+> Cssowl is Owl-Stars mixins library with support for [LESS](http://lesscss.org), [SASS/SCSS](http://sass-lang.com) and [Stylus](http://learnboost.github.io/stylus/).
 >
 > We created the mixins for working with [Owl-Stars](http://www.owl-stars.com) extensions like [Spriteowl](http://spriteowl.owl-stars.com), but feel free to use it on its own.
 
