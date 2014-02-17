@@ -1,0 +1,39 @@
+name: cssowl-sprite-replace
+description: |
+  Add a sprite element and hide the element's content.
+styles:
+  sass: |
+    @mixin cssowl-sprite-replace($element)
+      @extend %cssowl-text-hide
+      @extend %#{nth($element, 5)}
+  scss: |
+    @mixin cssowl-sprite-replace($element) {
+      @extend %cssowl-text-hide;
+      @extend %#{nth($element, 5)};
+    }
+  less: |
+    .cssowl-sprite-replace(@element) {
+      .cssowl-text-hide();
+      .less-sprite-element(extract(@element, 5));
+    }
+  styl: |
+    cssowl-sprite-replace($element)
+      @extend $cssowl-text-hide
+      @extend ${$element[4]}
+examples:
+  sass: |
+    .example-replace
+      +cssowl-sprite-replace($sprite-owl-up)
+  scss: |
+    .example-replace {
+      @include cssowl-sprite-replace($sprite-owl-up);
+    }
+  less: |
+    .example-replace {
+      .cssowl-sprite-replace(@sprite-owl-up);
+    }
+  styl: |
+    .example-replace
+      cssowl-sprite-replace($sprite-owl-up)
+  html: |
+    Lorem <span class="example-replace">ipsum</span> dolor sit atem

@@ -1,0 +1,54 @@
+name: cssowl-before-float
+description: |
+  Mixin to add content with the `:before` pseudo selector and position it with `float: $float`.
+styles:
+  sass: |
+    // mixin
+    =cssowl-before-float($content, $margin:0 0 0 0, $float:left)
+      &:before
+        float: $float
+        margin: $margin
+        content: $content
+  scss: |
+    // mixin
+    @mixin cssowl-before-float($content, $margin:0 0 0 0, $float:left) {
+      &:before {
+        float: $float;
+        margin: $margin;
+        content: $content;
+      }
+    }
+  less: |
+    // mixin
+    .cssowl-before-float(@content, @margin:0 0 0 0, @float:left) {
+      &:before {
+        float: @float;
+        margin: @margin;
+        content: @content;
+      }
+    }
+  styl: |
+    // mixin
+    cssowl-before-float($content, $margin=0 0 0 0, $float=left)
+      &:before
+        float $float
+        margin $margin
+        content $content
+examples:
+  sass: |
+    .example-before-float
+      +cssowl-before-float("*", 4px 10px 0 0)
+  scss: |
+    .example-before-float {
+      @include cssowl-before-float("*", 4px 10px 0 0);
+    }
+  less: |
+    .example-before-float {
+      .cssowl-before-float("*", 4px 10px 0 0);
+    }
+  styl: |
+    .example-before-float
+      cssowl-before-float("*", 4px 10px 0 0)
+  html: |
+    .example-before-float
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore.

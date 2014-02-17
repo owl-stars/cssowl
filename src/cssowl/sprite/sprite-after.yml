@@ -1,0 +1,53 @@
+name: cssowl-sprite-after
+description: |
+  Add a sprite element with the `:after` pseudo selector.
+styles:
+  sass: |
+    =cssowl-sprite-after($element, $margin:0 0 0 0, $display:inline-block)
+      &:after
+        content: ""
+        margin: $margin
+        display: $display
+        @extend %#{nth($element, 5)}
+  scss: |
+    @mixin cssowl-sprite-after($element, $margin:0 0 0 0, $display:inline-block) {
+      &:after {
+        content: "";
+        margin: $margin;
+        display: $display;
+        @extend %#{nth($element, 5)};
+      }
+    }
+  less: |
+    .cssowl-sprite-after(@element, @margin:0 0 0 0, @display:inline-block) {
+      &:after {
+        content: "";
+        margin: @margin;
+        display: @display;
+        .less-sprite-element(extract(@element, 5));
+      }
+    }
+  styl: |
+    cssowl-sprite-after($element, $margin=0 0 0 0, $display=inline-block)
+      &:after
+        content ""
+        margin $margin
+        display $display
+        @extend ${$element[4]}
+examples:
+  sass: |
+    .example-sprite-after
+      +cssowl-sprite-after($sprite-owl-up, 0 0 -2px 10px)
+  scss: |
+    .example-sprite-after {
+      @include cssowl-sprite-after($sprite-owl-up, 0 0 -2px 10px);
+    }
+  less: |
+    .example-sprite-after {
+      .cssowl-sprite-after(@sprite-owl-up, 0 0 -2px 10px);
+    }
+  styl: |
+    .example-sprite-after
+      cssowl-sprite-after($sprite-owl-up, 0 0 -2px 10px)
+  html: |
+    .example-sprite-after Quia sint quis nam et quia ducimus consequatur cumque.

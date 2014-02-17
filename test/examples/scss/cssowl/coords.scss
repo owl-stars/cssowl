@@ -1,0 +1,42 @@
+
+.example-coords-inside {
+  width: 10px;
+  height: 10px;
+  position: absolute;
+  background: #59371f;
+  &.top-center {
+    @include cssowl-coords-inside(10px, 10px, top, center);
+  }
+  &.middle-right {
+    @include cssowl-coords-inside(10px, 10px, middle, right);
+  }
+  &.bottom-center {
+    @include cssowl-coords-inside(10px, 10px, bottom, center);
+  }
+  &.middle-left {
+    @include cssowl-coords-inside(10px, 10px, middle, left);
+  }
+}
+
+.example-coords-outside {
+  width: 10px;
+  height: 10px;
+  position: absolute;
+  background: #59371f;
+  &.top-center {
+    @include cssowl-coords-outside(10px, 10px, top, center);
+  }
+  &.middle-right {
+    @include cssowl-coords-outside(10px, 10px, middle, right);
+  }
+  &.bottom-center {
+    @include cssowl-coords-outside(10px, 10px, bottom, center);
+  }
+  &.middle-left {
+    @include cssowl-coords-outside(10px, 10px, middle, left);
+  }
+}
+
+.example-coords {
+  @include cssowl-coords(20px false false 20px);
+}

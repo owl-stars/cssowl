@@ -1,0 +1,45 @@
+name: cssowl-sprite-before-absolute-outside
+description: |
+  Add a sprite element with the `:before` pseudo selector and place it absolutely *outside* the bounding box.
+styles:
+  sass: |
+    =cssowl-sprite-before-absolute-outside($element, $valign:top, $halign:left, $xOffset:0, $yOffset:0, $float:left)
+      +cssowl-before-absolute-outside("", nth($element, 3), nth($element, 4), $valign, $halign, $xOffset, $yOffset)
+      &:before
+        @extend %#{nth($element, 5)}
+  scss: |
+    @mixin cssowl-sprite-before-absolute-outside($element, $valign:top, $halign:left, $xOffset:0, $yOffset:0, $float:left) {
+      @include cssowl-before-absolute-outside("", nth($element, 3), nth($element, 4), $valign, $halign, $xOffset, $yOffset);
+      &:before {
+        @extend %#{nth($element, 5)};
+      }
+    }
+  less: |
+    .cssowl-sprite-before-absolute-outside(@element, @valign:top, @halign:left, @xOffset:0, @yOffset:0, @float:left) {
+      .cssowl-before-absolute-outside("", extract(@element, 3), extract(@element, 4), @valign, @halign, @xOffset, @yOffset);
+      &:before {
+        .less-sprite-element(extract(@element, 5));
+      }
+    }
+  styl: |
+    cssowl-sprite-before-absolute-outside($element, $valign=top, $halign=left, $xOffset=0, $yOffset=0, $float=left)
+      cssowl-before-absolute-outside("", $element[2], $element[3], $valign, $halign, $xOffset, $yOffset)
+      &:before
+        @extend ${$element[4]}
+examples:
+  sass: |
+    .example-sprite-before-absolute-outside
+      +cssowl-sprite-before-absolute-outside($sprite-arrow-up, top, center)
+  scss: |
+    .example-sprite-before-absolute-outside {
+      @include cssowl-sprite-before-absolute-outside($sprite-arrow-up, top, center);
+    }
+  less: |
+    .example-sprite-before-absolute-outside {
+      .cssowl-sprite-before-absolute-outside(@sprite-arrow-up, top, center);
+    }
+  styl: |
+    .example-sprite-before-absolute-outside
+      cssowl-sprite-before-absolute-outside($sprite-arrow-up, top, center)
+  html: |
+    .example-sprite-before-absolute-outside{:style => "display:inline-block;border-top:1px solid #59371f;padding-top: 5px;"} Quia sint quis

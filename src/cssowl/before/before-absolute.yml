@@ -1,0 +1,54 @@
+name: cssowl-before-absolute
+description: |
+  Mixin to add content with the `:before` pseudo selector and position it absolutely.
+styles:
+  sass: |
+    // mixin
+    =cssowl-before-absolute($content, $coordinates:0 false false 0)
+      @extend %cssowl-relative
+      &:before
+        content: $content
+        +cssowl-absolute($coordinates)
+  scss: |
+    // mixin
+    @mixin cssowl-before-absolute($content, $coordinates:0 false false 0) {
+      @extend %cssowl-relative;
+      &:before {
+        content: $content;
+        @include cssowl-absolute($coordinates);
+      }
+    }
+  less: |
+    // mixin
+    .cssowl-before-absolute(@content, @coordinates:0 false false 0) {
+      position: relative;
+      &:before {
+        content: @content;
+        .cssowl-absolute(@coordinates);
+      }
+    }
+  styl: |
+    // mixin
+    cssowl-before-absolute($content, $coordinates=0 false false 0)
+      @extend $cssowl-relative
+      &:before
+        content: $content
+        cssowl-absolute($coordinates)
+examples:
+  sass: |
+    .example-before-absolute
+      +cssowl-before-absolute("*", 17px false false 20px)
+  scss: |
+    .example-before-absolute {
+      @include cssowl-before-absolute("*", 17px false false 20px);
+    }
+  less: |
+    .example-before-absolute {
+      .cssowl-before-absolute("*", 17px false false 20px);
+    }
+  styl: |
+    .example-before-absolute
+      cssowl-before-absolute("*", 17px false false 20px)
+  html: |
+    .example-before-absolute{style: "width:50px;height:50px;border:1px solid #59371f;"}
+

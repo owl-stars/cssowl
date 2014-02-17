@@ -1,0 +1,46 @@
+name: cssowl-sprite-after-absolute
+description: |
+  Add a sprite element with the `:after` pseudo selector and place it absolutely.
+styles:
+  sass: |
+    =cssowl-sprite-after-absolute($element, $coordinates:0 false false 0)
+      +cssowl-after-absolute("", $coordinates)
+      &:after
+        @extend %#{nth($element, 5)}
+  scss: |
+    @mixin cssowl-sprite-after-absolute($element, $coordinates:0 false false 0) {
+      @include cssowl-after-absolute("", $coordinates);
+      &:after {
+        @extend %#{nth($element, 5)};
+      }
+    }
+  less: |
+    .cssowl-sprite-after-absolute(@element, @coordinates:0 false false 0) {
+      .cssowl-after-absolute("", @coordinates);
+      &:after {
+        .less-sprite-element(extract(@element, 5));
+      }
+    }
+  styl: |
+    cssowl-sprite-after-absolute($element, $coordinates=0 false false 0)
+      cssowl-after-absolute("", $coordinates)
+      &:after
+        @extend ${$element[4]}
+examples:
+  sass: |
+    .example-sprite-after-absolute
+      +cssowl-sprite-after-absolute($sprite-owl-up, 2px -20px false false)
+  scss: |
+    .example-sprite-after-absolute {
+      @include cssowl-sprite-after-absolute($sprite-owl-up, 2px -20px false false);
+    }
+  less: |
+    .example-sprite-after-absolute {
+      .cssowl-sprite-after-absolute(@sprite-owl-up, 2px -20px false false);
+    }
+  styl: |
+    .example-sprite-after-absolute
+      cssowl-sprite-after-absolute($sprite-owl-up, 2px -20px false false)
+  html: |
+    .example-sprite-after-absolute{:style => "margin-right:20px;"} Quia sint quis nam et quia ducimus consequatur cumque.
+

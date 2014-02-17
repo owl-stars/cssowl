@@ -1,0 +1,79 @@
+name: cssowl-sprite-absolute-outside
+description: |
+  Place a sprite element with `position: absolute;` *outside* the bounding box.
+styles:
+  sass: |
+    =cssowl-sprite-absolute-outside($element, $valign:top, $halign:left, $xOffset:0, $yOffset:0)
+      +cssowl-absolute-outside(nth($element, 3), nth($element, 4), $valign, $halign, $xOffset, $yOffset)
+      @extend %#{nth($element, 5)}
+  scss: |
+    @mixin cssowl-sprite-absolute-outside($element, $valign:top, $halign:left, $xOffset:0, $yOffset:0) {
+      @include cssowl-absolute-outside(nth($element, 3), nth($element, 4), $valign, $halign, $xOffset, $yOffset);
+      @extend %#{nth($element, 5)};
+    }
+  less: |
+    .cssowl-sprite-absolute-outside(@element, @valign:top, @halign:left, @xOffset:0, @yOffset:0) {
+      .cssowl-absolute-outside(extract(@element, 3), extract(@element, 4), @valign, @halign, @xOffset, @yOffset);
+      .less-sprite-element(extract(@element, 5));
+    }
+  styl: |
+    cssowl-sprite-absolute-outside($element, $valign=top, $halign=left, $xOffset=0, $yOffset=0)
+      cssowl-absolute-outside($element[2], $element[3], $valign, $halign, $xOffset, $yOffset)
+      @extend ${$element[4]}
+examples:
+  sass: |
+    .example-sprite-absolute-outside
+      > .top-center
+        +cssowl-sprite-absolute-outside($sprite-arrow-up, top, center)
+      > .middle-right
+        +cssowl-sprite-absolute-outside($sprite-arrow-right, middle, right)
+      > .bottom-center
+        +cssowl-sprite-absolute-outside($sprite-arrow-down, bottom, center)
+      > .middle-left
+        +cssowl-sprite-absolute-outside($sprite-arrow-left, middle, left)
+  scss: |
+    .example-sprite-absolute-outside {
+      > .top-center {
+        @include cssowl-sprite-absolute-outside($sprite-arrow-up, top, center);
+      }
+      > .middle-right {
+        @include cssowl-sprite-absolute-outside($sprite-arrow-right, middle, right);
+      }
+      > .bottom-center {
+        @include cssowl-sprite-absolute-outside($sprite-arrow-down, bottom, center);
+      }
+      > .middle-left {
+        @include cssowl-sprite-absolute-outside($sprite-arrow-left, middle, left);
+      }
+    }
+  less: |
+    .example-sprite-absolute-outside {
+      > .top-center {
+        .cssowl-sprite-absolute-outside(@sprite-arrow-up, top, center);
+      }
+      > .middle-right {
+        .cssowl-sprite-absolute-outside(@sprite-arrow-right, middle, right);
+      }
+      > .bottom-center {
+        .cssowl-sprite-absolute-outside(@sprite-arrow-down, bottom, center);
+      }
+      > .middle-left {
+        .cssowl-sprite-absolute-outside(@sprite-arrow-left, middle, left);
+      }
+    }
+  styl: |
+    .example-sprite-absolute-outside
+      > .top-center
+        cssowl-sprite-absolute-outside($sprite-arrow-up, top, center)
+      > .middle-right
+        cssowl-sprite-absolute-outside($sprite-arrow-right, middle, right)
+      > .bottom-center
+        cssowl-sprite-absolute-outside($sprite-arrow-down, bottom, center)
+      > .middle-left
+        cssowl-sprite-absolute-outside($sprite-arrow-left, middle, left)
+  html: |
+    .example-sprite-absolute-outside{:style => "position:relative;width:50px;height:50px;border:1px solid #59371f;"}
+      .top-center
+      .middle-right
+      .bottom-center
+      .middle-left

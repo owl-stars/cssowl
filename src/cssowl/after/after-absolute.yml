@@ -1,0 +1,54 @@
+name: cssowl-after-absolute
+description: |
+  Mixin to add content with the `:after` pseudo selector and position it absolutely.
+styles:
+  sass: |
+    // mixin
+    =cssowl-after-absolute($content, $coordinates:0 false false 0)
+      @extend %cssowl-relative
+      &:after
+        content: $content
+        +cssowl-absolute($coordinates)
+  scss: |
+    // mixin
+    @mixin cssowl-after-absolute($content, $coordinates:0 false false 0) {
+      @extend %cssowl-relative;
+      &:after {
+        content: $content;
+        @include cssowl-absolute($coordinates);
+      }
+    }
+  less: |
+    // mixin
+    .cssowl-after-absolute(@content, @coordinates:0 false false 0) {
+      position: relative;
+      &:after {
+        content: @content;
+        .cssowl-absolute(@coordinates);
+      }
+    }
+  styl: |
+    // mixin
+    cssowl-after-absolute($content, $coordinates=0 false false 0)
+      @extend $cssowl-relative
+      &:after
+        content: $content
+        cssowl-absolute($coordinates)
+examples:
+  sass: |
+    .example-after-absolute
+      +cssowl-after-absolute("*", 17px false false 20px)
+  scss: |
+    .example-after-absolute {
+      @include cssowl-after-absolute("*", 17px false false 20px);
+    }
+  less: |
+    .example-after-absolute {
+      .cssowl-after-absolute("*", 17px false false 20px);
+    }
+  styl: |
+    .example-after-absolute
+      cssowl-after-absolute("*", 17px false false 20px)
+  html: |
+    .example-after-absolute{style: "width:50px;height:50px;border:1px solid #59371f;"}
+

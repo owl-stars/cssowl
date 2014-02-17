@@ -1,0 +1,85 @@
+name: cssowl-coords
+description: |
+  Set an element's `top`, `right`, `bottom` and `left` properties.
+styles:
+  sass: |
+    =cssowl-coords($coords:0 false false 0)
+      $top: nth($coords, 1)
+      $right: nth($coords, 2)
+      $bottom: nth($coords, 3)
+      $left: nth($coords, 4)
+      @if $top != false
+        top: $top
+      @if $left != false
+        left: $left
+      @if $right != false
+        right: $right
+      @if $bottom != false
+        bottom: $bottom
+  scss: |
+    @mixin cssowl-coords($coords:0 false false 0) {
+      $top: nth($coords, 1);
+      $right: nth($coords, 2);
+      $bottom: nth($coords, 3);
+      $left: nth($coords, 4);
+      @if $top != false {
+        top: $top;
+      }
+      @if $left != false {
+        left: $left;
+      }
+      @if $right != false {
+        right: $right;
+      }
+      @if $bottom != false {
+        bottom: $bottom;
+      }
+    }
+  less: |
+    .cssowl-coords(@coords:0 false false 0) when not (extract(@coords, 1) = false) {
+      top: extract(@coords, 1);
+    }
+    .cssowl-coords(@coords:0 false false 0) when not (extract(@coords, 2) = false) {
+      right: extract(@coords, 2);
+    }
+    .cssowl-coords(@coords:0 false false 0) when not (extract(@coords, 3) = false) {
+      bottom: extract(@coords, 3);
+    }
+    .cssowl-coords(@coords:0 false false 0) when not (extract(@coords, 4) = false) {
+      left: extract(@coords, 4);
+    }
+    .cssowl-coords(@coords:0 false false 0) {
+      // see conditionals
+    }
+  styl: |
+    cssowl-coords($coords=0 false false 0)
+      $top = $coords[0];
+      $right = $coords[1];
+      $bottom = $coords[2];
+      $left = $coords[3];
+      if $top != false
+        top $top
+      if $left != false
+        left $left
+      if $right != false
+        right $right
+      if $bottom != false
+        bottom $bottom
+examples:
+  sass: |
+    .example-coords
+      +cssowl-coords(20px false false 20px)
+  scss: |
+    .example-coords {
+      @include cssowl-coords(20px false false 20px);
+    }
+  less: |
+    .example-coords {
+      .cssowl-coords(20px false false 20px);
+    }
+  styl: |
+    .example-coords
+      cssowl-coords(20px false false 20px)
+  html: |
+    .wrapper{style:"position:relative;width:50px;height:50px;border:1px solid #59371f;"}
+      .example-coords{style: "width:10px;height:10px;background:#59371f;position:absolute;"}

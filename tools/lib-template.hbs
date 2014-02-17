@@ -1,4 +1,2 @@
-{{#if description}}{{{commentize description}}}
-//{{/if}}{{#if mixin.parameters}}
-{{#each mixin.parameters}}// {{@key}}: {{{this}}}
-{{/each}}{{/if}}{{{trim mixin.syntax}}}
+{{#if description}}{{{ commentize description }}}{{/if}}
+{{{ trim styles.syntax }}}

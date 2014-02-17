@@ -1,0 +1,82 @@
+
+.example-sprite-absolute-inside {
+  > .top-center {
+    .cssowl-sprite-absolute-inside(@sprite-arrow-down, top, center);
+  }
+  > .middle-right {
+    .cssowl-sprite-absolute-inside(@sprite-arrow-left, middle, right);
+  }
+  > .bottom-center {
+    .cssowl-sprite-absolute-inside(@sprite-arrow-up, bottom, center);
+  }
+  > .middle-left {
+    .cssowl-sprite-absolute-inside(@sprite-arrow-right, middle, left);
+  }
+}
+
+.example-sprite-absolute-outside {
+  > .top-center {
+    .cssowl-sprite-absolute-outside(@sprite-arrow-up, top, center);
+  }
+  > .middle-right {
+    .cssowl-sprite-absolute-outside(@sprite-arrow-right, middle, right);
+  }
+  > .bottom-center {
+    .cssowl-sprite-absolute-outside(@sprite-arrow-down, bottom, center);
+  }
+  > .middle-left {
+    .cssowl-sprite-absolute-outside(@sprite-arrow-left, middle, left);
+  }
+}
+
+.example-sprite-absolute {
+  .cssowl-sprite-absolute(@sprite-owl-up, 10px 0 0 10px);
+}
+
+.example-sprite-after-absolute-inside {
+  .cssowl-sprite-after-absolute-inside(@sprite-arrow-down, top, center);
+}
+
+.example-sprite-after-absolute-outside {
+  .cssowl-sprite-after-absolute-outside(@sprite-arrow-up, top, center);
+}
+
+.example-sprite-after-absolute {
+  .cssowl-sprite-after-absolute(@sprite-owl-up, 2px -20px false false);
+}
+
+.example-sprite-after-float {
+  .cssowl-sprite-after-float(@sprite-owl-up, 0 5px 0 0);
+}
+
+.example-sprite-after {
+  .cssowl-sprite-after(@sprite-owl-up, 0 0 -2px 10px);
+}
+
+.example-sprite-before-absolute-inside {
+  .cssowl-sprite-before-absolute-inside(@sprite-arrow-down, top, center);
+}
+
+.example-sprite-before-absolute-outside {
+  .cssowl-sprite-before-absolute-outside(@sprite-arrow-up, top, center);
+}
+
+.example-sprite-before-absolute {
+  .cssowl-sprite-before-absolute(@sprite-owl-up, 2px false false -20px);
+}
+
+.example-sprite-before-float {
+  .cssowl-sprite-before-float(@sprite-owl-up, 0 5px 0 0);
+}
+
+.example-sprite-before {
+  .cssowl-sprite-before(@sprite-owl-up, 0 10px -2px 0);
+}
+
+.example-sprite-display {
+  .cssowl-sprite-display(@sprite-owl-up);
+}
+
+.example-replace {
+  .cssowl-sprite-replace(@sprite-owl-up);
+}

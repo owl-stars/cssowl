@@ -1,0 +1,31 @@
+
+.example-coords-inside
+  width: 10px
+  height: 10px
+  position: absolute
+  background: #59371f
+  &.top-center
+    +cssowl-coords-inside(10px, 10px, top, center)
+  &.middle-right
+    +cssowl-coords-inside(10px, 10px, middle, right)
+  &.bottom-center
+    +cssowl-coords-inside(10px, 10px, bottom, center)
+  &.middle-left
+    +cssowl-coords-inside(10px, 10px, middle, left)
+
+.example-coords-outside
+  width: 10px
+  height: 10px
+  position: absolute
+  background: #59371f
+  &.top-center
+    +cssowl-coords-outside(10px, 10px, top, center)
+  &.middle-right
+    +cssowl-coords-outside(10px, 10px, middle, right)
+  &.bottom-center
+    +cssowl-coords-outside(10px, 10px, bottom, center)
+  &.middle-left
+    +cssowl-coords-outside(10px, 10px, middle, left)
+
+.example-coords
+  +cssowl-coords(20px false false 20px)

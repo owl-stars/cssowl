@@ -1,13 +1,33 @@
 imports:
-  less: |
-    @import "cssowl/position";
-    @import "cssowl/sprite";
   sass: |
-    @import "cssowl/position"
+    @import "cssowl/absolute"
+    @import "cssowl/after"
+    @import "cssowl/before"
+    @import "cssowl/coords"
+    @import "cssowl/relative"
     @import "cssowl/sprite"
+    @import "cssowl/text"
   scss: |
-    @import "cssowl/position";
+    @import "cssowl/absolute";
+    @import "cssowl/after";
+    @import "cssowl/before";
+    @import "cssowl/coords";
+    @import "cssowl/relative";
     @import "cssowl/sprite";
+    @import "cssowl/text";
+  less: |
+    @import "cssowl/absolute";
+    @import "cssowl/after";
+    @import "cssowl/before";
+    @import "cssowl/coords";
+    @import "cssowl/relative";
+    @import "cssowl/sprite";
+    @import "cssowl/text";
   styl: |
-    @import "cssowl/position"
+    @import "cssowl/absolute"
+    @import "cssowl/after"
+    @import "cssowl/before"
+    @import "cssowl/coords"
+    @import "cssowl/relative"
     @import "cssowl/sprite"
+    @import "cssowl/text"

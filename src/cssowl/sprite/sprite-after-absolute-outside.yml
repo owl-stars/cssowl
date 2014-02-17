@@ -1,0 +1,45 @@
+name: cssowl-sprite-after-absolute-outside
+description: |
+  Add a sprite element with the `:after` pseudo selector and place it absolutely *outside* the bounding box.
+styles:
+  sass: |
+    =cssowl-sprite-after-absolute-outside($element, $valign:top, $halign:left, $xOffset:0, $yOffset:0, $float:left)
+      +cssowl-after-absolute-outside("", nth($element, 3), nth($element, 4), $valign, $halign, $xOffset, $yOffset)
+      &:after
+        @extend %#{nth($element, 5)}
+  scss: |
+    @mixin cssowl-sprite-after-absolute-outside($element, $valign:top, $halign:left, $xOffset:0, $yOffset:0, $float:left) {
+      @include cssowl-after-absolute-outside("", nth($element, 3), nth($element, 4), $valign, $halign, $xOffset, $yOffset);
+      &:after {
+        @extend %#{nth($element, 5)};
+      }
+    }
+  less: |
+    .cssowl-sprite-after-absolute-outside(@element, @valign:top, @halign:left, @xOffset:0, @yOffset:0, @float:left) {
+      .cssowl-after-absolute-outside("", extract(@element, 3), extract(@element, 4), @valign, @halign, @xOffset, @yOffset);
+      &:after {
+        .less-sprite-element(extract(@element, 5));
+      }
+    }
+  styl: |
+    cssowl-sprite-after-absolute-outside($element, $valign=top, $halign=left, $xOffset=0, $yOffset=0, $float=left)
+      cssowl-after-absolute-outside("", $element[2], $element[3], $valign, $halign, $xOffset, $yOffset)
+      &:after
+        @extend ${$element[4]}
+examples:
+  sass: |
+    .example-sprite-after-absolute-outside
+      +cssowl-sprite-after-absolute-outside($sprite-arrow-up, top, center)
+  scss: |
+    .example-sprite-after-absolute-outside {
+      @include cssowl-sprite-after-absolute-outside($sprite-arrow-up, top, center);
+    }
+  less: |
+    .example-sprite-after-absolute-outside {
+      .cssowl-sprite-after-absolute-outside(@sprite-arrow-up, top, center);
+    }
+  styl: |
+    .example-sprite-after-absolute-outside
+      cssowl-sprite-after-absolute-outside($sprite-arrow-up, top, center)
+  html: |
+    .example-sprite-after-absolute-outside{:style => "display:inline-block;border-top:1px solid #59371f;padding-top: 5px;"} Quia sint quis

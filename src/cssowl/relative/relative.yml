@@ -1,0 +1,58 @@
+name: cssowl-relative
+description: |
+  Extendable placeholder and mixin to position an element relatively.
+styles:
+  sass: |
+    // extendable placeholder
+    %cssowl-relative
+      position: relative
+    // mixin
+    =cssowl-relative($coordinates:0 false false 0)
+      +cssowl-coords($coordinates)
+      @extend %cssowl-relative
+  scss: |
+    // extendable placeholder
+    %cssowl-relative {
+      position: relative;
+    }
+    // mixin
+    @mixin cssowl-relative($coordinates:0 false false 0) {
+      @include cssowl-coords($coordinates);
+      @extend %cssowl-relative;
+    }
+  less: |
+    // disabled as less doesn't provide placeholders yet
+    //.cssowl-relative {
+    //  position: relative;
+    //}
+    // mixin
+    .cssowl-relative(@coordinates:0 false false 0) {
+      .cssowl-coords(@coordinates);
+      position: relative;
+    }
+  styl: |
+    // extendable placeholder
+    $cssowl-relative
+      position: relative;
+    // mixin
+    cssowl-relative($coordinates=0 false false 0)
+      cssowl-coords($coordinates)
+      @extend $cssowl-relative
+examples:
+  sass: |
+    .example-relative
+      +cssowl-relative(20px false false 20px)
+  scss: |
+    .example-relative {
+      @include cssowl-relative(20px false false 20px);
+    }
+  less: |
+    .example-relative {
+      .cssowl-relative(20px false false 20px);
+    }
+  styl: |
+    .example-relative
+      cssowl-relative(20px false false 20px)
+  html: |
+    .wrapper{style: "position:relative;width:50px;height:50px;border:1px solid #59371f;"}
+      .example-relative{style: "width:10px;height:10px;background:#59371f;"}
