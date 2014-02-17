@@ -1,0 +1,467 @@
+.example-sprite-absolute-inside > .top-center,
+.example-sprite-absolute-inside > .middle-right,
+.example-sprite-absolute-inside > .bottom-center,
+.example-sprite-absolute-inside > .middle-left,
+.example-sprite-absolute-outside > .top-center,
+.example-sprite-absolute-outside > .middle-right,
+.example-sprite-absolute-outside > .bottom-center,
+.example-sprite-absolute-outside > .middle-left,
+.example-sprite-absolute,
+.example-sprite-after-absolute-inside:after,
+.example-sprite-after-absolute-outside:after,
+.example-sprite-after-absolute:after,
+.example-sprite-after-float:after,
+.example-sprite-after:after,
+.example-sprite-before-absolute-inside:before,
+.example-sprite-before-absolute-outside:before,
+.example-sprite-before-absolute:before,
+.example-sprite-before-float:before,
+.example-sprite-before:before,
+.example-sprite-display,
+.example-replace {
+  background-image: url("sprite.png");
+  background-repeat: no-repeat;
+}
+@media only screen and (-Webkit-min-device-pixel-ratio: 1.5), only screen and (-moz-min-device-pixel-ratio: 1.5), only screen and (-o-min-device-pixel-ratio: 3/2), only screen and (min-device-pixel-ratio: 1.5) {
+  .example-sprite-absolute-inside > .top-center,
+  .example-sprite-absolute-inside > .middle-right,
+  .example-sprite-absolute-inside > .bottom-center,
+  .example-sprite-absolute-inside > .middle-left,
+  .example-sprite-absolute-outside > .top-center,
+  .example-sprite-absolute-outside > .middle-right,
+  .example-sprite-absolute-outside > .bottom-center,
+  .example-sprite-absolute-outside > .middle-left,
+  .example-sprite-absolute,
+  .example-sprite-after-absolute-inside:after,
+  .example-sprite-after-absolute-outside:after,
+  .example-sprite-after-absolute:after,
+  .example-sprite-after-float:after,
+  .example-sprite-after:after,
+  .example-sprite-before-absolute-inside:before,
+  .example-sprite-before-absolute-outside:before,
+  .example-sprite-before-absolute:before,
+  .example-sprite-before-float:before,
+  .example-sprite-before:before,
+  .example-sprite-display,
+  .example-replace,
+.example-sprite-absolute-inside > .top-center,
+.example-sprite-absolute-inside > .middle-right,
+.example-sprite-absolute-inside > .bottom-center,
+.example-sprite-absolute-inside > .middle-left,
+.example-sprite-absolute-outside > .top-center,
+.example-sprite-absolute-outside > .middle-right,
+.example-sprite-absolute-outside > .bottom-center,
+.example-sprite-absolute-outside > .middle-left,
+.example-sprite-absolute,
+.example-sprite-after-absolute-inside:after,
+.example-sprite-after-absolute-outside:after,
+.example-sprite-after-absolute:after,
+.example-sprite-after-float:after,
+.example-sprite-after:after,
+.example-sprite-before-absolute-inside:before,
+.example-sprite-before-absolute-outside:before,
+.example-sprite-before-absolute:before,
+.example-sprite-before-float:before,
+.example-sprite-before:before,
+.example-sprite-display,
+.example-replace {
+    background-image: url("sprite@2x.png");
+    background-size: 136px 111px;
+  }
+}
+.example-sprite-absolute-inside > .bottom-center,
+.example-sprite-absolute-outside > .top-center,
+.example-sprite-after-absolute-outside:after,
+.example-sprite-before-absolute-outside:before {
+  width: 11px;
+  height: 6px;
+  background-position: -96px -37px;
+}
+.example-sprite-absolute-inside > .middle-left,
+.example-sprite-absolute-outside > .middle-right {
+  width: 6px;
+  height: 11px;
+  background-position: -98px -76px;
+}
+.example-sprite-absolute-inside > .top-center,
+.example-sprite-absolute-outside > .bottom-center,
+.example-sprite-after-absolute-inside:after,
+.example-sprite-before-absolute-inside:before {
+  width: 11px;
+  height: 6px;
+  background-position: -96px -50px;
+}
+.example-sprite-absolute-inside > .middle-right,
+.example-sprite-absolute-outside > .middle-left {
+  width: 6px;
+  height: 11px;
+  background-position: -98px -61px;
+}
+.example-sprite-absolute,
+.example-sprite-after-absolute:after,
+.example-sprite-after-float:after,
+.example-sprite-after:after,
+.example-sprite-before-absolute:before,
+.example-sprite-before-float:before,
+.example-sprite-before:before,
+.example-sprite-display,
+.example-replace {
+  width: 16px;
+  height: 16px;
+  background-position: -93px 0;
+}
+.example-absolute-inside > .top-center,
+.example-absolute-inside > .middle-right,
+.example-absolute-inside > .bottom-center,
+.example-absolute-inside > .middle-left,
+.example-absolute-outside > .top-center,
+.example-absolute-outside > .middle-right,
+.example-absolute-outside > .bottom-center,
+.example-absolute-outside > .middle-left,
+.example-absolute,
+.example-after-absolute-inside:after,
+.example-after-absolute-outside:after,
+.example-after-absolute:after,
+.example-before-absolute-inside:before,
+.example-before-absolute-outside:before,
+.example-before-absolute:before,
+.example-sprite-absolute-inside > .top-center,
+.example-sprite-absolute-inside > .middle-right,
+.example-sprite-absolute-inside > .bottom-center,
+.example-sprite-absolute-inside > .middle-left,
+.example-sprite-absolute-outside > .top-center,
+.example-sprite-absolute-outside > .middle-right,
+.example-sprite-absolute-outside > .bottom-center,
+.example-sprite-absolute-outside > .middle-left,
+.example-sprite-absolute,
+.example-sprite-after-absolute-inside:after,
+.example-sprite-after-absolute-outside:after,
+.example-sprite-after-absolute:after,
+.example-sprite-before-absolute-inside:before,
+.example-sprite-before-absolute-outside:before,
+.example-sprite-before-absolute:before {
+  position: absolute;
+}
+.example-after-absolute-inside,
+.example-after-absolute-outside,
+.example-after-absolute,
+.example-before-absolute-inside,
+.example-before-absolute-outside,
+.example-before-absolute,
+.example-relative,
+.example-sprite-after-absolute-inside,
+.example-sprite-after-absolute-outside,
+.example-sprite-after-absolute,
+.example-sprite-before-absolute-inside,
+.example-sprite-before-absolute-outside,
+.example-sprite-before-absolute {
+  position: relative;
+}
+.example-replace,
+.example-text-hide {
+  overflow: hidden;
+  text-indent: 100%;
+  white-space: nowrap;
+  display: inline-block;
+}
+.example-absolute-inside > .top-center {
+  width: 10px;
+  height: 10px;
+  top: 0;
+  left: 50%;
+  margin-left: -5px;
+}
+.example-absolute-inside > .middle-right {
+  width: 10px;
+  height: 10px;
+  top: 50%;
+  margin-top: -5px;
+  right: 0;
+}
+.example-absolute-inside > .bottom-center {
+  width: 10px;
+  height: 10px;
+  bottom: 0;
+  left: 50%;
+  margin-left: -5px;
+}
+.example-absolute-inside > .middle-left {
+  width: 10px;
+  height: 10px;
+  top: 50%;
+  margin-top: -5px;
+  left: 0;
+}
+.example-absolute-outside > .top-center {
+  width: 10px;
+  height: 10px;
+  top: -10px;
+  left: 50%;
+  margin-left: -5px;
+}
+.example-absolute-outside > .middle-right {
+  width: 10px;
+  height: 10px;
+  top: 50%;
+  margin-top: -5px;
+  right: -10px;
+}
+.example-absolute-outside > .bottom-center {
+  width: 10px;
+  height: 10px;
+  bottom: -10px;
+  left: 50%;
+  margin-left: -5px;
+}
+.example-absolute-outside > .middle-left {
+  width: 10px;
+  height: 10px;
+  top: 50%;
+  margin-top: -5px;
+  left: -10px;
+}
+.example-absolute {
+  top: 20px;
+  left: 20px;
+}
+.example-after-absolute-inside:after {
+  content: "*";
+  width: 5px;
+  height: 5px;
+  top: 50%;
+  margin-top: -5px;
+  left: 50%;
+  margin-left: -3px;
+}
+.example-after-absolute-outside:after {
+  content: "*";
+  width: 5px;
+  height: 5px;
+  top: 50%;
+  margin-top: -5px;
+  right: -10px;
+}
+.example-after-absolute:after {
+  content: "*";
+  top: 17px;
+  left: 20px;
+}
+.example-after-float:after {
+  float: right;
+  margin: 4px 0 0 10px;
+  content: "*";
+}
+.example-before-absolute-inside:before {
+  content: "*";
+  width: 5px;
+  height: 5px;
+  top: 50%;
+  margin-top: -5px;
+  left: 50%;
+  margin-left: -3px;
+}
+.example-before-absolute-outside:before {
+  content: "*";
+  width: 5px;
+  height: 5px;
+  top: 50%;
+  margin-top: -5px;
+  right: -10px;
+}
+.example-before-absolute:before {
+  content: "*";
+  top: 17px;
+  left: 20px;
+}
+.example-before-float:before {
+  float: left;
+  margin: 4px 10px 0 0;
+  content: "*";
+}
+.example-coords-inside {
+  width: 10px;
+  height: 10px;
+  position: absolute;
+  background: #59371f;
+}
+.example-coords-inside.top-center {
+  top: 0;
+  left: 50%;
+  margin-left: -5px;
+}
+.example-coords-inside.middle-right {
+  top: 50%;
+  margin-top: -5px;
+  right: 0;
+}
+.example-coords-inside.bottom-center {
+  bottom: 0;
+  left: 50%;
+  margin-left: -5px;
+}
+.example-coords-inside.middle-left {
+  top: 50%;
+  margin-top: -5px;
+  left: 0;
+}
+.example-coords-outside {
+  width: 10px;
+  height: 10px;
+  position: absolute;
+  background: #59371f;
+}
+.example-coords-outside.top-center {
+  top: -10px;
+  left: 50%;
+  margin-left: -5px;
+}
+.example-coords-outside.middle-right {
+  top: 50%;
+  margin-top: -5px;
+  right: -10px;
+}
+.example-coords-outside.bottom-center {
+  bottom: -10px;
+  left: 50%;
+  margin-left: -5px;
+}
+.example-coords-outside.middle-left {
+  top: 50%;
+  margin-top: -5px;
+  left: -10px;
+}
+.example-coords {
+  top: 20px;
+  left: 20px;
+}
+.example-relative {
+  top: 20px;
+  left: 20px;
+}
+.example-sprite-absolute-inside > .top-center {
+  width: 11px;
+  height: 6px;
+  top: 0;
+  left: 50%;
+  margin-left: -6px;
+}
+.example-sprite-absolute-inside > .middle-right {
+  width: 6px;
+  height: 11px;
+  top: 50%;
+  margin-top: -6px;
+  right: 0;
+}
+.example-sprite-absolute-inside > .bottom-center {
+  width: 11px;
+  height: 6px;
+  bottom: 0;
+  left: 50%;
+  margin-left: -6px;
+}
+.example-sprite-absolute-inside > .middle-left {
+  width: 6px;
+  height: 11px;
+  top: 50%;
+  margin-top: -6px;
+  left: 0;
+}
+.example-sprite-absolute-outside > .top-center {
+  width: 11px;
+  height: 6px;
+  top: -6px;
+  left: 50%;
+  margin-left: -6px;
+}
+.example-sprite-absolute-outside > .middle-right {
+  width: 6px;
+  height: 11px;
+  top: 50%;
+  margin-top: -6px;
+  right: -6px;
+}
+.example-sprite-absolute-outside > .bottom-center {
+  width: 11px;
+  height: 6px;
+  bottom: -6px;
+  left: 50%;
+  margin-left: -6px;
+}
+.example-sprite-absolute-outside > .middle-left {
+  width: 6px;
+  height: 11px;
+  top: 50%;
+  margin-top: -6px;
+  left: -6px;
+}
+.example-sprite-absolute {
+  top: 10px;
+  left: 10px;
+  right: 0;
+  bottom: 0;
+}
+.example-sprite-after-absolute-inside:after {
+  content: "";
+  width: 11px;
+  height: 6px;
+  top: 0;
+  left: 50%;
+  margin-left: -6px;
+}
+.example-sprite-after-absolute-outside:after {
+  content: "";
+  width: 11px;
+  height: 6px;
+  top: -6px;
+  left: 50%;
+  margin-left: -6px;
+}
+.example-sprite-after-absolute:after {
+  content: "";
+  top: 2px;
+  right: -20px;
+}
+.example-sprite-after-float:after {
+  float: right;
+  margin: 0 5px 0 0;
+  content: "";
+}
+.example-sprite-after:after {
+  content: "";
+  margin: 0 0 -2px 10px;
+  display: inline-block;
+}
+.example-sprite-before-absolute-inside:before {
+  content: "";
+  width: 11px;
+  height: 6px;
+  top: 0;
+  left: 50%;
+  margin-left: -6px;
+}
+.example-sprite-before-absolute-outside:before {
+  content: "";
+  width: 11px;
+  height: 6px;
+  top: -6px;
+  left: 50%;
+  margin-left: -6px;
+}
+.example-sprite-before-absolute:before {
+  content: "";
+  top: 2px;
+  left: -20px;
+}
+.example-sprite-before-float:before {
+  float: left;
+  margin: 0 5px 0 0;
+  content: "";
+}
+.example-sprite-before:before {
+  content: "";
+  margin: 0 10px -2px 0;
+  display: inline-block;
+}
+.example-sprite-display {
+  display: inline-block;
+}

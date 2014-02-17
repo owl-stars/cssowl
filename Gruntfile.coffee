@@ -79,13 +79,13 @@ module.exports = (grunt) ->
   # Custom task for fixtures generation
   grunt.registerTask "librarianowl-examples", ->
     librarianowl.compile "src", "test/examples",
-      template: "tools/test-template.hbs"
+      template: "resources/librarianowl/template-examples.hbs"
 
   # Custom task for library generation
   grunt.registerTask "librarianowl-lib", ->
     librarianowl.compile "src", "lib", {
-      helpers: "tools/helpers.js"
-      template: "tools/lib-template.hbs"
+      helpers: "resources/librarianowl/helpers.js"
+      template: "resources/librarianowl/template-library.hbs"
     }
 
   # Load npm tasks
