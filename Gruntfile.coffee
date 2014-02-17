@@ -96,6 +96,7 @@ module.exports = (grunt) ->
   grunt.loadNpmTasks "grunt-contrib-stylus"
   grunt.loadNpmTasks "grunt-contrib-csslint"
   grunt.loadNpmTasks "grunt-contrib-clean"
+  grunt.loadNpmTasks "grunt-bumper"
 
   # Register tasks
   grunt.registerTask 'default', ['coffeelint', 'librarianowl-lib']

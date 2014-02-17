@@ -1,0 +1,10 @@
+// Extendable placeholder and mixin to position an element relatively.
+// disabled as less doesn't provide placeholders yet
+//.cssowl-relative {
+//  position: relative;
+//}
+// mixin
+.cssowl-relative(@coordinates:0 false false 0) {
+  .cssowl-coords(@coordinates);
+  position: relative;
+}

@@ -1,0 +1,34 @@
+// Mixin to add content with the `:before` pseudo selector and position it absolutely *inside* the bounding box.
+.cssowl-before-absolute-inside(@content, @width, @height, @valign:top, @halign:left, @xOffset:0, @yOffset:0) {
+  position: relative;
+  &:before {
+    content: @content;
+    .cssowl-absolute-inside(@width, @height, @valign, @halign, @xOffset, @yOffset);
+  }
+}
+// Mixin to add content with the `:before` pseudo selector and position it absolutely *outside* the bounding box.
+.cssowl-before-absolute-outside(@content, @width, @height, @valign:top, @halign:left, @xOffset:0, @yOffset:0) {
+  position: relative;
+  &:before {
+    content: @content;
+    .cssowl-absolute-outside(@width, @height, @valign, @halign, @xOffset, @yOffset);
+  }
+}
+// Mixin to add content with the `:before` pseudo selector and position it absolutely.
+// mixin
+.cssowl-before-absolute(@content, @coordinates:0 false false 0) {
+  position: relative;
+  &:before {
+    content: @content;
+    .cssowl-absolute(@coordinates);
+  }
+}
+// Mixin to add content with the `:before` pseudo selector and position it with `float: $float`.
+// mixin
+.cssowl-before-float(@content, @margin:0 0 0 0, @float:left) {
+  &:before {
+    float: @float;
+    margin: @margin;
+    content: @content;
+  }
+}

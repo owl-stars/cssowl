@@ -1,0 +1,99 @@
+// Place a sprite element with `position: absolute;` *inside* the bounding box.
+@mixin cssowl-sprite-absolute-inside($element, $valign:top, $halign:left, $xOffset:0, $yOffset:0) {
+  @include cssowl-absolute-inside(nth($element, 3), nth($element, 4), $valign, $halign, $xOffset, $yOffset);
+  @extend %#{nth($element, 5)};
+}
+// Place a sprite element with `position: absolute;` *outside* the bounding box.
+@mixin cssowl-sprite-absolute-outside($element, $valign:top, $halign:left, $xOffset:0, $yOffset:0) {
+  @include cssowl-absolute-outside(nth($element, 3), nth($element, 4), $valign, $halign, $xOffset, $yOffset);
+  @extend %#{nth($element, 5)};
+}
+// Place a sprite element with `position: absolute;`.
+@mixin cssowl-sprite-absolute($element, $coordinates:0 false false 0) {
+  @include cssowl-absolute($coordinates);
+  @extend %#{nth($element, 5)};
+}
+// Add a sprite element with the `:after` pseudo selector and place it absolutely *inside* the bounding box.
+@mixin cssowl-sprite-after-absolute-inside($element, $valign:top, $halign:left, $xOffset:0, $yOffset:0) {
+  @include cssowl-after-absolute-inside("", nth($element, 3), nth($element, 4), $valign, $halign, $xOffset, $yOffset);
+  &:after {
+    @extend %#{nth($element, 5)};
+  }
+}
+// Add a sprite element with the `:after` pseudo selector and place it absolutely *outside* the bounding box.
+@mixin cssowl-sprite-after-absolute-outside($element, $valign:top, $halign:left, $xOffset:0, $yOffset:0, $float:left) {
+  @include cssowl-after-absolute-outside("", nth($element, 3), nth($element, 4), $valign, $halign, $xOffset, $yOffset);
+  &:after {
+    @extend %#{nth($element, 5)};
+  }
+}
+// Add a sprite element with the `:after` pseudo selector and place it absolutely.
+@mixin cssowl-sprite-after-absolute($element, $coordinates:0 false false 0) {
+  @include cssowl-after-absolute("", $coordinates);
+  &:after {
+    @extend %#{nth($element, 5)};
+  }
+}
+// Add a sprite element with the `:after` pseudo selector and place it with the `float` attribute.
+@mixin cssowl-sprite-after-float($element, $margin:0 0 0 0, $float:right) {
+  @include cssowl-after-float("", $margin, $float);
+  &:after {
+    @extend %#{nth($element, 5)};
+  }
+}
+// Add a sprite element with the `:after` pseudo selector.
+@mixin cssowl-sprite-after($element, $margin:0 0 0 0, $display:inline-block) {
+  &:after {
+    content: "";
+    margin: $margin;
+    display: $display;
+    @extend %#{nth($element, 5)};
+  }
+}
+// Add a sprite element with the `:before` pseudo selector and place it absolutely *inside* the bounding box.
+@mixin cssowl-sprite-before-absolute-inside($element, $valign:top, $halign:left, $xOffset:0, $yOffset:0) {
+  @include cssowl-before-absolute-inside("", nth($element, 3), nth($element, 4), $valign, $halign, $xOffset, $yOffset);
+  &:before {
+    @extend %#{nth($element, 5)};
+  }
+}
+// Add a sprite element with the `:before` pseudo selector and place it absolutely *outside* the bounding box.
+@mixin cssowl-sprite-before-absolute-outside($element, $valign:top, $halign:left, $xOffset:0, $yOffset:0, $float:left) {
+  @include cssowl-before-absolute-outside("", nth($element, 3), nth($element, 4), $valign, $halign, $xOffset, $yOffset);
+  &:before {
+    @extend %#{nth($element, 5)};
+  }
+}
+// Add a sprite element with the `:before` pseudo selector and place it absolutely.
+@mixin cssowl-sprite-before-absolute($element, $coordinates:0 false false 0) {
+  @include cssowl-before-absolute("", $coordinates);
+  &:before {
+    @extend %#{nth($element, 5)};
+  }
+}
+// Add a sprite element with the `:before` pseudo selector and place it with the `float` attribute.
+@mixin cssowl-sprite-before-float($element, $margin:0 0 0 0, $float:left) {
+  @include cssowl-before-float("", $margin, $float);
+  &:before {
+    @extend %#{nth($element, 5)};
+  }
+}
+// Add a sprite element with the `:before` pseudo selector.
+@mixin cssowl-sprite-before($element, $margin:0 0 0 0, $display:inline-block) {
+  &:before {
+    content: "";
+    margin: $margin;
+    display: $display;
+    @extend %#{nth($element, 5)};
+  }
+}
+// Add a sprite element with its `width`, `height`, `background-image` and `background-position`.
+@mixin cssowl-sprite-display($element, $display:inline-block) {
+  display: $display;
+  @extend %#{nth($element, 5)};
+}
+// Add a sprite element and hide the element's content.
+@mixin cssowl-sprite-replace($element) {
+  @extend %cssowl-text-hide;
+  @extend %#{nth($element, 5)};
+}
