@@ -20,26 +20,26 @@
 //     - up
 //     - over
 //
-$sprite-sheet-width: 136px
-$sprite-sheet-height: 111px
+$sprite-sheet-width: 136px !default
+$sprite-sheet-height: 111px !default
 $sprite-sheet-image: url("sprite.png") !default
 $sprite-sheet-image-2x: url("sprite@2x.png") !default
-$sprite-sheet: 136px 111px url("sprite.png") url("sprite@2x.png") sprite
+$sprite-sheet: $sprite-sheet-width $sprite-sheet-height $sprite-sheet-image $sprite-sheet-image-2x sprite !default
 
 =sprite-element()
   background-image: $sprite-sheet-image
   background-repeat: no-repeat
-  @media only screen and (-Webkit-min-device-pixel-ratio: 1.5), only screen and (-moz-min-device-pixel-ratio: 1.5), only screen and (-o-min-device-pixel-ratio: 3/2), only screen and (min-device-pixel-ratio: 1.5)
+  @media only screen and (min--moz-device-pixel-ratio: 1.5), (-o-min-device-pixel-ratio: 3/2), (-webkit-min-device-pixel-ratio: 1.5), (min-device-pixel-ratio: 1.5), (min-resolution: 144dpi), (min-resolution: 1.5dppx)
     background-image: $sprite-sheet-image-2x
     background-size: $sprite-sheet-width $sprite-sheet-height
 %sprite-element
   +sprite-element()
 
-$sprite-logo-x: 0
-$sprite-logo-y: 0
-$sprite-logo-width: 86px
-$sprite-logo-height: 88px
-$sprite-logo: 0 0 86px 88px sprite-logo
+$sprite-logo-x: 0 !default
+$sprite-logo-y: 0 !default
+$sprite-logo-width: 86px !default
+$sprite-logo-height: 88px !default
+$sprite-logo: $sprite-logo-x $sprite-logo-y $sprite-logo-width $sprite-logo-height sprite-logo !default
 
 =sprite-logo-width()
   width: $sprite-logo-width
@@ -65,11 +65,11 @@ $sprite-logo: 0 0 86px 88px sprite-logo
 %sprite-logo
   +sprite-logo()
 
-$sprite-wjds-x: -3px
-$sprite-wjds-y: -93px
-$sprite-wjds-width: 131px
-$sprite-wjds-height: 18px
-$sprite-wjds: -3px -93px 131px 18px sprite-wjds
+$sprite-wjds-x: -3px !default
+$sprite-wjds-y: -93px !default
+$sprite-wjds-width: 131px !default
+$sprite-wjds-height: 18px !default
+$sprite-wjds: $sprite-wjds-x $sprite-wjds-y $sprite-wjds-width $sprite-wjds-height sprite-wjds !default
 
 =sprite-wjds-width()
   width: $sprite-wjds-width
@@ -95,11 +95,11 @@ $sprite-wjds: -3px -93px 131px 18px sprite-wjds
 %sprite-wjds
   +sprite-wjds()
 
-$sprite-home-x: -115px
-$sprite-home-y: 0
-$sprite-home-width: 21px
-$sprite-home-height: 19px
-$sprite-home: -115px 0 21px 19px sprite-home
+$sprite-home-x: -115px !default
+$sprite-home-y: 0 !default
+$sprite-home-width: 21px !default
+$sprite-home-height: 19px !default
+$sprite-home: $sprite-home-x $sprite-home-y $sprite-home-width $sprite-home-height sprite-home !default
 
 =sprite-home-width()
   width: $sprite-home-width
@@ -125,11 +125,11 @@ $sprite-home: -115px 0 21px 19px sprite-home
 %sprite-home
   +sprite-home()
 
-$sprite-arrow-up-x: -96px
-$sprite-arrow-up-y: -37px
-$sprite-arrow-up-width: 11px
-$sprite-arrow-up-height: 6px
-$sprite-arrow-up: -96px -37px 11px 6px sprite-arrow-up
+$sprite-arrow-up-x: -96px !default
+$sprite-arrow-up-y: -37px !default
+$sprite-arrow-up-width: 11px !default
+$sprite-arrow-up-height: 6px !default
+$sprite-arrow-up: $sprite-arrow-up-x $sprite-arrow-up-y $sprite-arrow-up-width $sprite-arrow-up-height sprite-arrow-up !default
 
 =sprite-arrow-up-width()
   width: $sprite-arrow-up-width
@@ -155,11 +155,11 @@ $sprite-arrow-up: -96px -37px 11px 6px sprite-arrow-up
 %sprite-arrow-up
   +sprite-arrow-up()
 
-$sprite-arrow-right-x: -98px
-$sprite-arrow-right-y: -76px
-$sprite-arrow-right-width: 6px
-$sprite-arrow-right-height: 11px
-$sprite-arrow-right: -98px -76px 6px 11px sprite-arrow-right
+$sprite-arrow-right-x: -98px !default
+$sprite-arrow-right-y: -76px !default
+$sprite-arrow-right-width: 6px !default
+$sprite-arrow-right-height: 11px !default
+$sprite-arrow-right: $sprite-arrow-right-x $sprite-arrow-right-y $sprite-arrow-right-width $sprite-arrow-right-height sprite-arrow-right !default
 
 =sprite-arrow-right-width()
   width: $sprite-arrow-right-width
@@ -185,11 +185,11 @@ $sprite-arrow-right: -98px -76px 6px 11px sprite-arrow-right
 %sprite-arrow-right
   +sprite-arrow-right()
 
-$sprite-arrow-down-x: -96px
-$sprite-arrow-down-y: -50px
-$sprite-arrow-down-width: 11px
-$sprite-arrow-down-height: 6px
-$sprite-arrow-down: -96px -50px 11px 6px sprite-arrow-down
+$sprite-arrow-down-x: -96px !default
+$sprite-arrow-down-y: -50px !default
+$sprite-arrow-down-width: 11px !default
+$sprite-arrow-down-height: 6px !default
+$sprite-arrow-down: $sprite-arrow-down-x $sprite-arrow-down-y $sprite-arrow-down-width $sprite-arrow-down-height sprite-arrow-down !default
 
 =sprite-arrow-down-width()
   width: $sprite-arrow-down-width
@@ -215,11 +215,11 @@ $sprite-arrow-down: -96px -50px 11px 6px sprite-arrow-down
 %sprite-arrow-down
   +sprite-arrow-down()
 
-$sprite-arrow-left-x: -98px
-$sprite-arrow-left-y: -61px
-$sprite-arrow-left-width: 6px
-$sprite-arrow-left-height: 11px
-$sprite-arrow-left: -98px -61px 6px 11px sprite-arrow-left
+$sprite-arrow-left-x: -98px !default
+$sprite-arrow-left-y: -61px !default
+$sprite-arrow-left-width: 6px !default
+$sprite-arrow-left-height: 11px !default
+$sprite-arrow-left: $sprite-arrow-left-x $sprite-arrow-left-y $sprite-arrow-left-width $sprite-arrow-left-height sprite-arrow-left !default
 
 =sprite-arrow-left-width()
   width: $sprite-arrow-left-width
@@ -245,11 +245,11 @@ $sprite-arrow-left: -98px -61px 6px 11px sprite-arrow-left
 %sprite-arrow-left
   +sprite-arrow-left()
 
-$sprite-owl-up-x: -93px
-$sprite-owl-up-y: 0
-$sprite-owl-up-width: 16px
-$sprite-owl-up-height: 16px
-$sprite-owl-up: -93px 0 16px 16px sprite-owl-up
+$sprite-owl-up-x: -93px !default
+$sprite-owl-up-y: 0 !default
+$sprite-owl-up-width: 16px !default
+$sprite-owl-up-height: 16px !default
+$sprite-owl-up: $sprite-owl-up-x $sprite-owl-up-y $sprite-owl-up-width $sprite-owl-up-height sprite-owl-up !default
 
 =sprite-owl-up-width()
   width: $sprite-owl-up-width
@@ -275,11 +275,11 @@ $sprite-owl-up: -93px 0 16px 16px sprite-owl-up
 %sprite-owl-up
   +sprite-owl-up()
 
-$sprite-owl-over-x: -93px
-$sprite-owl-over-y: -17px
-$sprite-owl-over-width: 16px
-$sprite-owl-over-height: 17px
-$sprite-owl-over: -93px -17px 16px 17px sprite-owl-over
+$sprite-owl-over-x: -93px !default
+$sprite-owl-over-y: -17px !default
+$sprite-owl-over-width: 16px !default
+$sprite-owl-over-height: 17px !default
+$sprite-owl-over: $sprite-owl-over-x $sprite-owl-over-y $sprite-owl-over-width $sprite-owl-over-height sprite-owl-over !default
 
 =sprite-owl-over-width()
   width: $sprite-owl-over-width

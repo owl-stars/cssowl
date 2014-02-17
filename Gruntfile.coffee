@@ -88,6 +88,17 @@ module.exports = (grunt) ->
       template: "resources/librarianowl/template-library.hbs"
     }
 
+  # Custom task for library generation
+  grunt.registerTask "librarianowl-docs", ->
+    librarianowl.compile "src", "docs/source/partials", {
+      filename: (item, syntax) ->
+        return "_" + item.module + ".haml"
+      filter: (filename) ->
+        return (filename != '_imports.yml')
+      helpers: "resources/librarianowl/helpers.js"
+      template: "resources/librarianowl/template-docs.hbs"
+    }
+
   # Load npm tasks
   grunt.loadNpmTasks "grunt-mocha-cov"
   grunt.loadNpmTasks "grunt-coffeelint"
@@ -101,3 +112,4 @@ module.exports = (grunt) ->
   # Register tasks
   grunt.registerTask 'default', ['coffeelint', 'librarianowl-lib']
   grunt.registerTask 'test', ['default', 'clean', 'librarianowl-examples', 'sass', 'less', 'stylus', 'csslint', 'mochacov']
+  grunt.registerTask 'docs', ['default', 'clean', 'librarianowl-examples', 'librarianowl-docs']
