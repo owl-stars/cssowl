@@ -17,6 +17,7 @@ set :js_dir, 'assets/js'
 set :css_dir, 'assets/css'
 set :images_dir, 'assets/img'
 set :fonts_dir, 'assets/fonts'
+set :relative_links, true
 
 ###
 # Environments
@@ -29,4 +30,5 @@ configure :build do
   activate :minify_javascript
   # others
   activate :cache_buster
+  activate :relative_assets
 end
