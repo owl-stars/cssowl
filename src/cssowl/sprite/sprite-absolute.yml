@@ -1,0 +1,40 @@
+name: cssowl-sprite-absolute
+description: |
+  Place a sprite element with `position: absolute;`.
+styles:
+  sass: |
+    =cssowl-sprite-absolute($element, $coordinates:0 false false 0)
+      +cssowl-absolute($coordinates)
+      @extend %#{nth($element, 5)}
+  scss: |
+    @mixin cssowl-sprite-absolute($element, $coordinates:0 false false 0) {
+      @include cssowl-absolute($coordinates);
+      @extend %#{nth($element, 5)};
+    }
+  less: |
+    .cssowl-sprite-absolute(@element, @coordinates:0 false false 0) {
+      .cssowl-absolute(@coordinates);
+      .less-sprite-element(extract(@element, 5));
+    }
+  styl: |
+    cssowl-sprite-absolute($element, $coordinates=0 false false 0)
+      cssowl-absolute($coordinates)
+      @extend ${$element[4]}
+examples:
+  sass: |
+    .example-sprite-absolute
+      +cssowl-sprite-absolute($sprite-owl-up, 10px 0 0 10px)
+  scss: |
+    .example-sprite-absolute {
+      @include cssowl-sprite-absolute($sprite-owl-up, 10px 0 0 10px);
+    }
+  less: |
+    .example-sprite-absolute {
+      .cssowl-sprite-absolute(@sprite-owl-up, 10px 0 0 10px);
+    }
+  styl: |
+    .example-sprite-absolute
+      cssowl-sprite-absolute($sprite-owl-up, 10px 0 0 10px)
+  html: |
+    .wrapper{style: "position:relative;width:50px;height:50px;border:1px solid #59371f;"}
+      .example-sprite-absolute

@@ -1,0 +1,54 @@
+name: cssowl-after-float
+description: |
+  Mixin to add content with the `:after` pseudo selector and position it with `float: $float`.
+styles:
+  sass: |
+    // mixin
+    =cssowl-after-float($content, $margin:0 0 0 0, $float:right)
+      &:after
+        float: $float
+        margin: $margin
+        content: $content
+  scss: |
+    // mixin
+    @mixin cssowl-after-float($content, $margin:0 0 0 0, $float:right) {
+      &:after {
+        float: $float;
+        margin: $margin;
+        content: $content;
+      }
+    }
+  less: |
+    // mixin
+    .cssowl-after-float(@content, @margin:0 0 0 0, @float:right) {
+      &:after {
+        float: @float;
+        margin: @margin;
+        content: @content;
+      }
+    }
+  styl: |
+    // mixin
+    cssowl-after-float($content, $margin=0 0 0 0, $float=right)
+      &:after
+        float $float
+        margin $margin
+        content $content
+examples:
+  sass: |
+    .example-after-float
+      +cssowl-after-float("*", 4px 0 0 10px)
+  scss: |
+    .example-after-float {
+      @include cssowl-after-float("*", 4px 0 0 10px);
+    }
+  less: |
+    .example-after-float {
+      .cssowl-after-float("*", 4px 0 0 10px);
+    }
+  styl: |
+    .example-after-float
+      cssowl-after-float("*", 4px 0 0 10px)
+  html: |
+    .example-after-float
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore.

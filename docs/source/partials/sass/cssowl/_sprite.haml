@@ -1,0 +1,233 @@
+%h3#cssowl-sprite-absolute-inside cssowl-sprite-absolute-inside
+
+%p
+  Place a sprite element with `position: absolute;` *inside* the bounding box.
+
+.bs-example
+  .example-sprite-absolute-inside{:style => "position:relative;width:50px;height:50px;border:1px solid #59371f;"}
+    .top-center
+    .middle-right
+    .bottom-center
+    .middle-left
+
+%pre
+  = preserve do
+    :escaped
+      .example-sprite-absolute-inside
+        > .top-center
+          +cssowl-sprite-absolute-inside($sprite-arrow-down, top, center)
+        > .middle-right
+          +cssowl-sprite-absolute-inside($sprite-arrow-left, middle, right)
+        > .bottom-center
+          +cssowl-sprite-absolute-inside($sprite-arrow-up, bottom, center)
+        > .middle-left
+          +cssowl-sprite-absolute-inside($sprite-arrow-right, middle, left)
+
+%h3#cssowl-sprite-absolute-outside cssowl-sprite-absolute-outside
+
+%p
+  Place a sprite element with `position: absolute;` *outside* the bounding box.
+
+.bs-example
+  .example-sprite-absolute-outside{:style => "position:relative;width:50px;height:50px;border:1px solid #59371f;"}
+    .top-center
+    .middle-right
+    .bottom-center
+    .middle-left
+
+%pre
+  = preserve do
+    :escaped
+      .example-sprite-absolute-outside
+        > .top-center
+          +cssowl-sprite-absolute-outside($sprite-arrow-up, top, center)
+        > .middle-right
+          +cssowl-sprite-absolute-outside($sprite-arrow-right, middle, right)
+        > .bottom-center
+          +cssowl-sprite-absolute-outside($sprite-arrow-down, bottom, center)
+        > .middle-left
+          +cssowl-sprite-absolute-outside($sprite-arrow-left, middle, left)
+
+%h3#cssowl-sprite-absolute cssowl-sprite-absolute
+
+%p
+  Place a sprite element with `position: absolute;`.
+
+.bs-example
+  .wrapper{style: "position:relative;width:50px;height:50px;border:1px solid #59371f;"}
+    .example-sprite-absolute
+
+%pre
+  = preserve do
+    :escaped
+      .example-sprite-absolute
+        +cssowl-sprite-absolute($sprite-owl-up, 10px 0 0 10px)
+
+%h3#cssowl-sprite-after-absolute-inside cssowl-sprite-after-absolute-inside
+
+%p
+  Add a sprite element with the `:after` pseudo selector and place it absolutely *inside* the bounding box.
+
+.bs-example
+  .example-sprite-after-absolute-inside{:style => "display:inline-block;border-top:1px solid #59371f;padding-top: 5px;"} Quia sint quis
+
+%pre
+  = preserve do
+    :escaped
+      .example-sprite-after-absolute-inside
+        +cssowl-sprite-after-absolute-inside($sprite-arrow-down, top, center)
+
+%h3#cssowl-sprite-after-absolute-outside cssowl-sprite-after-absolute-outside
+
+%p
+  Add a sprite element with the `:after` pseudo selector and place it absolutely *outside* the bounding box.
+
+.bs-example
+  .example-sprite-after-absolute-outside{:style => "display:inline-block;border-top:1px solid #59371f;padding-top: 5px;"} Quia sint quis
+
+%pre
+  = preserve do
+    :escaped
+      .example-sprite-after-absolute-outside
+        +cssowl-sprite-after-absolute-outside($sprite-arrow-up, top, center)
+
+%h3#cssowl-sprite-after-absolute cssowl-sprite-after-absolute
+
+%p
+  Add a sprite element with the `:after` pseudo selector and place it absolutely.
+
+.bs-example
+  .example-sprite-after-absolute{:style => "margin-right:20px;"} Quia sint quis nam et quia ducimus consequatur cumque.
+
+%pre
+  = preserve do
+    :escaped
+      .example-sprite-after-absolute
+        +cssowl-sprite-after-absolute($sprite-owl-up, 2px -20px false false)
+
+%h3#cssowl-sprite-after-float cssowl-sprite-after-float
+
+%p
+  Add a sprite element with the `:after` pseudo selector and place it with the `float` attribute.
+
+.bs-example
+  .example-sprite-after-float Quia sint quis nam et quia ducimus consequatur cumque.
+
+%pre
+  = preserve do
+    :escaped
+      .example-sprite-after-float
+        +cssowl-sprite-after-float($sprite-owl-up, 0 5px 0 0)
+
+%h3#cssowl-sprite-after cssowl-sprite-after
+
+%p
+  Add a sprite element with the `:after` pseudo selector.
+
+.bs-example
+  .example-sprite-after Quia sint quis nam et quia ducimus consequatur cumque.
+
+%pre
+  = preserve do
+    :escaped
+      .example-sprite-after
+        +cssowl-sprite-after($sprite-owl-up, 0 0 -2px 10px)
+
+%h3#cssowl-sprite-before-absolute-inside cssowl-sprite-before-absolute-inside
+
+%p
+  Add a sprite element with the `:before` pseudo selector and place it absolutely *inside* the bounding box.
+
+.bs-example
+  .example-sprite-before-absolute-inside{:style => "display:inline-block;border-top:1px solid #59371f;padding-top: 5px;"} Quia sint quis
+
+%pre
+  = preserve do
+    :escaped
+      .example-sprite-before-absolute-inside
+        +cssowl-sprite-before-absolute-inside($sprite-arrow-down, top, center)
+
+%h3#cssowl-sprite-before-absolute-outside cssowl-sprite-before-absolute-outside
+
+%p
+  Add a sprite element with the `:before` pseudo selector and place it absolutely *outside* the bounding box.
+
+.bs-example
+  .example-sprite-before-absolute-outside{:style => "display:inline-block;border-top:1px solid #59371f;padding-top: 5px;"} Quia sint quis
+
+%pre
+  = preserve do
+    :escaped
+      .example-sprite-before-absolute-outside
+        +cssowl-sprite-before-absolute-outside($sprite-arrow-up, top, center)
+
+%h3#cssowl-sprite-before-absolute cssowl-sprite-before-absolute
+
+%p
+  Add a sprite element with the `:before` pseudo selector and place it absolutely.
+
+.bs-example
+  .example-sprite-before-absolute{:style => "margin-left:20px;"} Quia sint quis nam et quia ducimus consequatur cumque.
+
+%pre
+  = preserve do
+    :escaped
+      .example-sprite-before-absolute
+        +cssowl-sprite-before-absolute($sprite-owl-up, 2px false false -20px)
+
+%h3#cssowl-sprite-before-float cssowl-sprite-before-float
+
+%p
+  Add a sprite element with the `:before` pseudo selector and place it with the `float` attribute.
+
+.bs-example
+  .example-sprite-before-float Quia sint quis nam et quia ducimus consequatur cumque.
+
+%pre
+  = preserve do
+    :escaped
+      .example-sprite-before-float
+        +cssowl-sprite-before-float($sprite-owl-up, 0 5px 0 0)
+
+%h3#cssowl-sprite-before cssowl-sprite-before
+
+%p
+  Add a sprite element with the `:before` pseudo selector.
+
+.bs-example
+  .example-sprite-before Quia sint quis nam et quia ducimus consequatur cumque.
+
+%pre
+  = preserve do
+    :escaped
+      .example-sprite-before
+        +cssowl-sprite-before($sprite-owl-up, 0 10px -2px 0)
+
+%h3#cssowl-sprite-display cssowl-sprite-display
+
+%p
+  Add a sprite element with its `width`, `height`, `background-image` and `background-position`.
+
+.bs-example
+  Lorem <span class="example-sprite-display"></span> ipsum dolor sit atem
+
+%pre
+  = preserve do
+    :escaped
+      .example-sprite-display
+        +cssowl-sprite-display($sprite-owl-up)
+
+%h3#cssowl-sprite-replace cssowl-sprite-replace
+
+%p
+  Add a sprite element and hide the element's content.
+
+.bs-example
+  Lorem <span class="example-replace">ipsum</span> dolor sit atem
+
+%pre
+  = preserve do
+    :escaped
+      .example-replace
+        +cssowl-sprite-replace($sprite-owl-up)
+

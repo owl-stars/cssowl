@@ -1,0 +1,49 @@
+name: cssowl-before-absolute-outside
+description: |
+  Mixin to add content with the `:before` pseudo selector and position it absolutely *outside* the bounding box.
+styles:
+  sass: |
+    =cssowl-before-absolute-outside($content, $width, $height, $valign:top, $halign:left, $xOffset:0, $yOffset:0)
+      @extend %cssowl-relative
+      &:before
+        content: $content
+        +cssowl-absolute-outside($width, $height, $valign, $halign, $xOffset, $yOffset)
+  scss: |
+    @mixin cssowl-before-absolute-outside($content, $width, $height, $valign:top, $halign:left, $xOffset:0, $yOffset:0) {
+      @extend %cssowl-relative;
+      &:before {
+        content: $content;
+        @include cssowl-absolute-outside($width, $height, $valign, $halign, $xOffset, $yOffset);
+      }
+    }
+  less: |
+    .cssowl-before-absolute-outside(@content, @width, @height, @valign:top, @halign:left, @xOffset:0, @yOffset:0) {
+      position: relative;
+      &:before {
+        content: @content;
+        .cssowl-absolute-outside(@width, @height, @valign, @halign, @xOffset, @yOffset);
+      }
+    }
+  styl: |
+    cssowl-before-absolute-outside($content, $width, $height, $valign=top, $halign=left, $xOffset=0, $yOffset=0)
+      @extend $cssowl-relative
+      &:before
+        content: $content
+        cssowl-absolute-outside($width, $height, $valign, $halign, $xOffset, $yOffset)
+examples:
+  sass: |
+    .example-before-absolute-outside
+      +cssowl-before-absolute-outside("*", 5px, 5px, middle, right, -5px, -2px)
+  scss: |
+    .example-before-absolute-outside {
+      @include cssowl-before-absolute-outside("*", 5px, 5px, middle, right, -5px, -2px);
+    }
+  less: |
+    .example-before-absolute-outside {
+      .cssowl-before-absolute-outside("*", 5px, 5px, middle, right, -5px, -2px);
+    }
+  styl: |
+    .example-before-absolute-outside
+      cssowl-before-absolute-outside("*", 5px, 5px, middle, right, -5px, -2px)
+  html: |
+    .example-before-absolute-outside{style: "width:50px;height:50px;border:1px solid #59371f;"}

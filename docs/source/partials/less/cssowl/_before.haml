@@ -1,0 +1,61 @@
+%h3#cssowl-before-absolute-inside cssowl-before-absolute-inside
+
+%p
+  Mixin to add content with the `:before` pseudo selector and position it absolutely *inside* the bounding box.
+
+.bs-example
+  .example-before-absolute-inside{style: "width:50px;height:50px;border:1px solid #59371f;"}
+
+%pre
+  = preserve do
+    :escaped
+      .example-before-absolute-inside {
+        .cssowl-before-absolute-inside("*", 5px, 5px, middle, center, 0, -2px);
+      }
+
+%h3#cssowl-before-absolute-outside cssowl-before-absolute-outside
+
+%p
+  Mixin to add content with the `:before` pseudo selector and position it absolutely *outside* the bounding box.
+
+.bs-example
+  .example-before-absolute-outside{style: "width:50px;height:50px;border:1px solid #59371f;"}
+
+%pre
+  = preserve do
+    :escaped
+      .example-before-absolute-outside {
+        .cssowl-before-absolute-outside("*", 5px, 5px, middle, right, -5px, -2px);
+      }
+
+%h3#cssowl-before-absolute cssowl-before-absolute
+
+%p
+  Mixin to add content with the `:before` pseudo selector and position it absolutely.
+
+.bs-example
+  .example-before-absolute{style: "width:50px;height:50px;border:1px solid #59371f;"}
+
+%pre
+  = preserve do
+    :escaped
+      .example-before-absolute {
+        .cssowl-before-absolute("*", 17px false false 20px);
+      }
+
+%h3#cssowl-before-float cssowl-before-float
+
+%p
+  Mixin to add content with the `:before` pseudo selector and position it with `float: $float`.
+
+.bs-example
+  .example-before-float
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore.
+
+%pre
+  = preserve do
+    :escaped
+      .example-before-float {
+        .cssowl-before-float("*", 4px 10px 0 0);
+      }
+

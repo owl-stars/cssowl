@@ -1,9 +1,0 @@
-imports:
-  less: |
-    @import "position";
-  sass: |
-    @import "position"
-  scss: |
-    @import "position";
-  styl: |
-    @import "position"

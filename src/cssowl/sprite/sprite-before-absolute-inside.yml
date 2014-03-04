@@ -1,0 +1,45 @@
+name: cssowl-sprite-before-absolute-inside
+description: |
+  Add a sprite element with the `:before` pseudo selector and place it absolutely *inside* the bounding box.
+styles:
+  sass: |
+    =cssowl-sprite-before-absolute-inside($element, $valign:top, $halign:left, $xOffset:0, $yOffset:0)
+      +cssowl-before-absolute-inside("", nth($element, 3), nth($element, 4), $valign, $halign, $xOffset, $yOffset)
+      &:before
+        @extend %#{nth($element, 5)}
+  scss: |
+    @mixin cssowl-sprite-before-absolute-inside($element, $valign:top, $halign:left, $xOffset:0, $yOffset:0) {
+      @include cssowl-before-absolute-inside("", nth($element, 3), nth($element, 4), $valign, $halign, $xOffset, $yOffset);
+      &:before {
+        @extend %#{nth($element, 5)};
+      }
+    }
+  less: |
+    .cssowl-sprite-before-absolute-inside(@element, @valign:top, @halign:left, @xOffset:0, @yOffset:0) {
+      .cssowl-before-absolute-inside("", extract(@element, 3), extract(@element, 4), @valign, @halign, @xOffset, @yOffset);
+      &:before {
+        .less-sprite-element(extract(@element, 5));
+      }
+    }
+  styl: |
+    cssowl-sprite-before-absolute-inside($element, $valign=top, $halign=left, $xOffset=0, $yOffset=0)
+      cssowl-before-absolute-inside("", $element[2], $element[3], $valign, $halign, $xOffset, $yOffset)
+      &:before
+        @extend ${$element[4]}
+examples:
+  sass: |
+    .example-sprite-before-absolute-inside
+      +cssowl-sprite-before-absolute-inside($sprite-arrow-down, top, center)
+  scss: |
+    .example-sprite-before-absolute-inside {
+      @include cssowl-sprite-before-absolute-inside($sprite-arrow-down, top, center);
+    }
+  less: |
+    .example-sprite-before-absolute-inside {
+      .cssowl-sprite-before-absolute-inside(@sprite-arrow-down, top, center);
+    }
+  styl: |
+    .example-sprite-before-absolute-inside
+      cssowl-sprite-before-absolute-inside($sprite-arrow-down, top, center)
+  html: |
+    .example-sprite-before-absolute-inside{:style => "display:inline-block;border-top:1px solid #59371f;padding-top: 5px;"} Quia sint quis

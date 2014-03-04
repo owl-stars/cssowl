@@ -25,25 +25,27 @@ module.exports = (grunt) ->
 
     clean:
       test:
-        src: ["test/tmp", "test/fixtures"]
+        src: ["test/tmp", "test/examples"]
 
     less:
       test:
         files:
-          "test/tmp/examples.less.css": "test/fixtures/examples.less"
+          "test/tmp/examples.less.css": "test/fixtures/less/cssowl.less"
 
     sass:
       test:
+        options:
+          trace: true
         files:
-          "test/tmp/examples.sass.css": "test/fixtures/examples.sass"
-          "test/tmp/examples.scss.css": "test/fixtures/examples.scss"
+          "test/tmp/examples.sass.css": "test/fixtures/sass/cssowl.sass"
+          "test/tmp/examples.scss.css": "test/fixtures/scss/cssowl.scss"
 
     stylus:
       test:
         options:
           compress: false
         files:
-          "test/tmp/examples.styl.css": "test/fixtures/examples.styl"
+          "test/tmp/examples.styl.css": "test/fixtures/styl/cssowl.styl"
 
     csslint:
       test:
@@ -68,27 +70,34 @@ module.exports = (grunt) ->
     # Deployment
     bumper:
       options:
+        push: false
+        createTag: false
         tasks: ["default"]
         files: ["package.json", 'bower.json']
         updateConfigs: ["pkg"]
 
   # Custom task for fixtures generation
   grunt.registerTask "librarianowl-examples", ->
-    librarianowl.examples "src", "test/fixtures",
-      template: "tools/test-template.hbs"
-      imports: (syntax) ->
-        switch syntax
-          when "sass" then return "@import '../../lib/#{syntax}/cssowl'"
-          when "scss" then return "@import '../../lib/#{syntax}/cssowl';"
-          when "less" then return "@import '../../lib/#{syntax}/cssowl';"
-          when "styl" then return "@import '../../lib/#{syntax}/cssowl'"
-
+    librarianowl.compile "src", "test/examples",
+      template: "resources/librarianowl/template-examples.hbs"
 
   # Custom task for library generation
   grunt.registerTask "librarianowl-lib", ->
-    librarianowl.library "src", "lib",
-      helpers: "tools/lib-helpers.js"
-      template: "tools/lib-template.hbs"
+    librarianowl.compile "src", "lib", {
+      helpers: "resources/librarianowl/helpers.js"
+      template: "resources/librarianowl/template-library.hbs"
+    }
+
+  # Custom task for library generation
+  grunt.registerTask "librarianowl-docs", ->
+    librarianowl.compile "src", "docs/source/partials", {
+      filename: (item, syntax) ->
+        return "_" + item.module + ".haml"
+      filter: (filename) ->
+        return (filename != '_imports.yml')
+      helpers: "resources/librarianowl/helpers.js"
+      template: "resources/librarianowl/template-docs.hbs"
+    }
 
   # Load npm tasks
   grunt.loadNpmTasks "grunt-mocha-cov"
@@ -102,4 +111,5 @@ module.exports = (grunt) ->
 
   # Register tasks
   grunt.registerTask 'default', ['coffeelint', 'librarianowl-lib']
-  grunt.registerTask 'test', ['default', 'clean', 'librarianowl-examples', 'less', 'sass', 'stylus', 'csslint', 'mochacov']
+  grunt.registerTask 'test', ['default', 'clean', 'librarianowl-examples', 'sass', 'less', 'stylus', 'csslint', 'mochacov']
+  grunt.registerTask 'docs', ['default', 'clean', 'librarianowl-examples', 'librarianowl-docs']

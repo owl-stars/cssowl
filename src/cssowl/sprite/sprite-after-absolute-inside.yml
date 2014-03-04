@@ -1,0 +1,45 @@
+name: cssowl-sprite-after-absolute-inside
+description: |
+  Add a sprite element with the `:after` pseudo selector and place it absolutely *inside* the bounding box.
+styles:
+  sass: |
+    =cssowl-sprite-after-absolute-inside($element, $valign:top, $halign:left, $xOffset:0, $yOffset:0)
+      +cssowl-after-absolute-inside("", nth($element, 3), nth($element, 4), $valign, $halign, $xOffset, $yOffset)
+      &:after
+        @extend %#{nth($element, 5)}
+  scss: |
+    @mixin cssowl-sprite-after-absolute-inside($element, $valign:top, $halign:left, $xOffset:0, $yOffset:0) {
+      @include cssowl-after-absolute-inside("", nth($element, 3), nth($element, 4), $valign, $halign, $xOffset, $yOffset);
+      &:after {
+        @extend %#{nth($element, 5)};
+      }
+    }
+  less: |
+    .cssowl-sprite-after-absolute-inside(@element, @valign:top, @halign:left, @xOffset:0, @yOffset:0) {
+      .cssowl-after-absolute-inside("", extract(@element, 3), extract(@element, 4), @valign, @halign, @xOffset, @yOffset);
+      &:after {
+        .less-sprite-element(extract(@element, 5));
+      }
+    }
+  styl: |
+    cssowl-sprite-after-absolute-inside($element, $valign=top, $halign=left, $xOffset=0, $yOffset=0)
+      cssowl-after-absolute-inside("", $element[2], $element[3], $valign, $halign, $xOffset, $yOffset)
+      &:after
+        @extend ${$element[4]}
+examples:
+  sass: |
+    .example-sprite-after-absolute-inside
+      +cssowl-sprite-after-absolute-inside($sprite-arrow-down, top, center)
+  scss: |
+    .example-sprite-after-absolute-inside {
+      @include cssowl-sprite-after-absolute-inside($sprite-arrow-down, top, center);
+    }
+  less: |
+    .example-sprite-after-absolute-inside {
+      .cssowl-sprite-after-absolute-inside(@sprite-arrow-down, top, center);
+    }
+  styl: |
+    .example-sprite-after-absolute-inside
+      cssowl-sprite-after-absolute-inside($sprite-arrow-down, top, center)
+  html: |
+    .example-sprite-after-absolute-inside{:style => "display:inline-block;border-top:1px solid #59371f;padding-top: 5px;"} Quia sint quis

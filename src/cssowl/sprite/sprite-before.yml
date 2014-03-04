@@ -1,0 +1,53 @@
+name: cssowl-sprite-before
+description: |
+  Add a sprite element with the `:before` pseudo selector.
+styles:
+  sass: |
+    =cssowl-sprite-before($element, $margin:0 0 0 0, $display:inline-block)
+      &:before
+        content: ""
+        margin: $margin
+        display: $display
+        @extend %#{nth($element, 5)}
+  scss: |
+    @mixin cssowl-sprite-before($element, $margin:0 0 0 0, $display:inline-block) {
+      &:before {
+        content: "";
+        margin: $margin;
+        display: $display;
+        @extend %#{nth($element, 5)};
+      }
+    }
+  less: |
+    .cssowl-sprite-before(@element, @margin:0 0 0 0, @display:inline-block) {
+      &:before {
+        content: "";
+        margin: @margin;
+        display: @display;
+        .less-sprite-element(extract(@element, 5));
+      }
+    }
+  styl: |
+    cssowl-sprite-before($element, $margin=0 0 0 0, $display=inline-block)
+      &:before
+        content ""
+        margin $margin
+        display $display
+        @extend ${$element[4]}
+examples:
+  sass: |
+    .example-sprite-before
+      +cssowl-sprite-before($sprite-owl-up, 0 10px -2px 0)
+  scss: |
+    .example-sprite-before {
+      @include cssowl-sprite-before($sprite-owl-up, 0 10px -2px 0);
+    }
+  less: |
+    .example-sprite-before {
+      .cssowl-sprite-before(@sprite-owl-up, 0 10px -2px 0);
+    }
+  styl: |
+    .example-sprite-before
+      cssowl-sprite-before($sprite-owl-up, 0 10px -2px 0)
+  html: |
+    .example-sprite-before Quia sint quis nam et quia ducimus consequatur cumque.

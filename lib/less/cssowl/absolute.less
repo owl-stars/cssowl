@@ -1,0 +1,26 @@
+// Mixin to position an element absolutely *inside* the bounding box.
+// mixin
+.cssowl-absolute-inside(@width, @height, @valign:top, @halign:left, @xOffset:0, @yOffset:0) {
+  width: @width;
+  height: @height;
+  position: absolute;
+  .cssowl-coords-inside(@width, @height, @valign, @halign, @xOffset, @yOffset);
+}
+// Mixin to position an element absolutely *outside* the bounding box.
+// mixin
+.cssowl-absolute-outside(@width, @height, @valign:top, @halign:left, @xOffset:0, @yOffset:0) {
+  width: @width;
+  height: @height;
+  position: absolute;
+  .cssowl-coords-outside(@width, @height, @valign, @halign, @xOffset, @yOffset);
+}
+// Extendable placeholder and mixin to position an element absolutely.
+// disabled as less doesn't provide placeholders yet
+//.cssowl-absolute {
+//  position: absolute;
+//}
+// mixin
+.cssowl-absolute(@coordinates:0 false false 0) {
+  .cssowl-coords(@coordinates);
+  position: absolute;
+}

@@ -1,0 +1,91 @@
+name: cssowl-absolute-inside
+description: |
+  Mixin to position an element absolutely *inside* the bounding box.
+styles:
+  sass: |
+    // mixin
+    =cssowl-absolute-inside($width, $height, $valign:top, $halign:left, $xOffset:0, $yOffset:0)
+      width: $width
+      height: $height
+      @extend %cssowl-absolute
+      +cssowl-coords-inside($width, $height, $valign, $halign, $xOffset, $yOffset)
+  scss: |
+    // mixin
+    @mixin cssowl-absolute-inside($width, $height, $valign:top, $halign:left, $xOffset:0, $yOffset:0) {
+      width: $width;
+      height: $height;
+      @extend %cssowl-absolute;
+      @include cssowl-coords-inside($width, $height, $valign, $halign, $xOffset, $yOffset);
+    }
+  less: |
+    // mixin
+    .cssowl-absolute-inside(@width, @height, @valign:top, @halign:left, @xOffset:0, @yOffset:0) {
+      width: @width;
+      height: @height;
+      position: absolute;
+      .cssowl-coords-inside(@width, @height, @valign, @halign, @xOffset, @yOffset);
+    }
+  styl: |
+    // mixin
+    cssowl-absolute-inside($width, $height, $valign=top, $halign=left, $xOffset=0, $yOffset=0)
+      width $width
+      height $height
+      @extend $cssowl-absolute;
+      cssowl-coords-inside($width, $height, $valign, $halign, $xOffset, $yOffset);
+examples:
+  sass: |
+    .example-absolute-inside
+      > .top-center
+        +cssowl-absolute-inside(10px, 10px, top, center)
+      > .middle-right
+        +cssowl-absolute-inside(10px, 10px, middle, right)
+      > .bottom-center
+        +cssowl-absolute-inside(10px, 10px, bottom, center)
+      > .middle-left
+        +cssowl-absolute-inside(10px, 10px, middle, left)
+  scss: |
+    .example-absolute-inside {
+      > .top-center {
+        @include cssowl-absolute-inside(10px, 10px, top, center);
+      }
+      > .middle-right {
+        @include cssowl-absolute-inside(10px, 10px, middle, right);
+      }
+      > .bottom-center {
+        @include cssowl-absolute-inside(10px, 10px, bottom, center);
+      }
+      > .middle-left {
+        @include cssowl-absolute-inside(10px, 10px, middle, left);
+      }
+    }
+  less: |
+    .example-absolute-inside {
+      > .top-center {
+        .cssowl-absolute-inside(10px, 10px, top, center);
+      }
+      > .middle-right {
+        .cssowl-absolute-inside(10px, 10px, middle, right);
+      }
+      > .bottom-center {
+        .cssowl-absolute-inside(10px, 10px, bottom, center);
+      }
+      > .middle-left {
+        .cssowl-absolute-inside(10px, 10px, middle, left);
+      }
+    }
+  styl: |
+    .example-absolute-inside
+      > .top-center
+        cssowl-absolute-inside(10px, 10px, top, center)
+      > .middle-right
+        cssowl-absolute-inside(10px, 10px, middle, right)
+      > .bottom-center
+        cssowl-absolute-inside(10px, 10px, bottom, center)
+      > .middle-left
+        cssowl-absolute-inside(10px, 10px, middle, left)
+  html: |
+    .example-absolute-inside{:style => "position:relative;width:50px;height:50px;border:1px solid #59371f;"}
+      .top-center{style: "width:10px;height:10px;background:#59371f;"}
+      .middle-right{style: "width:10px;height:10px;background:#59371f;"}
+      .bottom-center{style: "width:10px;height:10px;background:#59371f;"}
+      .middle-left{style: "width:10px;height:10px;background:#59371f;"}

@@ -1,0 +1,156 @@
+name: cssowl-coords-outside
+description: |
+  Set an element's `top`, `right`, `bottom` and `left` properties to position it *outside* the bounding box.
+styles:
+  sass: |
+    =cssowl-coords-outside($width, $height, $valign:top, $halign:left, $xOffset:0, $yOffset:0)
+      @if $valign == top
+        top: round($yOffset - $height)
+      @else if $valign == middle
+        top: 50%
+        margin-top: $yOffset - round($height / 2)
+      @else if $valign == bottom
+        bottom: round($yOffset - $height)
+      @if $halign == left
+        left: round($xOffset - $width)
+      @else if $halign == center
+        left: 50%
+        margin-left: $xOffset - round($width / 2)
+      @else if $halign == right
+        right: round($xOffset - $width)
+  scss: |
+    @mixin cssowl-coords-outside($width, $height, $valign:top, $halign:left, $xOffset:0, $yOffset:0) {
+      @if $valign == top {
+        top: round($yOffset - $height);
+      }
+      @else if $valign == middle {
+        top: 50%;
+        margin-top: $yOffset - round($height / 2);
+      }
+      @else if $valign == bottom {
+        bottom: round($yOffset - $height);
+      }
+      @if $halign == left {
+        left: round($xOffset - $width);
+      }
+      @else if $halign == center {
+        left: 50%;
+        margin-left: $xOffset - round($width / 2);
+      }
+      @else if $halign == right {
+        right: round($xOffset - $width);
+      }
+    }
+  less: |
+    .cssowl-coords-outside(@width, @height, @valign:top, @halign:left, @xOffset:0, @yOffset:0) when (@valign = top) {
+      top: round(@yOffset - @height);
+    }
+    .cssowl-coords-outside(@width, @height, @valign:top, @halign:left, @xOffset:0, @yOffset:0) when (@valign = middle) {
+      top: 50%;
+      margin-top: @yOffset - round(@height / 2);
+    }
+    .cssowl-coords-outside(@width, @height, @valign:top, @halign:left, @xOffset:0, @yOffset:0) when (@valign = bottom) {
+      bottom: round(@yOffset - @height);
+    }
+    .cssowl-coords-outside(@width, @height, @valign:top, @halign:left, @xOffset:0, @yOffset:0) when (@halign = left) {
+      left: round(@xOffset - @width);
+    }
+    .cssowl-coords-outside(@width, @height, @valign:top, @halign:left, @xOffset:0, @yOffset:0) when (@halign = center) {
+      left: 50%;
+      margin-left: @xOffset - round(@width / 2);
+    }
+    .cssowl-coords-outside(@width, @height, @valign:top, @halign:left, @xOffset:0, @yOffset:0) when (@halign = right) {
+      right: round(@xOffset - @width);
+    }
+    .cssowl-coords-outside(@width, @height, @valign:top, @halign:left, @xOffset:0, @yOffset:0) {
+      // see conditionals
+    }
+  styl: |
+    cssowl-coords-outside(width, height, valign=top, halign=left, xOffset=0, yOffset=0)
+      if valign == top
+        top round(yOffset - height)
+      else if valign == middle
+        top 50%
+        margin-top yOffset - round(height / 2)
+      else if valign == bottom
+        bottom round(yOffset - height)
+      if halign == left
+        left round(xOffset - width)
+      else if halign == center
+        left 50%
+        margin-left xOffset - round(width / 2)
+      else if halign == right
+        right round(xOffset - width)
+examples:
+  sass: |
+    .example-coords-outside
+      width: 10px
+      height: 10px
+      position: absolute
+      background: #59371f
+      &.top-center
+        +cssowl-coords-outside(10px, 10px, top, center)
+      &.middle-right
+        +cssowl-coords-outside(10px, 10px, middle, right)
+      &.bottom-center
+        +cssowl-coords-outside(10px, 10px, bottom, center)
+      &.middle-left
+        +cssowl-coords-outside(10px, 10px, middle, left)
+  scss: |
+    .example-coords-outside {
+      width: 10px;
+      height: 10px;
+      position: absolute;
+      background: #59371f;
+      &.top-center {
+        @include cssowl-coords-outside(10px, 10px, top, center);
+      }
+      &.middle-right {
+        @include cssowl-coords-outside(10px, 10px, middle, right);
+      }
+      &.bottom-center {
+        @include cssowl-coords-outside(10px, 10px, bottom, center);
+      }
+      &.middle-left {
+        @include cssowl-coords-outside(10px, 10px, middle, left);
+      }
+    }
+  less: |
+    .example-coords-outside {
+      width: 10px;
+      height: 10px;
+      position: absolute;
+      background: #59371f;
+      &.top-center {
+        .cssowl-coords-outside(10px, 10px, top, center);
+      }
+      &.middle-right {
+        .cssowl-coords-outside(10px, 10px, middle, right);
+      }
+      &.bottom-center {
+        .cssowl-coords-outside(10px, 10px, bottom, center);
+      }
+      &.middle-left {
+        .cssowl-coords-outside(10px, 10px, middle, left);
+      }
+    }
+  styl: |
+    .example-coords-outside
+      width 10px
+      height 10px
+      position absolute
+      background #59371f
+      &.top-center
+        cssowl-coords-outside(10px, 10px, top, center)
+      &.middle-right
+        cssowl-coords-outside(10px, 10px, middle, right)
+      &.bottom-center
+        cssowl-coords-outside(10px, 10px, bottom, center)
+      &.middle-left
+        cssowl-coords-outside(10px, 10px, middle, left)
+  html: |
+    .wrapper{:style => "position:relative;width:50px;height:50px;border:1px solid #59371f;"}
+      .example-coords-outside.top-center
+      .example-coords-outside.middle-right
+      .example-coords-outside.bottom-center
+      .example-coords-outside.middle-left

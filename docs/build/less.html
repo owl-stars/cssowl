@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta content='IE=edge,chrome=1' http-equiv='X-UA-Compatible'>
+    <meta content='width=device-width, initial-scale=1' name='viewport'>
+    <title>Cssowl Documentation</title>
+    <link href="assets/css/bootstrap.css?1392668650" media="screen" rel="stylesheet" type="text/css" />
+    <link href="assets/css/docs.css?1392668650" media="screen" rel="stylesheet" type="text/css" />
+  </head>
+  <body class='less'>
+    <div class='navbar navbar-inverse navbar-fixed-top' role='navigation'>
+      <div class='container'>
+        <div class='navbar-header'>
+          <button class='navbar-toggle' data-target='.navbar-collapse' data-toggle='collapse' type='button'>
+            <span class='sr-only'>Toggle navigation</span>
+            <span class='icon-bar'></span>
+            <span class='icon-bar'></span>
+            <span class='icon-bar'></span>
+          </button>
+          <a class='navbar-brand' href='/'>Cssowl</a>
+        </div>
+        <div class='collapse navbar-collapse'>
+          <ul class='nav navbar-nav'>
+            <li>
+              <a href="sass.html">SASS</a>
+            </li>
+            <li>
+              <a href="scss.html">SCSS</a>
+            </li>
+            <li>
+              <a href="less.html">LESS</a>
+            </li>
+            <li>
+              <a href="stylus.html">Stylus</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class='container bs-docs-container'>
+      <div class='row'>
+        <div class='col-md-12'>
+          <link href="assets/css/examples-less.css?1392668650" media="screen" rel="stylesheet" type="text/css" />
+          <div class='bs-docs-section'>
+            <h1 class='page-header' id='absolute'>Absolute</h1>
+            <h3 id='cssowl-absolute-inside'>cssowl-absolute-inside</h3>
+            <p>
+              Mixin to position an element absolutely *inside* the bounding box.
+            </p>
+            <div class='bs-example'>
+              <div class='example-absolute-inside' style='position:relative;width:50px;height:50px;border:1px solid #59371f;'>
+                <div class='top-center' style='width:10px;height:10px;background:#59371f;'></div>
+                <div class='middle-right' style='width:10px;height:10px;background:#59371f;'></div>
+                <div class='bottom-center' style='width:10px;height:10px;background:#59371f;'></div>
+                <div class='middle-left' style='width:10px;height:10px;background:#59371f;'></div>
+              </div>
+            </div>
+            <pre>.example-absolute-inside {&#x000A;  &gt; .top-center {&#x000A;    .cssowl-absolute-inside(10px, 10px, top, center);&#x000A;  }&#x000A;  &gt; .middle-right {&#x000A;    .cssowl-absolute-inside(10px, 10px, middle, right);&#x000A;  }&#x000A;  &gt; .bottom-center {&#x000A;    .cssowl-absolute-inside(10px, 10px, bottom, center);&#x000A;  }&#x000A;  &gt; .middle-left {&#x000A;    .cssowl-absolute-inside(10px, 10px, middle, left);&#x000A;  }&#x000A;}</pre>
+            <h3 id='cssowl-absolute-outside'>cssowl-absolute-outside</h3>
+            <p>
+              Mixin to position an element absolutely *outside* the bounding box.
+            </p>
+            <div class='bs-example'>
+              <div class='example-absolute-outside' style='position:relative;width:50px;height:50px;border:1px solid #59371f;'>
+                <div class='top-center' style='background:#59371f;'></div>
+                <div class='middle-right' style='background:#59371f;'></div>
+                <div class='bottom-center' style='background:#59371f;'></div>
+                <div class='middle-left' style='background:#59371f;'></div>
+              </div>
+            </div>
+            <pre>.example-absolute-outside {&#x000A;  &gt; .top-center {&#x000A;    .cssowl-absolute-outside(10px, 10px, top, center);&#x000A;  }&#x000A;  &gt; .middle-right {&#x000A;    .cssowl-absolute-outside(10px, 10px, middle, right);&#x000A;  }&#x000A;  &gt; .bottom-center {&#x000A;    .cssowl-absolute-outside(10px, 10px, bottom, center);&#x000A;  }&#x000A;  &gt; .middle-left {&#x000A;    .cssowl-absolute-outside(10px, 10px, middle, left);&#x000A;  }&#x000A;}</pre>
+            <h3 id='cssowl-absolute'>cssowl-absolute</h3>
+            <p>
+              Extendable placeholder and mixin to position an element absolutely.
+            </p>
+            <div class='bs-example'>
+              <div class='wrapper' style='position:relative;width:50px;height:50px;border:1px solid #59371f;'>
+                <div class='example-absolute' style='width:10px;height:10px;background:#59371f;'></div>
+              </div>
+            </div>
+            <pre>.example-absolute {&#x000A;  .cssowl-absolute(20px false false 20px);&#x000A;}</pre>
+          </div>
+          <div class='bs-docs-section'>
+            <h1 class='page-header' id='after'>After</h1>
+            <h3 id='cssowl-after-absolute-inside'>cssowl-after-absolute-inside</h3>
+            <p>
+              Mixin to add content with the `:after` pseudo selector and position it absolutely *inside* the bounding box.
+            </p>
+            <div class='bs-example'>
+              <div class='example-after-absolute-inside' style='width:50px;height:50px;border:1px solid #59371f;'></div>
+            </div>
+            <pre>.example-after-absolute-inside {&#x000A;  .cssowl-after-absolute-inside(&quot;*&quot;, 5px, 5px, middle, center, 0, -2px);&#x000A;}</pre>
+            <h3 id='cssowl-after-absolute-outside'>cssowl-after-absolute-outside</h3>
+            <p>
+              Mixin to add content with the `:after` pseudo selector and position it absolutely *outside* the bounding box.
+            </p>
+            <div class='bs-example'>
+              <div class='example-after-absolute-outside' style='width:50px;height:50px;border:1px solid #59371f;'></div>
+            </div>
+            <pre>.example-after-absolute-outside {&#x000A;  .cssowl-after-absolute-outside(&quot;*&quot;, 5px, 5px, middle, right, -5px, -2px);&#x000A;}</pre>
+            <h3 id='cssowl-after-absolute'>cssowl-after-absolute</h3>
+            <p>
+              Mixin to add content with the `:after` pseudo selector and position it absolutely.
+            </p>
+            <div class='bs-example'>
+              <div class='example-after-absolute' style='width:50px;height:50px;border:1px solid #59371f;'></div>
+            </div>
+            <pre>.example-after-absolute {&#x000A;  .cssowl-after-absolute(&quot;*&quot;, 17px false false 20px);&#x000A;}</pre>
+            <h3 id='cssowl-after-float'>cssowl-after-float</h3>
+            <p>
+              Mixin to add content with the `:after` pseudo selector and position it with `float: $float`.
+            </p>
+            <div class='bs-example'>
+              <div class='example-after-float'>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore.
+              </div>
+            </div>
+            <pre>.example-after-float {&#x000A;  .cssowl-after-float(&quot;*&quot;, 4px 0 0 10px);&#x000A;}</pre>
+          </div>
+          <div class='bs-docs-section'>
+            <h1 class='page-header' id='before'>Before</h1>
+            <h3 id='cssowl-before-absolute-inside'>cssowl-before-absolute-inside</h3>
+            <p>
+              Mixin to add content with the `:before` pseudo selector and position it absolutely *inside* the bounding box.
+            </p>
+            <div class='bs-example'>
+              <div class='example-before-absolute-inside' style='width:50px;height:50px;border:1px solid #59371f;'></div>
+            </div>
+            <pre>.example-before-absolute-inside {&#x000A;  .cssowl-before-absolute-inside(&quot;*&quot;, 5px, 5px, middle, center, 0, -2px);&#x000A;}</pre>
+            <h3 id='cssowl-before-absolute-outside'>cssowl-before-absolute-outside</h3>
+            <p>
+              Mixin to add content with the `:before` pseudo selector and position it absolutely *outside* the bounding box.
+            </p>
+            <div class='bs-example'>
+              <div class='example-before-absolute-outside' style='width:50px;height:50px;border:1px solid #59371f;'></div>
+            </div>
+            <pre>.example-before-absolute-outside {&#x000A;  .cssowl-before-absolute-outside(&quot;*&quot;, 5px, 5px, middle, right, -5px, -2px);&#x000A;}</pre>
+            <h3 id='cssowl-before-absolute'>cssowl-before-absolute</h3>
+            <p>
+              Mixin to add content with the `:before` pseudo selector and position it absolutely.
+            </p>
+            <div class='bs-example'>
+              <div class='example-before-absolute' style='width:50px;height:50px;border:1px solid #59371f;'></div>
+            </div>
+            <pre>.example-before-absolute {&#x000A;  .cssowl-before-absolute(&quot;*&quot;, 17px false false 20px);&#x000A;}</pre>
+            <h3 id='cssowl-before-float'>cssowl-before-float</h3>
+            <p>
+              Mixin to add content with the `:before` pseudo selector and position it with `float: $float`.
+            </p>
+            <div class='bs-example'>
+              <div class='example-before-float'>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore.
+              </div>
+            </div>
+            <pre>.example-before-float {&#x000A;  .cssowl-before-float(&quot;*&quot;, 4px 10px 0 0);&#x000A;}</pre>
+          </div>
+          <div class='bs-docs-section'>
+            <h1 class='page-header' id='coords'>Coords</h1>
+            <h3 id='cssowl-coords-inside'>cssowl-coords-inside</h3>
+            <p>
+              Set an element's `top`, `right`, `bottom` and `left` properties to position it *inside* the bounding box.
+            </p>
+            <div class='bs-example'>
+              <div class='wrapper' style='position:relative;width:50px;height:50px;border:1px solid #59371f;'>
+                <div class='example-coords-inside top-center'></div>
+                <div class='example-coords-inside middle-right'></div>
+                <div class='example-coords-inside bottom-center'></div>
+                <div class='example-coords-inside middle-left'></div>
+              </div>
+            </div>
+            <pre>.example-coords-inside {&#x000A;  width: 10px;&#x000A;  height: 10px;&#x000A;  position: absolute;&#x000A;  background: #59371f;&#x000A;  &amp;.top-center {&#x000A;    .cssowl-coords-inside(10px, 10px, top, center);&#x000A;  }&#x000A;  &amp;.middle-right {&#x000A;    .cssowl-coords-inside(10px, 10px, middle, right);&#x000A;  }&#x000A;  &amp;.bottom-center {&#x000A;    .cssowl-coords-inside(10px, 10px, bottom, center);&#x000A;  }&#x000A;  &amp;.middle-left {&#x000A;    .cssowl-coords-inside(10px, 10px, middle, left);&#x000A;  }&#x000A;}</pre>
+            <h3 id='cssowl-coords-outside'>cssowl-coords-outside</h3>
+            <p>
+              Set an element's `top`, `right`, `bottom` and `left` properties to position it *outside* the bounding box.
+            </p>
+            <div class='bs-example'>
+              <div class='wrapper' style='position:relative;width:50px;height:50px;border:1px solid #59371f;'>
+                <div class='example-coords-outside top-center'></div>
+                <div class='example-coords-outside middle-right'></div>
+                <div class='example-coords-outside bottom-center'></div>
+                <div class='example-coords-outside middle-left'></div>
+              </div>
+            </div>
+            <pre>.example-coords-outside {&#x000A;  width: 10px;&#x000A;  height: 10px;&#x000A;  position: absolute;&#x000A;  background: #59371f;&#x000A;  &amp;.top-center {&#x000A;    .cssowl-coords-outside(10px, 10px, top, center);&#x000A;  }&#x000A;  &amp;.middle-right {&#x000A;    .cssowl-coords-outside(10px, 10px, middle, right);&#x000A;  }&#x000A;  &amp;.bottom-center {&#x000A;    .cssowl-coords-outside(10px, 10px, bottom, center);&#x000A;  }&#x000A;  &amp;.middle-left {&#x000A;    .cssowl-coords-outside(10px, 10px, middle, left);&#x000A;  }&#x000A;}</pre>
+            <h3 id='cssowl-coords'>cssowl-coords</h3>
+            <p>
+              Set an element's `top`, `right`, `bottom` and `left` properties.
+            </p>
+            <div class='bs-example'>
+              <div class='wrapper' style='position:relative;width:50px;height:50px;border:1px solid #59371f;'>
+                <div class='example-coords' style='width:10px;height:10px;background:#59371f;position:absolute;'></div>
+              </div>
+            </div>
+            <pre>.example-coords {&#x000A;  .cssowl-coords(20px false false 20px);&#x000A;}</pre>
+          </div>
+          <div class='bs-docs-section'>
+            <h1 class='page-header' id='relative'>Relative</h1>
+            <h3 id='cssowl-relative'>cssowl-relative</h3>
+            <p>
+              Extendable placeholder and mixin to position an element relatively.
+            </p>
+            <div class='bs-example'>
+              <div class='wrapper' style='position:relative;width:50px;height:50px;border:1px solid #59371f;'>
+                <div class='example-relative' style='width:10px;height:10px;background:#59371f;'></div>
+              </div>
+            </div>
+            <pre>.example-relative {&#x000A;  .cssowl-relative(20px false false 20px);&#x000A;}</pre>
+          </div>
+          <div class='bs-docs-section'>
+            <h1 class='page-header' id='sprite'>Sprite</h1>
+            <h3 id='cssowl-sprite-absolute-inside'>cssowl-sprite-absolute-inside</h3>
+            <p>
+              Place a sprite element with `position: absolute;` *inside* the bounding box.
+            </p>
+            <div class='bs-example'>
+              <div class='example-sprite-absolute-inside' style='position:relative;width:50px;height:50px;border:1px solid #59371f;'>
+                <div class='top-center'></div>
+                <div class='middle-right'></div>
+                <div class='bottom-center'></div>
+                <div class='middle-left'></div>
+              </div>
+            </div>
+            <pre>.example-sprite-absolute-inside {&#x000A;  &gt; .top-center {&#x000A;    .cssowl-sprite-absolute-inside(@sprite-arrow-down, top, center);&#x000A;  }&#x000A;  &gt; .middle-right {&#x000A;    .cssowl-sprite-absolute-inside(@sprite-arrow-left, middle, right);&#x000A;  }&#x000A;  &gt; .bottom-center {&#x000A;    .cssowl-sprite-absolute-inside(@sprite-arrow-up, bottom, center);&#x000A;  }&#x000A;  &gt; .middle-left {&#x000A;    .cssowl-sprite-absolute-inside(@sprite-arrow-right, middle, left);&#x000A;  }&#x000A;}</pre>
+            <h3 id='cssowl-sprite-absolute-outside'>cssowl-sprite-absolute-outside</h3>
+            <p>
+              Place a sprite element with `position: absolute;` *outside* the bounding box.
+            </p>
+            <div class='bs-example'>
+              <div class='example-sprite-absolute-outside' style='position:relative;width:50px;height:50px;border:1px solid #59371f;'>
+                <div class='top-center'></div>
+                <div class='middle-right'></div>
+                <div class='bottom-center'></div>
+                <div class='middle-left'></div>
+              </div>
+            </div>
+            <pre>.example-sprite-absolute-outside {&#x000A;  &gt; .top-center {&#x000A;    .cssowl-sprite-absolute-outside(@sprite-arrow-up, top, center);&#x000A;  }&#x000A;  &gt; .middle-right {&#x000A;    .cssowl-sprite-absolute-outside(@sprite-arrow-right, middle, right);&#x000A;  }&#x000A;  &gt; .bottom-center {&#x000A;    .cssowl-sprite-absolute-outside(@sprite-arrow-down, bottom, center);&#x000A;  }&#x000A;  &gt; .middle-left {&#x000A;    .cssowl-sprite-absolute-outside(@sprite-arrow-left, middle, left);&#x000A;  }&#x000A;}</pre>
+            <h3 id='cssowl-sprite-absolute'>cssowl-sprite-absolute</h3>
+            <p>
+              Place a sprite element with `position: absolute;`.
+            </p>
+            <div class='bs-example'>
+              <div class='wrapper' style='position:relative;width:50px;height:50px;border:1px solid #59371f;'>
+                <div class='example-sprite-absolute'></div>
+              </div>
+            </div>
+            <pre>.example-sprite-absolute {&#x000A;  .cssowl-sprite-absolute(@sprite-owl-up, 10px 0 0 10px);&#x000A;}</pre>
+            <h3 id='cssowl-sprite-after-absolute-inside'>cssowl-sprite-after-absolute-inside</h3>
+            <p>
+              Add a sprite element with the `:after` pseudo selector and place it absolutely *inside* the bounding box.
+            </p>
+            <div class='bs-example'>
+              <div class='example-sprite-after-absolute-inside' style='display:inline-block;border-top:1px solid #59371f;padding-top: 5px;'>Quia sint quis</div>
+            </div>
+            <pre>.example-sprite-after-absolute-inside {&#x000A;  .cssowl-sprite-after-absolute-inside(@sprite-arrow-down, top, center);&#x000A;}</pre>
+            <h3 id='cssowl-sprite-after-absolute-outside'>cssowl-sprite-after-absolute-outside</h3>
+            <p>
+              Add a sprite element with the `:after` pseudo selector and place it absolutely *outside* the bounding box.
+            </p>
+            <div class='bs-example'>
+              <div class='example-sprite-after-absolute-outside' style='display:inline-block;border-top:1px solid #59371f;padding-top: 5px;'>Quia sint quis</div>
+            </div>
+            <pre>.example-sprite-after-absolute-outside {&#x000A;  .cssowl-sprite-after-absolute-outside(@sprite-arrow-up, top, center);&#x000A;}</pre>
+            <h3 id='cssowl-sprite-after-absolute'>cssowl-sprite-after-absolute</h3>
+            <p>
+              Add a sprite element with the `:after` pseudo selector and place it absolutely.
+            </p>
+            <div class='bs-example'>
+              <div class='example-sprite-after-absolute' style='margin-right:20px;'>Quia sint quis nam et quia ducimus consequatur cumque.</div>
+            </div>
+            <pre>.example-sprite-after-absolute {&#x000A;  .cssowl-sprite-after-absolute(@sprite-owl-up, 2px -20px false false);&#x000A;}</pre>
+            <h3 id='cssowl-sprite-after-float'>cssowl-sprite-after-float</h3>
+            <p>
+              Add a sprite element with the `:after` pseudo selector and place it with the `float` attribute.
+            </p>
+            <div class='bs-example'>
+              <div class='example-sprite-after-float'>Quia sint quis nam et quia ducimus consequatur cumque.</div>
+            </div>
+            <pre>.example-sprite-after-float {&#x000A;  .cssowl-sprite-after-float(@sprite-owl-up, 0 5px 0 0);&#x000A;}</pre>
+            <h3 id='cssowl-sprite-after'>cssowl-sprite-after</h3>
+            <p>
+              Add a sprite element with the `:after` pseudo selector.
+            </p>
+            <div class='bs-example'>
+              <div class='example-sprite-after'>Quia sint quis nam et quia ducimus consequatur cumque.</div>
+            </div>
+            <pre>.example-sprite-after {&#x000A;  .cssowl-sprite-after(@sprite-owl-up, 0 0 -2px 10px);&#x000A;}</pre>
+            <h3 id='cssowl-sprite-before-absolute-inside'>cssowl-sprite-before-absolute-inside</h3>
+            <p>
+              Add a sprite element with the `:before` pseudo selector and place it absolutely *inside* the bounding box.
+            </p>
+            <div class='bs-example'>
+              <div class='example-sprite-before-absolute-inside' style='display:inline-block;border-top:1px solid #59371f;padding-top: 5px;'>Quia sint quis</div>
+            </div>
+            <pre>.example-sprite-before-absolute-inside {&#x000A;  .cssowl-sprite-before-absolute-inside(@sprite-arrow-down, top, center);&#x000A;}</pre>
+            <h3 id='cssowl-sprite-before-absolute-outside'>cssowl-sprite-before-absolute-outside</h3>
+            <p>
+              Add a sprite element with the `:before` pseudo selector and place it absolutely *outside* the bounding box.
+            </p>
+            <div class='bs-example'>
+              <div class='example-sprite-before-absolute-outside' style='display:inline-block;border-top:1px solid #59371f;padding-top: 5px;'>Quia sint quis</div>
+            </div>
+            <pre>.example-sprite-before-absolute-outside {&#x000A;  .cssowl-sprite-before-absolute-outside(@sprite-arrow-up, top, center);&#x000A;}</pre>
+            <h3 id='cssowl-sprite-before-absolute'>cssowl-sprite-before-absolute</h3>
+            <p>
+              Add a sprite element with the `:before` pseudo selector and place it absolutely.
+            </p>
+            <div class='bs-example'>
+              <div class='example-sprite-before-absolute' style='margin-left:20px;'>Quia sint quis nam et quia ducimus consequatur cumque.</div>
+            </div>
+            <pre>.example-sprite-before-absolute {&#x000A;  .cssowl-sprite-before-absolute(@sprite-owl-up, 2px false false -20px);&#x000A;}</pre>
+            <h3 id='cssowl-sprite-before-float'>cssowl-sprite-before-float</h3>
+            <p>
+              Add a sprite element with the `:before` pseudo selector and place it with the `float` attribute.
+            </p>
+            <div class='bs-example'>
+              <div class='example-sprite-before-float'>Quia sint quis nam et quia ducimus consequatur cumque.</div>
+            </div>
+            <pre>.example-sprite-before-float {&#x000A;  .cssowl-sprite-before-float(@sprite-owl-up, 0 5px 0 0);&#x000A;}</pre>
+            <h3 id='cssowl-sprite-before'>cssowl-sprite-before</h3>
+            <p>
+              Add a sprite element with the `:before` pseudo selector.
+            </p>
+            <div class='bs-example'>
+              <div class='example-sprite-before'>Quia sint quis nam et quia ducimus consequatur cumque.</div>
+            </div>
+            <pre>.example-sprite-before {&#x000A;  .cssowl-sprite-before(@sprite-owl-up, 0 10px -2px 0);&#x000A;}</pre>
+            <h3 id='cssowl-sprite-display'>cssowl-sprite-display</h3>
+            <p>
+              Add a sprite element with its `width`, `height`, `background-image` and `background-position`.
+            </p>
+            <div class='bs-example'>
+              Lorem <span class="example-sprite-display"></span> ipsum dolor sit atem
+            </div>
+            <pre>.example-sprite-display {&#x000A;  .cssowl-sprite-display(@sprite-owl-up);&#x000A;}</pre>
+            <h3 id='cssowl-sprite-replace'>cssowl-sprite-replace</h3>
+            <p>
+              Add a sprite element and hide the element's content.
+            </p>
+            <div class='bs-example'>
+              Lorem <span class="example-replace">ipsum</span> dolor sit atem
+            </div>
+            <pre>.example-replace {&#x000A;  .cssowl-sprite-replace(@sprite-owl-up);&#x000A;}</pre>
+          </div>
+          <div class='bs-docs-section'>
+            <h1 class='page-header' id='text'>Text</h1>
+            <h3 id='cssowl-text-hide'>cssowl-text-hide</h3>
+            <p>
+              Extendable placeholder and mixin to hide an element's content.
+            </p>
+            <div class='bs-example'>
+              Lorem <span class="example-text-hide">ipsum</span> dolor sit atem
+            </div>
+            <pre>.example-text-hide {&#x000A;  &amp;:extend(.cssowl-text-hide);&#x000A;}</pre>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="assets/js/bootstrap.js?1392668649" type="text/javascript"></script>
+  </body>
+</html>

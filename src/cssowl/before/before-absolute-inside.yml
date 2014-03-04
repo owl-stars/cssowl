@@ -1,0 +1,49 @@
+name: cssowl-before-absolute-inside
+description: |
+  Mixin to add content with the `:before` pseudo selector and position it absolutely *inside* the bounding box.
+styles:
+  sass: |
+    =cssowl-before-absolute-inside($content, $width, $height, $valign:top, $halign:left, $xOffset:0, $yOffset:0)
+      @extend %cssowl-relative
+      &:before
+        content: $content
+        +cssowl-absolute-inside($width, $height, $valign, $halign, $xOffset, $yOffset)
+  scss: |
+    @mixin cssowl-before-absolute-inside($content, $width, $height, $valign:top, $halign:left, $xOffset:0, $yOffset:0) {
+      @extend %cssowl-relative;
+      &:before {
+        content: $content;
+        @include cssowl-absolute-inside($width, $height, $valign, $halign, $xOffset, $yOffset);
+      }
+    }
+  less: |
+    .cssowl-before-absolute-inside(@content, @width, @height, @valign:top, @halign:left, @xOffset:0, @yOffset:0) {
+      position: relative;
+      &:before {
+        content: @content;
+        .cssowl-absolute-inside(@width, @height, @valign, @halign, @xOffset, @yOffset);
+      }
+    }
+  styl: |
+    cssowl-before-absolute-inside($content, $width, $height, $valign=top, $halign=left, $xOffset=0, $yOffset=0)
+      @extend $cssowl-relative
+      &:before
+        content: $content
+        cssowl-absolute-inside($width, $height, $valign, $halign, $xOffset, $yOffset)
+examples:
+  sass: |
+    .example-before-absolute-inside
+      +cssowl-before-absolute-inside("*", 5px, 5px, middle, center, 0, -2px)
+  scss: |
+    .example-before-absolute-inside {
+      @include cssowl-before-absolute-inside("*", 5px, 5px, middle, center, 0, -2px);
+    }
+  less: |
+    .example-before-absolute-inside {
+      .cssowl-before-absolute-inside("*", 5px, 5px, middle, center, 0, -2px);
+    }
+  styl: |
+    .example-before-absolute-inside
+      cssowl-before-absolute-inside("*", 5px, 5px, middle, center, 0, -2px)
+  html: |
+    .example-before-absolute-inside{style: "width:50px;height:50px;border:1px solid #59371f;"}

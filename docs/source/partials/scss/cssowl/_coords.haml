@@ -1,0 +1,84 @@
+%h3#cssowl-coords-inside cssowl-coords-inside
+
+%p
+  Set an element's `top`, `right`, `bottom` and `left` properties to position it *inside* the bounding box.
+
+.bs-example
+  .wrapper{:style => "position:relative;width:50px;height:50px;border:1px solid #59371f;"}
+    .example-coords-inside.top-center
+    .example-coords-inside.middle-right
+    .example-coords-inside.bottom-center
+    .example-coords-inside.middle-left
+
+%pre
+  = preserve do
+    :escaped
+      .example-coords-inside {
+        width: 10px;
+        height: 10px;
+        position: absolute;
+        background: #59371f;
+        &.top-center {
+          @include cssowl-coords-inside(10px, 10px, top, center);
+        }
+        &.middle-right {
+          @include cssowl-coords-inside(10px, 10px, middle, right);
+        }
+        &.bottom-center {
+          @include cssowl-coords-inside(10px, 10px, bottom, center);
+        }
+        &.middle-left {
+          @include cssowl-coords-inside(10px, 10px, middle, left);
+        }
+      }
+
+%h3#cssowl-coords-outside cssowl-coords-outside
+
+%p
+  Set an element's `top`, `right`, `bottom` and `left` properties to position it *outside* the bounding box.
+
+.bs-example
+  .wrapper{:style => "position:relative;width:50px;height:50px;border:1px solid #59371f;"}
+    .example-coords-outside.top-center
+    .example-coords-outside.middle-right
+    .example-coords-outside.bottom-center
+    .example-coords-outside.middle-left
+
+%pre
+  = preserve do
+    :escaped
+      .example-coords-outside {
+        width: 10px;
+        height: 10px;
+        position: absolute;
+        background: #59371f;
+        &.top-center {
+          @include cssowl-coords-outside(10px, 10px, top, center);
+        }
+        &.middle-right {
+          @include cssowl-coords-outside(10px, 10px, middle, right);
+        }
+        &.bottom-center {
+          @include cssowl-coords-outside(10px, 10px, bottom, center);
+        }
+        &.middle-left {
+          @include cssowl-coords-outside(10px, 10px, middle, left);
+        }
+      }
+
+%h3#cssowl-coords cssowl-coords
+
+%p
+  Set an element's `top`, `right`, `bottom` and `left` properties.
+
+.bs-example
+  .wrapper{style:"position:relative;width:50px;height:50px;border:1px solid #59371f;"}
+    .example-coords{style: "width:10px;height:10px;background:#59371f;position:absolute;"}
+
+%pre
+  = preserve do
+    :escaped
+      .example-coords {
+        @include cssowl-coords(20px false false 20px);
+      }
+

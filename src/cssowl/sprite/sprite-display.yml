@@ -1,0 +1,39 @@
+name: cssowl-sprite-display
+description: |
+  Add a sprite element with its `width`, `height`, `background-image` and `background-position`.
+styles:
+  sass: |
+    @mixin cssowl-sprite-display($element, $display:inline-block)
+      display: $display
+      @extend %#{nth($element, 5)}
+  scss: |
+    @mixin cssowl-sprite-display($element, $display:inline-block) {
+      display: $display;
+      @extend %#{nth($element, 5)};
+    }
+  less: |
+    .cssowl-sprite-display(@element, @display:inline-block) {
+      display: @display;
+      .less-sprite-element(extract(@element, 5));
+    }
+  styl: |
+    cssowl-sprite-display($element, $display=inline-block)
+      display $display
+      @extend ${$element[4]}
+examples:
+  sass: |
+    .example-sprite-display
+      +cssowl-sprite-display($sprite-owl-up)
+  scss: |
+    .example-sprite-display {
+      @include cssowl-sprite-display($sprite-owl-up);
+    }
+  less: |
+    .example-sprite-display {
+      .cssowl-sprite-display(@sprite-owl-up);
+    }
+  styl: |
+    .example-sprite-display
+      cssowl-sprite-display($sprite-owl-up)
+  html: |
+    Lorem <span class="example-sprite-display"></span> ipsum dolor sit atem

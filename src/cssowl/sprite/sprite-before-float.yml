@@ -1,0 +1,46 @@
+name: cssowl-sprite-before-float
+description: |
+  Add a sprite element with the `:before` pseudo selector and place it with the `float` attribute.
+styles:
+  sass: |
+    =cssowl-sprite-before-float($element, $margin:0 0 0 0, $float:left)
+      +cssowl-before-float("", $margin, $float)
+      &:before
+        @extend %#{nth($element, 5)}
+  scss: |
+    @mixin cssowl-sprite-before-float($element, $margin:0 0 0 0, $float:left) {
+      @include cssowl-before-float("", $margin, $float);
+      &:before {
+        @extend %#{nth($element, 5)};
+      }
+    }
+  less: |
+    .cssowl-sprite-before-float(@element, @margin:0 0 0 0, @float:left) {
+      .cssowl-before-float("", @margin, @float);
+      &:before {
+        .less-sprite-element(extract(@element, 5));
+      }
+    }
+  styl: |
+    cssowl-sprite-before-float($element, $margin=0 0 0 0, $float=left)
+      cssowl-before-float("", $margin, $float)
+      &:before
+        @extend ${$element[4]}
+examples:
+  sass: |
+    .example-sprite-before-float
+      +cssowl-sprite-before-float($sprite-owl-up, 0 5px 0 0)
+  scss: |
+    .example-sprite-before-float {
+      @include cssowl-sprite-before-float($sprite-owl-up, 0 5px 0 0);
+    }
+  less: |
+    .example-sprite-before-float {
+      .cssowl-sprite-before-float(@sprite-owl-up, 0 5px 0 0);
+    }
+  styl: |
+    .example-sprite-before-float
+      cssowl-sprite-before-float($sprite-owl-up, 0 5px 0 0)
+  html: |
+    .example-sprite-before-float Quia sint quis nam et quia ducimus consequatur cumque.
+

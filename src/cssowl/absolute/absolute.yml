@@ -1,0 +1,58 @@
+name: cssowl-absolute
+description: |
+  Extendable placeholder and mixin to position an element absolutely.
+styles:
+  sass: |
+    // extendable placeholder
+    %cssowl-absolute
+      position: absolute
+    // mixin
+    =cssowl-absolute($coordinates:0 false false 0)
+      +cssowl-coords($coordinates)
+      @extend %cssowl-absolute
+  scss: |
+    // extendable placeholder
+    %cssowl-absolute {
+      position: absolute;
+    }
+    // mixin
+    @mixin cssowl-absolute($coordinates:0 false false 0) {
+      @include cssowl-coords($coordinates);
+      @extend %cssowl-absolute;
+    }
+  less: |
+    // disabled as less doesn't provide placeholders yet
+    //.cssowl-absolute {
+    //  position: absolute;
+    //}
+    // mixin
+    .cssowl-absolute(@coordinates:0 false false 0) {
+      .cssowl-coords(@coordinates);
+      position: absolute;
+    }
+  styl: |
+    // extendable placeholder
+    $cssowl-absolute
+      position: absolute
+    // mixin
+    cssowl-absolute($coordinates=0 false false 0)
+      cssowl-coords($coordinates)
+      @extend $cssowl-absolute
+examples:
+  sass: |
+    .example-absolute
+      +cssowl-absolute(20px false false 20px)
+  scss: |
+    .example-absolute {
+      @include cssowl-absolute(20px false false 20px);
+    }
+  less: |
+    .example-absolute {
+      .cssowl-absolute(20px false false 20px);
+    }
+  styl: |
+    .example-absolute
+      cssowl-absolute(20px false false 20px)
+  html: |
+    .wrapper{style: "position:relative;width:50px;height:50px;border:1px solid #59371f;"}
+      .example-absolute{style: "width:10px;height:10px;background:#59371f;"}
