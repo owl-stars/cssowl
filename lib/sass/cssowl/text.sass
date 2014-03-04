@@ -1,0 +1,10 @@
+// Extendable placeholder and mixin to hide an element's content.
+// mixin
+=cssowl-text-hide()
+  overflow: hidden
+  text-indent: 100%
+  white-space: nowrap
+  display: inline-block
+// extendable placeholder
+%cssowl-text-hide
+  +cssowl-text-hide()

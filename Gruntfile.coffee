@@ -79,13 +79,24 @@ module.exports = (grunt) ->
   # Custom task for fixtures generation
   grunt.registerTask "librarianowl-examples", ->
     librarianowl.compile "src", "test/examples",
-      template: "tools/test-template.hbs"
+      template: "resources/librarianowl/template-examples.hbs"
 
   # Custom task for library generation
   grunt.registerTask "librarianowl-lib", ->
     librarianowl.compile "src", "lib", {
-      helpers: "tools/helpers.js"
-      template: "tools/lib-template.hbs"
+      helpers: "resources/librarianowl/helpers.js"
+      template: "resources/librarianowl/template-library.hbs"
+    }
+
+  # Custom task for library generation
+  grunt.registerTask "librarianowl-docs", ->
+    librarianowl.compile "src", "docs/source/partials", {
+      filename: (item, syntax) ->
+        return "_" + item.module + ".haml"
+      filter: (filename) ->
+        return (filename != '_imports.yml')
+      helpers: "resources/librarianowl/helpers.js"
+      template: "resources/librarianowl/template-docs.hbs"
     }
 
   # Load npm tasks
@@ -96,7 +107,9 @@ module.exports = (grunt) ->
   grunt.loadNpmTasks "grunt-contrib-stylus"
   grunt.loadNpmTasks "grunt-contrib-csslint"
   grunt.loadNpmTasks "grunt-contrib-clean"
+  grunt.loadNpmTasks "grunt-bumper"
 
   # Register tasks
   grunt.registerTask 'default', ['coffeelint', 'librarianowl-lib']
   grunt.registerTask 'test', ['default', 'clean', 'librarianowl-examples', 'sass', 'less', 'stylus', 'csslint', 'mochacov']
+  grunt.registerTask 'docs', ['default', 'clean', 'librarianowl-examples', 'librarianowl-docs']

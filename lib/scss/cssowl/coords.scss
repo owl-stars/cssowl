@@ -1,0 +1,65 @@
+// Set an element's `top`, `right`, `bottom` and `left` properties to position it *inside* the bounding box.
+@mixin cssowl-coords-inside($width, $height, $valign:top, $halign:left, $xOffset:0, $yOffset:0) {
+  @if $valign == top {
+    top: $yOffset;
+  }
+  @else if $valign == middle {
+    top: 50%;
+    margin-top: $yOffset - round($height / 2);
+  }
+  @else if $valign == bottom {
+    bottom: $yOffset;
+  }
+  @if $halign == left {
+    left: $xOffset;
+  }
+  @else if $halign == center {
+    left: 50%;
+    margin-left: $xOffset - round($width / 2);
+  }
+  @else if $halign == right {
+    right: $xOffset;
+  }
+}
+// Set an element's `top`, `right`, `bottom` and `left` properties to position it *outside* the bounding box.
+@mixin cssowl-coords-outside($width, $height, $valign:top, $halign:left, $xOffset:0, $yOffset:0) {
+  @if $valign == top {
+    top: round($yOffset - $height);
+  }
+  @else if $valign == middle {
+    top: 50%;
+    margin-top: $yOffset - round($height / 2);
+  }
+  @else if $valign == bottom {
+    bottom: round($yOffset - $height);
+  }
+  @if $halign == left {
+    left: round($xOffset - $width);
+  }
+  @else if $halign == center {
+    left: 50%;
+    margin-left: $xOffset - round($width / 2);
+  }
+  @else if $halign == right {
+    right: round($xOffset - $width);
+  }
+}
+// Set an element's `top`, `right`, `bottom` and `left` properties.
+@mixin cssowl-coords($coords:0 false false 0) {
+  $top: nth($coords, 1);
+  $right: nth($coords, 2);
+  $bottom: nth($coords, 3);
+  $left: nth($coords, 4);
+  @if $top != false {
+    top: $top;
+  }
+  @if $left != false {
+    left: $left;
+  }
+  @if $right != false {
+    right: $right;
+  }
+  @if $bottom != false {
+    bottom: $bottom;
+  }
+}

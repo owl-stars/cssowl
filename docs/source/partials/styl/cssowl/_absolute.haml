@@ -1,0 +1,65 @@
+%h3#cssowl-absolute-inside cssowl-absolute-inside
+
+%p
+  Mixin to position an element absolutely *inside* the bounding box.
+
+.bs-example
+  .example-absolute-inside{:style => "position:relative;width:50px;height:50px;border:1px solid #59371f;"}
+    .top-center{style: "width:10px;height:10px;background:#59371f;"}
+    .middle-right{style: "width:10px;height:10px;background:#59371f;"}
+    .bottom-center{style: "width:10px;height:10px;background:#59371f;"}
+    .middle-left{style: "width:10px;height:10px;background:#59371f;"}
+
+%pre
+  = preserve do
+    :escaped
+      .example-absolute-inside
+        > .top-center
+          cssowl-absolute-inside(10px, 10px, top, center)
+        > .middle-right
+          cssowl-absolute-inside(10px, 10px, middle, right)
+        > .bottom-center
+          cssowl-absolute-inside(10px, 10px, bottom, center)
+        > .middle-left
+          cssowl-absolute-inside(10px, 10px, middle, left)
+
+%h3#cssowl-absolute-outside cssowl-absolute-outside
+
+%p
+  Mixin to position an element absolutely *outside* the bounding box.
+
+.bs-example
+  .example-absolute-outside{:style => "position:relative;width:50px;height:50px;border:1px solid #59371f;"}
+    .top-center{style: "background:#59371f;"}
+    .middle-right{style: "background:#59371f;"}
+    .bottom-center{style: "background:#59371f;"}
+    .middle-left{style: "background:#59371f;"}
+
+%pre
+  = preserve do
+    :escaped
+      .example-absolute-outside
+        > .top-center
+          cssowl-absolute-outside(10px, 10px, top, center)
+        > .middle-right
+          cssowl-absolute-outside(10px, 10px, middle, right)
+        > .bottom-center
+          cssowl-absolute-outside(10px, 10px, bottom, center)
+        > .middle-left
+          cssowl-absolute-outside(10px, 10px, middle, left)
+
+%h3#cssowl-absolute cssowl-absolute
+
+%p
+  Extendable placeholder and mixin to position an element absolutely.
+
+.bs-example
+  .wrapper{style: "position:relative;width:50px;height:50px;border:1px solid #59371f;"}
+    .example-absolute{style: "width:10px;height:10px;background:#59371f;"}
+
+%pre
+  = preserve do
+    :escaped
+      .example-absolute
+        cssowl-absolute(20px false false 20px)
+

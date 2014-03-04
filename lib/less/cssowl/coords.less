@@ -1,0 +1,64 @@
+// Set an element's `top`, `right`, `bottom` and `left` properties to position it *inside* the bounding box.
+.cssowl-coords-inside(@width, @height, @valign:top, @halign:left, @xOffset:0, @yOffset:0) when (@valign = top) {
+  top: @yOffset;
+}
+.cssowl-coords-inside(@width, @height, @valign:top, @halign:left, @xOffset:0, @yOffset:0) when (@valign = middle) {
+  top: 50%;
+  margin-top: @yOffset - round(@height / 2);
+}
+.cssowl-coords-inside(@width, @height, @valign:top, @halign:left, @xOffset:0, @yOffset:0) when (@valign = bottom) {
+  bottom: @xOffset;
+}
+.cssowl-coords-inside(@width, @height, @valign:top, @halign:left, @xOffset:0, @yOffset:0) when (@halign = left) {
+  left: @xOffset;
+}
+.cssowl-coords-inside(@width, @height, @valign:top, @halign:left, @xOffset:0, @yOffset:0) when (@halign = center) {
+  left: 50%;
+  margin-left: @xOffset - round(@width / 2);
+}
+.cssowl-coords-inside(@width, @height, @valign:top, @halign:left, @xOffset:0, @yOffset:0) when (@halign = right) {
+  right: @xOffset;
+}
+.cssowl-coords-inside(@width, @height, @valign:top, @halign:left, @xOffset:0, @yOffset:0) {
+  // see conditionals
+}
+// Set an element's `top`, `right`, `bottom` and `left` properties to position it *outside* the bounding box.
+.cssowl-coords-outside(@width, @height, @valign:top, @halign:left, @xOffset:0, @yOffset:0) when (@valign = top) {
+  top: round(@yOffset - @height);
+}
+.cssowl-coords-outside(@width, @height, @valign:top, @halign:left, @xOffset:0, @yOffset:0) when (@valign = middle) {
+  top: 50%;
+  margin-top: @yOffset - round(@height / 2);
+}
+.cssowl-coords-outside(@width, @height, @valign:top, @halign:left, @xOffset:0, @yOffset:0) when (@valign = bottom) {
+  bottom: round(@yOffset - @height);
+}
+.cssowl-coords-outside(@width, @height, @valign:top, @halign:left, @xOffset:0, @yOffset:0) when (@halign = left) {
+  left: round(@xOffset - @width);
+}
+.cssowl-coords-outside(@width, @height, @valign:top, @halign:left, @xOffset:0, @yOffset:0) when (@halign = center) {
+  left: 50%;
+  margin-left: @xOffset - round(@width / 2);
+}
+.cssowl-coords-outside(@width, @height, @valign:top, @halign:left, @xOffset:0, @yOffset:0) when (@halign = right) {
+  right: round(@xOffset - @width);
+}
+.cssowl-coords-outside(@width, @height, @valign:top, @halign:left, @xOffset:0, @yOffset:0) {
+  // see conditionals
+}
+// Set an element's `top`, `right`, `bottom` and `left` properties.
+.cssowl-coords(@coords:0 false false 0) when not (extract(@coords, 1) = false) {
+  top: extract(@coords, 1);
+}
+.cssowl-coords(@coords:0 false false 0) when not (extract(@coords, 2) = false) {
+  right: extract(@coords, 2);
+}
+.cssowl-coords(@coords:0 false false 0) when not (extract(@coords, 3) = false) {
+  bottom: extract(@coords, 3);
+}
+.cssowl-coords(@coords:0 false false 0) when not (extract(@coords, 4) = false) {
+  left: extract(@coords, 4);
+}
+.cssowl-coords(@coords:0 false false 0) {
+  // see conditionals
+}

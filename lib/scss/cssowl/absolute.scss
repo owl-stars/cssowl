@@ -1,0 +1,26 @@
+// Mixin to position an element absolutely *inside* the bounding box.
+// mixin
+@mixin cssowl-absolute-inside($width, $height, $valign:top, $halign:left, $xOffset:0, $yOffset:0) {
+  width: $width;
+  height: $height;
+  @extend %cssowl-absolute;
+  @include cssowl-coords-inside($width, $height, $valign, $halign, $xOffset, $yOffset);
+}
+// Mixin to position an element absolutely *outside* the bounding box.
+// mixin
+@mixin cssowl-absolute-outside($width, $height, $valign:top, $halign:left, $xOffset:0, $yOffset:0) {
+  width: $width;
+  height: $height;
+  @extend %cssowl-absolute;
+  @include cssowl-coords-outside($width, $height, $valign, $halign, $xOffset, $yOffset);
+}
+// Extendable placeholder and mixin to position an element absolutely.
+// extendable placeholder
+%cssowl-absolute {
+  position: absolute;
+}
+// mixin
+@mixin cssowl-absolute($coordinates:0 false false 0) {
+  @include cssowl-coords($coordinates);
+  @extend %cssowl-absolute;
+}

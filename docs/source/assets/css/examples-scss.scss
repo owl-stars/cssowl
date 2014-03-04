@@ -1,0 +1,6 @@
+$sprite-sheet-image: url("/assets/img/sprite.png");
+$sprite-sheet-image-2x: url("/assets/img/sprite@2x.png");
+
+@import "../../../../test/fixtures/scss/sprite";
+@import "../../../../lib/scss/cssowl";
+@import "../../../../test/examples/scss/cssowl";

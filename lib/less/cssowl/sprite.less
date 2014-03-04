@@ -1,0 +1,99 @@
+// Place a sprite element with `position: absolute;` *inside* the bounding box.
+.cssowl-sprite-absolute-inside(@element, @valign:top, @halign:left, @xOffset:0, @yOffset:0) {
+  .cssowl-absolute-inside(extract(@element, 3), extract(@element, 4), @valign, @halign, @xOffset, @yOffset);
+  .less-sprite-element(extract(@element, 5));
+}
+// Place a sprite element with `position: absolute;` *outside* the bounding box.
+.cssowl-sprite-absolute-outside(@element, @valign:top, @halign:left, @xOffset:0, @yOffset:0) {
+  .cssowl-absolute-outside(extract(@element, 3), extract(@element, 4), @valign, @halign, @xOffset, @yOffset);
+  .less-sprite-element(extract(@element, 5));
+}
+// Place a sprite element with `position: absolute;`.
+.cssowl-sprite-absolute(@element, @coordinates:0 false false 0) {
+  .cssowl-absolute(@coordinates);
+  .less-sprite-element(extract(@element, 5));
+}
+// Add a sprite element with the `:after` pseudo selector and place it absolutely *inside* the bounding box.
+.cssowl-sprite-after-absolute-inside(@element, @valign:top, @halign:left, @xOffset:0, @yOffset:0) {
+  .cssowl-after-absolute-inside("", extract(@element, 3), extract(@element, 4), @valign, @halign, @xOffset, @yOffset);
+  &:after {
+    .less-sprite-element(extract(@element, 5));
+  }
+}
+// Add a sprite element with the `:after` pseudo selector and place it absolutely *outside* the bounding box.
+.cssowl-sprite-after-absolute-outside(@element, @valign:top, @halign:left, @xOffset:0, @yOffset:0, @float:left) {
+  .cssowl-after-absolute-outside("", extract(@element, 3), extract(@element, 4), @valign, @halign, @xOffset, @yOffset);
+  &:after {
+    .less-sprite-element(extract(@element, 5));
+  }
+}
+// Add a sprite element with the `:after` pseudo selector and place it absolutely.
+.cssowl-sprite-after-absolute(@element, @coordinates:0 false false 0) {
+  .cssowl-after-absolute("", @coordinates);
+  &:after {
+    .less-sprite-element(extract(@element, 5));
+  }
+}
+// Add a sprite element with the `:after` pseudo selector and place it with the `float` attribute.
+.cssowl-sprite-after-float(@element, @margin:0 0 0 0, @float:right) {
+  .cssowl-after-float("", @margin, @float);
+  &:after {
+    .less-sprite-element(extract(@element, 5));
+  }
+}
+// Add a sprite element with the `:after` pseudo selector.
+.cssowl-sprite-after(@element, @margin:0 0 0 0, @display:inline-block) {
+  &:after {
+    content: "";
+    margin: @margin;
+    display: @display;
+    .less-sprite-element(extract(@element, 5));
+  }
+}
+// Add a sprite element with the `:before` pseudo selector and place it absolutely *inside* the bounding box.
+.cssowl-sprite-before-absolute-inside(@element, @valign:top, @halign:left, @xOffset:0, @yOffset:0) {
+  .cssowl-before-absolute-inside("", extract(@element, 3), extract(@element, 4), @valign, @halign, @xOffset, @yOffset);
+  &:before {
+    .less-sprite-element(extract(@element, 5));
+  }
+}
+// Add a sprite element with the `:before` pseudo selector and place it absolutely *outside* the bounding box.
+.cssowl-sprite-before-absolute-outside(@element, @valign:top, @halign:left, @xOffset:0, @yOffset:0, @float:left) {
+  .cssowl-before-absolute-outside("", extract(@element, 3), extract(@element, 4), @valign, @halign, @xOffset, @yOffset);
+  &:before {
+    .less-sprite-element(extract(@element, 5));
+  }
+}
+// Add a sprite element with the `:before` pseudo selector and place it absolutely.
+.cssowl-sprite-before-absolute(@element, @coordinates:0 false false 0) {
+  .cssowl-before-absolute("", @coordinates);
+  &:before {
+    .less-sprite-element(extract(@element, 5));
+  }
+}
+// Add a sprite element with the `:before` pseudo selector and place it with the `float` attribute.
+.cssowl-sprite-before-float(@element, @margin:0 0 0 0, @float:left) {
+  .cssowl-before-float("", @margin, @float);
+  &:before {
+    .less-sprite-element(extract(@element, 5));
+  }
+}
+// Add a sprite element with the `:before` pseudo selector.
+.cssowl-sprite-before(@element, @margin:0 0 0 0, @display:inline-block) {
+  &:before {
+    content: "";
+    margin: @margin;
+    display: @display;
+    .less-sprite-element(extract(@element, 5));
+  }
+}
+// Add a sprite element with its `width`, `height`, `background-image` and `background-position`.
+.cssowl-sprite-display(@element, @display:inline-block) {
+  display: @display;
+  .less-sprite-element(extract(@element, 5));
+}
+// Add a sprite element and hide the element's content.
+.cssowl-sprite-replace(@element) {
+  .cssowl-text-hide();
+  .less-sprite-element(extract(@element, 5));
+}

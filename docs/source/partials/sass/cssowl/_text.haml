@@ -1,0 +1,14 @@
+%h3#cssowl-text-hide cssowl-text-hide
+
+%p
+  Extendable placeholder and mixin to hide an element's content.
+
+.bs-example
+  Lorem <span class="example-text-hide">ipsum</span> dolor sit atem
+
+%pre
+  = preserve do
+    :escaped
+      .example-text-hide
+        @extend %cssowl-text-hide
+
