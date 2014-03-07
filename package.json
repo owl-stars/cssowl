@@ -29,21 +29,21 @@
     "test": "grunt test"
   },
   "devDependencies": {
-    "chai": "~1.8.0",
-    "librarianowl": "~0.2.0",
-    "grunt-coffeelint": "0.0.7",
-    "grunt-contrib-sass": "~0.5.1",
-    "grunt-contrib-less": "~0.8.2",
-    "grunt-contrib-clean": "~0.5.0",
-    "grunt-contrib-stylus": "~0.11.0",
-    "grunt-contrib-csslint": "~0.2.0",
-    "grunt-mocha-cov": "0.0.7",
-    "coffee-script": "~1.6.3",
-    "grunt-bumper": "~1.0.4",
-    "grunt": "~0.4.1"
+    "chai": "~1.9",
+    "librarianowl": "~0.2",
+    "grunt-coffeelint": "~0.0",
+    "grunt-contrib-sass": "~0.7",
+    "grunt-contrib-less": "~0.10",
+    "grunt-contrib-clean": "~0.5",
+    "grunt-contrib-stylus": "~0.13",
+    "grunt-contrib-csslint": "~0.2",
+    "grunt-mocha-cov": "~0.2",
+    "coffee-script": "~1.7",
+    "grunt-bumper": "~1.0",
+    "grunt": "~0.4"
   },
   "peerDependencies": {
-    "grunt": "~0.4.1"
+    "grunt": "~0.4"
   },
   "keywords": [
     "owl-stars",

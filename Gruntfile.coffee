@@ -61,7 +61,7 @@ module.exports = (grunt) ->
         bail: true
         ui: 'exports'
         require: 'coffee-script'
-        compilers: ['coffee:coffee-script']
+        compilers: ['coffee:coffee-script/register']
         files: 'test/specs/**/*.test.coffee'
       all:
         options:
