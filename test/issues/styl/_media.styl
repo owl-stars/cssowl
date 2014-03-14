@@ -1,0 +1,18 @@
+/*
+ * @see https://github.com/owl-stars/cssowl/issues/1
+ */
+breakpoint($width)
+  condition = 'screen and (max-width: %s)' % $width
+  @media condition
+    {block}
+
+.logo
+  cssowl-sprite-replace($sprite-arrow-left)
+
+  +breakpoint(768px)
+    sprite-arrow-right-adjust()
+
+  +breakpoint(1024px)
+    sprite-arrow-up-adjust()
+
+

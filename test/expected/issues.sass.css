@@ -1,0 +1,31 @@
+.logo {
+  background-image: url("sprite.png");
+  background-repeat: no-repeat; }
+  @media only screen and (min--moz-device-pixel-ratio: 1.5), (-o-min-device-pixel-ratio: 3 / 2), (-webkit-min-device-pixel-ratio: 1.5), (min-device-pixel-ratio: 1.5), (min-resolution: 144dpi), (min-resolution: 1.5dppx) {
+    .logo {
+      background-image: url("sprite@2x.png");
+      background-size: 136px 111px; } }
+
+.logo {
+  width: 6px;
+  height: 11px;
+  background-position: -98px -61px; }
+
+.logo {
+  overflow: hidden;
+  text-indent: 100%;
+  white-space: nowrap;
+  display: inline-block; }
+
+/* @see https://github.com/owl-stars/cssowl/issues/1
+ */
+@media screen and (min-width: 768px) {
+  .logo {
+    width: 6px;
+    height: 11px;
+    background-position: -98px -76px; } }
+@media screen and (min-width: 1024px) {
+  .logo {
+    width: 11px;
+    height: 6px;
+    background-position: -96px -37px; } }

@@ -1,4 +1,4 @@
-// Generated with Spriteowl v1.2.0
+// Generated with Spriteowl (compiler version 1.3.0)
 //
 // Please define the location for your image source:
 //
@@ -20,8 +20,8 @@
 //     - up
 //     - over
 //
-$sprite-sheet-width: 136px;
-$sprite-sheet-height: 111px;
+$sprite-sheet-width: 136px !default;
+$sprite-sheet-height: 111px !default;
 $sprite-sheet-image: url("sprite.png") !default;
 $sprite-sheet-image-2x: url("sprite@2x.png") !default;
 $sprite-sheet: $sprite-sheet-width $sprite-sheet-height $sprite-sheet-image $sprite-sheet-image-2x sprite !default;
@@ -69,9 +69,15 @@ $sprite-logo: $sprite-logo-x $sprite-logo-y $sprite-logo-width $sprite-logo-heig
 %sprite-logo-position {
   @include sprite-logo-position();
 }
-@mixin sprite-logo() {
+@mixin sprite-logo-adjust() {
   @include sprite-logo-size();
   @include sprite-logo-position();
+}
+%sprite-logo-adjust {
+  @include sprite-logo-adjust();
+}
+@mixin sprite-logo() {
+  @include sprite-logo-adjust();
   @extend %sprite-element;
 }
 %sprite-logo {
@@ -109,9 +115,15 @@ $sprite-wjds: $sprite-wjds-x $sprite-wjds-y $sprite-wjds-width $sprite-wjds-heig
 %sprite-wjds-position {
   @include sprite-wjds-position();
 }
-@mixin sprite-wjds() {
+@mixin sprite-wjds-adjust() {
   @include sprite-wjds-size();
   @include sprite-wjds-position();
+}
+%sprite-wjds-adjust {
+  @include sprite-wjds-adjust();
+}
+@mixin sprite-wjds() {
+  @include sprite-wjds-adjust();
   @extend %sprite-element;
 }
 %sprite-wjds {
@@ -149,9 +161,15 @@ $sprite-home: $sprite-home-x $sprite-home-y $sprite-home-width $sprite-home-heig
 %sprite-home-position {
   @include sprite-home-position();
 }
-@mixin sprite-home() {
+@mixin sprite-home-adjust() {
   @include sprite-home-size();
   @include sprite-home-position();
+}
+%sprite-home-adjust {
+  @include sprite-home-adjust();
+}
+@mixin sprite-home() {
+  @include sprite-home-adjust();
   @extend %sprite-element;
 }
 %sprite-home {
@@ -189,9 +207,15 @@ $sprite-arrow-up: $sprite-arrow-up-x $sprite-arrow-up-y $sprite-arrow-up-width $
 %sprite-arrow-up-position {
   @include sprite-arrow-up-position();
 }
-@mixin sprite-arrow-up() {
+@mixin sprite-arrow-up-adjust() {
   @include sprite-arrow-up-size();
   @include sprite-arrow-up-position();
+}
+%sprite-arrow-up-adjust {
+  @include sprite-arrow-up-adjust();
+}
+@mixin sprite-arrow-up() {
+  @include sprite-arrow-up-adjust();
   @extend %sprite-element;
 }
 %sprite-arrow-up {
@@ -229,9 +253,15 @@ $sprite-arrow-right: $sprite-arrow-right-x $sprite-arrow-right-y $sprite-arrow-r
 %sprite-arrow-right-position {
   @include sprite-arrow-right-position();
 }
-@mixin sprite-arrow-right() {
+@mixin sprite-arrow-right-adjust() {
   @include sprite-arrow-right-size();
   @include sprite-arrow-right-position();
+}
+%sprite-arrow-right-adjust {
+  @include sprite-arrow-right-adjust();
+}
+@mixin sprite-arrow-right() {
+  @include sprite-arrow-right-adjust();
   @extend %sprite-element;
 }
 %sprite-arrow-right {
@@ -269,9 +299,15 @@ $sprite-arrow-down: $sprite-arrow-down-x $sprite-arrow-down-y $sprite-arrow-down
 %sprite-arrow-down-position {
   @include sprite-arrow-down-position();
 }
-@mixin sprite-arrow-down() {
+@mixin sprite-arrow-down-adjust() {
   @include sprite-arrow-down-size();
   @include sprite-arrow-down-position();
+}
+%sprite-arrow-down-adjust {
+  @include sprite-arrow-down-adjust();
+}
+@mixin sprite-arrow-down() {
+  @include sprite-arrow-down-adjust();
   @extend %sprite-element;
 }
 %sprite-arrow-down {
@@ -309,9 +345,15 @@ $sprite-arrow-left: $sprite-arrow-left-x $sprite-arrow-left-y $sprite-arrow-left
 %sprite-arrow-left-position {
   @include sprite-arrow-left-position();
 }
-@mixin sprite-arrow-left() {
+@mixin sprite-arrow-left-adjust() {
   @include sprite-arrow-left-size();
   @include sprite-arrow-left-position();
+}
+%sprite-arrow-left-adjust {
+  @include sprite-arrow-left-adjust();
+}
+@mixin sprite-arrow-left() {
+  @include sprite-arrow-left-adjust();
   @extend %sprite-element;
 }
 %sprite-arrow-left {
@@ -349,9 +391,15 @@ $sprite-owl-up: $sprite-owl-up-x $sprite-owl-up-y $sprite-owl-up-width $sprite-o
 %sprite-owl-up-position {
   @include sprite-owl-up-position();
 }
-@mixin sprite-owl-up() {
+@mixin sprite-owl-up-adjust() {
   @include sprite-owl-up-size();
   @include sprite-owl-up-position();
+}
+%sprite-owl-up-adjust {
+  @include sprite-owl-up-adjust();
+}
+@mixin sprite-owl-up() {
+  @include sprite-owl-up-adjust();
   @extend %sprite-element;
 }
 %sprite-owl-up {
@@ -389,9 +437,15 @@ $sprite-owl-over: $sprite-owl-over-x $sprite-owl-over-y $sprite-owl-over-width $
 %sprite-owl-over-position {
   @include sprite-owl-over-position();
 }
-@mixin sprite-owl-over() {
+@mixin sprite-owl-over-adjust() {
   @include sprite-owl-over-size();
   @include sprite-owl-over-position();
+}
+%sprite-owl-over-adjust {
+  @include sprite-owl-over-adjust();
+}
+@mixin sprite-owl-over() {
+  @include sprite-owl-over-adjust();
   @extend %sprite-element;
 }
 %sprite-owl-over {

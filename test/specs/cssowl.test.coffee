@@ -26,3 +26,12 @@ module.exports =
       compare("examples.less.css")
     "#styl": () ->
       compare("examples.styl.css")
+  "Test #issues":
+    "#sass": () ->
+      compare("issues.sass.css")
+    "#scss": () ->
+      compare("issues.scss.css")
+    "#less": () ->
+      compare("issues.less.css")
+    "#styl": () ->
+      compare("issues.styl.css")

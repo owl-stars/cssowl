@@ -1,0 +1,20 @@
+/*
+ * @see https://github.com/owl-stars/cssowl/issues/1
+ */
+@mixin breakpoint($width: 1024px) {
+  @media screen and (min-width: $width) {
+    @content;
+  }
+}
+
+.logo {
+  @include cssowl-sprite-replace($sprite-arrow-left);
+
+  @include breakpoint(768px) {
+    @include sprite-arrow-right-adjust();
+  }
+
+  @include breakpoint(1024px) {
+    @include sprite-arrow-up-adjust();
+  }
+}
