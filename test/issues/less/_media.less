@@ -1,0 +1,14 @@
+/*
+ * @see https://github.com/owl-stars/cssowl/issues/1
+ */
+.logo {
+  .cssowl-sprite-replace(@sprite-arrow-left);
+
+  @media screen and (min-width: 768px) {
+    .sprite-arrow-right-adjust();
+  }
+
+  @media screen and (min-width: 1024px) {
+     .sprite-arrow-up-adjust();
+  }
+}

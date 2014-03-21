@@ -5,14 +5,14 @@ styles:
   sass: |
     // mixin
     =cssowl-before-absolute($content, $coordinates:0 false false 0)
-      @extend %cssowl-relative
+      position: relative
       &:before
         content: $content
         +cssowl-absolute($coordinates)
   scss: |
     // mixin
     @mixin cssowl-before-absolute($content, $coordinates:0 false false 0) {
-      @extend %cssowl-relative;
+      position: relative;
       &:before {
         content: $content;
         @include cssowl-absolute($coordinates);
@@ -30,7 +30,7 @@ styles:
   styl: |
     // mixin
     cssowl-before-absolute($content, $coordinates=0 false false 0)
-      @extend $cssowl-relative
+      position: relative
       &:before
         content: $content
         cssowl-absolute($coordinates)

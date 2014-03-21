@@ -7,14 +7,14 @@ styles:
     =cssowl-absolute-outside($width, $height, $valign:top, $halign:left, $xOffset:0, $yOffset:0)
       width: $width
       height: $height
-      @extend %cssowl-absolute
+      position: absolute
       +cssowl-coords-outside($width, $height, $valign, $halign, $xOffset, $yOffset)
   scss: |
     // mixin
     @mixin cssowl-absolute-outside($width, $height, $valign:top, $halign:left, $xOffset:0, $yOffset:0) {
       width: $width;
       height: $height;
-      @extend %cssowl-absolute;
+      position: absolute;
       @include cssowl-coords-outside($width, $height, $valign, $halign, $xOffset, $yOffset);
     }
   less: |
@@ -28,9 +28,9 @@ styles:
   styl: |
     // mixin
     cssowl-absolute-outside($width, $height, $valign=top, $halign=left, $xOffset=0, $yOffset=0)
-      width $width
-      height $height
-      @extend $cssowl-absolute;
+      width: $width
+      height: $height
+      position: absolute
       cssowl-coords-outside($width, $height, $valign, $halign, $xOffset, $yOffset);
 examples:
   sass: |

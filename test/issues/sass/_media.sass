@@ -1,0 +1,17 @@
+/*
+ * @see https://github.com/owl-stars/cssowl/issues/1
+ */
+=breakpoint($width: 1024px)
+  @media screen and (min-width: $width)
+    @content
+
+.logo
+  +cssowl-sprite-replace($sprite-arrow-left)
+
+  +breakpoint(768px)
+    +sprite-arrow-right-adjust()
+
+  +breakpoint(1024px)
+    +sprite-arrow-up-adjust()
+
+

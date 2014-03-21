@@ -31,6 +31,7 @@ module.exports = (grunt) ->
       test:
         files:
           "test/tmp/examples.less.css": "test/fixtures/less/cssowl.less"
+          "test/tmp/issues.less.css": "test/issues/less/issues.less"
 
     sass:
       test:
@@ -39,6 +40,8 @@ module.exports = (grunt) ->
         files:
           "test/tmp/examples.sass.css": "test/fixtures/sass/cssowl.sass"
           "test/tmp/examples.scss.css": "test/fixtures/scss/cssowl.scss"
+          "test/tmp/issues.sass.css": "test/issues/sass/issues.sass"
+          "test/tmp/issues.scss.css": "test/issues/scss/issues.scss"
 
     stylus:
       test:
@@ -46,6 +49,7 @@ module.exports = (grunt) ->
           compress: false
         files:
           "test/tmp/examples.styl.css": "test/fixtures/styl/cssowl.styl"
+          "test/tmp/issues.styl.css": "test/issues/styl/issues.styl"
 
     csslint:
       test:

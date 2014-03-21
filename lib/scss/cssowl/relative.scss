@@ -6,5 +6,5 @@
 // mixin
 @mixin cssowl-relative($coordinates:0 false false 0) {
   @include cssowl-coords($coordinates);
-  @extend %cssowl-relative;
+  position: relative;
 }

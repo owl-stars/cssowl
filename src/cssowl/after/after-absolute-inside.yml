@@ -4,13 +4,13 @@ description: |
 styles:
   sass: |
     =cssowl-after-absolute-inside($content, $width, $height, $valign:top, $halign:left, $xOffset:0, $yOffset:0)
-      @extend %cssowl-relative
+      position: relative
       &:after
         content: $content
         +cssowl-absolute-inside($width, $height, $valign, $halign, $xOffset, $yOffset)
   scss: |
     @mixin cssowl-after-absolute-inside($content, $width, $height, $valign:top, $halign:left, $xOffset:0, $yOffset:0) {
-      @extend %cssowl-relative;
+      position: relative;
       &:after {
         content: $content;
         @include cssowl-absolute-inside($width, $height, $valign, $halign, $xOffset, $yOffset);
@@ -26,7 +26,7 @@ styles:
     }
   styl: |
     cssowl-after-absolute-inside($content, $width, $height, $valign=top, $halign=left, $xOffset=0, $yOffset=0)
-      @extend $cssowl-relative
+      position: relative
       &:after
         content: $content
         cssowl-absolute-inside($width, $height, $valign, $halign, $xOffset, $yOffset)
