@@ -1,0 +1,31 @@
+{
+  "name": "owl-stars/cssowl",
+  "description": "Cssowl is Owl-Stars mixins library with support for LESS, SASS/SCSS & Stylus.",
+  "keywords": [
+    "owl-stars",
+    "spriteowl",
+    "stylus",
+    "less",
+    "sass",
+    "scss",
+    "css"
+  ],
+  "homepage": "http://cssowl.owl-stars.com",
+  "authors": [
+    {
+        "name": "franklin",
+        "email": "franklin@owl-stars.com"
+    }
+  ],
+  "support": {
+    "issues": "https://github.com/owl-stars/cssowl/issues"
+  },
+  "license": "MIT",
+  "extra":
+  {
+    "branch-alias":
+    {
+      "dev-develop": "1.3.x-dev"
+    }
+  }
+}

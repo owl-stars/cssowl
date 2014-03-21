@@ -4,13 +4,13 @@ description: |
 styles:
   sass: |
     =cssowl-before-absolute-outside($content, $width, $height, $valign:top, $halign:left, $xOffset:0, $yOffset:0)
-      @extend %cssowl-relative
+      position: relative
       &:before
         content: $content
         +cssowl-absolute-outside($width, $height, $valign, $halign, $xOffset, $yOffset)
   scss: |
     @mixin cssowl-before-absolute-outside($content, $width, $height, $valign:top, $halign:left, $xOffset:0, $yOffset:0) {
-      @extend %cssowl-relative;
+      position: relative;
       &:before {
         content: $content;
         @include cssowl-absolute-outside($width, $height, $valign, $halign, $xOffset, $yOffset);
@@ -26,7 +26,7 @@ styles:
     }
   styl: |
     cssowl-before-absolute-outside($content, $width, $height, $valign=top, $halign=left, $xOffset=0, $yOffset=0)
-      @extend $cssowl-relative
+      position: relative
       &:before
         content: $content
         cssowl-absolute-outside($width, $height, $valign, $halign, $xOffset, $yOffset)

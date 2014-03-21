@@ -42,9 +42,6 @@
     "grunt-bumper": "~1.0",
     "grunt": "~0.4"
   },
-  "peerDependencies": {
-    "grunt": "~0.4"
-  },
   "keywords": [
     "owl-stars",
     "spriteowl",

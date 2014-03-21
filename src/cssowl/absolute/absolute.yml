@@ -9,7 +9,7 @@ styles:
     // mixin
     =cssowl-absolute($coordinates:0 false false 0)
       +cssowl-coords($coordinates)
-      @extend %cssowl-absolute
+      position: absolute
   scss: |
     // extendable placeholder
     %cssowl-absolute {
@@ -18,7 +18,7 @@ styles:
     // mixin
     @mixin cssowl-absolute($coordinates:0 false false 0) {
       @include cssowl-coords($coordinates);
-      @extend %cssowl-absolute;
+      position: absolute;
     }
   less: |
     // disabled as less doesn't provide placeholders yet
@@ -37,7 +37,7 @@ styles:
     // mixin
     cssowl-absolute($coordinates=0 false false 0)
       cssowl-coords($coordinates)
-      @extend $cssowl-absolute
+      position: absolute
 examples:
   sass: |
     .example-absolute

@@ -110,53 +110,6 @@
   height: 16px;
   background-position: -93px 0;
 }
-.example-absolute-inside > .top-center,
-.example-absolute-inside > .middle-right,
-.example-absolute-inside > .bottom-center,
-.example-absolute-inside > .middle-left,
-.example-absolute-outside > .top-center,
-.example-absolute-outside > .middle-right,
-.example-absolute-outside > .bottom-center,
-.example-absolute-outside > .middle-left,
-.example-absolute,
-.example-after-absolute-inside:after,
-.example-after-absolute-outside:after,
-.example-after-absolute:after,
-.example-before-absolute-inside:before,
-.example-before-absolute-outside:before,
-.example-before-absolute:before,
-.example-sprite-absolute-inside > .top-center,
-.example-sprite-absolute-inside > .middle-right,
-.example-sprite-absolute-inside > .bottom-center,
-.example-sprite-absolute-inside > .middle-left,
-.example-sprite-absolute-outside > .top-center,
-.example-sprite-absolute-outside > .middle-right,
-.example-sprite-absolute-outside > .bottom-center,
-.example-sprite-absolute-outside > .middle-left,
-.example-sprite-absolute,
-.example-sprite-after-absolute-inside:after,
-.example-sprite-after-absolute-outside:after,
-.example-sprite-after-absolute:after,
-.example-sprite-before-absolute-inside:before,
-.example-sprite-before-absolute-outside:before,
-.example-sprite-before-absolute:before {
-  position: absolute;
-}
-.example-after-absolute-inside,
-.example-after-absolute-outside,
-.example-after-absolute,
-.example-before-absolute-inside,
-.example-before-absolute-outside,
-.example-before-absolute,
-.example-relative,
-.example-sprite-after-absolute-inside,
-.example-sprite-after-absolute-outside,
-.example-sprite-after-absolute,
-.example-sprite-before-absolute-inside,
-.example-sprite-before-absolute-outside,
-.example-sprite-before-absolute {
-  position: relative;
-}
 .example-replace,
 .example-text-hide {
   overflow: hidden;
@@ -167,6 +120,7 @@
 .example-absolute-inside > .top-center {
   width: 10px;
   height: 10px;
+  position: absolute;
   top: 0;
   left: 50%;
   margin-left: -5px;
@@ -174,6 +128,7 @@
 .example-absolute-inside > .middle-right {
   width: 10px;
   height: 10px;
+  position: absolute;
   top: 50%;
   margin-top: -5px;
   right: 0;
@@ -181,6 +136,7 @@
 .example-absolute-inside > .bottom-center {
   width: 10px;
   height: 10px;
+  position: absolute;
   bottom: 0;
   left: 50%;
   margin-left: -5px;
@@ -188,6 +144,7 @@
 .example-absolute-inside > .middle-left {
   width: 10px;
   height: 10px;
+  position: absolute;
   top: 50%;
   margin-top: -5px;
   left: 0;
@@ -195,6 +152,7 @@
 .example-absolute-outside > .top-center {
   width: 10px;
   height: 10px;
+  position: absolute;
   top: -10px;
   left: 50%;
   margin-left: -5px;
@@ -202,6 +160,7 @@
 .example-absolute-outside > .middle-right {
   width: 10px;
   height: 10px;
+  position: absolute;
   top: 50%;
   margin-top: -5px;
   right: -10px;
@@ -209,6 +168,7 @@
 .example-absolute-outside > .bottom-center {
   width: 10px;
   height: 10px;
+  position: absolute;
   bottom: -10px;
   left: 50%;
   margin-left: -5px;
@@ -216,6 +176,7 @@
 .example-absolute-outside > .middle-left {
   width: 10px;
   height: 10px;
+  position: absolute;
   top: 50%;
   margin-top: -5px;
   left: -10px;
@@ -223,55 +184,80 @@
 .example-absolute {
   top: 20px;
   left: 20px;
+  position: absolute;
+}
+.example-after-absolute-inside {
+  position: relative;
 }
 .example-after-absolute-inside:after {
   content: "*";
   width: 5px;
   height: 5px;
+  position: absolute;
   top: 50%;
   margin-top: -5px;
   left: 50%;
   margin-left: -3px;
 }
+.example-after-absolute-outside {
+  position: relative;
+}
 .example-after-absolute-outside:after {
   content: "*";
   width: 5px;
   height: 5px;
+  position: absolute;
   top: 50%;
   margin-top: -5px;
   right: -10px;
+}
+.example-after-absolute {
+  position: relative;
 }
 .example-after-absolute:after {
   content: "*";
   top: 17px;
   left: 20px;
+  position: absolute;
 }
 .example-after-float:after {
   float: right;
   margin: 4px 0 0 10px;
   content: "*";
 }
+.example-before-absolute-inside {
+  position: relative;
+}
 .example-before-absolute-inside:before {
   content: "*";
   width: 5px;
   height: 5px;
+  position: absolute;
   top: 50%;
   margin-top: -5px;
   left: 50%;
   margin-left: -3px;
 }
+.example-before-absolute-outside {
+  position: relative;
+}
 .example-before-absolute-outside:before {
   content: "*";
   width: 5px;
   height: 5px;
+  position: absolute;
   top: 50%;
   margin-top: -5px;
   right: -10px;
+}
+.example-before-absolute {
+  position: relative;
 }
 .example-before-absolute:before {
   content: "*";
   top: 17px;
   left: 20px;
+  position: absolute;
 }
 .example-before-float:before {
   float: left;
@@ -337,10 +323,12 @@
 .example-relative {
   top: 20px;
   left: 20px;
+  position: relative;
 }
 .example-sprite-absolute-inside > .top-center {
   width: 11px;
   height: 6px;
+  position: absolute;
   top: 0;
   left: 50%;
   margin-left: -6px;
@@ -348,6 +336,7 @@
 .example-sprite-absolute-inside > .middle-right {
   width: 6px;
   height: 11px;
+  position: absolute;
   top: 50%;
   margin-top: -6px;
   right: 0;
@@ -355,6 +344,7 @@
 .example-sprite-absolute-inside > .bottom-center {
   width: 11px;
   height: 6px;
+  position: absolute;
   bottom: 0;
   left: 50%;
   margin-left: -6px;
@@ -362,6 +352,7 @@
 .example-sprite-absolute-inside > .middle-left {
   width: 6px;
   height: 11px;
+  position: absolute;
   top: 50%;
   margin-top: -6px;
   left: 0;
@@ -369,6 +360,7 @@
 .example-sprite-absolute-outside > .top-center {
   width: 11px;
   height: 6px;
+  position: absolute;
   top: -6px;
   left: 50%;
   margin-left: -6px;
@@ -376,6 +368,7 @@
 .example-sprite-absolute-outside > .middle-right {
   width: 6px;
   height: 11px;
+  position: absolute;
   top: 50%;
   margin-top: -6px;
   right: -6px;
@@ -383,6 +376,7 @@
 .example-sprite-absolute-outside > .bottom-center {
   width: 11px;
   height: 6px;
+  position: absolute;
   bottom: -6px;
   left: 50%;
   margin-left: -6px;
@@ -390,6 +384,7 @@
 .example-sprite-absolute-outside > .middle-left {
   width: 6px;
   height: 11px;
+  position: absolute;
   top: 50%;
   margin-top: -6px;
   left: -6px;
@@ -399,27 +394,40 @@
   left: 10px;
   right: 0;
   bottom: 0;
+  position: absolute;
+}
+.example-sprite-after-absolute-inside {
+  position: relative;
 }
 .example-sprite-after-absolute-inside:after {
   content: "";
   width: 11px;
   height: 6px;
+  position: absolute;
   top: 0;
   left: 50%;
   margin-left: -6px;
+}
+.example-sprite-after-absolute-outside {
+  position: relative;
 }
 .example-sprite-after-absolute-outside:after {
   content: "";
   width: 11px;
   height: 6px;
+  position: absolute;
   top: -6px;
   left: 50%;
   margin-left: -6px;
+}
+.example-sprite-after-absolute {
+  position: relative;
 }
 .example-sprite-after-absolute:after {
   content: "";
   top: 2px;
   right: -20px;
+  position: absolute;
 }
 .example-sprite-after-float:after {
   float: right;
@@ -431,26 +439,38 @@
   margin: 0 0 -2px 10px;
   display: inline-block;
 }
+.example-sprite-before-absolute-inside {
+  position: relative;
+}
 .example-sprite-before-absolute-inside:before {
   content: "";
   width: 11px;
   height: 6px;
+  position: absolute;
   top: 0;
   left: 50%;
   margin-left: -6px;
+}
+.example-sprite-before-absolute-outside {
+  position: relative;
 }
 .example-sprite-before-absolute-outside:before {
   content: "";
   width: 11px;
   height: 6px;
+  position: absolute;
   top: -6px;
   left: 50%;
   margin-left: -6px;
+}
+.example-sprite-before-absolute {
+  position: relative;
 }
 .example-sprite-before-absolute:before {
   content: "";
   top: 2px;
   left: -20px;
+  position: absolute;
 }
 .example-sprite-before-float:before {
   float: left;

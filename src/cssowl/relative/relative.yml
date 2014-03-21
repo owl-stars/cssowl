@@ -9,7 +9,7 @@ styles:
     // mixin
     =cssowl-relative($coordinates:0 false false 0)
       +cssowl-coords($coordinates)
-      @extend %cssowl-relative
+      position: relative
   scss: |
     // extendable placeholder
     %cssowl-relative {
@@ -18,7 +18,7 @@ styles:
     // mixin
     @mixin cssowl-relative($coordinates:0 false false 0) {
       @include cssowl-coords($coordinates);
-      @extend %cssowl-relative;
+      position: relative;
     }
   less: |
     // disabled as less doesn't provide placeholders yet
@@ -33,11 +33,11 @@ styles:
   styl: |
     // extendable placeholder
     $cssowl-relative
-      position: relative;
+      position relative
     // mixin
     cssowl-relative($coordinates=0 false false 0)
       cssowl-coords($coordinates)
-      @extend $cssowl-relative
+      position relative
 examples:
   sass: |
     .example-relative
