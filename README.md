@@ -3,6 +3,11 @@
 [![Bower version](https://badge.fury.io/bo/cssowl.png)](http://badge.fury.io/bo/cssowl)
 [![Build Status](https://travis-ci.org/owl-stars/cssowl.png?branch=master)](https://travis-ci.org/owl-stars/cssowl)
 
+
+**NOTE: Unfortunately this library hasn't been maintained for a while now.
+We are still using it for some projects in combination with Spriteowl but since we recommend using sth like icon fonts for larger projects we haven't touched this library yet. We plan to update this library to be used with icon fonts too but we can't quite tell when at the moment. Cheers**
+
+
 > Cssowl is Owl-Stars mixins library with support for [LESS](http://lesscss.org), [SASS/SCSS](http://sass-lang.com) and [Stylus](http://learnboost.github.io/stylus/).
 >
 > We created the mixins for working with [Owl-Stars](http://www.owl-stars.com) extensions like [Spriteowl](http://spriteowl.owl-stars.com), but feel free to use it on its own.
